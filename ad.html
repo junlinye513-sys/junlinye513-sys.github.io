@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>進入測驗中心前</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- 🔔 未來申請 AdSense 後，這一行會啟用 -->
+  <!--
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+  -->
+
+  <style>
+    body {
+      font-family: "Microsoft JhengHei", sans-serif;
+      background: #f2f6fc;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .box {
+      background: #ffffff;
+      padding: 32px 26px;
+      border-radius: 18px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+      max-width: 420px;
+      width: 90%;
+      text-align: center;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #2d6ac5;
+      font-size: 22px;
+    }
+
+    .ad-area {
+      margin: 20px 0;
+      padding: 18px;
+      background: #fafafa;
+      border: 1px dashed #ccc;
+      border-radius: 12px;
+      font-size: 15px;
+      color: #555;
+    }
+
+    .ad-placeholder {
+      font-size: 14px;
+      color: #999;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      background: #4A8FE7;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      background: #aaa;
+      cursor: not-allowed;
+    }
+
+    .countdown {
+      margin-top: 12px;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box">
+  <h2>進入測驗中心前</h2>
+
+  <!-- 📢 AdSense 廣告區 -->
+  <div class="ad-area">
+
+    <!-- 🔔 未來啟用 AdSense 時使用 -->
+    <!--
+    <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-XXXXXXXXXXXX"
+      data-ad-slot="1234567890"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    -->
+
+    <!-- 🟡 現在顯示的佔位內容（合法、安全） -->
+    <div class="ad-placeholder">
+      📢 本站為個人教學輔助系統<br>
+      未來將加入合作公告與廣告內容
+    </div>
+
+  </div>
+
+  <button id="goBtn" disabled>請稍候（3）</button>
+
+  <div class="countdown">感謝你的支持 🙏</div>
+</div>
+
+<script>
+  let sec = 3;
+  const btn = document.getElementById("goBtn");
+
+  const timer = setInterval(() => {
+    sec--;
+    btn.textContent = `請稍候（${sec}）`;
+
+    if (sec <= 0) {
+      clearInterval(timer);
+      btn.textContent = "進入測驗中心";
+      btn.disabled = false;
+    }
+  }, 1000);
+
+  btn.onclick = () => {
+    localStorage.setItem("AD_SEEN", "yes");
+    location.href = "index.html";
+  };
+</script>
+
+</body>
+</html>
