@@ -5,12 +5,17 @@
   <title>進入測驗中心前</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- ✅ AdSense 驗證程式碼 -->
-  
- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8785320054950646"
-     crossorigin="anonymous"></script>
- 
+  <!-- =====================================================
+       ✅ Google AdSense 驗證程式碼
+       ✔ 放在 <head> 中（官方規範）
+       ✔ 用於網站擁有權驗證
+       ✔ 審核通過後可直接使用廣告
+       ===================================================== -->
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8785320054950646"
+    crossorigin="anonymous"></script>
 
+  <!-- ================== 頁面樣式 ================== -->
   <style>
     body {
       font-family: "Microsoft JhengHei", sans-serif;
@@ -38,6 +43,7 @@
       font-size: 22px;
     }
 
+    /* 廣告顯示區（未來可直接插入 AdSense） */
     .ad-area {
       margin: 20px 0;
       padding: 18px;
@@ -48,9 +54,11 @@
       color: #555;
     }
 
+    /* 審核期間顯示的合法佔位內容 */
     .ad-placeholder {
       font-size: 14px;
       color: #999;
+      line-height: 1.6;
     }
 
     button {
@@ -82,15 +90,19 @@
 <div class="box">
   <h2>進入測驗中心前</h2>
 
-  <!-- 📢 AdSense 廣告區 -->
+  <!-- =====================================================
+       📢 廣告顯示區
+       ✔ 審核前：顯示佔位內容（合法）
+       ✔ 審核後：可直接啟用 AdSense
+       ===================================================== -->
   <div class="ad-area">
 
-    <!-- 🔔 未來啟用 AdSense 時使用 -->
+    <!-- 🔔【AdSense 正式廣告碼（通過後啟用）】 -->
     <!--
     <ins class="adsbygoogle"
       style="display:block"
-      data-ad-client="ca-pub-XXXXXXXXXXXX"
-      data-ad-slot="1234567890"
+      data-ad-client="ca-pub-8785320054950646"
+      data-ad-slot="你的廣告位ID"
       data-ad-format="auto"
       data-full-width-responsive="true"></ins>
 
@@ -99,7 +111,7 @@
     </script>
     -->
 
-    <!-- 🟡 現在顯示的佔位內容（合法、安全） -->
+    <!-- 🟡 審核期間顯示的替代內容 -->
     <div class="ad-placeholder">
       📢 本站為個人教學輔助系統<br>
       未來將加入合作公告與廣告內容
@@ -107,11 +119,12 @@
 
   </div>
 
+  <!-- 倒數進入測驗（避免誘導點擊，合規） -->
   <button id="goBtn" disabled>請稍候（3）</button>
-
   <div class="countdown">感謝你的支持 🙏</div>
 </div>
 
+<!-- ================== 倒數控制 ================== -->
 <script>
   let sec = 3;
   const btn = document.getElementById("goBtn");
@@ -127,6 +140,7 @@
     }
   }, 1000);
 
+  // 進入主測驗頁
   btn.onclick = () => {
     localStorage.setItem("AD_SEEN", "yes");
     location.href = "index.html";
