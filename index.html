@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
+  <link rel="canonical" href="https://junlinye513-sys.github.io/" />
+  <meta name="google-site-verification" content="googlea467c367c19bc6c6" />
   <!-- =====================================================
        ✅ Google AdSense 驗證程式碼
        ✔ 放在 <head> 中（官方規範）
@@ -12,7 +14,10 @@
     crossorigin="anonymous"></script>
 
   <meta charset="UTF-8">
-  <title>線上學科題庫練習平台</title>
+  <title>線上學科題庫練習平台｜丙級・乙級資訊類學科｜即時批改</title>
+  <meta name="description" content="線上學科題庫練習平台，提供資訊相關丙級與乙級學科題庫練習，包含軟體應用、硬體裝修、網頁設計、網路架設與軟體設計等科目，支援線上測驗、即時批改與反覆練習，無廣告干擾，適合高中職與技專校院學生進行課堂練習與考前複習。">
+
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- =====================================================
@@ -160,9 +165,8 @@
      A. 強制曝光廣告頁（僅第一次）
      ------------------------------------------------------- */
   if (!localStorage.getItem("AD_SEEN")) {
-    location.replace("ad.html");
-  }
-
+  setTimeout(() => location.replace("ad.html"), 3000);
+}
   /* -------------------------------------------------------
      B. 後端 API 設定
      ------------------------------------------------------- */
@@ -235,7 +239,7 @@
 </script>
 
 <footer>
-  © 2025 線上學科測驗系統 ｜ 
+  © 2025 線上學科題庫練習平台 ｜ 
   <a href="about.html">關於本站</a> ｜ 
   <a href="privacy.html">隱私權政策</a> ｜ 
   <a href="contact.html">聯絡我們</a>
@@ -243,6 +247,7 @@
 
 </body>
 </html>
+
 
 
 
