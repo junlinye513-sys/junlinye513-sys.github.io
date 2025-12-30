@@ -3,26 +3,17 @@
 <head>
   <link rel="canonical" href="https://junlinye513-sys.github.io/" />
   <meta name="google-site-verification" content="KeS4mjmoIAaRRgZs3fdyuyPTQ81x7nQfmH6le6uiiQE" />
-  <!-- =====================================================
-       ✅ Google AdSense 驗證程式碼
-       ✔ 放在 <head> 中（官方規範）
-       ✔ 用於網站擁有權驗證
-       ✔ 不會顯示廣告、不影響畫面
-       ===================================================== -->
+
   <script async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8785320054950646"
     crossorigin="anonymous"></script>
 
   <meta charset="UTF-8">
-  <title>線上學科題庫練習平台｜丙級・乙級資訊類學科｜即時批改</title>
-  <meta name="description" content="線上學科題庫練習平台，提供資訊相關丙級與乙級學科題庫練習，包含軟體應用、硬體裝修、網頁設計、網路架設與軟體設計等科目，支援線上測驗、即時批改與反覆練習，無廣告干擾，適合高中職與技專校院學生進行課堂練習與考前複習。">
-
+  <title>資訊職類與商業服務職類學科題庫練習平台｜丙級・乙級檢定</title>
+  <meta name="description" content="資訊職類與商業服務職類學科題庫練習平台，提供丙級與乙級技術士檢定學科線上練習，涵蓋電腦軟體應用、硬體裝修、網頁設計、網路架設、軟體設計與會計相關檢定，支援即時批改與反覆練習，適合高中職與技專校院學生。">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- =====================================================
-       🎨 全站樣式設定
-       ===================================================== -->
   <style>
     :root {
       --primary: #4A8FE7;
@@ -30,7 +21,6 @@
       --bg: #f2f6fc;
       --card-bg: #ffffff;
       --text: #333;
-      --text-light: #666;
       --radius: 14px;
     }
 
@@ -41,14 +31,13 @@
       color: var(--text);
     }
 
-    /* ===== Hero 區（標題＋即時統計） ===== */
     .hero {
       text-align: center;
       padding: 50px 20px 20px;
       background: linear-gradient(160deg, #e8f1ff, #f6fbff);
     }
     .hero h1 {
-      font-size: 36px;
+      font-size: 34px;
       color: var(--primary-dark);
       margin: 0;
     }
@@ -58,24 +47,20 @@
       color: #444;
     }
     .hero-img {
-      width: 300px;
+      width: 280px;
       margin-top: 15px;
     }
 
-    /* ===== 公告 / 預留廣告區（未來可換 AdSense） ===== */
     .ad-box {
       max-width: 900px;
       margin: 20px auto;
-      padding: 16px 20px;
+      padding: 16px;
       background: #fff7e6;
-      border: 1px dashed #f0c36d;
       border-radius: 12px;
       text-align: center;
-      color: #7a5a00;
       font-size: 15px;
     }
 
-    /* ===== 搜尋列 ===== */
     .search-box {
       max-width: 600px;
       margin: 20px auto;
@@ -89,11 +74,21 @@
       font-size: 16px;
     }
 
-    /* ===== 測驗卡片列表 ===== */
-    #tool-list {
+    .section {
       max-width: 900px;
       margin: 40px auto;
       padding: 0 20px;
+    }
+
+    .section h2 {
+      font-size: 24px;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tool-list {
       display: grid;
       gap: 20px;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -126,93 +121,72 @@
 
 <body>
 
-<!-- ===============================
-     🏷️ Hero 區
-     =============================== -->
 <section class="hero">
-  <h1>線上學科題庫練習平台</h1>
+  <h1>資訊職類與商業服務職類學科題庫練習平台</h1>
   <div class="hero-info" id="stats">載入中...</div>
-  <img class="hero-img"
-       src="https://ssl.gstatic.com/classroom/themes/img_bookclub.jpg">
+  <img class="hero-img" src="https://ssl.gstatic.com/classroom/themes/img_bookclub.jpg">
 </section>
 
-<!-- ===============================
-     📢 公告 / 廣告預留區
-     =============================== -->
 <div class="ad-box">
-  <strong>📢 公告資訊</strong>
-  本站為個人教學輔助系統，內容持續更新中
+  📢 本站為個人教學輔助系統，內容持續更新中
 </div>
 
-<!-- ===============================
-     🔍 搜尋列
-     =============================== -->
 <div class="search-box">
   <input id="search" type="text"
-         placeholder="搜尋科目關鍵字（如：丙級、軟體、網頁）">
+         placeholder="搜尋檢定或科目（如：會計丙級、軟體應用、網頁設計）">
 </div>
 
-<!-- ===============================
-     📚 測驗列表
-     =============================== -->
-<div id="tool-list"></div>
+<div id="content"></div>
 
-<!-- ===============================
-     ⚙️ 主程式（單一入口，避免重複）
-     =============================== -->
 <script>
-  /* -------------------------------------------------------
-     A. 強制曝光廣告頁（僅第一次）
-     ------------------------------------------------------- */
-  if (!localStorage.getItem("AD_SEEN")) {
-  setTimeout(() => location.replace("ad.html"), 3000);
-}
-  /* -------------------------------------------------------
-     B. 後端 API 設定
-     ------------------------------------------------------- */
   const API = "https://script.google.com/macros/s/AKfycbxAp06fzFAYTDRh17fZqe4pfytLRHAuNcPb8ubRKQJkCJZDEyVze9_fylV847gkz9jt/exec";
   const ua = encodeURIComponent(navigator.userAgent);
 
-  /* -------------------------------------------------------
-     C. 固定使用者 ID（跨頁追蹤）
-     ------------------------------------------------------- */
   let userId = localStorage.getItem("USER_ID");
   if (!userId) {
     userId = "u" + Math.random().toString(36).substring(2);
     localStorage.setItem("USER_ID", userId);
   }
 
-  /* -------------------------------------------------------
-     D. 測驗清單資料
-     ------------------------------------------------------- */
   const data = [
-    { title:"軟體應用丙級學科", description:"電腦概論、應用軟體使用、系統軟體使用、資訊安全、共同科目｜即時批改", url:"https://script.google.com/macros/s/AKfycbzJRPUuPygnC4dYRThkRlfIsVoEz12YFqDiu3h_YLv90ASUU0dLZnZ_x0c5Dj0-WFmu4A/exec" },
-    { title:"硬體裝修丙級學科", description:"電腦、電子及電機機械識圖、作業準備、儀表、軟體及一般工具使用、工作方法、裝修及控制應用、資訊安全措施、共同科目｜即時批改", url:"https://script.google.com/macros/s/AKfycbydKhYl8bSSMgnJiLXV8XeKc2uCf27b4Ib4jJ3mwDspbnRDKd2drH9cyA4wC2_AAgwW/exec" },
-    { title:"網頁設計丙級學科", description:"作業準備、應用軟體安裝及使用、系統軟體安裝及使用、資訊及安全、共同科目｜即時批改", url:"https://script.google.com/macros/s/AKfycbzyzxH0PutzRpCZBYPJbvzTTqGAYYDqAK86ZQoBx8lVzXzN3fmxgd26lBUZMLSQ2Pdp/exec" },
-    { title:"網路架設丙級學科", description:"識圖與製圖及相關法規、作業準備、網路架設佈線、網路元件及軟體安裝與應用、共同科目｜即時批改", url:"https://script.google.com/macros/s/AKfycbwEE7inwNKRQ4cf-tsb5_ujvqnvNOkKM0UVNIUxNeuBW62mEaUbfdevjBFo0UH-QXuz/exec" },
-    { title:"軟體設計丙級學科", description:"電腦概論、程式設計、系統發展、資訊安全、共同科目｜即時批改", url:"https://script.google.com/macros/s/AKfycbz2fWW9XGhQlhCvaYVKjLr7JK_PIrkxS4q6IkJID0A58DEiVWej42Mw2t6ziW0nwWJc/exec" },
-    { title:"軟體應用乙級學科", description:"電腦概論、應用軟體使用、系統軟體使用、資訊安全、共同科目｜即時批改", url:"https://script.google.com/macros/s/AKfycbyE_QjwST9zmBWCBNgoBwqArdYfPWqIhM31UZDO-D3ZLXgv0LzLCKz3AfQbC1YKzKxx-Q/exec" },
-    { title:"硬體裝修乙級學科", description:"電腦、電子及電機機械、作業準備、儀表、軟體及一般工具、工作方法、裝修及控制應用、資訊安全措施、共同科目｜即時批改", url:"https://script.google.com/macros/s/AKfycbye8qFicewmkqAgdKy31Jp92uxZzj6tUK7DrsZEIgrjsqAngz53Kiiv9AgKFhUdOKNO/exec" }
+    { category:"資訊職類", title:"軟體應用丙級學科", description:"電腦概論、應用軟體使用、系統軟體使用、資訊安全、共同科目｜即時批改", url:"https://script.google.com/macros/s/AKfycbzJRPUuPygnC4dYRThkRlfIsVoEz12YFqDiu3h_YLv90ASUU0dLZnZ_x0c5Dj0-WFmu4A/exec" },
+    { category:"資訊職類", title:"硬體裝修丙級學科", description:"電腦、電子及電機機械識圖、作業準備、儀表、軟體及一般工具使用、工作方法、裝修及控制應用、資訊安全措施、共同科目｜即時批改", url:"https://script.google.com/macros/s/AKfycbydKhYl8bSSMgnJiLXV8XeKc2uCf27b4Ib4jJ3mwDspbnRDKd2drH9cyA4wC2_AAgwW/exec" },
+    { category:"資訊職類", title:"網頁設計丙級學科", description:"作業準備、應用軟體安裝及使用、系統軟體安裝及使用、資訊及安全、共同科目｜即時批改", url:"https://script.google.com/macros/s/AKfycbzyzxH0PutzRpCZBYPJbvzTTqGAYYDqAK86ZQoBx8lVzXzN3fmxgd26lBUZMLSQ2Pdp/exec" },
+    { category:"資訊職類", title:"網路架設丙級學科", description:"識圖與製圖及相關法規、作業準備、網路架設佈線、網路元件及軟體安裝與應用、共同科目｜即時批改", url:"https://script.google.com/macros/s/AKfycbwEE7inwNKRQ4cf-tsb5_ujvqnvNOkKM0UVNIUxNeuBW62mEaUbfdevjBFo0UH-QXuz/exec" },
+    { category:"資訊職類", title:"軟體設計丙級學科", description:"電腦概論、程式設計、系統發展、資訊安全、共同科目｜即時批改", url:"https://script.google.com/macros/s/AKfycbz2fWW9XGhQlhCvaYVKjLr7JK_PIrkxS4q6IkJID0A58DEiVWej42Mw2t6ziW0nwWJc/exec" },
+    { category:"資訊職類", title:"軟體應用乙級學科", description:"電腦概論、應用軟體使用、系統軟體使用、資訊安全、共同科目｜即時批改", url:"https://script.google.com/macros/s/AKfycbyE_QjwST9zmBWCBNgoBwqArdYfPWqIhM31UZDO-D3ZLXgv0LzLCKz3AfQbC1YKzKxx-Q/exec" },
+    { category:"資訊職類", title:"硬體裝修乙級學科", description:"電腦、電子及電機機械、作業準備、儀表、軟體及一般工具、工作方法、裝修及控制應用、資訊安全措施、共同科目｜即時批改", url:"https://script.google.com/macros/s/AKfycbye8qFicewmkqAgdKy31Jp92uxZzj6tUK7DrsZEIgrjsqAngz53Kiiv9AgKFhUdOKNO/exec" }
+    
+    { category:"商業服務職類", title:"會計事務丙級學科", description:"會計基本概念、平時會計處理程序、期末會計處理程序、會計資訊系統概念、相關法令之規定、共同科目", url:"https://script.google.com/macros/s/AKfycbzKghOORCB32SeSDb0vXoNEFdEm46NDhuvF6JpwCMwmddurFmnBRTNyrWzHpegJdFCJ/exec"},
+    { category:"商業服務職類", title:"會計事務乙級學科", description:"會計基本概念及會計處理程序、資產及負債之評價、權益之會計處理與表達、現金流量表之編製與財務報表分析、會計資訊與進銷存相關資訊處理作業、共同科目", url:"https://script.google.com/macros/s/AKfycbz9xJ0kyDMJBQRvsDoRaUNLxlmgUnqS_xGD5ywIJse5PrzdYjcayc0iEOil__nRg4-g/exec"}
   ];
 
-  /* -------------------------------------------------------
-     E. 渲染卡片
-     ------------------------------------------------------- */
   function render(list) {
-    document.getElementById("tool-list").innerHTML =
-      list.map(t => `
-        <div class="tool-card">
-          <h3>${t.title}</h3>
-          <p>${t.description}</p>
-          <a class="btn" href="${t.url}" target="_blank">開始測驗</a>
-        </div>
+    const groups = {};
+    list.forEach(t => {
+      if (!groups[t.category]) groups[t.category] = [];
+      groups[t.category].push(t);
+    });
+
+    document.getElementById("content").innerHTML =
+      Object.keys(groups).map(cat => `
+        <section class="section">
+          <h2>${cat}</h2>
+          <div class="tool-list">
+            ${groups[cat].map(t => `
+              <div class="tool-card">
+                <h3>${t.title}</h3>
+                <p>${t.description}</p>
+                ${t.url === "#" ? "" : `<a class="btn" href="${t.url}" target="_blank">開始測驗</a>`}
+              </div>
+            `).join("")}
+          </div>
+        </section>
       `).join("");
   }
+
   render(data);
 
-  /* -------------------------------------------------------
-     F. 搜尋
-     ------------------------------------------------------- */
   document.getElementById("search").addEventListener("input", e => {
     const kw = e.target.value.toLowerCase();
     render(data.filter(t =>
@@ -221,9 +195,6 @@
     ));
   });
 
-  /* -------------------------------------------------------
-     G. 在線 / 訪客統計
-     ------------------------------------------------------- */
   async function updateStats() {
     const visit = await fetch(`${API}?action=visit&ua=${ua}&vid=${userId}`).then(r=>r.json());
     const online = await fetch(`${API}?action=online`).then(r=>r.json());
@@ -239,17 +210,8 @@
 </script>
 
 <footer>
-  © 2025 線上學科題庫練習平台 ｜ 
-  <a href="about.html">關於本站</a> ｜ 
-  <a href="privacy.html">隱私權政策</a> ｜ 
-  <a href="contact.html">聯絡我們</a>
+  © 2025 資訊職類與商業服務職類學科題庫練習平台
 </footer>
 
 </body>
 </html>
-
-
-
-
-
-
