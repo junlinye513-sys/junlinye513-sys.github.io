@@ -1,151 +1,78 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <title>進入測驗中心前</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>使用說明｜測驗中心</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
 
-  <!-- =====================================================
-       ✅ Google AdSense 驗證程式碼
-       ✔ 放在 <head> 中（官方規範）
-       ✔ 用於網站擁有權驗證
-       ✔ 審核通過後可直接使用廣告
-       ===================================================== -->
-  <script async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8785320054950646"
-    crossorigin="anonymous"></script>
+<style>
+  body {
+    font-family: "Microsoft JhengHei", sans-serif;
+    background: #f2f6fc;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
 
-  <!-- ================== 頁面樣式 ================== -->
-  <style>
-    body {
-      font-family: "Microsoft JhengHei", sans-serif;
-      background: #f2f6fc;
-      margin: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
+  .box {
+    background: #ffffff;
+    padding: 32px 26px;
+    border-radius: 18px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+    max-width: 420px;
+    width: 90%;
+    text-align: center;
+  }
 
-    .box {
-      background: #ffffff;
-      padding: 32px 26px;
-      border-radius: 18px;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.15);
-      max-width: 420px;
-      width: 90%;
-      text-align: center;
-    }
+  h2 {
+    margin-top: 0;
+    color: #2d6ac5;
+    font-size: 22px;
+  }
 
-    h2 {
-      margin-top: 0;
-      color: #2d6ac5;
-      font-size: 22px;
-    }
+  p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.7;
+    margin: 18px 0;
+  }
 
-    /* 廣告顯示區（未來可直接插入 AdSense） */
-    .ad-area {
-      margin: 20px 0;
-      padding: 18px;
-      background: #fafafa;
-      border: 1px dashed #ccc;
-      border-radius: 12px;
-      font-size: 15px;
-      color: #555;
-    }
+  button {
+    margin-top: 12px;
+    padding: 12px 22px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    background: #4A8FE7;
+    color: #fff;
+    cursor: pointer;
+  }
 
-    /* 審核期間顯示的合法佔位內容 */
-    .ad-placeholder {
-      font-size: 14px;
-      color: #999;
-      line-height: 1.6;
-    }
-
-    button {
-      margin-top: 20px;
-      padding: 12px 20px;
-      font-size: 16px;
-      border: none;
-      border-radius: 10px;
-      background: #4A8FE7;
-      color: #fff;
-      cursor: pointer;
-    }
-
-    button:disabled {
-      background: #aaa;
-      cursor: not-allowed;
-    }
-
-    .countdown {
-      margin-top: 12px;
-      font-size: 14px;
-      color: #777;
-    }
-  </style>
+  button:hover {
+    background: #2d6ac5;
+  }
+</style>
 </head>
 
 <body>
 
 <div class="box">
-  <h2>進入測驗中心前</h2>
+  <h2>使用說明</h2>
 
-  <!-- =====================================================
-       📢 廣告顯示區
-       ✔ 審核前：顯示佔位內容（合法）
-       ✔ 審核後：可直接啟用 AdSense
-       ===================================================== -->
-  <div class="ad-area">
+  <p>
+    本站為<strong>免費學科練習與教學輔助平台</strong><br>
+    提供各類檢定學科反覆練習與即時回饋<br>
+    為維持網站長期營運，未來可能加入合作或贊助內容<br>
+    感謝你的理解與支持 🙏
+  </p>
 
-    <!-- 🔔【AdSense 正式廣告碼（通過後啟用）】 -->
-    <!--
-    <ins class="adsbygoogle"
-      style="display:block"
-      data-ad-client="ca-pub-8785320054950646"
-      data-ad-slot="你的廣告位ID"
-      data-ad-format="auto"
-      data-full-width-responsive="true"></ins>
-
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-    -->
-
-    <!-- 🟡 審核期間顯示的替代內容 -->
-    <div class="ad-placeholder">
-      📢 本站為個人教學輔助系統<br>
-      未來將加入合作公告與廣告內容
-    </div>
-
-  </div>
-
-  <!-- 倒數進入測驗（避免誘導點擊，合規） -->
-  <button id="goBtn" disabled>請稍候（3）</button>
-  <div class="countdown">感謝你的支持 🙏</div>
+  <button onclick="location.href='index.html'">
+    進入測驗中心
+  </button>
 </div>
-
-<!-- ================== 倒數控制 ================== -->
-<script>
-  let sec = 3;
-  const btn = document.getElementById("goBtn");
-
-  const timer = setInterval(() => {
-    sec--;
-    btn.textContent = `請稍候（${sec}）`;
-
-    if (sec <= 0) {
-      clearInterval(timer);
-      btn.textContent = "進入測驗中心";
-      btn.disabled = false;
-    }
-  }, 1000);
-
-  // 進入主測驗頁
-  btn.onclick = () => {
-    localStorage.setItem("AD_SEEN", "yes");
-    location.href = "index.html";
-  };
-</script>
 
 </body>
 </html>
