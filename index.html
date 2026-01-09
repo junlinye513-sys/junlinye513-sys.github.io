@@ -121,9 +121,8 @@
 
 <body>
 
-  <!-- ✅ 安全的一次性 ad.html 導向（AdSense 安全） -->
 <script>
-  // 只在同一個瀏覽分頁顯示一次 ad.html
+  //僅用於首次進站顯示入口說明頁（非廣告強制）
   if (!sessionStorage.getItem("adShown")) {
     sessionStorage.setItem("adShown", "yes");
     window.location.replace("ad.html");
@@ -231,3 +230,4 @@
 
 </body>
 </html>
+
