@@ -121,6 +121,15 @@
 
 <body>
 
+  <!-- ✅ 安全的一次性 ad.html 導向（AdSense 安全） -->
+<script>
+  // 只在同一個瀏覽分頁顯示一次 ad.html
+  if (!sessionStorage.getItem("adShown")) {
+    sessionStorage.setItem("adShown", "yes");
+    window.location.replace("ad.html");
+  }
+</script>
+  
 <section class="hero">
   <h1>資訊職類與商業服務職類學科題庫練習平台</h1>
   <div class="hero-info" id="stats">載入中...</div>
@@ -222,12 +231,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
