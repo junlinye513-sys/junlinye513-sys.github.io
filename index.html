@@ -120,14 +120,6 @@
 </head>
 
 <body>
-
-<script>
-  //僅用於首次進站顯示入口說明頁（非廣告強制）
-  if (!sessionStorage.getItem("adShown")) {
-    sessionStorage.setItem("adShown", "yes");
-    window.location.replace("ad.html");
-  }
-</script>
   
 <section class="hero">
   <h1>資訊職類與商業服務職類學科題庫練習平台</h1>
@@ -136,7 +128,10 @@
 </section>
 
 <div class="ad-box">
-  📢 本站為個人教學輔助系統，內容持續更新中
+  📢 本站為個人教學輔助系統，內容持續更新中<br>
+  提供資訊職類與商業服務職類檢定學科練習<br><br>
+
+  <a class="btn" href="ad.html">進入測驗中心</a>
 </div>
 
 <div class="search-box">
@@ -230,4 +225,5 @@
 
 </body>
 </html>
+
 
