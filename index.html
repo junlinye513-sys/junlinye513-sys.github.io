@@ -2,75 +2,122 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>資訊與商業服務檢定學科練習平台｜114年度最新題庫</title>
-  <meta name="description" content="專為高中職學生設計的線上學科題庫練習平台。提供資訊職類（軟體應用、網頁設計、硬體裝修）與商業服務職類（會計事務、門市服務）技術士檢定之專業導覽與應考攻略。">
+  <title>114年度技術士檢定學科練習平台｜資訊職類與商業服務職類</title>
+  <meta name="description" content="本平台提供 114 年度最新技術士檢定學科題庫練習，涵蓋電腦軟體應用、網頁設計、硬體裝修、會計事務與門市服務等科目。透過即時在線統計與數位化練習介面，協助學生高效準備測驗。">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="https://junlinye513-sys.github.io/">
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8785320054950646" crossorigin="anonymous"></script>
 
   <style>
-    :root { --primary: #4A8FE7; --primary-dark: #2d6ac5; --bg: #f2f6fc; --text: #333; }
-    body { font-family: "Microsoft JhengHei", sans-serif; margin: 0; background: var(--bg); color: var(--text); line-height: 1.8; }
-    .hero { text-align: center; padding: 60px 20px; background: linear-gradient(160deg, #eef4ff, #f9fbff); }
-    .hero h1 { font-size: 32px; color: var(--primary-dark); }
-    .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-    .main-box { background: #fff; padding: 30px; border-radius: 18px; box-shadow: 0 10px 25px rgba(0,0,0,.05); margin-bottom: 30px; }
-    .tool-list { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: 20px; }
-    .tool-card { border: 1px solid #eee; padding: 20px; border-radius: 12px; transition: 0.3s; }
-    .tool-card:hover { transform: translateY(-5px); border-color: var(--primary); }
-    .btn { display: inline-block; padding: 10px 20px; background: var(--primary); color: #fff; border-radius: 8px; text-decoration: none; margin-top: 10px; }
-    .article-section { background: #fff; padding: 35px; border-radius: 18px; margin-top: 30px; }
-    h2, h3 { color: var(--primary-dark); border-left: 5px solid var(--primary); padding-left: 15px; }
-    footer { text-align: center; padding: 40px; color: #888; font-size: 14px; }
-    footer a { color: #666; text-decoration: none; margin: 0 10px; }
+    :root { --primary: #4A8FE7; --primary-dark: #2d6ac5; --bg: #f2f6fc; --text: #333; --radius: 18px; }
+    body { font-family: "Microsoft JhengHei", system-ui, sans-serif; margin: 0; background: var(--bg); color: var(--text); line-height: 1.8; }
+    
+    .hero { text-align: center; padding: 60px 20px 40px; background: linear-gradient(160deg, #eef4ff, #f9fbff); }
+    .hero h1 { font-size: 32px; font-weight: 700; color: var(--primary-dark); margin: 0 0 10px; }
+    
+    /* 在線人數統計樣式 */
+    .stats-badge {
+      display: inline-block;
+      background: rgba(74, 143, 231, 0.1);
+      color: var(--primary-dark);
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 10px;
+      border: 1px solid rgba(74, 143, 231, 0.2);
+    }
+
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+    .main-box { margin-top: -20px; background: #fff; padding: 35px; border-radius: var(--radius); box-shadow: 0 12px 30px rgba(0,0,0,0.06); }
+    .main-box h2 { font-size: 24px; border-left: 6px solid var(--primary); padding-left: 15px; margin-top: 0; color: var(--primary-dark); }
+    
+    .tool-list { display: grid; gap: 25px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: 25px; }
+    .tool-card { background: #fff; padding: 25px; border-radius: 14px; border: 1px solid #edf2f7; transition: 0.3s; text-align: center; }
+    .tool-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-color: var(--primary); }
+    
+    .btn { display: inline-block; padding: 12px 28px; background: var(--primary); color: #fff; border-radius: 10px; text-decoration: none; font-weight: 600; }
+    
+    .content-article { background: #fff; padding: 40px; border-radius: var(--radius); margin: 30px 0; box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
+    .content-article h3 { color: var(--primary-dark); margin-top: 25px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+    
+    footer { text-align: center; padding: 40px 20px; font-size: 14px; color: #999; border-top: 1px solid #eee; margin-top: 20px; }
+    footer a { color: #777; text-decoration: none; margin: 0 10px; }
   </style>
 </head>
 <body>
 
 <section class="hero">
   <h1>114 年度技術士檢定學科練習平台</h1>
-  <p>提供專業職類學科解析、應考指南及線上模擬練習系統</p>
+  <div id="stats" class="stats-badge">正在連線統計中...</div>
 </section>
 
 <div class="container">
   <div class="main-box">
-    <h2>快速進入練習中心</h2>
-    <p>點選下方分類查看各科題庫說明並開始線上練習：</p>
+    <h2>選擇檢定職類</h2>
     <div class="tool-list">
       <div class="tool-card">
-        <h3>💻 資訊職類</h3>
-        <p>涵蓋電腦軟體應用、網頁設計、硬體裝修等。點擊查看詳細題庫範圍與練習入口。</p>
+        <h3>💻 資訊職類題庫</h3>
+        <p>包含電腦軟體應用、網頁設計、硬體裝修之丙乙級學科練習。</p>
         <a class="btn" href="intro.html#info">進入資訊題庫</a>
       </div>
       <div class="tool-card">
         <h3>📊 商業服務職類</h3>
-        <p>包含會計事務、門市服務、國際貿易等。提供最新年度檢定公告與線上模擬。</p>
+        <p>包含會計事務、門市服務、國際貿易等科目之最新規範練習。</p>
         <a class="btn" href="intro.html#business">進入商業題庫</a>
       </div>
     </div>
   </div>
 
-  <div class="article-section">
-    <h2>技術士檢定準備全攻略</h2>
-    <p>取得國家技術士證照是許多技職學子與職場人士專業能力的象徵。無論是丙級還是乙級，學科測驗都是首要克服的挑戰。</p>
+  <article class="content-article">
+    <h2>如何高效準備技術士學科測驗？</h2>
+    <p>技術士檢定學科題庫量龐大，本平台透過數位化介面協助考生高效複習。請善用「分章練習」與「模擬測試」來強化記憶。</p>
     
-    <h3>學科準備三大策略</h3>
+    <h3>💡 應考準備建議</h3>
     <ul>
-      <li><strong>理解大於死背：</strong> 在資訊職類中，如「個人電腦硬體」章節，理解零組件運作邏輯能事半功倍。</li>
-      <li><strong>善用數位工具：</strong> 本平台提供 24 小時不間斷的練習系統，協助考生利用碎片時間熟悉 800-1200 題的龐大題庫。</li>
-      <li><strong>跨科共同科目：</strong> 莫忽視「職業安全衛生」與「環境保護」等共同科目，這是穩定取分的關鍵。</li>
+      <li><strong>理解觀念：</strong> 針對專業科目進行深度理解，減少死背負擔。</li>
+      <li><strong>共同科目：</strong> 莫忽視職安衛生與環境保護等必考基本分。</li>
+      <li><strong>穩定練習：</strong> 每日利用 15 分鐘進行模擬測驗，維持手感。</li>
     </ul>
-
-    <h3>關於 114 年最新題庫規範</h3>
-    <p>本平台內容持續根據勞動部勞動力發展署技能檢定中心之公告進行編修。我們建議使用者在練習時，特別注意近年新增的資訊安全與ESG永續經營相關考題。</p>
-  </div>
+  </article>
 </div>
 
 <footer>
-  <p>© 2025 技術士檢定學習平台｜致力於提升技職競爭力</p>
+  <p>© 2025 技術士檢定學習平台｜數位教學輔助系統</p>
   <a href="about.html">關於本站</a> | <a href="privacy.html">隱私權政策</a> | <a href="contact.html">聯絡我們</a>
 </footer>
+
+<script>
+  // 原有統計 API 配置
+  const API = "https://script.google.com/macros/s/AKfycbxAp06fzFAYTDRh17fZqe4pfytLRHAuNcPb8ubRKQJkCJZDEyVze9_fylV847gkz9jt/exec";
+  const ua = encodeURIComponent(navigator.userAgent);
+  let userId = localStorage.getItem("USER_ID") || ("u" + Math.random().toString(36).substring(2));
+  localStorage.setItem("USER_ID", userId);
+
+  async function updateStats() {
+    try {
+      const visit = await fetch(`${API}?action=visit&ua=${ua}&vid=${userId}`).then(r => r.json());
+      const online = await fetch(`${API}?action=online`).then(r => r.json());
+      
+      // 優化後的字眼：增加同伴感
+      const onlineCount = online.online ?? 0;
+      const totalCount = visit.total ?? 0;
+      
+      document.getElementById("stats").innerHTML = 
+        `✨ 你並不孤單，目前有 <b>${onlineCount}</b> 人正與你一同努力練習中！ (累計造訪：${totalCount})`;
+    } catch (e) {
+      document.getElementById("stats").style.display = 'none';
+    }
+  }
+
+  // 初始化與定時更新
+  fetch(`${API}?action=heartbeat&userId=${userId}&ua=${ua}`).then(updateStats);
+  setInterval(() => {
+    fetch(`${API}?action=heartbeat&userId=${userId}&ua=${ua}`);
+    updateStats();
+  }, 10000);
+</script>
 
 </body>
 </html>
