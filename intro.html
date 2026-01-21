@@ -2,58 +2,83 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>題庫範圍說明與練習入口｜技術士檢定平台</title>
+  <title>題庫練習中心｜技術士檢定平台</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
+    /* 基本樣式保持一致 */
     body { font-family: "Microsoft JhengHei", sans-serif; background: #f2f6fc; margin: 0; padding: 20px; line-height: 1.8; }
     .content-box { max-width: 900px; margin: 30px auto; background: #fff; padding: 40px; border-radius: 16px; box-shadow: 0 5px 15px rgba(0,0,0,.05); }
     h1 { color: #2d6ac5; text-align: center; }
-    h2 { border-bottom: 2px solid #4A8FE7; padding-bottom: 10px; color: #4A8FE7; margin-top: 40px; }
+    h2 { border-bottom: 2px solid #4A8FE7; padding-bottom: 10px; color: #4A8FE7; margin-top: 20px; }
+    
+    /* 重要：預設將兩個分類都隱藏，防止閃爍 */
+    #info-section, #business-section { display: none; }
+    
     .exam-item { background: #f9fbff; padding: 15px; margin: 10px 0; border-radius: 8px; border-left: 4px solid #4A8FE7; display: flex; justify-content: space-between; align-items: center; }
-    .btn-go { background: #4A8FE7; color: #fff; padding: 8px 15px; text-decoration: none; border-radius: 5px; font-size: 14px; }
-    .warning-box { background: #fff8e1; border: 1px solid #ffe082; padding: 15px; border-radius: 8px; font-size: 14px; }
+    .btn-go { background: #4A8FE7; color: #fff; padding: 8px 20px; text-decoration: none; border-radius: 8px; font-size: 14px; font-weight: bold; }
+    .warning-box { background: #fff8e1; border: 1px solid #ffe082; padding: 15px; border-radius: 8px; font-size: 14px; margin-bottom: 20px; }
+    .back-link { display: block; text-align: center; margin-top: 40px; color: #888; text-decoration: none; font-size: 15px; }
+    .back-link:hover { color: #4A8FE7; }
   </style>
 </head>
 <body>
 
 <div class="content-box">
-  <h1>技術士學科題庫導覽</h1>
+  <h1 id="main-title">技術士學科題庫導覽</h1>
+  
   <div class="warning-box">
-    💡 <strong>練習提示：</strong> 下方練習系統將連結至專屬測試頁面，請同學完成作答後務必點擊提交，系統將自動核對正確答案與提供解析。
+    💡 <strong>練習提示：</strong> 系統將連結至模擬測試頁面，請完成作答後點擊提交以查看詳細解析。
   </div>
 
-  <h2 id="info">💻 資訊職類題庫入口</h2>
-  <p>資訊職類學科重點包含：電腦概論、應用軟體使用、系統軟體維護及近年最受重視的資訊安全（InfoSec）。</p>
-  
-  <div class="exam-item">
-    <span>電腦軟體應用（丙級 / 乙級）</span>
-    <a href="你的練習連結" class="btn-go" target="_blank">開始練習</a>
-  </div>
-  <div class="exam-item">
-    <span>網頁設計（丙級 / 乙級）</span>
-    <a href="你的練習連結" class="btn-go" target="_blank">開始練習</a>
-  </div>
-  <div class="exam-item">
-    <span>電腦硬體裝修（丙級 / 乙級）</span>
-    <a href="你的練習連結" class="btn-go" target="_blank">開始練習</a>
+  <div id="info-section">
+    <h2>💻 資訊職類練習中心</h2>
+    <p>包含電腦概論、軟體應用、網頁設計及資訊安全等科目。</p>
+    <div class="exam-item"><span>電腦軟體應用（丙級 / 乙級）</span><a href="你的連結" class="btn-go" target="_blank">開始練習</a></div>
+    <div class="exam-item"><span>網頁設計（丙級 / 乙級）</span><a href="你的連結" class="btn-go" target="_blank">開始練習</a></div>
+    <div class="exam-item"><span>電腦硬體裝修（丙級 / 乙級）</span><a href="你的連結" class="btn-go" target="_blank">開始練習</a></div>
   </div>
 
-  <h2 id="business">📊 商業服務職類題庫入口</h2>
-  <p>商業職類著重於專業實務邏輯，如會計的帳務處理程序、門市服務的顧客關係管理等。</p>
-  
-  <div class="exam-item">
-    <span>會計事務（丙級 / 乙級）</span>
-    <a href="你的練習連結" class="btn-go" target="_blank">開始練習</a>
-  </div>
-  <div class="exam-item">
-    <span>門市服務（丙級 / 乙級）</span>
-    <a href="你的練習連結" class="btn-go" target="_blank">開始練習</a>
+  <div id="business-section">
+    <h2>📊 商業服務練習中心</h2>
+    <p>包含會計事務、門市服務、國際貿易等實務科目。</p>
+    <div class="exam-item"><span>會計事務（丙級 / 乙級）</span><a href="你的連結" class="btn-go" target="_blank">開始練習</a></div>
+    <div class="exam-item"><span>門市服務（丙級 / 乙級）</span><a href="你的連結" class="btn-go" target="_blank">開始練習</a></div>
   </div>
 
-  <div style="margin-top: 50px; text-align: center;">
-    <a href="index.html" style="color: #888;">← 回到首頁</a>
-  </div>
+  <a href="index.html" class="back-link">← 返回首頁重新選擇</a>
 </div>
+
+<script>
+  function updateView() {
+    // 取得網址列中的 # 內容
+    const hash = window.location.hash;
+    
+    // 抓取 HTML 元素
+    const infoSec = document.getElementById('info-section');
+    const busSec = document.getElementById('business-section');
+    const title = document.getElementById('main-title');
+
+    // 邏輯判斷
+    if (hash === '#info') {
+      infoSec.style.display = 'block';
+      busSec.style.display = 'none';
+      title.innerText = '資訊職類題庫專區';
+    } else if (hash === '#business') {
+      busSec.style.display = 'block';
+      infoSec.style.display = 'none';
+      title.innerText = '商業服務題庫專區';
+    } else {
+      // 如果沒有 #，就全部顯示（備用方案）
+      infoSec.style.display = 'block';
+      busSec.style.display = 'block';
+    }
+  }
+
+  // 1. 網頁開啟時立刻判斷
+  window.addEventListener('DOMContentLoaded', updateView);
+  // 2. 如果在同頁面點擊按鈕切換，也要能反應
+  window.addEventListener('hashchange', updateView);
+</script>
 
 </body>
 </html>
