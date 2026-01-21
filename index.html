@@ -1,313 +1,168 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <link rel="canonical" href="https://junlinye513-sys.github.io/" />
-  <meta name="google-site-verification" content="KeS4mjmoIAaRRgZs3fdyuyPTQ81x7nQfmH6le6uiiQE" />
+  <meta charset="UTF-8">
+  <title>資訊職類與商業服務職類學科題庫練習平台｜丙級・乙級檢定</title>
 
+  <meta name="description"
+        content="線上學科題庫練習平台，提供資訊職類與商業服務職類技術士檢定學科練習，適合高中職學生、自學考生與教師使用。">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://junlinye513-sys.github.io/">
+
+  <!-- Google AdSense（審核用，尚未放廣告） -->
   <script async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8785320054950646"
     crossorigin="anonymous"></script>
 
-  <meta charset="UTF-8">
-  <title>資訊職類與商業服務職類學科題庫練習平台｜丙級・乙級檢定</title>
-  <meta name="description" content="資訊職類與商業服務職類學科題庫練習平台，提供丙級與乙級技術士檢定學科線上練習，涵蓋電腦軟體應用、硬體裝修、網頁設計、網路架設、軟體設計與會計相關檢定，支援即時批改與反覆練習，適合高中職與技專校院學生。">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <style>
     :root {
-  --primary: #4A8FE7;
-  --primary-dark: #2d6ac5;
-  --bg: #f2f6fc;
-  --card-bg: #ffffff;
-  --text: #333;
-  --radius: 16px;
-}
+      --primary: #4A8FE7;
+      --primary-dark: #2d6ac5;
+      --bg: #f2f6fc;
+      --card-bg: #ffffff;
+      --text: #333;
+      --radius: 16px;
+    }
 
-/* ===== 基本設定 ===== */
-body {
-  font-family: "Microsoft JhengHei", system-ui, sans-serif;
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.7;
-}
+    body {
+      font-family: "Microsoft JhengHei", system-ui, sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
 
-/* ===== Hero 區塊 ===== */
-.hero {
-  text-align: center;
-  padding: 64px 20px 44px;
-  background: linear-gradient(160deg, #eef4ff, #f9fbff);
-}
+    .hero {
+      text-align: center;
+      padding: 64px 20px 44px;
+      background: linear-gradient(160deg, #eef4ff, #f9fbff);
+    }
 
-.hero h1 {
-  font-size: 36px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: var(--primary-dark);
-  margin: 0 0 12px;
-}
+    .hero h1 {
+      font-size: 34px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin: 0 0 12px;
+    }
 
-.hero-info {
-  font-size: 15px;
-  color: #555;
-  margin-bottom: 20px;
-}
+    .hero p {
+      font-size: 15px;
+      color: #555;
+      max-width: 720px;
+      margin: auto;
+    }
 
-.hero-img {
-  width: 260px;
-  margin: 22px auto 0;
-  display: block;
-  border-radius: 12px;
-}
+    .main-box {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 28px;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 10px 24px rgba(0,0,0,.08);
+    }
 
-/* ===== 主行動卡（進入測驗中心） ===== */
-.ad-box {
-  max-width: 760px;
-  margin: 32px auto;
-  padding: 26px 24px;
-  background: #fff8e1;
-  border-radius: 20px;
-  text-align: center;
-  font-size: 15px;
-  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
-}
+    .main-box h2 {
+      font-size: 26px;
+      border-left: 5px solid var(--primary);
+      padding-left: 12px;
+      margin-top: 0;
+    }
 
-.ad-box .btn {
-  margin-top: 16px;
-}
+    .tool-list {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      margin-top: 24px;
+    }
 
-/* ===== 搜尋框 ===== */
-.search-box {
-  max-width: 620px;
-  margin: 28px auto 8px;
-  text-align: center;
-}
+    .tool-card {
+      background: var(--card-bg);
+      padding: 22px;
+      border-radius: var(--radius);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+    }
 
-.search-box input {
-  width: 100%;
-  padding: 14px 18px;
-  border-radius: 14px;
-  border: 1px solid #ccc;
-  font-size: 17px;
-  outline: none;
-}
+    .tool-card h3 {
+      margin-top: 0;
+      font-size: 18px;
+    }
 
-.search-box input:focus {
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(74,143,231,0.15);
-}
+    .tool-card p {
+      font-size: 14px;
+      color: #555;
+    }
 
-/* ===== 區段 ===== */
-.section {
-  max-width: 1000px;
-  margin: 46px auto;
-  padding: 0 20px;
-}
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 18px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 14px;
+    }
 
-.section h2 {
-  font-size: 26px;
-  margin-bottom: 24px;
-  padding-left: 10px;
-  border-left: 5px solid var(--primary);
-}
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      font-size: 14px;
+      color: #888;
+    }
 
-/* ===== 題庫卡片 ===== */
-.tool-list {
-  display: grid;
-  gap: 24px;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-}
+    footer a {
+      color: #666;
+      margin: 0 6px;
+      text-decoration: none;
+    }
 
-.tool-card {
-  background: var(--card-bg);
-  padding: 24px;
-  border-radius: var(--radius);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.tool-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 32px rgba(0,0,0,0.14);
-}
-
-.tool-card h3 {
-  margin-top: 0;
-  font-size: 18px;
-  color: #222;
-}
-
-.tool-card p {
-  font-size: 14px;
-  color: #555;
-}
-
-/* ===== 按鈕 ===== */
-.btn {
-  display: inline-block;
-  padding: 12px 22px;
-  background: var(--primary);
-  color: #fff;
-  border-radius: 12px;
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 500;
-  transition: background 0.25s ease, transform 0.2s ease;
-}
-
-.btn:hover {
-  background: var(--primary-dark);
-  transform: translateY(-2px);
-}
-
-/* ===== Footer ===== */
-footer {
-  text-align: center;
-  padding: 28px 16px 34px;
-  font-size: 14px;
-  color: #888;
-}
-
-footer a {
-  color: #666;
-  text-decoration: none;
-  margin: 0 6px;
-}
-
-footer a:hover {
-  color: var(--primary);
-}
-
-/* ===== RWD 微調 ===== */
-@media (max-width: 600px) {
-  .hero h1 {
-    font-size: 28px;
-  }
-
-  .hero-img {
-    width: 220px;
-  }
-
-  .section h2 {
-    font-size: 22px;
-  }
-}
+    footer a:hover {
+      color: var(--primary);
+    }
   </style>
 </head>
 
 <body>
-  
+
 <section class="hero">
-  <h1>資訊職類與商業服務職類學科題庫練習平台</h1>
-  <div class="hero-info" id="stats">載入中...</div>
-  <img class="hero-img" src="https://ssl.gstatic.com/classroom/themes/img_bookclub.jpg">
+  <h1>線上學科題庫練習平台</h1>
+  <p>
+    提供資訊職類與商業服務職類技術士檢定之學科練習，
+    協助學生熟悉題型、強化觀念，作為學習與教學輔助使用。
+  </p>
 </section>
 
-<div class="ad-box">
-  📢 本站為個人教學輔助系統，內容持續更新中<br>
-  提供資訊職類與商業服務職類檢定學科練習<br><br>
- </div>
+<div class="main-box">
+  <h2>可練習的學科題庫</h2>
 
-<div class="search-box">
-  <input id="search" type="text"
-         placeholder="搜尋檢定或科目（如：會計丙級、軟體應用、網頁設計）">
+  <div class="tool-list">
+    <div class="tool-card">
+      <h3>資訊職類學科</h3>
+      <p>
+        包含軟體應用、網頁設計、硬體裝修、網路架設等
+        丙級與乙級學科內容。
+      </p>
+      <a class="btn" href="intro.html">查看說明</a>
+    </div>
+
+    <div class="tool-card">
+      <h3>商業服務職類學科</h3>
+      <p>
+        包含會計事務、門市服務、國際業務等
+        技術士檢定學科練習內容。
+      </p>
+      <a class="btn" href="intro.html">查看說明</a>
+    </div>
+  </div>
 </div>
 
-<div id="content"></div>
-
-<script>
-  const API = "https://script.google.com/macros/s/AKfycbxAp06fzFAYTDRh17fZqe4pfytLRHAuNcPb8ubRKQJkCJZDEyVze9_fylV847gkz9jt/exec";
-  const ua = encodeURIComponent(navigator.userAgent);
-
-  let userId = localStorage.getItem("USER_ID");
-  if (!userId) {
-    userId = "u" + Math.random().toString(36).substring(2);
-    localStorage.setItem("USER_ID", userId);
-  }
-
-  const data = [
-    { category:"資訊職類", title:"軟體應用丙級學科", description:"電腦概論、應用軟體使用、系統軟體使用、資訊安全、共同科目", url:"https://script.google.com/macros/s/AKfycbzJRPUuPygnC4dYRThkRlfIsVoEz12YFqDiu3h_YLv90ASUU0dLZnZ_x0c5Dj0-WFmu4A/exec" },
-    { category:"資訊職類", title:"硬體裝修丙級學科", description:"電腦、電子及電機機械識圖、作業準備、儀表、軟體及一般工具使用、工作方法、裝修及控制應用、資訊安全措施、共同科目", url:"https://script.google.com/macros/s/AKfycbydKhYl8bSSMgnJiLXV8XeKc2uCf27b4Ib4jJ3mwDspbnRDKd2drH9cyA4wC2_AAgwW/exec" },
-    { category:"資訊職類", title:"網頁設計丙級學科", description:"作業準備、應用軟體安裝及使用、系統軟體安裝及使用、資訊及安全、共同科目", url:"https://script.google.com/macros/s/AKfycbzyzxH0PutzRpCZBYPJbvzTTqGAYYDqAK86ZQoBx8lVzXzN3fmxgd26lBUZMLSQ2Pdp/exec" },
-    { category:"資訊職類", title:"軟體應用乙級學科", description:"電腦概論、應用軟體使用、系統軟體使用、資訊安全、共同科目", url:"https://script.google.com/macros/s/AKfycbyE_QjwST9zmBWCBNgoBwqArdYfPWqIhM31UZDO-D3ZLXgv0LzLCKz3AfQbC1YKzKxx-Q/exec" },
-    { category:"資訊職類", title:"硬體裝修乙級學科", description:"電腦、電子及電機機械、作業準備、儀表、軟體及一般工具、工作方法、裝修及控制應用、資訊安全措施、共同科目", url:"https://script.google.com/macros/s/AKfycbye8qFicewmkqAgdKy31Jp92uxZzj6tUK7DrsZEIgrjsqAngz53Kiiv9AgKFhUdOKNO/exec" },
-    { category:"資訊職類", title:"網頁設計乙級學科", description:"作業準備、應用軟體安裝及使用、系統軟體安裝及使用、資訊安全、共同科目", url:"https://script.google.com/macros/s/AKfycbwCLU4dBXYmmLkrA_gt1pORbQj5k6vObxiQlszkI_r0KORjnDb-gePD_BopK6DNbgEH/exec" },
-    { category:"資訊職類", title:"網路架設丙級學科", description:"識圖與製圖及相關法規、作業準備、網路架設佈線、網路元件及軟體安裝與應用、共同科目", url:"https://script.google.com/macros/s/AKfycbwEE7inwNKRQ4cf-tsb5_ujvqnvNOkKM0UVNIUxNeuBW62mEaUbfdevjBFo0UH-QXuz/exec" },
-    { category:"資訊職類", title:"軟體設計丙級學科", description:"電腦概論、程式設計、系統發展、資訊安全、共同科目", url:"https://script.google.com/macros/s/AKfycbz2fWW9XGhQlhCvaYVKjLr7JK_PIrkxS4q6IkJID0A58DEiVWej42Mw2t6ziW0nwWJc/exec" },
-    { category:"資訊職類", title:"網路架設乙級學科", description:"識圖與製圖、作業準備、網路架設佈線、網路元件及軟體安裝與應用、網路規劃與管理、共同科目", url:"https://script.google.com/macros/s/AKfycbxRA5wcSX3No3g9IRltqTxZI50LhZqxWghi74XMCwJMOiOEPScFXDuoN3PVpPwjwZWh/exec" },
-    { category:"資訊職類", title:"軟體設計乙級C++學科", description:"C++、電腦軟體設計共同科目", url:"https://script.google.com/macros/s/AKfycbz0ILKy8LDJkauRiYBfdH0KMVBqEdOsGSPU_9EUJRHnQQ6xmd_EzwHL_6zKJ_SLjGBd/exec" },
-    { category:"資訊職類", title:"軟體設計乙級JAVA學科", description:"Java、電腦軟體設計共同科目", url:"https://script.google.com/macros/s/AKfycbz7TtKewfptci7YwHEYXBYH-jaADbjzcjCaufnV9SxzKZX1fRxupXz2KdbzPRsb2HsHSw/exec" },
-   
-    
-    { category:"商業服務職類", title:"會計事務丙級學科", description:"會計基本概念、平時會計處理程序、期末會計處理程序、會計資訊系統概念、相關法令之規定、共同科目", url:"https://script.google.com/macros/s/AKfycbzKghOORCB32SeSDb0vXoNEFdEm46NDhuvF6JpwCMwmddurFmnBRTNyrWzHpegJdFCJ/exec"},
-    { category:"商業服務職類", title:"門市服務丙級學科", description:"零售概論、門市行政、門市清潔、商品處理作業、櫃台作業、顧客服務作業、簡易設備操作、共同科目", url:"https://script.google.com/macros/s/AKfycbzIKbd3zDb7muPUWmG0_azss1Gdyw5Lz6Lo6sXXprLeIGE6bDHlPbxzZvWgAz6mrH0i/exec"},
-    { category:"商業服務職類", title:"國際業務丙級學科", description:"貿易概論及流程－商業道德、經貿常識、貿易概論及流程－貿易概論、進出口流程、貿易概論及流程－簽審、檢驗、報關、基礎貿易英文－基本交易條件、基礎貿易英文－常用貿易英文、出口價格核算－要約、承諾、索賠、出口價格核算－貿易條件及報價、商業信用狀分析－信用狀、商業信用狀分析－進出口結匯及融資、貿易單據製作－貨物運輸保險、輸出保險、貿易單據製作－國際貨物運輸、共同科目", url:"https://script.google.com/macros/s/AKfycbw-uJS8Gf73s00c4Nu2Ws-IdYpophko7irelVYK3d1NoqtknsmcOjjaKe4xEIff0Gg2fw/exec"},
-    { category:"商業服務職類", title:"會計事務乙級學科", description:"會計基本概念及會計處理程序、資產及負債之評價、權益之會計處理與表達、現金流量表之編製與財務報表分析、會計資訊與進銷存相關資訊處理作業、共同科目", url:"https://script.google.com/macros/s/AKfycbz9xJ0kyDMJBQRvsDoRaUNLxlmgUnqS_xGD5ywIJse5PrzdYjcayc0iEOil__nRg4-g/exec"},
-    { category:"商業服務職類", title:"門市服務乙級學科", description:"零售與門市管理、門市商品管理、門市銷售管理、門市人力資源管理、門市營運計劃與管理、門市商圈經營、門市顧客服務管理、危機處理、共同科目", url:"https://script.google.com/macros/s/AKfycbxODbuDcg2PqhBG3YzVAvoqpWLfJmM8-t_STsM_rh7FuxlcwUlcfcfxAE04FczcQs_d/exec"},
-    { category:"商業服務職類", title:"國際業務乙級學科", description:"貿易函電、交易磋商與簽約、進出口價格核算、貿易單據製審、貿易個案分析、共同科目", url:"https://script.google.com/macros/s/AKfycbygs_FhJBK0Ojr2HU1D2bi_5h4-9EIZQZ5SdJc8mumOYIpga1WkN7T4v6jT-2QUaU-TVw/exec"},
-  ];
-
-  function render(list) {
-    const groups = {};
-    list.forEach(t => {
-      if (!groups[t.category]) groups[t.category] = [];
-      groups[t.category].push(t);
-    });
-
-    document.getElementById("content").innerHTML =
-      Object.keys(groups).map(cat => `
-        <section class="section">
-          <h2>${cat}</h2>
-          <div class="tool-list">
-            ${groups[cat].map(t => `
-              <div class="tool-card">
-                <h3>${t.title}</h3>
-                <p>${t.description}</p>
-                ${t.url === "#" ? "" : `<a class="btn" href="${t.url}" target="_blank">開始測驗</a>`}
-              </div>
-            `).join("")}
-          </div>
-        </section>
-      `).join("");
-  }
-
-  render(data);
-
-  document.getElementById("search").addEventListener("input", e => {
-    const kw = e.target.value.toLowerCase();
-    render(data.filter(t =>
-      t.title.toLowerCase().includes(kw) ||
-      t.description.toLowerCase().includes(kw)
-    ));
-  });
-
-  async function updateStats() {
-    const visit = await fetch(`${API}?action=visit&ua=${ua}&vid=${userId}`).then(r=>r.json());
-    const online = await fetch(`${API}?action=online`).then(r=>r.json());
-    document.getElementById("stats").innerHTML =
-      `👥 目前在線：${online.online ?? 0} 人　📈 累計訪客：${visit.total ?? 0} 人`;
-  }
-
-  fetch(`${API}?action=heartbeat&userId=${userId}&ua=${ua}`).then(updateStats);
-  setInterval(() => {
-    fetch(`${API}?action=heartbeat&userId=${userId}&ua=${ua}`);
-    updateStats();
-  }, 10000);
-</script>
-
 <footer>
-  © 2025 資訊職類與商業服務職類學科題庫練習平台<br>
-  <a href="about.html">關於本站</a> ｜ 
-  <a href="privacy.html">隱私權政策</a> ｜ 
+  © 2025 線上學科題庫練習平台<br>
+  <a href="about.html">關於本站</a>｜
+  <a href="privacy.html">隱私權政策</a>｜
   <a href="contact.html">聯絡我們</a>
 </footer>
 
 </body>
 </html>
-
-
-
-
-
-
