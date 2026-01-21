@@ -1,77 +1,101 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-<meta charset="UTF-8">
-<title>使用說明｜測驗中心</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
+  <meta charset="UTF-8">
+  <title>平台公告與使用說明｜114年度技術士檢定練習</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="關於本站的營運說明、教學輔助目標以及未來的贊助合作計畫。">
 
-<style>
-  body {
-    font-family: "Microsoft JhengHei", sans-serif;
-    background: #f2f6fc;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
+  <style>
+    body {
+      font-family: "Microsoft JhengHei", sans-serif;
+      background: #f2f6fc;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
 
-  .box {
-    background: #ffffff;
-    padding: 32px 26px;
-    border-radius: 18px;
-    box-shadow: 0 10px 24px rgba(0,0,0,0.15);
-    max-width: 420px;
-    width: 90%;
-    text-align: center;
-  }
+    .box {
+      background: #ffffff;
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+    }
 
-  h2 {
-    margin-top: 0;
-    color: #2d6ac5;
-    font-size: 22px;
-  }
+    h1 {
+      margin-top: 0;
+      color: #2d6ac5;
+      font-size: 24px;
+    }
 
-  p {
-    font-size: 14px;
-    color: #555;
-    line-height: 1.7;
-    margin: 18px 0;
-  }
+    .content-text {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.8;
+      text-align: left;
+      background: #f9fbff;
+      padding: 20px;
+      border-radius: 12px;
+      margin: 20px 0;
+    }
 
-  button {
-    margin-top: 12px;
-    padding: 12px 22px;
-    font-size: 16px;
-    border: none;
-    border-radius: 10px;
-    background: #4A8FE7;
-    color: #fff;
-    cursor: pointer;
-  }
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
 
-  button:hover {
-    background: #2d6ac5;
-  }
-</style>
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      background: #4A8FE7;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+
+    button.secondary {
+      background: #fff;
+      color: #4A8FE7;
+      border: 1px solid #4A8FE7;
+    }
+
+    button:hover {
+      background: #2d6ac5;
+      color: #fff;
+    }
+  </style>
 </head>
 
 <body>
 
 <div class="box">
-  <h2>使用說明</h2>
+  <h1>平台公告與營運說明</h1>
 
-  <p>
-    本站為<strong>免費學科練習與教學輔助平台</strong><br>
-    提供各類檢定學科反覆練習與即時回饋<br>
-    為維持網站長期營運，未來可能加入合作或贊助內容<br>
-    感謝你的理解與支持 🙏
-  </p>
+  <div class="content-text">
+    <strong>致各位考生與使用者：</strong><br><br>
+    本站是由個人獨立開發的<strong>免費教學輔助平台</strong>，旨在協助大家準備 114 年度各類技術士學科檢定。為了確保平台能長期穩定運作：<br>
+    <ul>
+      <li>提供即時更新的歷屆試題練習。</li>
+      <li>維持簡潔、高效的數位作答介面。</li>
+      <li>未來可能導入少量廣告或贊助內容以補貼伺服器支出。</li>
+    </ul>
+    感謝大家的支持，我們將持續優化練習系統！
+  </div>
 
-  <button onclick="location.href='index.html'">
-    進入測驗中心
-  </button>
+  <div class="btn-group">
+    <button onclick="location.href='index.html'">進入練習中心</button>
+    <button class="secondary" onclick="location.href='about.html'">了解更多</button>
+  </div>
 </div>
 
 </body>
