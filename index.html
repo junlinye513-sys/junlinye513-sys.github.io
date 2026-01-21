@@ -2,166 +2,74 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>資訊職類與商業服務職類學科題庫練習平台｜丙級・乙級檢定</title>
-
-  <meta name="description"
-        content="線上學科題庫練習平台，提供資訊職類與商業服務職類技術士檢定學科練習，適合高中職學生、自學考生與教師使用。">
-
+  <title>資訊與商業服務檢定學科練習平台｜114年度最新題庫</title>
+  <meta name="description" content="專為高中職學生設計的線上學科題庫練習平台。提供資訊職類（軟體應用、網頁設計、硬體裝修）與商業服務職類（會計事務、門市服務）技術士檢定之專業導覽與應考攻略。">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="https://junlinye513-sys.github.io/">
 
-  <!-- Google AdSense（審核用，尚未放廣告） -->
-  <script async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8785320054950646"
-    crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8785320054950646" crossorigin="anonymous"></script>
 
   <style>
-    :root {
-      --primary: #4A8FE7;
-      --primary-dark: #2d6ac5;
-      --bg: #f2f6fc;
-      --card-bg: #ffffff;
-      --text: #333;
-      --radius: 16px;
-    }
-
-    body {
-      font-family: "Microsoft JhengHei", system-ui, sans-serif;
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 64px 20px 44px;
-      background: linear-gradient(160deg, #eef4ff, #f9fbff);
-    }
-
-    .hero h1 {
-      font-size: 34px;
-      font-weight: 700;
-      color: var(--primary-dark);
-      margin: 0 0 12px;
-    }
-
-    .hero p {
-      font-size: 15px;
-      color: #555;
-      max-width: 720px;
-      margin: auto;
-    }
-
-    .main-box {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 28px;
-      background: #fff;
-      border-radius: 18px;
-      box-shadow: 0 10px 24px rgba(0,0,0,.08);
-    }
-
-    .main-box h2 {
-      font-size: 26px;
-      border-left: 5px solid var(--primary);
-      padding-left: 12px;
-      margin-top: 0;
-    }
-
-    .tool-list {
-      display: grid;
-      gap: 24px;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      margin-top: 24px;
-    }
-
-    .tool-card {
-      background: var(--card-bg);
-      padding: 22px;
-      border-radius: var(--radius);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.08);
-    }
-
-    .tool-card h3 {
-      margin-top: 0;
-      font-size: 18px;
-    }
-
-    .tool-card p {
-      font-size: 14px;
-      color: #555;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 18px;
-      background: var(--primary);
-      color: #fff;
-      border-radius: 10px;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px 10px;
-      font-size: 14px;
-      color: #888;
-    }
-
-    footer a {
-      color: #666;
-      margin: 0 6px;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      color: var(--primary);
-    }
+    :root { --primary: #4A8FE7; --primary-dark: #2d6ac5; --bg: #f2f6fc; --text: #333; }
+    body { font-family: "Microsoft JhengHei", sans-serif; margin: 0; background: var(--bg); color: var(--text); line-height: 1.8; }
+    .hero { text-align: center; padding: 60px 20px; background: linear-gradient(160deg, #eef4ff, #f9fbff); }
+    .hero h1 { font-size: 32px; color: var(--primary-dark); }
+    .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+    .main-box { background: #fff; padding: 30px; border-radius: 18px; box-shadow: 0 10px 25px rgba(0,0,0,.05); margin-bottom: 30px; }
+    .tool-list { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: 20px; }
+    .tool-card { border: 1px solid #eee; padding: 20px; border-radius: 12px; transition: 0.3s; }
+    .tool-card:hover { transform: translateY(-5px); border-color: var(--primary); }
+    .btn { display: inline-block; padding: 10px 20px; background: var(--primary); color: #fff; border-radius: 8px; text-decoration: none; margin-top: 10px; }
+    .article-section { background: #fff; padding: 35px; border-radius: 18px; margin-top: 30px; }
+    h2, h3 { color: var(--primary-dark); border-left: 5px solid var(--primary); padding-left: 15px; }
+    footer { text-align: center; padding: 40px; color: #888; font-size: 14px; }
+    footer a { color: #666; text-decoration: none; margin: 0 10px; }
   </style>
 </head>
-
 <body>
 
 <section class="hero">
-  <h1>線上學科題庫練習平台</h1>
-  <p>
-    提供資訊職類與商業服務職類技術士檢定之學科練習，
-    協助學生熟悉題型、強化觀念，作為學習與教學輔助使用。
-  </p>
+  <h1>114 年度技術士檢定學科練習平台</h1>
+  <p>提供專業職類學科解析、應考指南及線上模擬練習系統</p>
 </section>
 
-<div class="main-box">
-  <h2>可練習的學科題庫</h2>
-
-  <div class="tool-list">
-    <div class="tool-card">
-      <h3>資訊職類學科</h3>
-      <p>
-        包含軟體應用、網頁設計、硬體裝修、網路架設等
-        丙級與乙級學科內容。
-      </p>
-      <a class="btn" href="intro.html">查看說明</a>
+<div class="container">
+  <div class="main-box">
+    <h2>快速進入練習中心</h2>
+    <p>點選下方分類查看各科題庫說明並開始線上練習：</p>
+    <div class="tool-list">
+      <div class="tool-card">
+        <h3>💻 資訊職類</h3>
+        <p>涵蓋電腦軟體應用、網頁設計、硬體裝修等。點擊查看詳細題庫範圍與練習入口。</p>
+        <a class="btn" href="intro.html#info">進入資訊題庫</a>
+      </div>
+      <div class="tool-card">
+        <h3>📊 商業服務職類</h3>
+        <p>包含會計事務、門市服務、國際貿易等。提供最新年度檢定公告與線上模擬。</p>
+        <a class="btn" href="intro.html#business">進入商業題庫</a>
+      </div>
     </div>
+  </div>
 
-    <div class="tool-card">
-      <h3>商業服務職類學科</h3>
-      <p>
-        包含會計事務、門市服務、國際業務等
-        技術士檢定學科練習內容。
-      </p>
-      <a class="btn" href="intro.html">查看說明</a>
-    </div>
+  <div class="article-section">
+    <h2>技術士檢定準備全攻略</h2>
+    <p>取得國家技術士證照是許多技職學子與職場人士專業能力的象徵。無論是丙級還是乙級，學科測驗都是首要克服的挑戰。</p>
+    
+    <h3>學科準備三大策略</h3>
+    <ul>
+      <li><strong>理解大於死背：</strong> 在資訊職類中，如「個人電腦硬體」章節，理解零組件運作邏輯能事半功倍。</li>
+      <li><strong>善用數位工具：</strong> 本平台提供 24 小時不間斷的練習系統，協助考生利用碎片時間熟悉 800-1200 題的龐大題庫。</li>
+      <li><strong>跨科共同科目：</strong> 莫忽視「職業安全衛生」與「環境保護」等共同科目，這是穩定取分的關鍵。</li>
+    </ul>
+
+    <h3>關於 114 年最新題庫規範</h3>
+    <p>本平台內容持續根據勞動部勞動力發展署技能檢定中心之公告進行編修。我們建議使用者在練習時，特別注意近年新增的資訊安全與ESG永續經營相關考題。</p>
   </div>
 </div>
 
 <footer>
-  © 2025 線上學科題庫練習平台<br>
-  <a href="about.html">關於本站</a>｜
-  <a href="privacy.html">隱私權政策</a>｜
-  <a href="contact.html">聯絡我們</a>
+  <p>© 2025 技術士檢定學習平台｜致力於提升技職競爭力</p>
+  <a href="about.html">關於本站</a> | <a href="privacy.html">隱私權政策</a> | <a href="contact.html">聯絡我們</a>
 </footer>
 
 </body>
