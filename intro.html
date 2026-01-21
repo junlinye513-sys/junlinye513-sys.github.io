@@ -2,64 +2,57 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>題庫使用說明｜線上學科題庫練習平台</title>
+  <title>題庫範圍說明與練習入口｜技術士檢定平台</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <style>
-    body {
-      font-family: "Microsoft JhengHei", sans-serif;
-      background: #f2f6fc;
-      margin: 0;
-      padding: 30px;
-      color: #333;
-    }
-
-    .box {
-      max-width: 860px;
-      margin: auto;
-      background: #fff;
-      padding: 32px;
-      border-radius: 16px;
-      box-shadow: 0 6px 18px rgba(0,0,0,.08);
-    }
-
-    h1 {
-      color: #2d6ac5;
-      margin-top: 0;
-    }
-
-    p {
-      line-height: 1.8;
-      font-size: 15px;
-      margin-bottom: 18px;
-    }
+    body { font-family: "Microsoft JhengHei", sans-serif; background: #f2f6fc; margin: 0; padding: 20px; line-height: 1.8; }
+    .content-box { max-width: 900px; margin: 30px auto; background: #fff; padding: 40px; border-radius: 16px; box-shadow: 0 5px 15px rgba(0,0,0,.05); }
+    h1 { color: #2d6ac5; text-align: center; }
+    h2 { border-bottom: 2px solid #4A8FE7; padding-bottom: 10px; color: #4A8FE7; margin-top: 40px; }
+    .exam-item { background: #f9fbff; padding: 15px; margin: 10px 0; border-radius: 8px; border-left: 4px solid #4A8FE7; display: flex; justify-content: space-between; align-items: center; }
+    .btn-go { background: #4A8FE7; color: #fff; padding: 8px 15px; text-decoration: none; border-radius: 5px; font-size: 14px; }
+    .warning-box { background: #fff8e1; border: 1px solid #ffe082; padding: 15px; border-radius: 8px; font-size: 14px; }
   </style>
 </head>
-
 <body>
 
-<div class="box">
-  <h1>題庫使用說明</h1>
+<div class="content-box">
+  <h1>技術士學科題庫導覽</h1>
+  <div class="warning-box">
+    💡 <strong>練習提示：</strong> 下方練習系統將連結至專屬測試頁面，請同學完成作答後務必點擊提交，系統將自動核對正確答案與提供解析。
+  </div>
 
-  <p>
-    本平台為個人開發之<strong>線上學科題庫練習平台</strong>，
-    主要提供資訊職類與商業服務職類相關技術士檢定之學科練習。
-  </p>
+  <h2 id="info">💻 資訊職類題庫入口</h2>
+  <p>資訊職類學科重點包含：電腦概論、應用軟體使用、系統軟體維護及近年最受重視的資訊安全（InfoSec）。</p>
+  
+  <div class="exam-item">
+    <span>電腦軟體應用（丙級 / 乙級）</span>
+    <a href="你的練習連結" class="btn-go" target="_blank">開始練習</a>
+  </div>
+  <div class="exam-item">
+    <span>網頁設計（丙級 / 乙級）</span>
+    <a href="你的練習連結" class="btn-go" target="_blank">開始練習</a>
+  </div>
+  <div class="exam-item">
+    <span>電腦硬體裝修（丙級 / 乙級）</span>
+    <a href="你的練習連結" class="btn-go" target="_blank">開始練習</a>
+  </div>
 
-  <p>
-    使用者可依照不同職類與級別，選擇適合的學科內容進行反覆練習，
-    以熟悉考試題型與核心概念。
-  </p>
+  <h2 id="business">📊 商業服務職類題庫入口</h2>
+  <p>商業職類著重於專業實務邏輯，如會計的帳務處理程序、門市服務的顧客關係管理等。</p>
+  
+  <div class="exam-item">
+    <span>會計事務（丙級 / 乙級）</span>
+    <a href="你的練習連結" class="btn-go" target="_blank">開始練習</a>
+  </div>
+  <div class="exam-item">
+    <span>門市服務（丙級 / 乙級）</span>
+    <a href="你的練習連結" class="btn-go" target="_blank">開始練習</a>
+  </div>
 
-  <p>
-    本平台內容以教育學習與教學輔助為目的，
-    非官方考試系統，所有資料僅供學習與練習參考使用。
-  </p>
-
-  <p>
-    系統功能將依網站營運與教學需求持續調整與優化，
-    實際測驗介面與互動功能將於後續逐步開放。
-  </p>
+  <div style="margin-top: 50px; text-align: center;">
+    <a href="index.html" style="color: #888;">← 回到首頁</a>
+  </div>
 </div>
 
 </body>
