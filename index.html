@@ -11,47 +11,67 @@
 
   <style>
     :root { --primary: #4A8FE7; --primary-dark: #2d6ac5; --bg: #f2f6fc; --text: #333; --radius: 18px; }
-    body { font-family: "Microsoft JhengHei", system-ui, sans-serif; margin: 0; background: var(--bg); color: var(--text); line-height: 1.8; }
+    body { font-family: "Microsoft JhengHei", system-ui, sans-serif; margin: 0; background: var(--bg); color: var(--text); line-height: 1.6; }
     
-    .hero { text-align: center; padding: 60px 20px 40px; background: linear-gradient(160deg, #eef4ff, #f9fbff); }
-    .hero h1 { font-size: 32px; font-weight: 700; color: var(--primary-dark); margin: 0 0 10px; }
+    /* Hero 區域優化 */
+    .hero { text-align: center; padding: 40px 15px 30px; background: linear-gradient(160deg, #eef4ff, #f9fbff); }
+    .hero h1 { font-size: 28px; font-weight: 700; color: var(--primary-dark); margin: 0 0 10px; }
     
     .stats-badge {
       display: inline-block;
       background: rgba(74, 143, 231, 0.1);
       color: var(--primary-dark);
-      padding: 8px 16px;
+      padding: 6px 12px;
       border-radius: 50px;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
-      margin-top: 10px;
+      margin-top: 5px;
       border: 1px solid rgba(74, 143, 231, 0.2);
     }
 
-    .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
-    .main-box { margin-top: -20px; background: #fff; padding: 35px; border-radius: var(--radius); box-shadow: 0 12px 30px rgba(0,0,0,0.06); }
-    .main-box h2 { font-size: 24px; border-left: 6px solid var(--primary); padding-left: 15px; margin-top: 0; color: var(--primary-dark); }
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 15px; }
     
-    .tool-list { display: grid; gap: 25px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-top: 25px; }
-    .tool-card { background: #fff; padding: 25px; border-radius: 14px; border: 1px solid #edf2f7; transition: 0.3s; text-align: center; }
-    .tool-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-color: var(--primary); }
+    /* 主卡片區域 */
+    .main-box { margin-top: -10px; background: #fff; padding: 25px 20px; border-radius: var(--radius); box-shadow: 0 12px 30px rgba(0,0,0,0.06); }
+    .main-box h2 { font-size: 22px; border-left: 6px solid var(--primary); padding-left: 12px; margin-top: 0; color: var(--primary-dark); }
     
-    .btn { display: inline-block; padding: 12px 28px; background: var(--primary); color: #fff; border-radius: 10px; text-decoration: none; font-weight: 600; }
+    /* 修正後的清單佈局 */
+    .tool-list { display: grid; gap: 20px; grid-template-columns: 1fr; margin-top: 20px; }
     
-    .content-article { background: #fff; padding: 40px; border-radius: var(--radius); margin: 30px 0; box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
-    .content-article h2 { color: var(--primary-dark); border-bottom: 2px solid var(--primary); padding-bottom: 10px; }
-    .content-article h3 { color: #444; margin-top: 25px; background: #f8faff; padding: 10px; border-radius: 8px; }
+    .tool-card { background: #fff; padding: 20px; border-radius: 14px; border: 1px solid #edf2f7; transition: 0.3s; text-align: center; }
+    .tool-card h3 { margin-top: 0; font-size: 18px; }
+    .tool-card p { font-size: 14px; color: #666; }
+    .tool-card:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-color: var(--primary); }
     
-    .guide-box { border-left: 4px solid #ffd54f; background: #fffef0; padding: 15px; margin: 20px 0; }
+    .btn { display: inline-block; padding: 10px 24px; background: var(--primary); color: #fff; border-radius: 10px; text-decoration: none; font-weight: 600; width: 80%; }
     
-    footer { text-align: center; padding: 40px 20px; font-size: 14px; color: #999; border-top: 1px solid #eee; margin-top: 20px; }
-    footer a { color: #777; text-decoration: none; margin: 0 10px; }
+    /* 文章區域優化 */
+    .content-article { background: #fff; padding: 25px 20px; border-radius: var(--radius); margin: 25px 0; box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
+    .content-article h2 { font-size: 20px; color: var(--primary-dark); border-bottom: 2px solid var(--primary); padding-bottom: 8px; }
+    .content-article h3 { font-size: 17px; color: #444; margin-top: 20px; background: #f8faff; padding: 8px 12px; border-radius: 8px; }
+    .content-article ul, .content-article ol { padding-left: 20px; font-size: 15px; }
+    .content-article li { margin-bottom: 10px; }
+    
+    .guide-box { border-left: 4px solid #ffd54f; background: #fffef0; padding: 12px; margin: 15px 0; font-size: 14px; }
+    
+    footer { text-align: center; padding: 30px 15px; font-size: 13px; color: #999; border-top: 1px solid #eee; margin-top: 20px; }
+    footer a { color: #777; text-decoration: none; margin: 0 5px; }
+
+    /* 📱 手機/平板 響應式斷點設定 */
+    @media (min-width: 768px) {
+      .hero { padding: 60px 20px 40px; }
+      .hero h1 { font-size: 32px; }
+      .main-box { margin-top: -20px; padding: 35px; }
+      .tool-list { grid-template-columns: repeat(2, 1fr); } /* 平板以上變兩欄 */
+      .btn { width: auto; } /* 寬螢幕按鈕恢復寬度 */
+      .content-article { padding: 40px; }
+    }
   </style>
 </head>
 <body>
 
 <section class="hero">
-  <h1>114 年度技術士檢定學科練習平台</h1>
+  <h1>114 年度技術士檢定練習平台</h1>
   <div id="stats" class="stats-badge">正在連線統計中...</div>
 </section>
 
@@ -61,13 +81,12 @@
     <div class="tool-list">
       <div class="tool-card">
         <h3>💻 資訊職類題庫</h3>
-        <p>包含電腦軟體應用、網頁設計、硬體裝修等科目之乙丙級學科練習。</p>
+        <p>電腦軟體應用、網頁設計、硬體裝修等乙丙級學科練習。</p>
         <a class="btn" href="intro.html#info">進入資訊題庫</a>
       </div>
-      <div class="tool-list">
       <div class="tool-card">
         <h3>📊 商業服務職類</h3>
-        <p>包含會計事務、門市服務、國際貿易等科目之乙丙級學科練習。</p>
+        <p>會計事務、門市服務、國際貿易等乙丙級學科練習。</p>
         <a class="btn" href="intro.html#business">進入商業題庫</a>
       </div>
     </div>
@@ -75,43 +94,35 @@
 
   <article class="content-article">
     <h2>114 年度技術士學科應考全攻略</h2>
-    <p>準備技術士檢定學科，除了反覆練習題庫外，掌握考場規則與作答技巧同樣重要。本平台針對 114 年度最新規範，為考生整理了詳盡的應考攻略，協助您一次過關。</p>
+    <p>準備技術士檢定學科，除了反覆練習題庫外，掌握技巧同樣重要。本平台針對最新規範整理如下：</p>
 
     <h3>一、 考前準備與必備物資</h3>
     <ul>
-      <li><strong>應試證件：</strong> 務必攜帶「准考證」與「國民身分證」（或具照片之駕照、護照、健保卡正本）。若准考證遺失，請事先上網列印，考場當日不協助補發。</li>
-      <li><strong>指定文具：</strong> 學科測驗採電腦閱卷，請準備 **2B 鉛筆**、高品質橡皮擦。建議多帶一支黑色墨水原子筆備用。</li>
-      <li><strong>服儀規定：</strong> 穿著整齊適宜之服裝，因試場冷氣強度不一，建議採洋蔥式穿法，口罩則視各考場最新規範配戴。</li>
+      <li><strong>應試證件：</strong> 務必攜帶准考證與身分證正本。</li>
+      <li><strong>指定文具：</strong> 準備 2B 鉛筆與橡皮擦。不可使用修正液（帶）。</li>
     </ul>
 
     <div class="guide-box">
-      <strong>⚠️ 嚴格禁止事項：</strong> 嚴禁攜帶具傳輸、通訊、記憶、拍攝或計算功能之電子產品（如手機、智慧型手錶/手環、藍牙耳機）。應試前請務必將其關機並放置於臨時置物區。
+      <strong>⚠️ 嚴禁通訊設備：</strong> 包含手機、智慧手錶、藍牙耳機等，進入考場前請務必關機。
     </div>
 
-    <h3>二、 應試過程與注意事項</h3>
+    <h3>二、 應試過程注意事項</h3>
     <ul>
-      <li><strong>進場作答：</strong> 預備鈴響後即可進入試場，將證件置於桌角。使用 2B 鉛筆將答案卡方格畫滿、塗黑，不可超出方格範圍。</li>
-      <li><strong>更正方式：</strong> 若需更改答案，必須使用橡皮擦將原劃記處「徹底擦拭乾淨」，<strong>不得使用修正液或修正帶</strong>，否則可能導致掃描錯誤。</li>
-      <li><strong>時間限制：</strong> 考試開始 15 分鐘後禁止入場；傳統筆試 45 分鐘內不得出場。若參加的是「電腦測試（即測即評）」，則不受 45 分鐘出場限制。</li>
-      <li><strong>考場禁令：</strong> 答案卡條碼區不得做任何記號。考場內嚴禁飲食、抽菸或隨意交談。</li>
+      <li><strong>答案卡劃記：</strong> 須將方格塗黑塗滿，不可超出範圍。</li>
+      <li><strong>時間限制：</strong> 開考 15 分鐘後禁止入場。</li>
     </ul>
-
-    <h3>三、 高效複習建議</h3>
-    <p>技術士學科題庫雖然龐大，但其命題規律性強。建議考生採取以下三步驟：</p>
-    <ol>
-      <li><strong>理解重於死背：</strong> 專業科目應先理解基本觀念，尤其是電路原理或會計準則。</li>
-      <li><strong>掌握共同科目：</strong> 職業安全衛生、工作倫理與環境保護等共同科目是「基本分」，務必熟練。</li>
-      <li><strong>碎片化練習：</strong> 每天利用本平台進行 15-20 分鐘的模擬測驗，建立對考題的直覺反應。</li>
-    </ol>
   </article>
 </div>
 
 <footer>
-  <p>© 2025 技術士檢定學習平台｜數位教學輔助系統</p>
-  <a href="about.html">關於本站</a> | <a href="privacy.html">隱私權政策</a> | <a href="contact.html">聯絡我們</a>
+  <p>© 2025 技術士檢定學習平台｜數位教學系統</p>
+  <div>
+    <a href="about.html">關於本站</a> | <a href="privacy.html">隱私權政策</a> | <a href="contact.html">聯絡我們</a>
+  </div>
 </footer>
 
 <script>
+  // ... (腳本部分保持不變) ...
   const API = "https://script.google.com/macros/s/AKfycbxAp06fzFAYTDRh17fZqe4pfytLRHAuNcPb8ubRKQJkCJZDEyVze9_fylV847gkz9jt/exec";
   const ua = encodeURIComponent(navigator.userAgent);
   let userId = localStorage.getItem("USER_ID") || ("u" + Math.random().toString(36).substring(2));
@@ -124,7 +135,7 @@
       const onlineCount = online.online ?? 0;
       const totalCount = visit.total ?? 0;
       document.getElementById("stats").innerHTML = 
-        `✨ 你並不孤單，目前有 <b>${onlineCount}</b> 人正與你一同努力練習中！ (累計造訪：${totalCount})`;
+        `✨ 目前有 <b>${onlineCount}</b> 人在線練習中！ (累計：${totalCount})`;
     } catch (e) {
       document.getElementById("stats").style.display = 'none';
     }
