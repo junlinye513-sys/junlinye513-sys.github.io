@@ -14,11 +14,25 @@
     /* 重要：預設將兩個分類都隱藏，防止閃爍 */
     #info-section, #business-section { display: none; }
     
-    .exam-item { background: #f9fbff; padding: 15px; margin: 10px 0; border-radius: 8px; border-left: 4px solid #4A8FE7; display: flex; justify-content: space-between; align-items: center; }
-    .btn-go { background: #4A8FE7; color: #fff; padding: 8px 20px; text-decoration: none; border-radius: 8px; font-size: 14px; font-weight: bold; }
+    .exam-item { background: #f9fbff; padding: 15px 20px; margin: 12px 0; border-radius: 8px; border-left: 4px solid #4A8FE7; display: flex; justify-content: space-between; align-items: center; }
+    
+    /* 新增資訊欄位樣式 */
+    .exam-info { display: flex; flex-direction: column; }
+    .exam-name { font-weight: bold; color: #333; font-size: 1.05em; }
+    .exam-details { font-size: 12px; color: #777; margin-top: 3px; }
+    .version-tag { background: #e3f2fd; color: #1976d2; padding: 1px 6px; border-radius: 4px; font-weight: bold; margin-right: 5px; }
+
+    .btn-go { background: #4A8FE7; color: #fff; padding: 8px 20px; text-decoration: none; border-radius: 8px; font-size: 14px; font-weight: bold; transition: 0.3s; }
+    .btn-go:hover { background: #2d6ac5; transform: scale(1.05); }
+    
     .warning-box { background: #fff8e1; border: 1px solid #ffe082; padding: 15px; border-radius: 8px; font-size: 14px; margin-bottom: 20px; }
     .back-link { display: block; text-align: center; margin-top: 40px; color: #888; text-decoration: none; font-size: 15px; }
     .back-link:hover { color: #4A8FE7; }
+
+    /* 手機版適應 */
+    @media (max-width: 600px) {
+      .exam-item { flex-direction: column; text-align: center; gap: 12px; }
+    }
   </style>
 </head>
 <body>
@@ -27,34 +41,153 @@
   <h1 id="main-title">技術士學科題庫導覽</h1>
   
   <div class="warning-box">
-    💡 <strong>練習提示：</strong> 系統將連結至模擬測試頁面，請完成作答後點擊提交以查看詳細解析。
+    💡 <strong>114年度更新：</strong> 本站題庫均已同步至最新公告版次。請確認下方標註之<strong>版次編號</strong>，確保練習內容正確無誤。
   </div>
 
   <div id="info-section">
     <h2>💻 資訊職類練習中心</h2>
-    <p>包含、軟體應用、硬體裝修、網頁設計、網路架設、程式設計等實務科目。。</p>
-    <div class="exam-item"><span>軟體應用丙級學科</span><a href="https://script.google.com/macros/s/AKfycbzJRPUuPygnC4dYRThkRlfIsVoEz12YFqDiu3h_YLv90ASUU0dLZnZ_x0c5Dj0-WFmu4A/exec" class="btn-go" target="_blank">開始練習</a></div>
-    <div class="exam-item"><span>硬體裝修丙級學科</span><a href="https://script.google.com/macros/s/AKfycbydKhYl8bSSMgnJiLXV8XeKc2uCf27b4Ib4jJ3mwDspbnRDKd2drH9cyA4wC2_AAgwW/exec" class="btn-go" target="_blank">開始練習</a></div>
-    <div class="exam-item"><span>網頁設計丙級學科</span><a href="https://script.google.com/macros/s/AKfycbzyzxH0PutzRpCZBYPJbvzTTqGAYYDqAK86ZQoBx8lVzXzN3fmxgd26lBUZMLSQ2Pdp/exec" class="btn-go" target="_blank">開始練習</a></div>
-    <div class="exam-item"><span>網路架設丙級學科</span><a href="https://script.google.com/macros/s/AKfycbwEE7inwNKRQ4cf-tsb5_ujvqnvNOkKM0UVNIUxNeuBW62mEaUbfdevjBFo0UH-QXuz/exec" class="btn-go" target="_blank">開始練習</a></div>
-    <div class="exam-item"><span>軟體設計丙級學科</span><a href="https://script.google.com/macros/s/AKfycbz2fWW9XGhQlhCvaYVKjLr7JK_PIrkxS4q6IkJID0A58DEiVWej42Mw2t6ziW0nwWJc/exec" class="btn-go" target="_blank">開始練習</a></div>
-    <div class="exam-item"><span>軟體應用乙級學科</span><a href="https://script.google.com/macros/s/AKfycbyE_QjwST9zmBWCBNgoBwqArdYfPWqIhM31UZDO-D3ZLXgv0LzLCKz3AfQbC1YKzKxx-Q/exec" class="btn-go" target="_blank">開始練習</a></div>
-    <div class="exam-item"><span>硬體裝修乙級學科</span><a href="https://script.google.com/macros/s/AKfycbye8qFicewmkqAgdKy31Jp92uxZzj6tUK7DrsZEIgrjsqAngz53Kiiv9AgKFhUdOKNO/exec" class="btn-go" target="_blank">開始練習</a></div>
-    <div class="exam-item"><span>網頁設計乙級學科</span><a href="https://script.google.com/macros/s/AKfycbwCLU4dBXYmmLkrA_gt1pORbQj5k6vObxiQlszkI_r0KORjnDb-gePD_BopK6DNbgEH/exec" class="btn-go" target="_blank">開始練習</a></div>
-    <div class="exam-item"><span>網路架設乙級學科</span><a href="https://script.google.com/macros/s/AKfycbxRA5wcSX3No3g9IRltqTxZI50LhZqxWghi74XMCwJMOiOEPScFXDuoN3PVpPwjwZWh/exec" class="btn-go" target="_blank">開始練習</a></div>
-    <div class="exam-item"><span>軟體設計乙級C++學科</span><a href="https://script.google.com/macros/s/AKfycbz0ILKy8LDJkauRiYBfdH0KMVBqEdOsGSPU_9EUJRHnQQ6xmd_EzwHL_6zKJ_SLjGBd/exec" class="btn-go" target="_blank">開始練習</a></div>
-    <div class="exam-item"><span>軟體設計乙級JAVA學科</span><a href="https://script.google.com/macros/s/AKfycbz7TtKewfptci7YwHEYXBYH-jaADbjzcjCaufnV9SxzKZX1fRxupXz2KdbzPRsb2HsHSw/exec" class="btn-go" target="_blank">開始練習</a></div>
+    <p>包含軟體應用、硬體裝修、網頁設計、網路架設、程式設計等實務科目。</p>
+    
+    <div class="exam-item">
+      <div class="exam-info">
+        <span class="exam-name">電腦軟體應用 丙級</span>
+        <div class="exam-details"><span class="version-tag">版次 V114112414</span> 檔名：118003A14</div>
+      </div>
+      <a href="https://script.google.com/macros/s/AKfycbzJRPUuPygnC4dYRThkRlfIsVoEz12YFqDiu3h_YLv90ASUU0dLZnZ_x0c5Dj0-WFmu4A/exec" class="btn-go" target="_blank">開始練習</a>
+    </div>
+
+    <div class="exam-item">
+      <div class="exam-info">
+        <span class="exam-name">電腦軟體應用 乙級</span>
+        <div class="exam-details"><span class="version-tag">版次 V114112415</span> 檔名：118002A15</div>
+      </div>
+      <a href="https://script.google.com/macros/s/AKfycbyE_QjwST9zmBWCBNgoBwqArdYfPWqIhM31UZDO-D3ZLXgv0LzLCKz3AfQbC1YKzKxx-Q/exec" class="btn-go" target="_blank">開始練習</a>
+    </div>
+
+    <div class="exam-item">
+      <div class="exam-info">
+        <span class="exam-name">硬體裝修 丙級</span>
+        <div class="exam-details"><span class="version-tag">版次 V114090114</span> 檔名：120003A14</div>
+      </div>
+      <a href="https://script.google.com/macros/s/AKfycbydKhYl8bSSMgnJiLXV8XeKc2uCf27b4Ib4jJ3mwDspbnRDKd2drH9cyA4wC2_AAgwW/exec" class="btn-go" target="_blank">開始練習</a>
+    </div>
+
+    <div class="exam-item">
+      <div class="exam-info">
+        <span class="exam-name">硬體裝修 乙級</span>
+        <div class="exam-details"><span class="version-tag">版次 V114090111</span> 檔名：120002A11</div>
+      </div>
+      <a href="https://script.google.com/macros/s/AKfycbye8qFicewmkqAgdKy31Jp92uxZzj6tUK7DrsZEIgrjsqAngz53Kiiv9AgKFhUdOKNO/exec" class="btn-go" target="_blank">開始練習</a>
+    </div>
+
+    <div class="exam-item">
+      <div class="exam-info">
+        <span class="exam-name">網頁設計 丙級</span>
+        <div class="exam-details"><span class="version-tag">版次 V114112517</span> 檔名：173003A17</div>
+      </div>
+      <a href="https://script.google.com/macros/s/AKfycbzyzxH0PutzRpCZBYPJbvzTTqGAYYDqAK86ZQoBx8lVzXzN3fmxgd26lBUZMLSQ2Pdp/exec" class="btn-go" target="_blank">開始練習</a>
+    </div>
+
+    <div class="exam-item">
+      <div class="exam-info">
+        <span class="exam-name">網頁設計 乙級</span>
+        <div class="exam-details"><span class="version-tag">版次 V114090113</span> 檔名：173002A13</div>
+      </div>
+      <a href="https://script.google.com/macros/s/AKfycbwCLU4dBXYmmLkrA_gt1pORbQj5k6vObxiQlszkI_r0KORjnDb-gePD_BopK6DNbgEH/exec" class="btn-go" target="_blank">開始練習</a>
+    </div>
+
+    <div class="exam-item">
+      <div class="exam-info">
+        <span class="exam-name">網路架設 丙級</span>
+        <div class="exam-details"><span class="version-tag">版次 V114090114</span> 檔名：172003A14</div>
+      </div>
+      <a href="https://script.google.com/macros/s/AKfycbwEE7inwNKRQ4cf-tsb5_ujvqnvNOkKM0UVNIUxNeuBW62mEaUbfdevjBFo0UH-QXuz/exec" class="btn-go" target="_blank">開始練習</a>
+    </div>
+
+    <div class="exam-item">
+      <div class="exam-info">
+        <span class="exam-name">網路架設 乙級</span>
+        <div class="exam-details"><span class="version-tag">版次 V114123014</span> 檔名：172002A14</div>
+      </div>
+      <a href="https://script.google.com/macros/s/AKfycbxRA5wcSX3No3g9IRltqTxZI50LhZqxWghi74XMCwJMOiOEPScFXDuoN3PVpPwjwZWh/exec" class="btn-go" target="_blank">開始練習</a>
+    </div>
+
+    <div class="exam-item">
+      <div class="exam-info">
+        <span class="exam-name">電腦軟體設計 丙級</span>
+        <div class="exam-details"><span class="version-tag">版次 V114090113</span> 檔名：119003A13</div>
+      </div>
+      <a href="https://script.google.com/macros/s/AKfycbz2fWW9XGhQlhCvaYVKjLr7JK_PIrkxS4q6IkJID0A58DEiVWej42Mw2t6ziW0nwWJc/exec" class="btn-go" target="_blank">開始練習</a>
+    </div>
+
+    <div class="exam-item">
+      <div class="exam-info">
+        <span class="exam-name">電腦軟體設計(C++) 乙級</span>
+        <div class="exam-details"><span class="version-tag">版次 V114090112</span> 檔名：119002A12</div>
+      </div>
+      <a href="https://script.google.com/macros/s/AKfycbz0ILKy8LDJkauRiYBfdH0KMVBqEdOsGSPU_9EUJRHnQQ6xmd_EzwHL_6zKJ_SLjGBd/exec" class="btn-go" target="_blank">開始練習</a>
+    </div>
+
+    <div class="exam-item">
+      <div class="exam-info">
+        <span class="exam-name">電腦軟體設計(JAVA) 乙級</span>
+        <div class="exam-details"><span class="version-tag">版次 V114090111</span> 檔名：119012A11</div>
+      </div>
+      <a href="https://script.google.com/macros/s/AKfycbz7TtKewfptci7YwHEYXBYH-jaADbjzcjCaufnV9SxzKZX1fRxupXz2KdbzPRsb2HsHSw/exec" class="btn-go" target="_blank">開始練習</a>
+    </div>
   </div>
 
   <div id="business-section">
     <h2>📊 商業服務練習中心</h2>
     <p>包含會計事務、門市服務、國際貿易等實務科目。</p>
-    <div class="exam-item"><span>會計事務丙級學科</span><a href="https://script.google.com/macros/s/AKfycbzKghOORCB32SeSDb0vXoNEFdEm46NDhuvF6JpwCMwmddurFmnBRTNyrWzHpegJdFCJ/exec" class="btn-go" target="_blank">開始練習</a></div>
-    <div class="exam-item"><span>門市服務丙級學科</span><a href="https://script.google.com/macros/s/AKfycbzIKbd3zDb7muPUWmG0_azss1Gdyw5Lz6Lo6sXXprLeIGE6bDHlPbxzZvWgAz6mrH0i/exec" class="btn-go" target="_blank">開始練習</a></div>
-    <div class="exam-item"><span>國際業務丙級學科</span><a href="https://script.google.com/macros/s/AKfycbw-uJS8Gf73s00c4Nu2Ws-IdYpophko7irelVYK3d1NoqtknsmcOjjaKe4xEIff0Gg2fw/exec" class="btn-go" target="_blank">開始練習</a></div>
-    <div class="exam-item"><span>會計事務乙級學科</span><a href="https://script.google.com/macros/s/AKfycbz9xJ0kyDMJBQRvsDoRaUNLxlmgUnqS_xGD5ywIJse5PrzdYjcayc0iEOil__nRg4-g/exec" class="btn-go" target="_blank">開始練習</a></div>
-    <div class="exam-item"><span>門市服務乙級學科</span><a href="https://script.google.com/macros/s/AKfycbxODbuDcg2PqhBG3YzVAvoqpWLfJmM8-t_STsM_rh7FuxlcwUlcfcfxAE04FczcQs_d/exec" class="btn-go" target="_blank">開始練習</a></div>
-    <div class="exam-item"><span>國際業務乙級學科</span><a href="https://script.google.com/macros/s/AKfycbygs_FhJBK0Ojr2HU1D2bi_5h4-9EIZQZ5SdJc8mumOYIpga1WkN7T4v6jT-2QUaU-TVw/exec" class="btn-go" target="_blank">開始練習</a></div>
+
+    <div class="exam-item">
+      <div class="exam-info">
+        <span class="exam-name">會計事務 丙級</span>
+        <div class="exam-details"><span class="version-tag">版次 V114090113</span> 檔名：149003A13</div>
+      </div>
+      <a href="https://script.google.com/macros/s/AKfycbzKghOORCB32SeSDb0vXoNEFdEm46NDhuvF6JpwCMwmddurFmnBRTNyrWzHpegJdFCJ/exec" class="btn-go" target="_blank">開始練習</a>
+    </div>
+
+    <div class="exam-item">
+      <div class="exam-info">
+        <span class="exam-name">會計事務 乙級</span>
+        <div class="exam-details"><span class="version-tag">版次 V114090111</span> 檔名：149002A11</div>
+      </div>
+      <a href="https://script.google.com/macros/s/AKfycbz9xJ0kyDMJBQRvsDoRaUNLxlmgUnqS_xGD5ywIJse5PrzdYjcayc0iEOil__nRg4-g/exec" class="btn-go" target="_blank">開始練習</a>
+    </div>
+
+    <div class="exam-item">
+      <div class="exam-info">
+        <span class="exam-name">門市服務 丙級</span>
+        <div class="exam-details"><span class="version-tag">版次 V114090114</span> 檔名：181003A14</div>
+      </div>
+      <a href="https://script.google.com/macros/s/AKfycbzIKbd3zDb7muPUWmG0_azss1Gdyw5Lz6Lo6sXXprLeIGE6bDHlPbxzZvWgAz6mrH0i/exec" class="btn-go" target="_blank">開始練習</a>
+    </div>
+
+    <div class="exam-item">
+      <div class="exam-info">
+        <span class="exam-name">門市服務 乙級</span>
+        <div class="exam-details"><span class="version-tag">版次 V114090112</span> 檔名：181002A12</div>
+      </div>
+      <a href="https://script.google.com/macros/s/AKfycbxODbuDcg2PqhBG3YzVAvoqpWLfJmM8-t_STsM_rh7FuxlcwUlcfcfxAE04FczcQs_d/exec" class="btn-go" target="_blank">開始練習</a>
+    </div>
+
+    <div class="exam-item">
+      <div class="exam-info">
+        <span class="exam-name">國際貿易業務 丙級</span>
+        <div class="exam-details"><span class="version-tag">版次 V114122312</span> 檔名：150003A12</div>
+      </div>
+      <a href="https://script.google.com/macros/s/AKfycbw-uJS8Gf73s00c4Nu2Ws-IdYpophko7irelVYK3d1NoqtknsmcOjjaKe4xEIff0Gg2fw/exec" class="btn-go" target="_blank">開始練習</a>
+    </div>
+
+    <div class="exam-item">
+      <div class="exam-info">
+        <span class="exam-name">國際貿易業務 乙級</span>
+        <div class="exam-details"><span class="version-tag">版次 V114123011</span> 檔名：150002A11</div>
+      </div>
+      <a href="https://script.google.com/macros/s/AKfycbygs_FhJBK0Ojr2HU1D2bi_5h4-9EIZQZ5SdJc8mumOYIpga1WkN7T4v6jT-2QUaU-TVw/exec" class="btn-go" target="_blank">開始練習</a>
+    </div>
   </div>
 
   <a href="index.html" class="back-link">← 返回首頁重新選擇</a>
@@ -62,15 +195,11 @@
 
 <script>
   function updateView() {
-    // 取得網址列中的 # 內容
     const hash = window.location.hash;
-    
-    // 抓取 HTML 元素
     const infoSec = document.getElementById('info-section');
     const busSec = document.getElementById('business-section');
     const title = document.getElementById('main-title');
 
-    // 邏輯判斷
     if (hash === '#info') {
       infoSec.style.display = 'block';
       busSec.style.display = 'none';
@@ -80,15 +209,12 @@
       infoSec.style.display = 'none';
       title.innerText = '商業服務題庫專區';
     } else {
-      // 如果沒有 #，就全部顯示（備用方案）
       infoSec.style.display = 'block';
       busSec.style.display = 'block';
     }
   }
 
-  // 1. 網頁開啟時立刻判斷
   window.addEventListener('DOMContentLoaded', updateView);
-  // 2. 如果在同頁面點擊按鈕切換，也要能反應
   window.addEventListener('hashchange', updateView);
 </script>
 
