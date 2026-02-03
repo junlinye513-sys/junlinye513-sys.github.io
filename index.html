@@ -3,84 +3,155 @@
 <head>
   <meta charset="UTF-8">
   <title>115年度技術士檢定學科練習平台｜資訊職類與商業服務職類</title>
-  <meta name="description" content="本平台提供 115 年度最新技術士檢定學科題庫練習，涵蓋電腦軟體應用、網頁設計、硬體裝修、會計事務與門市服務等科目。提供詳盡的應考準備指南與即時模擬測驗，協助考生高效過關。">
+  <meta name="description" content="本平台整理 115 年度全國技術士技能檢定學科重要日程，並提供資訊職類與商業服務職類乙丙級學科題庫與完整應考攻略。">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="https://junlinye513-sys.github.io/">
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8785320054950646" crossorigin="anonymous"></script>
 
   <style>
-    :root { --primary: #4A8FE7; --primary-dark: #2d6ac5; --bg: #f2f6fc; --text: #333; --radius: 18px; }
-    body { font-family: "Microsoft JhengHei", system-ui, sans-serif; margin: 0; background: var(--bg); color: var(--text); line-height: 1.6; }
-    
-    /* Hero 區域優化 */
-    .hero { text-align: center; padding: 40px 15px 30px; background: linear-gradient(160deg, #eef4ff, #f9fbff); }
-    .hero h1 { font-size: 28px; font-weight: 700; color: var(--primary-dark); margin: 0 0 10px; }
-    
-    .stats-badge {
-      display: inline-block;
-      background: rgba(74, 143, 231, 0.1);
-      color: var(--primary-dark);
-      padding: 6px 12px;
-      border-radius: 50px;
-      font-size: 13px;
-      font-weight: 600;
-      margin-top: 5px;
-      border: 1px solid rgba(74, 143, 231, 0.2);
+    :root{
+      --primary:#4A8FE7;
+      --primary-dark:#2d6ac5;
+      --bg:#f2f6fc;
+      --radius:18px;
+    }
+    body{
+      margin:0;
+      font-family:"Microsoft JhengHei",system-ui,sans-serif;
+      background:var(--bg);
+      color:#333;
+      line-height:1.6;
+    }
+    .hero{
+      text-align:center;
+      padding:50px 15px 35px;
+      background:linear-gradient(160deg,#eef4ff,#f9fbff);
+    }
+    .hero h1{
+      margin:0;
+      color:var(--primary-dark);
+      font-size:28px;
+    }
+    .stats-badge{
+      display:inline-block;
+      margin-top:8px;
+      padding:6px 14px;
+      border-radius:50px;
+      font-size:13px;
+      background:rgba(74,143,231,.1);
+      border:1px solid rgba(74,143,231,.2);
+      color:var(--primary-dark);
+    }
+    .container{
+      max-width:1000px;
+      margin:auto;
+      padding:0 15px;
+    }
+    .box{
+      background:#fff;
+      border-radius:var(--radius);
+      padding:28px;
+      margin:25px 0;
+      box-shadow:0 8px 20px rgba(0,0,0,.05);
+    }
+    h2{
+      border-left:6px solid var(--primary);
+      padding-left:12px;
+      color:var(--primary-dark);
+      margin-top:0;
+    }
+    h3{
+      margin-top:22px;
+      background:#f8faff;
+      padding:8px 12px;
+      border-radius:8px;
+      font-size:17px;
+    }
+    ul{padding-left:20px;}
+    li{margin-bottom:10px;}
+
+    .tool-list{
+      display:grid;
+      gap:20px;
+      grid-template-columns:1fr;
+    }
+    .tool-card{
+      border:1px solid #e6edf7;
+      border-radius:14px;
+      padding:22px;
+      text-align:center;
+    }
+    .btn{
+      display:inline-block;
+      margin-top:10px;
+      padding:10px 26px;
+      background:var(--primary);
+      color:#fff;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:600;
     }
 
-    .container { max-width: 1000px; margin: 0 auto; padding: 0 15px; }
-    
-    /* 主卡片區域 */
-    .main-box { margin-top: -10px; background: #fff; padding: 25px 20px; border-radius: var(--radius); box-shadow: 0 12px 30px rgba(0,0,0,0.06); }
-    .main-box h2 { font-size: 22px; border-left: 6px solid var(--primary); padding-left: 12px; margin-top: 0; color: var(--primary-dark); }
-    
-    /* 修正後的清單佈局 */
-    .tool-list { display: grid; gap: 20px; grid-template-columns: 1fr; margin-top: 20px; }
-    
-    .tool-card { background: #fff; padding: 20px; border-radius: 14px; border: 1px solid #edf2f7; transition: 0.3s; text-align: center; }
-    .tool-card h3 { margin-top: 0; font-size: 18px; }
-    .tool-card p { font-size: 14px; color: #666; }
-    .tool-card:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-color: var(--primary); }
-    
-    .btn { display: inline-block; padding: 10px 24px; background: var(--primary); color: #fff; border-radius: 10px; text-decoration: none; font-weight: 600; width: 80%; }
-    
-    /* 文章區域優化 */
-    .content-article { background: #fff; padding: 25px 20px; border-radius: var(--radius); margin: 25px 0; box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
-    .content-article h2 { font-size: 20px; color: var(--primary-dark); border-bottom: 2px solid var(--primary); padding-bottom: 8px; }
-    .content-article h3 { font-size: 17px; color: #444; margin-top: 20px; background: #f8faff; padding: 8px 12px; border-radius: 8px; }
-    .content-article ul, .content-article ol { padding-left: 20px; font-size: 15px; }
-    .content-article li { margin-bottom: 10px; }
-    
-    .guide-box { border-left: 4px solid #ffd54f; background: #fffef0; padding: 12px; margin: 15px 0; font-size: 14px; }
-    
-    footer { text-align: center; padding: 30px 15px; font-size: 13px; color: #999; border-top: 1px solid #eee; margin-top: 20px; }
-    footer a { color: #777; text-decoration: none; margin: 0 5px; }
+    /* 日程表 */
+    .schedule-table{
+      width:100%;
+      border-collapse:collapse;
+      font-size:15px;
+    }
+    .schedule-table th,
+    .schedule-table td{
+      border:1px solid #ddd;
+      padding:10px;
+      text-align:center;
+    }
+    .schedule-table th{
+      background:#f1f6ff;
+      color:#2d6ac5;
+    }
+    .note{
+      font-size:14px;
+      color:#666;
+      margin-top:10px;
+    }
 
-    /* 📱 手機/平板 響應式斷點設定 */
-    @media (min-width: 768px) {
-      .hero { padding: 60px 20px 40px; }
-      .hero h1 { font-size: 32px; }
-      .main-box { margin-top: -20px; padding: 35px; }
-      .tool-list { grid-template-columns: repeat(2, 1fr); } /* 平板以上變兩欄 */
-      .btn { width: auto; } /* 寬螢幕按鈕恢復寬度 */
-      .content-article { padding: 40px; }
+    .guide-box{
+      border-left:4px solid #ffd54f;
+      background:#fffef0;
+      padding:14px;
+      margin:15px 0;
+      font-size:14px;
+    }
+
+    footer{
+      text-align:center;
+      padding:30px 15px;
+      font-size:13px;
+      color:#999;
+      border-top:1px solid #eee;
+    }
+
+    @media(min-width:768px){
+      .tool-list{grid-template-columns:repeat(2,1fr);}
     }
   </style>
 </head>
+
 <body>
 
 <section class="hero">
-  <h1>115 年度技術士檢定練習平台</h1>
+  <h1>115 年度技術士檢定學科練習平台</h1>
   <div id="stats" class="stats-badge">正在連線統計中...</div>
 </section>
 
 <div class="container">
-  <div class="main-box">
+
+  <!-- 職類選擇 -->
+  <div class="box">
     <h2>選擇檢定職類</h2>
     <div class="tool-list">
       <div class="tool-card">
-        <h3>💻 資訊職類題庫</h3>
+        <h3>💻 資訊職類</h3>
         <p>電腦軟體應用、網頁設計、硬體裝修等乙丙級學科練習。</p>
         <a class="btn" href="intro.html#info">進入資訊題庫</a>
       </div>
@@ -92,62 +163,118 @@
     </div>
   </div>
 
-  <article class="content-article">
-    <h2>114 年度技術士學科應考全攻略</h2>
-    <p>準備技術士檢定學科，除了反覆練習題庫外，掌握技巧同樣重要。本平台針對最新規範整理如下：</p>
+  <!-- 重要日程表 -->
+  <div class="box">
+    <h2>📅 115 年度全國技術士技能檢定｜重要日程表（學科）</h2>
 
-    <h3>一、 考前準備與必備物資</h3>
+    <table class="schedule-table">
+      <tr>
+        <th>項目</th>
+        <th>第一梯次</th>
+        <th>第二梯次</th>
+        <th>第三梯次</th>
+      </tr>
+      <tr>
+        <td>簡章發售及報名書表發售期間</td>
+        <td>114/12/26(五)～115/01/13(二)</td>
+        <td>115/04/17(五)～115/05/05(二)</td>
+        <td>115/08/20(四)～115/09/07(一)</td>
+      </tr>
+      <tr>
+        <td>報名日期(團體報名/個人報名)</td>
+        <td>115/01/02(五)～115/01/13(二)</td>
+        <td>115/04/24(五)～115/05/05(二)</td>
+        <td>115/08/27(四)～115/09/07(一)</td>
+      </tr>
+      <tr>
+        <td>准考證寄送日期</td>
+        <td>115/02/24(二)</td>
+        <td>115/06/16(二)</td>
+        <td>115/10/20(二)</td>
+      </tr>
+      <tr>
+        <td>學科測驗</td>
+        <td>115/03/15（日）</td>
+        <td>115/07/05（日）</td>
+        <td>115/11/08（日）</td>
+      </tr>
+      <tr>
+        <td>學科成績公告</td>
+        <td>115/04/10(五)</td>
+        <td>115/07/31(五)</td>
+        <td>115/12/04(五)</td>
+      </tr>
+      <tr>
+        <td>成績單寄送</td>
+        <td>115/04/14(二)</td>
+        <td>115/08/04(二)</td>
+        <td>115/12/08(二)</td>
+      </tr>
+    </table>
+
+    <div class="note">
+      ※ 本表依勞動部技能檢定中心公告整理，實際以官方最新公告為準。
+      
+    </div>
+  </div>
+
+  <!-- 應考攻略 -->
+  <div class="box">
+    <h2>📘 115 年度技術士學科應考攻略</h2>
+
+    <h3>一、考前準備與必備物資</h3>
     <ul>
-      <li><strong>應試證件：</strong> 務必攜帶准考證與身分證正本。</li>
-      <li><strong>指定文具：</strong> 準備 2B 鉛筆與橡皮擦。不可使用修正液（帶）。</li>
+      <li><strong>身份證明：</strong> 必須攜帶「身分證正本」或具照片之有效證件（如駕照、護照、健保卡）。</li>
+      <li><strong>准考證：</strong> 若不慎遺失，可至技能檢定中心網站線上列印。</li>
+      <li><strong>作答工具：</strong> 準備 2B 鉛筆及軟質橡皮擦。</li>
     </ul>
 
     <div class="guide-box">
-      <strong>⚠️ 嚴禁通訊設備：</strong> 包含手機、智慧手錶、藍牙耳機等，進入考場前請務必關機。
+      ⚠️ 嚴禁攜帶手機、智慧手錶、藍牙耳機等具通訊、記憶或拍攝功能之設備
     </div>
 
-    <h3>二、 應試過程注意事項</h3>
+    <h3>二、應試過程注意事項</h3>
     <ul>
-      <li><strong>答案卡劃記：</strong> 須將方格塗黑塗滿，不可超出範圍。</li>
-      <li><strong>時間限制：</strong> 開考 15 分鐘後禁止入場。</li>
+      <li><strong>答案卡劃記：</strong> 須將方格塗黑塗滿，若擦拭不淨會影響讀卡。</li>
+      <li><strong>時間限制：</strong> 開考 15 分鐘後禁止入場，測試時間 45 分鐘後方可繳卷離開。</li>      
     </ul>
-  </article>
+
+    <h3>三、高效複習與應試建議</h3>
+    <ul>
+      <li>專業科目以理解為主，避免死背題目</li>
+      <li>共同科目（職安、倫理、環保）屬基本分，務必熟練</li>
+      <li>考前兩週建議搭配線上題庫進行短時、高頻模擬練習</li>
+    </ul>
+  </div>
+
 </div>
 
 <footer>
-  <p>© 2026 技術士檢定學習平台｜數位教學系統</p>
-  <div>
-    <a href="about.html">關於本站</a> | <a href="privacy.html">隱私權政策</a> | <a href="contact.html">聯絡我們</a>
-  </div>
+  © 2026 技術士檢定學習平台｜數位教學系統<br>
+  <a href="about.html">關於本站</a>｜
+  <a href="privacy.html">隱私權政策</a>｜
+  <a href="contact.html">聯絡我們</a>
 </footer>
 
 <script>
-  // ... (腳本部分保持不變) ...
-  const API = "https://script.google.com/macros/s/AKfycbxAp06fzFAYTDRh17fZqe4pfytLRHAuNcPb8ubRKQJkCJZDEyVze9_fylV847gkz9jt/exec";
-  const ua = encodeURIComponent(navigator.userAgent);
-  let userId = localStorage.getItem("USER_ID") || ("u" + Math.random().toString(36).substring(2));
-  localStorage.setItem("USER_ID", userId);
+const API="https://script.google.com/macros/s/AKfycbxAp06fzFAYTDRh17fZqe4pfytLRHAuNcPb8ubRKQJkCJZDEyVze9_fylV847gkz9jt/exec";
+const ua=encodeURIComponent(navigator.userAgent);
+let userId=localStorage.getItem("USER_ID")||("u"+Math.random().toString(36).substring(2));
+localStorage.setItem("USER_ID",userId);
 
-  async function updateStats() {
-    try {
-      const visit = await fetch(`${API}?action=visit&ua=${ua}&vid=${userId}`).then(r => r.json());
-      const online = await fetch(`${API}?action=online`).then(r => r.json());
-      const onlineCount = online.online ?? 0;
-      const totalCount = visit.total ?? 0;
-      document.getElementById("stats").innerHTML = 
-        `✨ 目前有 <b>${onlineCount}</b> 人在線練習中！ (累計：${totalCount})`;
-    } catch (e) {
-      document.getElementById("stats").style.display = 'none';
-    }
+async function updateStats(){
+  try{
+    const v=await fetch(`${API}?action=visit&ua=${ua}&vid=${userId}`).then(r=>r.json());
+    const o=await fetch(`${API}?action=online`).then(r=>r.json());
+    document.getElementById("stats").innerHTML=
+      `✨ 目前有 <b>${o.online??0}</b> 人在線練習中（累計 ${v.total??0}）`;
+  }catch{
+    document.getElementById("stats").style.display="none";
   }
-
-  fetch(`${API}?action=heartbeat&userId=${userId}&ua=${ua}`).then(updateStats);
-  setInterval(() => {
-    fetch(`${API}?action=heartbeat&userId=${userId}&ua=${ua}`);
-    updateStats();
-  }, 10000);
+}
+fetch(`${API}?action=heartbeat&userId=${userId}&ua=${ua}`).then(updateStats);
+setInterval(()=>{fetch(`${API}?action=heartbeat&userId=${userId}&ua=${ua}`);updateStats();},10000);
 </script>
 
 </body>
 </html>
-
