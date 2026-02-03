@@ -138,7 +138,16 @@
     @media(min-width:768px){
       .tool-list{grid-template-columns:repeat(2,1fr);}
     }
-  </style>
+
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-scroll table {
+  min-width: 700px;
+}
+</style>
 </head>
 
 <body>
@@ -172,6 +181,7 @@
     <h2>📅 115 年度全國技術士技能檢定｜重要日程表（學科）</h2>
 
     <table class="schedule-table">
+       <table class="schedule-table">
       <tr>
         <th>項目</th>
         <th>第一梯次</th>
@@ -214,6 +224,7 @@
         <td>115/08/04(二)</td>
         <td>115/12/08(二)</td>
       </tr>
+         </table>
     </table>
 
     <div class="note">
@@ -282,4 +293,5 @@ setInterval(()=>{fetch(`${API}?action=heartbeat&userId=${userId}&ua=${ua}`);upda
 
 </body>
 </html>
+
 
