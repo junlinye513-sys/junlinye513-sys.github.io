@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>115年度技術士檢定學科練習平台｜資訊職類與商業服務職類</title>
+  <title>115 年度技術士檢定學科練習平台｜全國技術士技能檢定重要時程與題庫</title>
   <meta name="description" content="本平台整理 115 年度全國技術士技能檢定學科重要日程，並提供資訊職類與商業服務職類乙丙級學科題庫與完整應考攻略。">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="https://junlinye513-sys.github.io/">
@@ -21,7 +21,7 @@
       font-family:"Microsoft JhengHei",system-ui,sans-serif;
       background:var(--bg);
       color:#333;
-      line-height:1.6;
+      line-height:1.8; /* 增加行高提升閱讀舒適度 */
     }
     .hero{
       text-align:center;
@@ -60,6 +60,7 @@
       padding-left:12px;
       color:var(--primary-dark);
       margin-top:0;
+      font-size: 22px;
     }
     h3{
       margin-top:22px;
@@ -68,6 +69,7 @@
       border-radius:8px;
       font-size:17px;
     }
+    p { margin-bottom: 15px; text-align: justify; }
     ul{padding-left:20px;}
     li{margin-bottom:10px;}
 
@@ -87,22 +89,27 @@
       margin-top:10px;
       padding:10px 26px;
       background:var(--primary);
-      color:#fff;
+      color:#fff !important;
       border-radius:10px;
       text-decoration:none;
       font-weight:600;
     }
 
-    /* 日程表 */
+    .table-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 15px 0;
+    }
     .schedule-table{
       width:100%;
       border-collapse:collapse;
       font-size:15px;
+      min-width: 750px; /* 確保在手機上有滾動感，不擠壓日期 */
     }
     .schedule-table th,
     .schedule-table td{
-      border:1px solid #ddd;
-      padding:10px;
+      border:1px solid #eee;
+      padding:12px;
       text-align:center;
     }
     .schedule-table th{
@@ -112,7 +119,8 @@
     .note{
       font-size:14px;
       color:#666;
-      margin-top:10px;
+      margin-top:15px;
+      line-height: 1.6;
     }
 
     .guide-box{
@@ -120,7 +128,7 @@
       background:#fffef0;
       padding:14px;
       margin:15px 0;
-      font-size:14px;
+      font-size:15px;
     }
 
     footer{
@@ -130,38 +138,31 @@
       color:#999;
       border-top:1px solid #eee;
     }
+    footer a { text-decoration: none; color: #777; margin: 0 5px; }
 
-    footer a {
-      text-decoration: none;
-    }
-    
     @media(min-width:768px){
       .tool-list{grid-template-columns:repeat(2,1fr);}
     }
-
-.table-scroll {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.table-scroll table {
-  min-width: 700px;
-}
-</style>
+  </style>
 </head>
 
 <body>
 
 <section class="hero">
   <h1>115 年度技術士檢定學科練習平台</h1>
-  <div id="stats" class="stats-badge">正在連線統計中...</div>
+  <div id="stats" class="stats-badge">正在連線統計即時考生數據...</div>
 </section>
 
 <div class="container">
 
-  <!-- 職類選擇 -->
   <div class="box">
-    <h2>選擇檢定職類</h2>
+    <h2>115 年全國技術士技能檢定資訊與題庫</h2>
+    <p>歡迎來到數位化學科練習系統。本平台專為準備全國技術士技能檢定之考生設計，彙整了 115 年度最新的學科測試日程與重要資訊。無論您是報考電腦軟體應用、網頁設計等資訊類職類，或是會計事務、門市服務等商業服務類職類，我們都提供精確的題庫練習資源，協助您在繁忙的備考期間，透過手機或電腦進行高效複習。</p>
+  </div>
+
+  <div class="box">
+    <h2>選擇檢定職類進入練習</h2>
+    <p>請根據您的報考科目選擇對應的題庫類別。本系統收錄之題庫內容均依據勞動部技能檢定中心之最新規範進行修訂，涵蓋乙級與丙級常見科目。</p>
     <div class="tool-list">
       <div class="tool-card">
         <h3>💻 資訊職類</h3>
@@ -176,62 +177,65 @@
     </div>
   </div>
 
-  <!-- 重要日程表 -->
   <div class="box">
-    <h2>📅 115 年度全國技術士技能檢定｜重要日程表（學科）</h2>
+    <h2>📅 115 年度全國技術士技能檢定｜重要日程表</h2>
+    <p>掌握報名時間是應考成功的第一步。下表彙整了 115 年度三個梯次的重要關鍵節點，包含簡章購買、網路報名以及准考證寄送日：</p>
 
-    <table class="schedule-table">
-       <table class="schedule-table">
-      <tr>
-        <th>項目</th>
-        <th>第一梯次</th>
-        <th>第二梯次</th>
-        <th>第三梯次</th>
-      </tr>
-      <tr>
-        <td>簡章發售及報名書表發售期間</td>
-        <td>114/12/26(五)～115/01/13(二)</td>
-        <td>115/04/17(五)～115/05/05(二)</td>
-        <td>115/08/20(四)～115/09/07(一)</td>
-      </tr>
-      <tr>
-        <td>報名日期(團體報名/個人報名)</td>
-        <td>115/01/02(五)～115/01/13(二)</td>
-        <td>115/04/24(五)～115/05/05(二)</td>
-        <td>115/08/27(四)～115/09/07(一)</td>
-      </tr>
-      <tr>
-        <td>准考證寄送日期</td>
-        <td>115/02/24(二)</td>
-        <td>115/06/16(二)</td>
-        <td>115/10/20(二)</td>
-      </tr>
-      <tr>
-        <td>學科測驗</td>
-        <td>115/03/15（日）</td>
-        <td>115/07/05（日）</td>
-        <td>115/11/08（日）</td>
-      </tr>
-      <tr>
-        <td>學科成績公告</td>
-        <td>115/04/10(五)</td>
-        <td>115/07/31(五)</td>
-        <td>115/12/04(五)</td>
-      </tr>
-      <tr>
-        <td>成績單寄送</td>
-        <td>115/04/14(二)</td>
-        <td>115/08/04(二)</td>
-        <td>115/12/08(二)</td>
-      </tr>
-         </table>
-    </table>
+    <div class="table-scroll">
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>第一梯次</th>
+            <th>第二梯次</th>
+            <th>第三梯次</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>簡章發售及報名表發售期間</td>
+            <td>114/12/26(五)～115/01/13(二)</td>
+            <td>115/04/17(五)～115/05/05(二)</td>
+            <td>115/08/20(四)～115/09/07(一)</td>
+          </tr>
+          <tr>
+            <td><strong>報名日期(團體報名/個人報名)</strong></td>
+            <td>115/01/02(五)～115/01/13(二)</td>
+            <td>115/04/24(五)～115/05/05(二)</td>
+            <td>115/08/27(四)～115/09/07(一)</td>
+          </tr>
+          <tr>
+            <td>准考證寄送日期</td>
+            <td>115/02/24(二)</td>
+            <td>115/06/16(二)</td>
+            <td>115/10/20(二)</td>
+          </tr>
+          <tr>
+            <td><strong>學科測試日期</strong></td>
+            <td><strong>115/03/15（日）</strong></td>
+            <td><strong>115/07/05（日）</strong></td>
+            <td><strong>115/11/08（日）</strong></td>
+          </tr>
+          <tr>
+            <td>學科成績公告</td>
+            <td>115/04/10(五)</td>
+            <td>115/07/31(五)</td>
+            <td>115/12/04(五)</td>
+          </tr>
+          <tr>
+            <td>成績單寄送日期</td>
+            <td>115/04/14(二)</td>
+            <td>115/08/04(二)</td>
+            <td>115/12/08(二)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-     <div class="note">
-        ※ 本表依勞動部技能檢定中心公告整理，實際以官方最新公告為準。<br><br>
-
-        🔗 <strong>官方查詢與公告：</strong><br>
-        ・
+    <div class="note">
+      ※ 本表依勞動部技能檢定中心公告整理，實際時程請以官方最新簡章內容為準。<br><br>
+      🔗 <strong>官方查詢與公告：</strong><br>
+          ・
         <a href="https://eservice.wdasec.gov.tw/WWW/C101Q"
         target="_blank" rel="noopener">
         技能檢定術科辦理單位及成績查詢、補發成績單及證照費繳費單列印
@@ -246,46 +250,41 @@
         target="_blank" rel="noopener">
         即測即評服務網
         </a>
-      </div>
-
+    </div>
   </div>
 
-  <!-- 應考攻略 -->
   <div class="box">
-    <h2>📘 115 年度技術士學科應考攻略</h2>
+    <h2>📘 115 年度技術士學科應考全攻略</h2>
+    <p>除了反覆練習題庫外，了解試場規範能幫助您更穩定地發揮實力。以下整理了考生最常遇到的注意事項：</p>
 
-    <h3>一、考前準備與必備物資</h3>
+    <h3>一、考前必備物資確認</h3>
     <ul>
-      <li><strong>身份證明：</strong> 必須攜帶「身分證正本」或具照片之有效證件（如駕照、護照、健保卡）。</li>
-      <li><strong>准考證：</strong> 若不慎遺失，可至技能檢定中心網站線上列印。</li>
-      <li><strong>作答工具：</strong> 準備 2B 鉛筆及軟質橡皮擦。</li>
+      <li><strong>有效證件正本：</strong> 身分證、駕照、護照或附照片之健保卡（擇一）。</li>
+      <li><strong>准考證：</strong> 建議收到後先行核對考場位置，若遺失可至網站線上補印。</li>
+      <li><strong>作答工具：</strong> 限用 2B 鉛筆劃記方格，並備妥足夠強度的軟質橡皮擦。</li>
     </ul>
 
     <div class="guide-box">
-      ⚠️ 嚴禁攜帶手機、智慧手錶、藍牙耳機等具通訊、記憶或拍攝功能之設備
+      <strong>⚠️ 嚴禁攜帶電子通訊設備：</strong><br>
+      依官方規定，嚴禁攜帶行動電話、智慧型手錶、藍牙耳機入座。請務必完全關機並依監考老師指示放置，違者將扣減分數甚至取消資格。
     </div>
 
     <h3>二、應試過程注意事項</h3>
+    <p>學科測試時間總計 100 分鐘，考生應妥善分配時間。建議先完成有把握的題目，最後預留 15 分鐘進行全卷檢查。</p>
     <ul>
-      <li><strong>答案卡劃記：</strong> 須將方格塗黑塗滿，若擦拭不淨會影響讀卡。</li>
-      <li><strong>測驗時間規定：</strong> 開考 15 分鐘後禁止入場，測試時間 45 分鐘後方可繳卷離開。</li>      
+      <li><strong>答案卡劃記：</strong> 須將方格塗黑塗滿，若擦拭不淨或劃記過輕，將導致電腦讀卡失敗。</li>
+      <li><strong>出場規定：</strong> 測試開始 15 分鐘後禁止入場；測試 45 分鐘後方可繳卷離場（即測即評除外）。</li>
     </ul>
 
-    <h3>三、高效複習與應試建議</h3>
-    <ul>
-      <li>專業科目以理解為主，避免死背題目</li>
-      <li>共同科目（職安、倫理、環保）屬基本分，務必熟練</li>
-      <li>考前兩週建議搭配線上題庫進行短時、反覆模擬練習</li>
-    </ul>
+    <h3>三、數位複習法建議</h3>
+    <p>對於資訊職類或商業服務職類的學科，建議採取「分段複習法」。每日花費 30 分鐘針對錯誤題目進行理解，而非單純死背題目。特別是「共同科目」（職業安全、勞動法令、環境保護、工作倫理）為各職類必考內容，務必熟練以穩定拿分。</p>
   </div>
 
 </div>
 
 <footer>
-  © 2026 技術士檢定學習平台｜數位教學系統<br>
-  <a href="about.html">關於本站</a>｜
-  <a href="privacy.html">隱私權政策</a>｜
-  <a href="contact.html">聯絡我們</a>
+  © 2026 技術士檢定學習平台｜專業學科練習與資訊彙整站<br>
+  <a href="about.html">關於本站</a>｜<a href="privacy.html">隱私權政策</a>｜<a href="contact.html">聯絡我們</a>
 </footer>
 
 <script>
@@ -299,7 +298,7 @@ async function updateStats(){
     const v=await fetch(`${API}?action=visit&ua=${ua}&vid=${userId}`).then(r=>r.json());
     const o=await fetch(`${API}?action=online`).then(r=>r.json());
     document.getElementById("stats").innerHTML=
-      `✨ 目前有 <b>${o.online??0}</b> 人在線練習中（累計 ${v.total??0}）`;
+      `✨ 目前有 <b>${o.online??0}</b> 人在線練習中（累計造訪：${v.total??0}）`;
   }catch{
     document.getElementById("stats").style.display="none";
   }
@@ -310,8 +309,3 @@ setInterval(()=>{fetch(`${API}?action=heartbeat&userId=${userId}&ua=${ua}`);upda
 
 </body>
 </html>
-
-
-
-
-
