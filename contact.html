@@ -5,30 +5,37 @@
   <title>聯絡我們｜115 年度技術士檢定學科練習平台</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
+    /* 1. 全站統一變數 */
     :root {
       --primary: #4A8FE7;
       --primary-dark: #2d6ac5;
       --bg: #f2f6fc;
       --radius: 18px;
     }
+
+    /* 2. 基礎設定：移除 body padding 確保導覽列貼邊 */
     body {
       font-family: "Microsoft JhengHei", system-ui, sans-serif;
       background: var(--bg);
       margin: 0;
+      padding: 0;
       color: #333;
       line-height: 1.8;
     }
 
-    /* 導覽列 CSS (與首頁保持一致) */
+    /* 3. 導覽列：嚴格對齊首頁與練習頁高度 */
     .navbar {
       position: sticky;
       top: 0;
+      left: 0;
+      width: 100%;
       z-index: 1000;
       background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(0,0,0,0.05);
       padding: 12px 0;
     }
+
     .nav-container {
       max-width: 1000px;
       margin: auto;
@@ -37,12 +44,17 @@
       justify-content: space-between;
       align-items: center;
     }
+
+    /* 修正 Logo 垂直置中，防止圖示撐開高度 */
     .nav-logo {
       font-weight: bold;
       color: var(--primary-dark);
       text-decoration: none;
       font-size: 18px;
+      display: flex;
+      align-items: center;
     }
+
     .nav-menu {
       display: flex;
       gap: 20px;
@@ -50,15 +62,20 @@
       margin: 0;
       padding: 0;
     }
+
     .nav-menu a {
       text-decoration: none;
       color: #555;
       font-size: 15px;
       font-weight: 500;
+      transition: 0.3s;
     }
-    .nav-menu a:hover { color: var(--primary); }
 
-    /* 內容容器 */
+    .nav-menu a:hover {
+      color: var(--primary);
+    }
+
+    /* 4. 內容容器 */
     .container {
       max-width: 750px;
       margin: 40px auto;
@@ -68,6 +85,7 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.05);
       text-align: center;
     }
+
     h1 { color: var(--primary-dark); margin-bottom: 10px; margin-top: 0; }
     p { font-size: 16px; color: #555; }
 
@@ -84,48 +102,75 @@
       text-decoration: none;
       transition: 0.3s;
     }
+
     .email-box:hover {
       background: #e0ecff;
       transform: translateY(-2px);
     }
 
+    /* 5. FAQ 區塊 */
     .faq-section {
       text-align: left;
       margin-top: 40px;
       border-top: 1px solid #eee;
       padding-top: 30px;
     }
+
     .faq-section h2 {
       font-size: 20px;
       color: var(--primary);
       margin-bottom: 20px;
     }
+
     .faq-item {
       margin-bottom: 20px;
       background: #f9fbff;
       padding: 15px;
       border-radius: 10px;
     }
+
     .faq-item strong {
       display: block;
       color: #222;
       font-size: 16px;
       margin-bottom: 5px;
     }
+
     .faq-item span {
       font-size: 15px;
       color: #444;
     }
 
+    /* 6. 頁腳：對齊 privacy.html 樣式 */
     footer {
       text-align: center;
-      padding: 30px 15px;
+      padding: 40px 15px;
       font-size: 13px;
       color: #999;
+      border-top: 1px solid #eee;
+      background: #fff;
+      margin-top: 60px;
     }
 
+    footer a {
+      text-decoration: none;
+      color: #777;
+      margin: 0 5px;
+      transition: 0.3s;
+    }
+
+    footer a:hover {
+      color: var(--primary);
+    }
+
+    /* 7. 行動裝置適應 */
     @media (max-width: 600px) {
-      .nav-menu { gap: 12px; overflow-x: auto; white-space: nowrap; }
+      .nav-menu {
+        gap: 12px;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 5px;
+      }
       .container { padding: 25px; margin: 20px 15px; }
       .email-box { font-size: 16px; padding: 12px 20px; }
     }
@@ -171,7 +216,10 @@
   </div>
 
   <footer>
-    © 2026 技術士檢定學習平台｜專業學科練習與資訊彙整站
+    © 2026 技術士檢定學習平台｜專業學科練習與資訊彙整站<br>
+    <div style="margin-top: 8px;">
+      <a href="about.html">關於本站</a>｜<a href="privacy.html">隱私權政策</a>｜<a href="contact.html">聯絡我們</a>
+    </div>
   </footer>
 
 </body>
