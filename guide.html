@@ -2,104 +2,109 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>丙級技術士學科準備完整攻略｜115 年度最新版｜練習平台教師版</title>
-  <meta name="description" content="電腦老師親授：115 年度丙級技術士學科準備完整攻略。從題庫結構、三階段複習法、錯題回補、共同科目拿分，到考場應試細節，協助你穩定拿到及格以上。">
+  <title>丙級技術士學科準備完整攻略｜115 年度最新版｜技術士檢定練習站</title>
+  <meta name="description" content="115 年度丙級技術士學科準備完整攻略。從題庫結構、三階段複習法、共同科目拿分到考場細節，協助考生穩定取得及格分數。">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="canonical" href="https://junlinye513-sys.github.io/guide-c.html">
+  <link rel="canonical" href="https://junlinye513-sys.github.io/guide.html">
 
   <style>
-    :root{ --primary:#4A8FE7; --primary-dark:#2d6ac5; --bg:#f2f6fc; --radius:18px; }
-    body{ margin:0; font-family:"Microsoft JhengHei",system-ui,sans-serif; background:var(--bg); color:#333; line-height:1.85; }
-    a{ color:var(--primary-dark); text-decoration:none; }
-    a:hover{ text-decoration:underline; }
+    :root {
+      --primary: #4A8FE7;
+      --primary-dark: #2d6ac5;
+      --bg: #f2f6fc;
+      --radius: 18px;
+    }
+    body {
+      margin: 0;
+      font-family: "Microsoft JhengHei", system-ui, sans-serif;
+      background: var(--bg);
+      color: #333;
+      line-height: 1.85;
+    }
+
+    /* 導覽列 */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      padding: 12px 0;
+    }
+    .nav-container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 0 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-logo { font-weight: bold; color: var(--primary-dark); text-decoration: none; font-size: 18px; }
+    .nav-menu { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
+    .nav-menu a { text-decoration: none; color: #555; font-size: 15px; font-weight: 500; }
+    .nav-menu a:hover { color: var(--primary); }
 
     /* 文章容器 */
-    .container{ max-width:900px; margin:30px auto 50px; padding:0 16px; }
-    .article-box{
-      background:#fff;
-      border-radius:var(--radius);
-      padding:34px;
-      box-shadow:0 8px 20px rgba(0,0,0,.05);
-      border:1px solid #eef2f8;
+    .container { max-width: 900px; margin: 30px auto 50px; padding: 0 16px; }
+    .article-box {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 34px;
+      box-shadow: 0 8px 20px rgba(0,0,0,.05);
+      border: 1px solid #eef2f8;
     }
-    h1{
-      color:var(--primary-dark);
-      font-size:28px;
-      margin:0 0 10px;
-      border-bottom:2px solid var(--primary);
-      padding-bottom:10px;
-      line-height:1.3;
+    h1 {
+      color: var(--primary-dark);
+      font-size: 28px;
+      margin: 0 0 10px;
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 10px;
+      line-height: 1.3;
     }
-    .meta{
-      display:flex; gap:10px; flex-wrap:wrap;
-      color:#667; font-size:13px; margin:10px 0 18px;
-    }
-    .pill{
-      background:#f3f7ff;
-      border:1px solid #dce7ff;
-      padding:4px 10px;
-      border-radius:999px;
-    }
+    .meta { display: flex; gap: 10px; flex-wrap: wrap; color: #667; font-size: 13px; margin: 10px 0 18px; }
+    .pill { background: #f3f7ff; border: 1px solid #dce7ff; padding: 4px 10px; border-radius: 999px; }
 
-    h2{ color:var(--primary); margin-top:28px; margin-bottom:10px; font-size:20px; }
-    h3{
-      margin-top:18px;
-      background:#f8faff;
-      padding:8px 12px;
-      border-radius:10px;
-      font-size:16px;
-    }
-    p{ margin:10px 0 14px; text-align: justify; }
-    ul,ol{ padding-left:20px; margin:10px 0 14px; }
-    li{ margin-bottom:10px; }
+    h2 { color: var(--primary); margin-top: 28px; margin-bottom: 10px; font-size: 22px; border-left: 5px solid var(--primary); padding-left: 12px; }
+    h3 { margin-top: 18px; background: #f8faff; padding: 10px 15px; border-radius: 10px; font-size: 18px; color: var(--primary-dark); }
+    p { margin: 15px 0; text-align: justify; }
+    ul, ol { padding-left: 20px; margin: 10px 0 14px; }
+    li { margin-bottom: 10px; }
 
-    .highlight { background-color:#fff3cd; padding:2px 6px; border-radius:6px; font-weight:700; }
+    .highlight { background-color: #fff3cd; padding: 2px 6px; border-radius: 6px; font-weight: 700; }
+    .teacher-tip { border-left: 5px solid #4caf50; background: #f1f8e9; padding: 16px; margin: 20px 0; border-radius: 12px; }
+    .warning { border-left: 5px solid #ff9800; background: #fff7e6; padding: 16px; margin: 20px 0; border-radius: 12px; }
 
-    .teacher-tip{
-      border-left:5px solid #4caf50;
-      background:#f1f8e9;
-      padding:14px 14px 14px 16px;
-      margin:18px 0;
-      border-radius:12px;
-    }
-    .warning{
-      border-left:5px solid #ff9800;
-      background:#fff7e6;
-      padding:14px 14px 14px 16px;
-      margin:18px 0;
-      border-radius:12px;
-    }
+    /* 目錄 */
+    .toc { background: #fbfcff; border: 1px solid #e6edf7; border-radius: 14px; padding: 16px; margin: 20px 0; }
+    .toc b { display: block; margin-bottom: 10px; color: #223; font-size: 16px; }
+    .toc a { display: inline-block; margin: 5px 15px 5px 0; font-weight: 600; font-size: 15px; color: var(--primary-dark); text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
 
-    /* 目录 */
-    .toc{
-      background:#fbfcff;
-      border:1px solid #e6edf7;
-      border-radius:14px;
-      padding:14px 16px;
-      margin:16px 0 22px;
-    }
-    .toc b{ display:block; margin-bottom:8px; color:#223; }
-    .toc a{ display:inline-block; margin:6px 10px 0 0; font-weight:600; font-size:14px; }
+    footer { text-align: center; padding: 40px 15px; font-size: 13px; color: #999; border-top: 1px solid #eee; background: #fff; margin-top: 50px; }
+    footer a { text-decoration: none; color: #777; margin: 0 5px; }
 
-    /* 页尾 */
-    footer{
-      max-width:900px;
-      margin:18px auto 26px;
-      padding:0 16px;
-      color:#889;
-      font-size:13px;
-      text-align:center;
-    }
-    footer a{ color:#667; margin: 0 6px; }
-
-    @media (max-width:600px){
-      .article-box{ padding:22px; }
-      h1{ font-size:24px; }
+    @media (max-width: 600px) {
+      .nav-menu { gap: 12px; overflow-x: auto; white-space: nowrap; padding-bottom: 5px; }
+      .article-box { padding: 22px; }
+      h1 { font-size: 24px; }
     }
   </style>
 </head>
 
 <body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">🎯 檢定練習站</a>
+      <ul class="nav-menu">
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="practice.html">題庫練習</a></li>
+        <li><a href="guide.html">備考攻略</a></li>
+        <li><a href="about.html">關於本站</a></li>
+      </ul>
+    </div>
+  </nav>
 
   <div class="container">
     <article class="article-box">
@@ -107,115 +112,106 @@
       <h1>115 年度丙級技術士學科：準備完整攻略</h1>
 
       <div class="meta">
-        <span class="pill">更新：115 年度版本</span>
-        <span class="pill">適用：各職類丙級學科</span>
-        <span class="pill">難度：一般</span>
+        <span class="pill">📅 更新：115 年度最新版本</span>
+        <span class="pill">🎯 適用：各職類丙級學科</span>
+        <span class="pill">📖 難度：入門必看</span>
       </div>
 
       <p>
         面對全國技術士技能檢定，學科測試往往是大家最容易輕視、卻也最容易因為粗心而滑鐵盧的一關。
-        其實只要掌握正確策略，及格（60 分）很穩、甚至拿到更高分也不難。下面我用「老師會帶學生怎麼準備」的方式，整理成一份可直接照做的流程。
+        其實只要掌握正確策略，及格（60 分）很穩、甚至拿到更高分也不難。下面我整理了一份從老師的角度出發、可直接照做的備考流程。
       </p>
 
       <div class="toc">
-        <b>本篇目錄</b>
-        <a href="#structure">一、掌握題庫結構</a>
-        <a href="#plan">二、系統化複習三部曲</a>
-        <a href="#mistakes">三、錯題回補方法</a>
-        <a href="#examday">四、考場致勝細節</a>
-        <a href="#checklist">五、考前檢核清單</a>
+        <b>📌 本篇攻略快速導覽</b>
+        <a href="#structure">1. 掌握題庫結構</a>
+        <a href="#plan">2. 系統化複習三部曲</a>
+        <a href="#mistakes">3. 錯題回補方法</a>
+        <a href="#examday">4. 考場致勝細節</a>
+        <a href="#checklist">5. 考前檢核清單</a>
       </div>
 
       <h2 id="structure">一、掌握題庫結構：知己知彼</h2>
       <p>
-        丙級學科通常由「職類專業科目」與「共同科目」組成。你不用追求一次全會，
-        重點是把能穩定拿分的部分先吃下來。
+        丙級學科通常由「職類專業科目」與「共同科目」組成。你不用追求一次全會，重點是把能穩定拿分的部分先吃下來。
       </p>
       <ul>
-        <li><strong>專業科目：</strong>佔比高，是該職類（如電腦軟體應用、硬體裝修、網頁設計等）的核心知識。</li>
-        <li><strong>共同科目：</strong>跨職類共通（例如職業安全、工作倫理、環境保護等），題型相對固定，<span class="highlight">CP 值很高</span>。</li>
+        <li><strong>專業科目：</strong>佔比最高，是該職類（如電腦軟體應用、硬體裝修、網頁設計等）的核心知識。</li>
+        <li><strong>共同科目：</strong>跨職類共通（例如職業安全、工作倫理、環境保護等），題型固定，<span class="highlight">是穩定及格的救命丹</span>。</li>
       </ul>
 
       <div class="teacher-tip">
         <strong>👨‍🏫 老師提醒：</strong>
         很多人死背專業題目，卻在共同科目失分，這是非常可惜的。
-        建議先把共同科目整理到「看到題目就能秒選」的程度，基本分會很穩。
+        建議先把共同科目練習到「看到題目就能秒選」的程度，基本分會非常穩固。
       </div>
 
-      <h2 id="plan">二、系統化複習三部曲（照做就有效）</h2>
+      <h2 id="plan">二、系統化複習三部曲</h2>
 
       <h3>1）第一階段：地毯式閱讀（考前 3–4 週）</h3>
       <p>
-        先把題庫從頭到尾「看過一遍」，不要急著測驗分數。這階段的目標是：看懂題目在問什麼、知道每個名詞的意思。
-        遇到不懂的術語（例如：虛擬記憶體、DNS、資料庫索引…），請立刻查一個可靠來源，寫成一句話筆記。
+        不要急著做模擬測驗。先將題庫從頭到尾流覽一遍，目標是看懂題目在問什麼。
+        遇到不懂的術語（例如：DNS、資料庫索引、勞基法工時規定），立刻查詢關鍵字並簡單紀錄。
       </p>
 
       <h3>2）第二階段：分類練習（考前 2 週）</h3>
       <p>
-        這時才開始把題目做「分類」，你會刷得更快、也比較不亂。
+        開始將題目做分類，這會讓你記憶效率大幅提升：
       </p>
       <ul>
-        <li><span class="highlight">常識/理解題</span>：靠邏輯與理解可答，重點是「看懂題目敘述」。</li>
-        <li><span class="highlight">計算/步驟題</span>：例如進位制、基本公式、流程判斷，務必動手做過一次。</li>
-        <li><span class="highlight">純記憶題</span>：法規數字、名詞對應，做成小筆記，考前複習用。</li>
+        <li><span class="highlight">常識理解題</span>：靠邏輯即可判斷，多看幾次題目敘述即可。</li>
+        <li><span class="highlight">計算與邏輯題</span>：如進位制轉換，務必動手算過一次。</li>
+        <li><span class="highlight">純記憶題</span>：如法規數字、百分比，可整理成考前 10 分鐘速讀筆記。</li>
       </ul>
 
       <h3>3）第三階段：模擬測驗（考前 7 天）</h3>
       <p>
-        考前一週重點是「穩定」：穩定拿分、穩定速度、穩定心態。
-        建議每天做 1–2 回合模擬（依你的時間），做完立刻回補錯題，隔天先複習昨天錯題再開始新一回合。
+        考前一週重點是「穩定速度與心態」。
+        建議每天在本站進行 1–2 回合模擬測驗。切記：做完立刻針對錯題進行「回補」，不要只看分數。
       </p>
 
       <div class="warning">
         <strong>⚠️ 常見錯誤：</strong>
-        考前一週開始大量換新資料、到處找新題庫，反而會把節奏打亂。
-        你要做的是把「會錯的題目變少」，不是把「看過的題目變多」。
+        考前一週還在找新的補習班資料或新題庫，反而會打亂節奏。
+        此時應專注於把「會錯的題目變少」，而非「看過的題目變多」。
       </div>
 
       <h2 id="mistakes">三、錯題回補方法（最能拉分）</h2>
-      <p>刷題沒進步，幾乎都是因為錯題沒有回補。老師建議用「錯題三欄法」：</p>
+      <p>刷題沒進步，通常是因為重蹈覆轍。建議建立簡單的「錯題觀念」紀錄：</p>
       <ol>
-        <li><strong>題目/題型：</strong>例如「共同科目－職安」、「專業－網路概念」</li>
-        <li><strong>錯因：</strong>觀念不懂 / 粗心看錯題目敘述（例如題目問「何者為非」）</li>
-        <li><strong>一句話觀念：</strong>用自己的話寫出來（越短越好）</li>
+        <li><strong>標註題型：</strong>標出你是專業科目還是共同科目錯比較多。</li>
+        <li><strong>釐清錯因：</strong>是觀念不懂？還是題目看錯（例如沒看到「何者為非」）？</li>
+        <li><strong>簡短總結：</strong>用一句話寫出正確答案的邏輯，例如：「勞基法加班費前兩小時加給 1/3」。</li>
       </ol>
-
-      <div class="teacher-tip">
-        <strong>👨‍🏫 老師提醒：</strong>
-        你考前最該看的，不是整本題庫，而是你自己的「錯題筆記」。
-        考前 3 天只看錯題筆記，往往比再刷一堆新題更有效。
-      </div>
 
       <h2 id="examday">四、考場上的致勝細節</h2>
       <ul>
-        <li><strong>小心陷阱題：</strong>特別注意題目敘述中的「是 / 非」、「正確 / 錯誤」、「最不可能」。</li>
-        <li><strong>不要空題：</strong>答錯不倒扣，不會也要選一個最合理的。</li>
-        <li><strong>答案卡與題號：</strong>最容易出事的是「跳號劃記」。每做 10 題就回頭核對一次題號。</li>
-        <li><strong>先易後難：</strong>卡住先跳過，回頭再處理，保持節奏。</li>
+        <li><strong>小心陷阱字：</strong>題目問的是「正確」還是「不正確」？</li>
+        <li><strong>不要空題：</strong>學科不倒扣，即便不確定也要選出最可能的選項。</li>
+        <li><strong>檢查劃記：</strong>每做 10 題就核對一次答案卡與題號，避免跳號。</li>
       </ul>
 
-      <h2 id="checklist">五、考前檢核清單（最後一天照這張做）</h2>
+      <h2 id="checklist">五、考前檢核清單</h2>
       <ul>
-        <li>✅ 我能穩定把共同科目拿到基本分（看到題目能快速作答）。</li>
-        <li>✅ 我整理過錯題（至少 50 題以上），並能說出「為什麼」。</li>
-        <li>✅ 我做過至少 3 次模擬練習，速度與節奏不慌亂。</li>
-        <li>✅ 我知道考試當天要帶什麼、不能帶什麼，並確認考場與交通。</li>
+        <li>✅ 共同科目能穩定拿到 80% 以上分數。</li>
+        <li>✅ 整理過至少一次所有的錯題紀錄。</li>
+        <li>✅ 完成過 3 次以上的完整模擬練習（100分鐘/80題）。</li>
+        <li>✅ 確認准考證、身分證件與 2B 鉛筆已備齊。</li>
       </ul>
 
       <p>
-        若你已經完成本篇策略整理，建議回到
-        <a href="practice.html">線上學科練習頁面</a>
-        實際演練一回合，並將錯題依照上文方法整理成筆記。
+        若你已經準備好了，現在就點擊下方的按鈕，開始今天的模擬練習吧！
       </p>
+      <div style="text-align: center; margin-top: 30px;">
+        <a href="practice.html" style="background: var(--primary); color: white; padding: 12px 30px; border-radius: 10px; font-weight: bold; text-decoration: none;">開始題庫練習</a>
+      </div>
 
     </article>
   </div>
 
   <footer>
-    © 2026 技術士檢定學習平台｜
-    <a href="./index.html">首頁</a>｜
-    <a href="./privacy.html">隱私權政策</a>｜
-    <a href="./contact.html">聯絡我們</a>
+    © 2026 技術士檢定學習平台｜專業學科練習與資訊彙整站<br><br>
+    <a href="about.html">關於本站</a>｜<a href="privacy.html">隱私權政策</a>｜<a href="contact.html">聯絡我們</a>
   </footer>
 
 </body>
