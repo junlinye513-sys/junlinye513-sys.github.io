@@ -83,7 +83,7 @@
       padding: 40px;
       border-radius: var(--radius);
       box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-      text-align: center;
+      text-align: center; /* 保持標題與按鈕置中 */
     }
 
     h1 { color: var(--primary-dark); margin-bottom: 10px; margin-top: 0; }
@@ -174,9 +174,15 @@
       .container { padding: 25px; margin: 20px 15px; }
       .email-box { font-size: 16px; padding: 12px 20px; }
     }
- .back-home { 
+
+    /* 底部連結靠左處理 */
+    .back-home-container {
+      text-align: left;
+      margin-top: 30px;
+    }
+
+    .back-home { 
       display: inline-block; 
-      margin-top: 30px; 
       color: #888; 
       text-decoration: none; 
       font-size: 14px; 
@@ -223,7 +229,10 @@
         <span>本平台由我個人維護，未來將視需求逐步增加資訊類與商業類的其他級別。</span>
       </div>
     </div>
-    <a href="index.html" class="back-home">← 回到首頁</a>
+
+    <div class="back-home-container">
+      <a href="index.html" class="back-home">← 回到首頁</a>
+    </div>
   </div>
 
   <footer>
