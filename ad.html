@@ -4,17 +4,48 @@
   <meta charset="UTF-8">
   <title>平台公告與使用說明｜115年度技術士檢定練習</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="關於本站的營運說明、教學輔助目標以及未來的贊助合作計畫。">
+  <meta name="description" content="關於本站的營運說明、教學輔助目標以及未來的維護計畫。">
 
   <style>
+    :root {
+      --primary: #4A8FE7;
+      --primary-dark: #2d6ac5;
+      --bg: #f2f6fc;
+    }
     body {
-      font-family: "Microsoft JhengHei", sans-serif;
-      background: #f2f6fc;
+      font-family: "Microsoft JhengHei", system-ui, sans-serif;
+      background: var(--bg);
       margin: 0;
+      display: flex;
+      flex-direction: column; /* 讓 nav 跟 box 垂直排列 */
+      min-height: 100vh;
+    }
+
+    /* 導覽列 */
+    .navbar {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      padding: 12px 0;
+      width: 100%;
+    }
+    .nav-container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 0 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-logo { font-weight: bold; color: var(--primary-dark); text-decoration: none; }
+    .nav-menu { display: flex; gap: 15px; list-style: none; margin: 0; padding: 0; }
+    .nav-menu a { text-decoration: none; color: #555; font-size: 14px; }
+
+    .main-content {
+      flex: 1;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
       padding: 20px;
     }
 
@@ -28,11 +59,7 @@
       text-align: center;
     }
 
-    h1 {
-      margin-top: 0;
-      color: #2d6ac5;
-      font-size: 24px;
-    }
+    h1 { margin-top: 0; color: var(--primary-dark); font-size: 24px; }
 
     .content-text {
       font-size: 15px;
@@ -45,56 +72,59 @@
       margin: 20px 0;
     }
 
-    .btn-group {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-    }
+    .btn-group { display: flex; gap: 10px; justify-content: center; }
 
     button {
       padding: 12px 24px;
       font-size: 16px;
       border: none;
       border-radius: 10px;
-      background: #4A8FE7;
+      background: var(--primary);
       color: #fff;
       cursor: pointer;
       transition: 0.3s;
       font-weight: bold;
     }
+    button.secondary { background: #fff; color: var(--primary); border: 1px solid var(--primary); }
+    button:hover { background: var(--primary-dark); color: #fff; }
 
-    button.secondary {
-      background: #fff;
-      color: #4A8FE7;
-      border: 1px solid #4A8FE7;
-    }
-
-    button:hover {
-      background: #2d6ac5;
-      color: #fff;
+    @media (max-width: 480px) {
+      .btn-group { flex-direction: column; }
     }
   </style>
 </head>
 
 <body>
 
-<div class="box">
-  <h1>平台公告與營運說明</h1>
-
-  <div class="content-text">
-    <strong>致各位考生與使用者：</strong><br><br>
-    本站是由個人獨立開發的<strong>免費教學輔助平台</strong>，旨在協助大家準備 115 年度各類技術士學科檢定。為了確保平台能長期穩定運作：<br>
-    <ul>
-      <li>提供即時更新的歷屆試題練習。</li>
-      <li>維持簡潔、高效的數位作答介面。</li>
-      <li>未來可能導入少量廣告或贊助內容以補貼伺服器支出。</li>
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">🎯 檢定練習站</a>
+    <ul class="nav-menu">
+      <li><a href="index.html">首頁</a></li>
+      <li><a href="about.html">關於本站</a></li>
     </ul>
-    感謝大家的支持，我們將持續優化練習系統！
   </div>
+</nav>
 
-  <div class="btn-group">
-    <button onclick="location.href='index.html'">進入練習中心</button>
-    <button class="secondary" onclick="location.href='about.html'">了解更多</button>
+<div class="main-content">
+  <div class="box">
+    <h1>平台公告與營運說明</h1>
+
+    <div class="content-text">
+      <strong>致各位考生與使用者：</strong><br><br>
+      本站為提供 115 年度技術士學科檢定準備的<strong>免費教學資源平台</strong>。為了確保系統長期穩定運作並持續更新：<br>
+      <ul>
+        <li>即時維護各類職類之歷屆試題。</li>
+        <li>優化行動裝置作答體驗，支援隨時隨地練習。</li>
+        <li>持續匯整應考攻略與共同科目重點。</li>
+      </ul>
+      感謝每一位考生的支持與回饋，讓我們能不斷改進。
+    </div>
+
+    <div class="btn-group">
+      <button onclick="location.href='index.html'">進入練習中心</button>
+      <button class="secondary" onclick="location.href='about.html'">了解更多</button>
+    </div>
   </div>
 </div>
 
