@@ -9,12 +9,13 @@
 .navbar {
   position: sticky;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 0; /* 加上這行防止位移 */
+  width: 100%; /* 加上這行確保寬度 */
   z-index: 1000;
-  background: #fff; /* 改回純白，確保與背景切齊 */
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(0,0,0,0.05);
-  padding: 12px 0;
+  padding: 12px 0; /* 與 index.html 嚴格一致 */
 }
 
 .nav-container {
@@ -28,9 +29,11 @@
 
 .nav-logo {
   font-weight: bold;
-  color: #2d6ac5;
+  color: var(--primary-dark);
   text-decoration: none;
   font-size: 18px;
+  display: flex;
+  align-items: center;
 }
 
 .nav-menu {
@@ -54,17 +57,16 @@
 }
 
 /* 基本樣式保持一致 */
-body { 
-  font-family: "Microsoft JhengHei", sans-serif; 
-  background: #f2f6fc; 
-  margin: 0; 
-  padding: 0; /* 關鍵：必須為 0 */
-  line-height: 1.8; 
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  font-family: "Microsoft JhengHei", sans-serif;
 }
 
 .content-box {
   max-width: 900px;
-  margin: 40px auto; /* 這裡改回 margin 控制上下間距 */
+  margin: 40px auto; /* 如果覺得太近，可以改成 50px */
   background: #fff;
   padding: 40px;
   border-radius: 16px;
