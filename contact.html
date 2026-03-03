@@ -1,88 +1,178 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <title>聯絡我們｜114年度技術士檢定學科練習平台</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      font-family: "Microsoft JhengHei", sans-serif;
-      background: #f2f6fc;
-      margin: 0;
-      padding: 40px 20px;
-      color: #333;
-      line-height: 1.8;
-    }
-    .container {
-      max-width: 700px;
-      margin: auto;
-      background: #fff;
-      padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-      text-align: center;
-    }
-    h1 { color: #2d6ac5; margin-bottom: 10px; }
-    p { font-size: 15px; color: #555; }
-    .email-box {
-      display: inline-block;
-      background: #eef4ff;
-      padding: 15px 30px;
-      border-radius: 10px;
-      color: #2d6ac5;
-      font-size: 20px;
-      font-weight: bold;
-      margin: 25px 0;
-      border: 1px dashed #4A8FE7;
-    }
-    .faq-section {
-      text-align: left;
-      margin-top: 40px;
-      border-top: 1px solid #eee;
-      padding-top: 30px;
-    }
-    .faq-section h2 {
-      font-size: 18px;
-      color: #4A8FE7;
-    }
-    .faq-item {
-      margin-bottom: 15px;
-    }
-    .faq-item strong {
-      display: block;
-      color: #222;
-    }
-    .back-home { display: block; margin-top: 30px; color: #888; text-decoration: none; font-size: 14px; }
-  </style>
+  <meta charset="UTF-8">
+  <title>聯絡我們｜115 年度技術士檢定學科練習平台</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --primary: #4A8FE7;
+      --primary-dark: #2d6ac5;
+      --bg: #f2f6fc;
+      --radius: 18px;
+    }
+    body {
+      font-family: "Microsoft JhengHei", system-ui, sans-serif;
+      background: var(--bg);
+      margin: 0;
+      color: #333;
+      line-height: 1.8;
+    }
+
+    /* 導覽列 CSS (與首頁保持一致) */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      padding: 12px 0;
+    }
+    .nav-container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 0 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-logo {
+      font-weight: bold;
+      color: var(--primary-dark);
+      text-decoration: none;
+      font-size: 18px;
+    }
+    .nav-menu {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-menu a {
+      text-decoration: none;
+      color: #555;
+      font-size: 15px;
+      font-weight: 500;
+    }
+    .nav-menu a:hover { color: var(--primary); }
+
+    /* 內容容器 */
+    .container {
+      max-width: 750px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: var(--radius);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    h1 { color: var(--primary-dark); margin-bottom: 10px; margin-top: 0; }
+    p { font-size: 16px; color: #555; }
+
+    .email-box {
+      display: inline-block;
+      background: #eef4ff;
+      padding: 15px 30px;
+      border-radius: 12px;
+      color: var(--primary-dark);
+      font-size: 20px;
+      font-weight: bold;
+      margin: 25px 0;
+      border: 1px dashed var(--primary);
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .email-box:hover {
+      background: #e0ecff;
+      transform: translateY(-2px);
+    }
+
+    .faq-section {
+      text-align: left;
+      margin-top: 40px;
+      border-top: 1px solid #eee;
+      padding-top: 30px;
+    }
+    .faq-section h2 {
+      font-size: 20px;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    .faq-item {
+      margin-bottom: 20px;
+      background: #f9fbff;
+      padding: 15px;
+      border-radius: 10px;
+    }
+    .faq-item strong {
+      display: block;
+      color: #222;
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+    .faq-item span {
+      font-size: 15px;
+      color: #444;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 15px;
+      font-size: 13px;
+      color: #999;
+    }
+
+    @media (max-width: 600px) {
+      .nav-menu { gap: 12px; overflow-x: auto; white-space: nowrap; }
+      .container { padding: 25px; margin: 20px 15px; }
+      .email-box { font-size: 16px; padding: 12px 20px; }
+    }
+  </style>
 </head>
 <body>
 
-<div class="container">
-  <h1>聯絡我們</h1>
-  <p>如果您對本站的 114 年度學科練習內容有任何問題、錯誤回報或功能建議，歡迎隨時與我聯絡。</p>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">🎯 檢定練習站</a>
+      <ul class="nav-menu">
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="practice.html">題庫練習</a></li>
+        <li><a href="guide.html">備考攻略</a></li>
+        <li><a href="about.html">關於本站</a></li>
+      </ul>
+    </div>
+  </nav>
 
-  <div class="email-box">
-    📧 junlinye513@gmail.com
-  </div>
+  <div class="container">
+    <h1>聯絡我們</h1>
+    <p>如果您對本站的 115 年度學科練習內容有任何問題、錯誤回報或功能建議，歡迎隨時與我聯絡。</p>
 
-  <div class="faq-section">
-    <h2>常見問題解答 (FAQ)</h2>
-    <div class="faq-item">
-      <strong>Q1：本站的題庫是最新版本嗎？</strong>
-      <span>是的，本站內容均參考勞動力發展署技能檢定中心公告之 114 年度最新學科題庫進行整理。</span>
-    </div>
-    <div class="faq-item">
-      <strong>Q2：練習時發現題目錯誤怎麼辦？</strong>
-      <span>由於題庫龐大，若有標注錯誤或格式問題，請務必將該題目截圖或複製文字，透過上述電郵告知我，我將盡快修正。</span>
-    </div>
-    <div class="faq-item">
-      <strong>Q3：之後會增加更多職類嗎？</strong>
-      <span>本平台由我個人利用課餘時間維護，未來將視需求逐步增加資訊類與商業類的其他級別。</span>
-    </div>
-  </div>
+    <a href="mailto:junlinye513@gmail.com" class="email-box">
+      📧 junlinye513@gmail.com
+    </a>
 
-  <a href="index.html" class="back-home">← 回到首頁</a>
-</div>
+    <div class="faq-section">
+      <h2>常見問題解答 (FAQ)</h2>
+      <div class="faq-item">
+        <strong>Q1：本站的題庫是最新版本嗎？</strong>
+        <span>是的，本站內容均參考勞動力發展署技能檢定中心公告之 115 年度最新學科題庫進行整理。</span>
+      </div>
+      <div class="faq-item">
+        <strong>Q2：練習時發現題目錯誤怎麼辦？</strong>
+        <span>由於題庫龐大，若有標注錯誤或格式問題，請務必將該題目截圖或複製文字，透過電子郵件告知我，我將盡快修正。</span>
+      </div>
+      <div class="faq-item">
+        <strong>Q3：之後會增加更多職類嗎？</strong>
+        <span>本平台由我個人維護，未來將視需求逐步增加資訊類與商業類的其他級別。</span>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    © 2026 技術士檢定學習平台｜專業學科練習與資訊彙整站
+  </footer>
 
 </body>
 </html>
