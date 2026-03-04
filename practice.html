@@ -12,7 +12,7 @@
       --radius: 18px;
     }
 
-    /* 1. 導覽列：嚴格對齊 12px 與 毛玻璃效果 */
+    /* 1. 導覽列：標準化統一高度 */
     .navbar {
       position: sticky;
       top: 0;
@@ -21,8 +21,10 @@
       z-index: 1000;
       background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(0,0,0,0.05);
-      padding: 12px 0;
+      /* 與 guide 統一使用 12px 內距 */
+      padding: 12px 0; 
     }
 
     .nav-container {
@@ -32,6 +34,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      /* 關鍵：統一所有頁面的容器內容高度 */
+      height: 27px; 
     }
 
     .nav-logo {
@@ -41,6 +45,7 @@
       font-size: 18px;
       display: flex;
       align-items: center;
+      line-height: 1;
     }
 
     .nav-menu {
@@ -57,13 +62,14 @@
       font-size: 15px;
       font-weight: 500;
       transition: 0.3s;
+      line-height: 1;
     }
 
     .nav-menu a:hover {
       color: var(--primary);
     }
 
-    /* 2. Body 修正 */
+    /* 2. Body 與背景 */
     body {
       margin: 0;
       padding: 0;
@@ -76,16 +82,18 @@
     /* 3. 內容區塊 */
     .content-box {
       max-width: 900px;
-      margin: 40px auto; 
+      margin: 30px auto 50px; /* 統一與 guide 接近的間距 */
       background: #fff;
       padding: 40px;
       border-radius: var(--radius);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      border: 1px solid #eef2f8;
     }
 
-    h1 { color: var(--primary-dark); text-align: center; margin-top: 0; }
+    h1 { color: var(--primary-dark); text-align: center; margin-top: 0; font-size: 28px; }
     h2 { border-bottom: 2px solid var(--primary); padding-bottom: 10px; color: var(--primary); margin-top: 20px; }
 
+    /* 區塊顯示控制 */
     #info-section, #business-section { display: none; }
 
     .exam-item { 
@@ -109,7 +117,7 @@
 
     .warning-box { background: #fff8e1; border: 1px solid #ffe082; padding: 15px; border-radius: 8px; font-size: 14px; margin-bottom: 20px; }
 
-    /* 返回連結靠左容器 */
+    /* 返回連結：依要求改到靠左邊 */
     .back-home-container {
       text-align: left;
       margin-top: 40px;
@@ -123,7 +131,7 @@
     }
     .back-link:hover { color: var(--primary); }
 
-    /* 4. 頁腳：對齊全站樣式 */
+    /* 4. 頁腳：統一與 guide 相同的樣式 */
     footer {
       text-align: center;
       padding: 40px 15px;
@@ -131,7 +139,7 @@
       color: #999;
       border-top: 1px solid #eee;
       background: #fff;
-      margin-top: 60px;
+      margin-top: 50px;
     }
 
     footer a {
@@ -153,8 +161,9 @@
         white-space: nowrap;
         padding-bottom: 5px;
       }
+      .nav-container { height: auto; }
       .exam-item { flex-direction: column; text-align: center; gap: 12px; }
-      .content-box { padding: 20px; margin: 20px 15px; }
+      .content-box { padding: 22px; margin: 20px 15px; }
     }
   </style>
 </head>
