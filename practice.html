@@ -4,125 +4,159 @@
   <meta charset="UTF-8">
   <title>題庫練習中心｜技術士檢定平台</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-:root {
-  --primary: #4A8FE7;
-  --primary-dark: #2d6ac5;
-  --bg: #f2f6fc;
-}
+  <style>
+    :root {
+      --primary: #4A8FE7;
+      --primary-dark: #2d6ac5;
+      --bg: #f2f6fc;
+      --radius: 18px;
+    }
 
-/* 1. 導覽列：嚴格對齊 index.html 的 12px 與 毛玻璃效果 */
-.navbar {
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-  padding: 12px 0; /* 這裡必須是 12px */
-}
+    /* 1. 導覽列：嚴格對齊 12px 與 毛玻璃效果 */
+    .navbar {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      padding: 12px 0;
+    }
 
-.nav-container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 0 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    .nav-container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 0 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-/* 關鍵修正：加上 flex 與 center 讓 Logo 圖示與文字垂直對齊，不撐開高度 */
-.nav-logo {
-  font-weight: bold;
-  color: var(--primary-dark);
-  text-decoration: none;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-}
+    .nav-logo {
+      font-weight: bold;
+      color: var(--primary-dark);
+      text-decoration: none;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+    }
 
-.nav-menu {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+    .nav-menu {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
 
-.nav-menu a {
-  text-decoration: none;
-  color: #555;
-  font-size: 15px;
-  font-weight: 500;
-  transition: 0.3s;
-}
+    .nav-menu a {
+      text-decoration: none;
+      color: #555;
+      font-size: 15px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
 
-.nav-menu a:hover {
-  color: var(--primary);
-}
+    .nav-menu a:hover {
+      color: var(--primary);
+    }
 
-/* 2. Body 修正：背景色與邊距對齊 */
-body {
-  margin: 0;
-  padding: 0;
-  background: var(--bg);
-  font-family: "Microsoft JhengHei", sans-serif;
-  line-height: 1.8;
-}
+    /* 2. Body 修正 */
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      font-family: "Microsoft JhengHei", system-ui, sans-serif;
+      line-height: 1.8;
+      color: #333;
+    }
 
-/* 3. 內容區塊修正：margin 設為 40px auto 保持間距穩定 */
-.content-box {
-  max-width: 900px;
-  margin: 40px auto; 
-  background: #fff;
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
+    /* 3. 內容區塊 */
+    .content-box {
+      max-width: 900px;
+      margin: 40px auto; 
+      background: #fff;
+      padding: 40px;
+      border-radius: var(--radius);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
 
-h1 { color: var(--primary-dark); text-align: center; margin-top: 0; }
-h2 { border-bottom: 2px solid var(--primary); padding-bottom: 10px; color: var(--primary); margin-top: 20px; }
+    h1 { color: var(--primary-dark); text-align: center; margin-top: 0; }
+    h2 { border-bottom: 2px solid var(--primary); padding-bottom: 10px; color: var(--primary); margin-top: 20px; }
 
-/* 防止內容閃爍 */
-#info-section, #business-section { display: none; }
+    #info-section, #business-section { display: none; }
 
-.exam-item { 
-  background: #f9fbff; 
-  padding: 15px 20px; 
-  margin: 12px 0; 
-  border-radius: 8px; 
-  border-left: 4px solid var(--primary); 
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; 
-}
+    .exam-item { 
+      background: #f9fbff; 
+      padding: 15px 20px; 
+      margin: 12px 0; 
+      border-radius: 8px; 
+      border-left: 4px solid var(--primary); 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+    }
 
-.exam-info { display: flex; flex-direction: column; }
-.exam-name { font-weight: bold; color: #333; font-size: 1.05em; }
-.exam-details { font-size: 12px; color: #777; margin-top: 3px; }
-.version-tag { background: #e3f2fd; color: #1976d2; padding: 1px 6px; border-radius: 4px; font-weight: bold; margin-right: 5px; }
+    .exam-info { display: flex; flex-direction: column; }
+    .exam-name { font-weight: bold; color: #333; font-size: 1.05em; }
+    .exam-details { font-size: 12px; color: #777; margin-top: 3px; }
+    .version-tag { background: #e3f2fd; color: #1976d2; padding: 1px 6px; border-radius: 4px; font-weight: bold; margin-right: 5px; }
 
-.btn-go { background: var(--primary); color: #fff !important; padding: 8px 20px; text-decoration: none; border-radius: 8px; font-size: 14px; font-weight: bold; transition: 0.3s; }
-.btn-go:hover { background: var(--primary-dark); transform: scale(1.05); }
+    .btn-go { background: var(--primary); color: #fff !important; padding: 8px 20px; text-decoration: none; border-radius: 8px; font-size: 14px; font-weight: bold; transition: 0.3s; }
+    .btn-go:hover { background: var(--primary-dark); transform: scale(1.05); }
 
-.warning-box { background: #fff8e1; border: 1px solid #ffe082; padding: 15px; border-radius: 8px; font-size: 14px; margin-bottom: 20px; }
-.back-link { display: block; text-align: center; margin-top: 40px; color: #888; text-decoration: none; font-size: 15px; }
-.back-link:hover { color: var(--primary); }
+    .warning-box { background: #fff8e1; border: 1px solid #ffe082; padding: 15px; border-radius: 8px; font-size: 14px; margin-bottom: 20px; }
 
-/* 行動裝置優化 */
-@media (max-width: 600px) {
-  .nav-menu {
-    gap: 12px;
-    overflow-x: auto;
-    white-space: nowrap;
-    padding-bottom: 5px;
-  }
-  .exam-item { flex-direction: column; text-align: center; gap: 12px; }
-  .content-box { padding: 20px; margin: 20px 15px; }
-}
-</style>
+    /* 返回連結靠左容器 */
+    .back-home-container {
+      text-align: left;
+      margin-top: 40px;
+    }
+    .back-link { 
+      display: inline-block; 
+      color: #888; 
+      text-decoration: none; 
+      font-size: 15px; 
+      transition: 0.3s;
+    }
+    .back-link:hover { color: var(--primary); }
+
+    /* 4. 頁腳：對齊全站樣式 */
+    footer {
+      text-align: center;
+      padding: 40px 15px;
+      font-size: 13px;
+      color: #999;
+      border-top: 1px solid #eee;
+      background: #fff;
+      margin-top: 60px;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: #777;
+      margin: 0 5px;
+      transition: 0.3s;
+    }
+
+    footer a:hover {
+      color: var(--primary);
+    }
+
+    /* 行動裝置優化 */
+    @media (max-width: 600px) {
+      .nav-menu {
+        gap: 12px;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 5px;
+      }
+      .exam-item { flex-direction: column; text-align: center; gap: 12px; }
+      .content-box { padding: 20px; margin: 20px 15px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -291,8 +325,17 @@ h2 { border-bottom: 2px solid var(--primary); padding-bottom: 10px; color: var(-
     </div>
   </div>
 
-  <a href="index.html" class="back-link">← 返回首頁重新選擇</a>
+  <div class="back-home-container">
+    <a href="index.html" class="back-link">← 返回首頁重新選擇</a>
+  </div>
 </div>
+
+<footer>
+  © 2026 技術士檢定學習平台<br>
+  <div style="margin-top: 8px;">
+    <a href="about.html">關於本站</a>｜<a href="privacy.html">隱私權政策</a>｜<a href="contact.html">聯絡我們</a>
+  </div>
+</footer>
 
 <script>
   function updateView() {
