@@ -8,158 +8,190 @@
   :root {
     --primary: #4A8FE7;
     --primary-dark: #2d6ac5;
-    --bg: #f2f6fc;
-    --radius: 18px;
+    --bg: #f5f8ff; /* 稍微調亮背景色，增加清新感 */
+    --radius: 20px; /* 圓角加大更現代 */
   }
 
   body {
     margin: 0;
     padding: 0;
-    font-family: "Microsoft JhengHei", system-ui, sans-serif;
+    font-family: "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
     background: var(--bg);
-    color: #333;
-    line-height: 1.85;
+    color: #444; /* 文字改深灰色，比純黑更有質感 */
+    line-height: 1.8;
+    letter-spacing: 0.02em; /* 增加一點點字距 */
   }
 
-  /* 1. 導覽列：全站統一高度與對齊 */
+  /* 1. 導覽列：輕盈懸浮感 */
   .navbar {
     position: sticky;
     top: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    padding: 12px 0;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0,0,0,0.03);
+    padding: 10px 0;
   }
   .nav-container {
-    max-width: 1000px; /* 統一導覽列最大寬度 */
+    max-width: 900px; /* 導覽列也同步縮窄，視覺更聚焦 */
     margin: auto;
-    padding: 0 20px;
+    padding: 0 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
   .nav-logo {
-    font-weight: bold;
+    font-weight: 800;
     color: var(--primary-dark);
     text-decoration: none;
-    font-size: 18px;
+    font-size: 19px;
     display: flex;
     align-items: center;
     gap: 8px;
   }
   .nav-menu {
     display: flex;
-    gap: 20px;
+    gap: 24px;
     list-style: none;
     margin: 0;
     padding: 0;
   }
   .nav-menu a {
     text-decoration: none;
-    color: #555;
+    color: #666;
     font-size: 15px;
     font-weight: 500;
-    transition: 0.3s;
+    transition: all 0.3s ease;
   }
   .nav-menu a:hover { color: var(--primary); }
 
-  /* 2. 內容容器：解決寬度跳動的核心 */
+  /* 2. 精緻化內容容器：縮窄至 800px */
   .container {
-    max-width: 900px; /* 統一所有頁面內容寬度 */
-    margin: 30px auto 60px;
-    padding: 0 16px;
+    max-width: 800px; /* 這是閱讀最舒適的寬度 */
+    margin: 40px auto 80px;
+    padding: 0 20px;
     box-sizing: border-box;
   }
 
-  /* 統一所有頁面的白色外框 */
+  /* 統一所有頁面的白色卡片樣式 */
   .box, .content-box, .article-box {
     background: #fff;
     border-radius: var(--radius);
-    padding: 35px;
+    padding: 40px; /* 增加內部留白 */
     margin-bottom: 30px;
-    box-shadow: 0 8px 20px rgba(0,0,0,.05);
-    border: 1px solid #eef2f8;
+    box-shadow: 0 10px 30px rgba(74, 143, 231, 0.08); /* 帶點藍色的輕柔陰影 */
+    border: 1px solid rgba(255, 255, 255, 0.6);
   }
 
-  /* 3. 標題樣式：全站統一左對齊與藍色底線 */
+  /* 3. 標題與排版細節 */
   h1 {
     color: var(--primary-dark);
-    font-size: 28px;
-    margin: 0 0 20px 0;
-    border-bottom: 2px solid var(--primary);
-    padding-bottom: 12px;
+    font-size: 26px;
+    margin: 0 0 25px 0;
+    border-bottom: 3px solid var(--primary);
+    width: fit-content; /* 底線只跟著文字長度 */
+    padding-bottom: 8px;
     line-height: 1.3;
-    text-align: left;
   }
   h2 {
-    color: var(--primary);
-    margin: 35px 0 15px 0;
-    font-size: 22px;
-    border-left: 6px solid var(--primary);
-    padding-left: 15px;
-  }
-  h3 {
-    margin-top: 25px;
-    background: #f8faff;
-    padding: 10px 15px;
-    border-radius: 10px;
-    font-size: 18px;
     color: var(--primary-dark);
+    margin: 40px 0 20px 0;
+    font-size: 21px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  h2::before { /* 用小方塊代替大邊框，更優雅 */
+    content: "";
+    width: 6px;
+    height: 22px;
+    background: var(--primary);
+    border-radius: 3px;
+    display: inline-block;
   }
 
-  p { margin-bottom: 18px; text-align: justify; }
-  ul, ol { padding-left: 25px; margin-bottom: 20px; }
-  li { margin-bottom: 10px; }
+  h3 {
+    margin-top: 30px;
+    background: #f0f5ff;
+    padding: 12px 18px;
+    border-radius: 12px;
+    font-size: 17px;
+    color: var(--primary-dark);
+    border-left: 3px solid var(--primary);
+  }
 
-  /* 4. 特殊元件整合 (首頁、練習頁、攻略頁) */
-  .stats-badge { display: inline-block; margin-bottom: 20px; padding: 6px 15px; border-radius: 50px; font-size: 13px; background: rgba(74,143,231,.1); border: 1px solid rgba(74,143,231,.2); color: var(--primary-dark); }
-  .tool-list { display: grid; gap: 20px; grid-template-columns: 1fr; margin: 20px 0; }
-  .tool-card { border: 1px solid #e6edf7; border-radius: 14px; padding: 22px; text-align: center; }
-  .btn, .btn-go { display: inline-block; padding: 10px 25px; background: var(--primary); color: #fff !important; border-radius: 10px; text-decoration: none; font-weight: 600; transition: 0.3s; }
-  .btn:hover, .btn-go:hover { background: var(--primary-dark); transform: translateY(-2px); }
+  p { margin-bottom: 20px; text-align: justify; color: #555; }
   
-  /* 列表項目樣式 (practice.html) */
-  .exam-item { background: #f8faff; padding: 15px 20px; margin: 12px 0; border-radius: 10px; border: 1px solid #e6edf7; display: flex; justify-content: space-between; align-items: center; }
-  .version-tag { background: var(--primary); color: white; padding: 1px 6px; border-radius: 4px; font-size: 11px; margin-right: 5px; }
+  /* 按鈕優化 */
+  .btn, .btn-go {
+    display: inline-block;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: #fff !important;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(74, 143, 231, 0.3);
+    transition: 0.3s;
+  }
+  .btn:hover, .btn-go:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(74, 143, 231, 0.4);
+  }
 
-  /* 提醒框 (guide.html / practice.html) */
-  .warning, .warning-box, .guide-box, .teacher-tip { padding: 18px; margin: 25px 0; border-radius: 12px; border-left: 6px solid #ffd54f; background: #fffef0; font-size: 15px; }
-  .teacher-tip { border-left-color: #4caf50; background: #f1f8e9; }
-  .highlight { background: #fff3cd; padding: 2px 5px; border-radius: 4px; font-weight: bold; }
+  /* 列表與卡片 (practice.html) */
+  .exam-item {
+    background: #fff;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 15px;
+    border: 1px solid #edf2f9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+  }
+  .exam-item:hover {
+    background: #f9fbff;
+    border-color: var(--primary);
+  }
 
-  /* 表格滾動 (index.html) */
-  .table-scroll { overflow-x: auto; margin: 20px 0; border-radius: 10px; border: 1px solid #eee; }
-  .schedule-table { width: 100%; border-collapse: collapse; min-width: 700px; }
-  .schedule-table th, .schedule-table td { border: 1px solid #eee; padding: 12px; text-align: center; }
-  .schedule-table th { background: #f1f6ff; color: var(--primary-dark); }
+  /* 提醒框系列 */
+  .warning, .warning-box, .guide-box, .teacher-tip {
+    padding: 20px;
+    margin: 30px 0;
+    border-radius: 15px;
+    background: #fff9eb;
+    border: 1px solid #ffeeba;
+    color: #856404;
+    font-size: 15px;
+  }
+  .teacher-tip {
+    background: #f3fcf4;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+  }
 
-  /* 5. 頁腳：全站統一樣式 */
+  /* 頁腳 */
   footer {
     text-align: center;
-    padding: 50px 20px;
+    padding: 60px 20px;
     font-size: 13px;
-    color: #999;
-    border-top: 1px solid #eee;
+    color: #aaa;
     background: #fff;
-    margin-top: 50px;
+    border-top: 1px solid #f0f0f0;
   }
-  footer a { text-decoration: none; color: #777; margin: 0 8px; transition: 0.3s; }
-  footer a:hover { color: var(--primary); }
+  footer a { text-decoration: none; color: #888; margin: 0 10px; }
 
-  /* RWD 手機版優化 */
+  /* 手機版適配 */
   @media (max-width: 768px) {
-    .tool-list { grid-template-columns: 1fr; }
-    .nav-menu { gap: 12px; overflow-x: auto; white-space: nowrap; padding: 5px 0; }
-    .container { margin-top: 20px; }
-    .box, .content-box, .article-box { padding: 22px; }
-    h1 { font-size: 24px; }
+    .container { margin-top: 20px; padding: 0 15px; }
+    .box, .content-box, .article-box { padding: 25px; }
+    .nav-container { padding: 0 15px; }
+    .nav-menu { gap: 15px; font-size: 14px; }
     .exam-item { flex-direction: column; text-align: center; gap: 15px; }
-  }
-  @media (min-width: 769px) {
-    .tool-list { grid-template-columns: repeat(2, 1fr); }
   }
 </style>
 </head>
