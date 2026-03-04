@@ -22,7 +22,7 @@
       line-height: 1.85;
     }
 
-    /* 🆕 頂部導覽列樣式 (對齊截圖) */
+    /* 頂部導覽列：毛玻璃效果 */
     .navbar {
       position: sticky;
       top: 0;
@@ -32,7 +32,6 @@
       -webkit-backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(0,0,0,0.05);
       padding: 12px 0;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.02);
     }
     .nav-container {
       max-width: 1000px;
@@ -67,7 +66,7 @@
     }
     .nav-menu a:hover { color: var(--primary); }
 
-    /* 文章容器 */
+    /* 內容容器 */
     .container { max-width: 900px; margin: 30px auto 50px; padding: 0 16px; }
     .article-box {
       background: #fff;
@@ -76,6 +75,8 @@
       box-shadow: 0 8px 20px rgba(0,0,0,.05);
       border: 1px solid #eef2f8;
     }
+
+    /* 標題與標籤 */
     h1 {
       color: var(--primary-dark);
       font-size: 28px;
@@ -84,48 +85,39 @@
       padding-bottom: 10px;
       line-height: 1.3;
     }
-    .meta {
-      display: flex; gap: 10px; flex-wrap: wrap;
-      color: #667; font-size: 13px; margin: 10px 0 18px;
-    }
-    .pill {
-      background: #f3f7ff;
-      border: 1px solid #dce7ff;
-      padding: 4px 10px;
-      border-radius: 999px;
-    }
+    .meta { display: flex; gap: 10px; flex-wrap: wrap; color: #667; font-size: 13px; margin: 10px 0 18px; }
+    .pill { background: #f3f7ff; border: 1px solid #dce7ff; padding: 4px 10px; border-radius: 999px; }
 
     h2 { color: var(--primary); margin-top: 28px; margin-bottom: 10px; font-size: 22px; border-left: 5px solid var(--primary); padding-left: 12px; }
-    h3 {
-      margin-top: 18px;
-      background: #f8faff;
-      padding: 10px 15px;
-      border-radius: 10px;
-      font-size: 18px;
-      color: var(--primary-dark);
-    }
+    h3 { margin-top: 18px; background: #f8faff; padding: 10px 15px; border-radius: 10px; font-size: 18px; color: var(--primary-dark); }
     p { margin: 15px 0; text-align: justify; }
-    ul, ol { padding-left: 20px; margin: 10px 0 14px; }
+    ul { padding-left: 20px; margin: 10px 0 14px; }
     li { margin-bottom: 10px; }
 
+    /* 提示框與強調 */
+    .teacher-tip { border-left: 5px solid #4caf50; background: #f1f8e9; padding: 16px; margin: 20px 0; border-radius: 12px; }
+    .warning { border-left: 5px solid #ff9800; background: #fff7e6; padding: 16px; margin: 20px 0; border-radius: 12px; }
     .highlight { background-color: #fff3cd; padding: 2px 6px; border-radius: 6px; font-weight: 700; }
 
-    .teacher-tip {
-      border-left: 5px solid #4caf50;
-      background: #f1f8e9;
-      padding: 16px;
-      margin: 20px 0;
-      border-radius: 12px;
+    /* 回到首頁按鈕：對齊丙級樣式 */
+    .btn-home {
+      display: inline-block;
+      padding: 12px 40px;
+      background: var(--primary);
+      color: white !important;
+      border-radius: 10px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s;
+      box-shadow: 0 4px 12px rgba(74, 143, 231, 0.2);
     }
-    .warning {
-      border-left: 5px solid #ff9800;
-      background: #fff7e6;
-      padding: 16px;
-      margin: 20px 0;
-      border-radius: 12px;
+    .btn-home:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(74, 143, 231, 0.3);
     }
 
-    /* 🆕 頁腳樣式 (對齊截圖) */
+    /* 頁腳樣式 */
     footer {
       text-align: center;
       padding: 40px 15px;
@@ -135,17 +127,8 @@
       background: #fff;
       margin-top: 50px;
     }
-    footer a { text-decoration: none; color: #777; margin: 0 8px; transition: color 0.3s; }
+    footer a { text-decoration: none; color: #777; margin: 0 8px; }
     footer a:hover { color: var(--primary); }
-
-    .back-home {
-      display: inline-block;
-      margin-top: 20px;
-      color: #888;
-      text-decoration: none;
-      font-size: 14px;
-    }
-    .back-home:hover { color: var(--primary); text-decoration: underline; }
 
     @media (max-width: 600px) {
       .nav-menu { gap: 12px; overflow-x: auto; white-space: nowrap; padding-bottom: 5px; }
@@ -202,8 +185,7 @@
 
       <h3>1）建立核心觀念地圖（考前 4 週）</h3>
       <p>
-        將重要章節整理成「概念架構圖」。例如資料庫、網路架構、作業系統等，
-        必須知道它們彼此的關聯，而不是只背單一名詞。
+        將重要章節整理成「概念架構圖」。例如資料庫、網路架構、作業系統等，必須知道它們彼此的關聯。
       </p>
 
       <h3>2）強化應用題型（考前 2 週）</h3>
@@ -214,14 +196,12 @@
 
       <h3>3）穩定錯題區（考前 7 天）</h3>
       <p>
-        整理出自己最容易錯的 3 個主題，反覆檢視。不要再新增太多新資料，
-        目標是讓「錯誤次數逐漸下降」。
+        整理出自己最容易錯的 3 個主題，反覆檢視。不要再新增太多新資料。
       </p>
 
       <div class="warning">
         ⚠️ <strong>常見陷阱：</strong>
-        題目常出現極小差異選項，例如數字範圍或專有名詞順序，
-        必須逐字確認題目敘述。
+        題目常出現極小差異選項，例如數字範圍或專有名詞順序，必須逐字確認題目敘述。
       </div>
 
       <h2>三、乙級考場作答策略</h2>
@@ -231,19 +211,21 @@
         <li>最後 15 分鐘務必檢查題號與答案卡。</li>
       </ul>
 
-      <p>
-        乙級的通過關鍵在於「理解＋穩定」。只要掌握觀念整合能力，
-        分數自然會穩定提升。
-      </p>
-
-      <a href="index.html" class="back-home">← 回到首頁</a>
+      <div style="text-align: center; margin-top: 40px; border-top: 1px solid #f0f0f0; padding-top: 30px;">
+        <p style="color: #666; font-size: 15px; margin-bottom: 20px;">若您已準備好挑戰乙級，現在就開始練習吧！</p>
+        <a href="index.html" class="btn-home">回到首頁開始練習</a>
+      </div>
 
     </article>
   </div>
 
   <footer>
-    © 2026 技術士檢定學習平台<br><br>
-    <a href="about.html">關於本站</a>｜<a href="privacy.html">隱私權政策</a>｜<a href="contact.html">聯絡我們</a>
+    <div style="margin-bottom: 10px;">© 2026 技術士檢定學習平台</div>
+    <div>
+      <a href="about.html">關於本站</a>｜
+      <a href="privacy.html">隱私權政策</a>｜
+      <a href="contact.html">聯絡我們</a>
+    </div>
   </footer>
 
 </body>
