@@ -1,37 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-<url>
-<loc>https://junlinye513-sys.github.io/</loc>
-</url>
-
-<url>
-<loc>https://junlinye513-sys.github.io/practice.html</loc>
-</url>
-
-<url>
-<loc>https://junlinye513-sys.github.io/guide.html</loc>
-</url>
-
-<url>
-<loc>https://junlinye513-sys.github.io/exam-guide.html</loc>
-</url>
-
-<url>
-<loc>https://junlinye513-sys.github.io/study-guide.html</loc>
-</url>
-
-<url>
-<loc>https://junlinye513-sys.github.io/guide-value.html</loc>
-</url>
-
-<url>
-<loc>https://junlinye513-sys.github.io/guide-resume.html</loc>
-</url>
-
-<url>
-<loc>https://junlinye513-sys.github.io/license-register-guide.html</loc>
-</url>
-  
+  <url>
+    <loc>https://junlinye513-sys.github.io/</loc>
+    <lastmod>2026-03-23</lastmod>
+  </url>
+  <url>
+    <loc>https://junlinye513-sys.github.io/practice.html</loc>
+    <lastmod>2026-03-23</lastmod>
+  </url>
+  <url>
+    <loc>https://junlinye513-sys.github.io/guide.html</loc>
+  </url>
+  <url>
+    <loc>https://junlinye513-sys.github.io/exam-guide.html</loc>
+  </url>
+  <url>
+    <loc>https://junlinye513-sys.github.io/study-guide.html</loc>
+  </url>
+  <url>
+    <loc>https://junlinye513-sys.github.io/guide-value.html</loc>
+  </url>
+  <url>
+    <loc>https://junlinye513-sys.github.io/guide-resume.html</loc>
+  </url>
+  <url>
+    <loc>https://junlinye513-sys.github.io/license-register-guide.html</loc>
+  </url>
 </urlset>
-
