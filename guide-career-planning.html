@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>技術士證照與職涯規劃：如何用丙級、乙級證照打造競爭力｜115 年度最新版｜技術士檢定練習站</title>
+  <meta name="description" content="技術士證照不只是考試，更是職涯起點。本篇分析丙級與乙級證照在新鮮人、轉職者與在職升遷中的角色，提供系統化的職涯規劃策略與建議。">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://junlinye513-sys.github.io/guide-career-planning.html">
+
+  <style>
+    :root {
+      --primary: #4A8FE7;
+      --primary-dark: #2d6ac5;
+      --bg: #f2f6fc;
+      --radius: 18px;
+    }
+    body {
+      margin: 0;
+      font-family: "Microsoft JhengHei", system-ui, sans-serif;
+      background: var(--bg);
+      color: #333;
+      line-height: 1.85;
+    }
+
+    /* 導覽列 - 統一規格 */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      padding: 12px 0;
+    }
+    .nav-container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 0 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-logo { font-weight: bold; color: var(--primary-dark); text-decoration: none; font-size: 18px; display: flex; align-items: center; }
+    .nav-menu { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
+    .nav-menu a { text-decoration: none; color: #555; font-size: 15px; font-weight: 500; transition: color 0.3s; }
+    .nav-menu a:hover { color: var(--primary); }
+
+    /* 文章容器 */
+    .container { max-width: 900px; margin: 30px auto 50px; padding: 0 16px; }
+    .article-box {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 34px;
+      box-shadow: 0 8px 20px rgba(0,0,0,.05);
+      border: 1px solid #eef2f8;
+    }
+    h1 {
+      color: var(--primary-dark);
+      font-size: 28px;
+      margin: 0 0 10px;
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 10px;
+      line-height: 1.3;
+    }
+    .meta { display: flex; gap: 10px; flex-wrap: wrap; color: #667; font-size: 13px; margin: 10px 0 18px; }
+    .pill { background: #f3f7ff; border: 1px solid #dce7ff; padding: 4px 10px; border-radius: 999px; }
+
+    h2 { color: var(--primary); margin-top: 28px; margin-bottom: 10px; font-size: 22px; border-left: 5px solid var(--primary); padding-left: 12px; }
+    h3 { margin-top: 18px; background: #f8faff; padding: 10px 15px; border-radius: 10px; font-size: 18px; color: var(--primary-dark); }
+    p { margin: 15px 0; text-align: justify; }
+    ul, ol { padding-left: 20px; margin: 10px 0 14px; }
+    li { margin-bottom: 10px; }
+
+    /* 提示區塊樣式 */
+    .highlight { background-color: #fff3cd; padding: 2px 6px; border-radius: 6px; font-weight: 700; }
+    .teacher-tip { border-left: 5px solid #4caf50; background: #f1f8e9; padding: 16px; margin: 20px 0; border-radius: 12px; }
+    .warning { border-left: 5px solid #ff9800; background: #fff7e6; padding: 16px; margin: 20px 0; border-radius: 12px; }
+
+    /* 表格樣式 */
+    .table-scroll { overflow-x: auto; margin: 20px 0; border: 1px solid #eee; border-radius: 10px; }
+    table { width: 100%; border-collapse: collapse; min-width: 500px; }
+    th, td { padding: 12px; border: 1px solid #eee; text-align: left; font-size: 15px; }
+    th { background: #f1f6ff; color: var(--primary-dark); }
+
+    /* 目錄 */
+    .toc { background: #fbfcff; border: 1px solid #e6edf7; border-radius: 14px; padding: 16px; margin: 20px 0; }
+    .toc b { display: block; margin-bottom: 10px; color: #223; font-size: 16px; }
+    .toc a { display: inline-block; margin: 5px 15px 5px 0; font-weight: 600; font-size: 15px; color: var(--primary-dark); text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 12px 30px;
+      background: var(--primary);
+      color: #fff !important;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Footer */
+    footer { text-align: center; padding: 40px 15px; font-size: 13px; color: #999; border-top: 1px solid #eee; background: #fff; margin-top: 50px; }
+    footer a { text-decoration: none; color: #777; margin: 0 5px; }
+
+    @media (max-width: 600px) {
+      .nav-menu { gap: 12px; overflow-x: auto; white-space: nowrap; padding-bottom: 5px; }
+      .article-box { padding: 22px; }
+      h1 { font-size: 24px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">🎯 檢定練習站</a>
+      <ul class="nav-menu">
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="practice.html">題庫練習</a></li>
+        <li><a href="guide.html">備考攻略</a></li>
+        <li><a href="about.html">關於本站</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <article class="article-box">
+
+      <h1>技術士證照與職涯規劃：打造長期競爭力</h1>
+
+      <div class="meta">
+        <span class="pill">📅 更新：115 年度最新版本</span>
+        <span class="pill">🔎 主題：職涯規劃策略</span>
+        <span class="pill">🎓 適用：所有欲用證照加分者</span>
+      </div>
+
+      <p>
+        考取技術士證照不應只是為了當下的升學或求職，更應該是長期職涯規劃的一部分。這篇將協助你從「點（證照）」擴展到「線（職涯）」，制定系統化的競爭力升級計畫。
+      </p>
+
+      <div class="toc">
+        <b>📌 本篇攻略快速導覽</b>
+        <a href="#freshman">1. 新鮮人：建立基礎與信心</a>
+        <a href="#career-changer">2. 轉職者：無痛跨域的門檻</a>
+        <a href="#advancement">3. 在職者：升遷與加薪籌碼</a>
+        <a href="#strategy">4. 系統化規劃三部曲</a>
+      </div>
+
+      <h2 id="freshman">一、新鮮人：將丙級證照視為職涯起點</h2>
+      <p>對於剛入職場的新鮮人或在校學生，丙級證照通常被低估。其實，它的主要價值在於：</p>
+      <ul>
+        <li><strong>驗證基礎技能：</strong> 證明你具備該職類最基本的動手操作能力或知識觀念。</li>
+        <li><strong>升學與實習門檻：</strong> 在技優甄審或申請實習時，往往是第一道篩選機制。</li>
+        <li><strong>建立學習節奏：</strong> 習慣國家檢定的考試模式，為將來挑戰更高難度奠定心態。</li>
+      </ul>
+
+      <div class="teacher-tip">
+        <strong>👨‍🏫 老師建議：</strong>
+        新鮮人不要眼高手低。先拿到丙級穩定軍心，再搭配「作品集」或「專案紀錄」，你的競爭力就已經超越大多數同齡人。
+      </div>
+
+      <h2 id="career-changer">二、轉職者：用證照無痛跨越新領域</h2>
+      <p>非本科系背景想要轉職，證照是最快的實力背書工具：</p>
+      
+      <h3>1. 能力可見化</h3>
+      <p>雇主不知道你的過去，但政府核發的證照是可被公認的技能證明，能迅速填補學歷不足的空白。</p>
+      
+      <h3>2. 縮短適應期</h3>
+      <p>準備考試的過程會逼你系統化學習新領域的術語與規範，這能大幅縮短你進入新公司後的陣痛期。</p>
+
+      <div class="warning">
+        <strong>⚠️ 提醒：</strong>
+        轉職者目標應鎖定「乙級」。若時間有限，可先拿丙級打底，但一定要有衝刺乙級的計畫，因為乙級才是證明你具備專業獨立作業能力的關鍵。
+      </div>
+
+      <h2 id="advancement">三、在職者：將乙級證照變為升遷加薪籌碼</h2>
+      <p>在累積一定工作經驗後，考取乙級證照是對你專業深度的認證：</p>
+      <ul>
+        <li><strong>專業認可：</strong> 代表你不只會「做」，還懂得背後的原理解析與整合應用。</li>
+        <li><strong>爭取加薪：</strong> 部分公司有證照加給制度，乙級通常享有較高津貼。</li>
+        <li><strong>邁向管理職：</strong> 乙級代表具備獨立作業與排解複雜問題的能力，是提升為基層幹部的重要指標。</li>
+      </ul>
+
+      <h2 id="strategy">四、系統化職涯規劃三部曲</h2>
+      <p>如何讓證照真正發揮最大效益？請遵循以下規劃策略：</p>
+
+      <h3>1. T型人才規劃（專業與廣度並重）</h3>
+      <p>先在一個領域考取丙級與乙級（專業深），再跨領域考取一張相關的丙級證照（廣度）。例如：電腦軟體應用（乙級）+ 會計事務（丙級）＝ 最強行政財會。例如：網頁設計（乙級）+ 電腦軟體應用（乙級）＝ 資訊處理全才。</p>
+
+      <h3>2. 從實作中連結證照（證照 + 作品）</h3>
+      <p>別只會考題！將題庫學到的觀念或術語，用在實際的專案、作品或工作報表中。在履歷和面試時，要講得出你考這張證照是為了做哪類作品或解決哪種問題。</p>
+
+      <h3>3. 定期審視與更新（每 3-5 年）</h3>
+      <p>技術與法規隨時在變。除了國家證照，建議搭配國際證照（如 Microsoft, Cisco, Adobe）或最新的公會認證，保持你的技能領先市場。</p>
+
+      <p>
+        總結來說，證照只是一張紙，<strong>真正的價值在於你準備考試的過程，以及你考完後如何整合運用</strong>。做好長期規劃，證照將成為你職涯中最穩固的階梯。
+      </p>
+
+      <div style="text-align: center; margin-top: 40px;">
+        <p style="color: #666; font-size: 15px; margin-bottom: 20px;">做好規劃了嗎？現在就開始累積實力！</p>
+        <a href="practice.html" class="btn">前往題庫練習</a>
+      </div>
+
+    </article>
+  </div>
+
+  <footer>
+    © 2026 技術士檢定學習平台<br><br>
+    <a href="about.html">關於本站</a>｜<a href="privacy.html">隱私權政策</a>｜<a href="contact.html">聯絡我們</a>
+  </footer>
+
+</body>
+</html>
