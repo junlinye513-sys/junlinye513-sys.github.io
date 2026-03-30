@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>📖 線上模擬考 vs 實體書：115 年度備考資源全評測｜技術士檢定練習站</title>
+  <meta name="description" content="深度評析技術士檢定備考資源。比較線上練習系統與實體書的優缺點、學習效益與成本回報，助你找出最高效率的及格路徑。">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://junlinye513-sys.github.io/guide-res.html">
+
+  <style>
+    :root { 
+      --primary: #4A8FE7; 
+      --primary-dark: #2d6ac5; 
+      --bg: #f2f6fc; 
+      --radius: 20px; 
+      --card-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+    body { margin: 0; font-family: "Microsoft JhengHei", system-ui, sans-serif; background: var(--bg); color: #333; line-height: 1.8; }
+    
+    /* 導覽列 */
+    .navbar { position: sticky; top: 0; z-index: 1000; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.05); padding: 14px 0; }
+    .nav-container { max-width: 1000px; margin: auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+    .nav-logo { font-weight: 800; color: var(--primary-dark); text-decoration: none; font-size: 20px; }
+    .nav-menu { display: flex; gap: 24px; list-style: none; margin: 0; padding: 0; }
+    .nav-menu a { text-decoration: none; color: #556; font-size: 15px; font-weight: 600; }
+
+    /* 文章容器 */
+    .container { max-width: 900px; margin: 40px auto 60px; padding: 0 20px; }
+    .article-box { background: #fff; border-radius: var(--radius); padding: 45px; box-shadow: var(--card-shadow); border: 1px solid #eef2f8; }
+    
+    h1 { color: var(--primary-dark); font-size: 30px; margin: 0 0 15px; line-height: 1.3; }
+    .meta { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 25px; }
+    .pill { background: #f0f5ff; color: var(--primary); border: 1px solid #dce7ff; padding: 5px 12px; border-radius: 50px; font-size: 13px; font-weight: 600; }
+
+    h2 { color: var(--primary); margin: 45px 0 20px; font-size: 25px; border-left: 6px solid var(--primary); padding-left: 15px; }
+    h3 { margin-top: 30px; background: #f1f6ff; padding: 12px 20px; border-radius: 12px; font-size: 20px; color: var(--primary-dark); }
+    
+    /* 表格對齊優化 */
+    .table-scroll { overflow-x: auto; margin: 25px 0; border-radius: 12px; border: 1px solid #eee; }
+    table { width: 100%; border-collapse: collapse; min-width: 650px; background: #fff; }
+    th, td { padding: 15px; border: 1px solid #f0f0f0; }
+    th { background: #f8faff; color: #445; font-weight: 700; text-align: center; }
+    
+    /* 第一欄項目名靠左，其餘比較內容置中 */
+    td:first-child { text-align: left; font-weight: bold; color: #555; background: #fafafa; width: 120px; }
+    td { text-align: center; }
+
+    .highlight-win { color: #d4a017; font-weight: 800; background: #fffdf2; }
+
+    /* 老師建議與警告 */
+    .teacher-tip { border-left: 6px solid #4caf50; background: #f3faf1; padding: 20px; margin: 35px 0; border-radius: 15px; }
+    .warning { border-left: 6px solid #ff9800; background: #fff8ef; padding: 20px; margin: 35px 0; border-radius: 15px; }
+    
+    .btn { display: inline-block; padding: 16px 40px; background: var(--primary); color: #fff !important; border-radius: 12px; text-decoration: none; font-weight: bold; font-size: 17px; transition: 0.3s; box-shadow: 0 6px 20px rgba(74, 143, 231, 0.3); }
+    .btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+
+    footer { text-align: center; padding: 50px 20px; font-size: 14px; color: #99a; border-top: 1px solid #eee; background: #fff; }
+
+    @media (max-width: 600px) {
+      .article-box { padding: 25px; }
+      h1 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">🎯 檢定練習站</a>
+      <ul class="nav-menu">
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="practice.html">題庫練習</a></li>
+        <li><a href="guide.html">備考攻略</a></li>
+        <li><a href="about.html">關於本站</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <article class="article-box">
+      <h1>📖 線上模擬考 vs 實體書：哪種方式更適合你？</h1>
+      
+      <div class="meta">
+        <span class="pill">📅 2026 年度更新</span>
+        <span class="pill">📚 資源評測</span>
+        <span class="pill">🔥 核心建議</span>
+      </div>
+
+      <p>
+        「準備技術士學科，我該買書還是刷題庫？」這是每個考生的共同難題。在 115 年度題庫持續更新的背景下，資訊的 **精準度** 與 **複習效率** 成為了合格的關鍵。本篇將深度對比兩大備考資源，幫你找出最強過關組合。
+      </p>
+
+      <h2 id="online">一 : 💻 線上模擬考：高效刷題的數位武器</h2>
+      <p>對於目標是「快速通過學科」的考生來說，線上測驗系統具備實體書難以企及的數據優勢：</p>
+      <ul>
+        <li><strong>錯題追蹤：</strong> 系統自動收錄你的錯誤題型，省去手動標註的時間。</li>
+        <li><strong>隨身練習：</strong> 手機隨開即練，完美利用捷運、休息等碎片時間。</li>
+        <li><strong>即時反饋：</strong> 寫完立刻知道對錯與解析，複習節奏不中斷。</li>
+      </ul>
+
+      <h2 id="compare">二 : ⚖️ 資源深度對比（表格對齊優化）</h2>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>比較項目</th>
+              <th>線上練習系統 (本站)</th>
+              <th>傳統實體參考書</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>更新速度</td>
+              <td class="highlight-win">🏆 極快 (即時同步)</td>
+              <td>較慢 (需印刷改版)</td>
+            </tr>
+            <tr>
+              <td>學習成本</td>
+              <td class="highlight-win">🏆 低 (網路存取)</td>
+              <td>高 (需購書費用)</td>
+            </tr>
+            <tr>
+              <td>弱點強化</td>
+              <td class="highlight-win">🏆 自動記錄錯題</td>
+              <td>手動標記與查找</td>
+            </tr>
+            <tr>
+              <td>理論深度</td>
+              <td>一般 (重結果)</td>
+              <td class="highlight-win">🏆 極佳 (重過程)</td>
+            </tr>
+            <tr>
+              <td>便攜程度</td>
+              <td class="highlight-win">🏆 極高 (手機操作)</td>
+              <td>低 (笨重難攜帶)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="who">三 : 🎯 誰適合哪種資源？</h2>
+      
+      <h3>1. 我適合「線上練習系統」，如果：</h3>
+      <ul>
+        <li>我目前的程度已經有 60% 以上，只是需要熟悉題感。</li>
+        <li>我是通勤族或上班族，只能利用瑣碎時間複習。</li>
+        <li>我希望在考前一週進行大量的全真模擬模擬。</li>
+      </ul>
+
+      <h3>2. 我適合「實體參考書」，如果：</h3>
+      <ul>
+        <li>我對該科目（如網路架設）完全沒基礎，需要系統化讀懂原理。</li>
+        <li>我無法長時間盯著螢幕，容易分心或感到眼力疲勞。</li>
+        <li>我需要練習手寫計算題（如子網路計算過程）。</li>
+      </ul>
+
+      <div class="teacher-tip">
+        <strong>👨‍🏫 老師的「一次過」攻略：</strong>
+        如果你想在最短時間內及格，建議採 **「82 法則」**：80% 的時間使用 **線上練習系統** 來維持手感與刷題量，遇到不懂的 20% 理論再翻閱 **參考書** 或搜尋文章補強。
+      </div>
+
+      <div class="warning">
+        <strong>⚠️ 考前大忌：</strong>
+        千萬不要只盯著一本三年前出的「舊版書」讀，因為 115 年度的資訊安全與法規題目變動極大，一定要搭配線上最新的題庫才保險！
+      </div>
+
+      <div style="text-align: center; margin-top: 50px;">
+        <p style="color: #667; margin-bottom: 25px; font-weight: bold;">準備好挑戰 115 年度最新模擬考了嗎？</p>
+        <a href="practice.html" class="btn">開始練習題庫</a>
+      </div>
+    </article>
+  </div>
+
+  <footer>
+    © 2026 技術士檢定練習站<br>
+    致力於打造全台最專業的學科測驗平台
+  </footer>
+
+</body>
+</html>
