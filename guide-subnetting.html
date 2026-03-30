@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>子網路遮罩計算完全攻略：從二進位到 CIDR 快速上手｜115 年度最新版｜技術士檢定練習站</title>
+  <meta name="description" content="深入淺出教學子網路切割計算，包含二進位轉換、網段間距判定、CIDR 換算與常用遮罩對照表，助你輕鬆應對網路架設技術士考試。">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://junlinye513-sys.github.io/guide-subnetting.html">
+  <style>
+    :root { 
+      --primary: #4A8FE7; 
+      --primary-dark: #2d6ac5; 
+      --bg: #f2f6fc; 
+      --radius: 20px; 
+      --card-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+    body { margin: 0; font-family: "Microsoft JhengHei", system-ui, sans-serif; background: var(--bg); color: #333; line-height: 1.8; }
+    
+    /* 導覽列 - 現代化毛玻璃 */
+    .navbar { position: sticky; top: 0; z-index: 1000; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.05); padding: 14px 0; }
+    .nav-container { max-width: 1000px; margin: auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+    .nav-logo { font-weight: 800; color: var(--primary-dark); text-decoration: none; font-size: 20px; display: flex; align-items: center; }
+    .nav-menu { display: flex; gap: 24px; list-style: none; margin: 0; padding: 0; }
+    .nav-menu a { text-decoration: none; color: #556; font-size: 15px; font-weight: 600; transition: 0.3s; }
+    .nav-menu a:hover { color: var(--primary); }
+
+    /* 文章主體 */
+    .container { max-width: 900px; margin: 40px auto 60px; padding: 0 20px; }
+    .article-box { background: #fff; border-radius: var(--radius); padding: 45px; box-shadow: var(--card-shadow); border: 1px solid #eef2f8; }
+    
+    h1 { color: var(--primary-dark); font-size: 30px; margin: 0 0 15px; line-height: 1.3; }
+    .meta { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 25px; }
+    .pill { background: #f0f5ff; color: var(--primary); border: 1px solid #dce7ff; padding: 5px 12px; border-radius: 50px; font-size: 13px; font-weight: 600; }
+
+    /* 目錄 */
+    .toc { background: #f8fbff; border: 1px solid #e1e9f5; border-radius: 16px; padding: 24px; margin: 30px 0; }
+    .toc b { display: block; margin-bottom: 12px; color: #223; font-size: 17px; }
+    .toc a { display: inline-block; margin: 6px 18px 6px 0; font-weight: 600; color: var(--primary-dark); text-decoration: none; transition: 0.2s; }
+    .toc a:hover { color: var(--primary); text-decoration: underline; }
+
+    h2 { color: var(--primary); margin: 45px 0 20px; font-size: 25px; border-left: 6px solid var(--primary); padding-left: 15px; }
+    h3 { margin-top: 30px; background: #f1f6ff; padding: 12px 20px; border-radius: 12px; font-size: 20px; color: var(--primary-dark); display: flex; align-items: center; }
+    
+    /* 強化表格樣式 */
+    .table-scroll { overflow-x: auto; margin: 25px 0; border-radius: 12px; border: 1px solid #eee; }
+    table { width: 100%; border-collapse: collapse; min-width: 600px; background: #fff; }
+    th, td { padding: 15px; border: 1px solid #f0f0f0; text-align: center; }
+    th { background: #f8faff; color: #445; font-weight: 700; }
+    .highlight-cell { background: #fff9e6; font-weight: 800; color: #d4a017; }
+
+    /* 老師建議與警告 */
+    .teacher-tip { border-left: 6px solid #4caf50; background: #f3faf1; padding: 20px; margin: 35px 0; border-radius: 15px; }
+    .warning { border-left: 6px solid #ff9800; background: #fff8ef; padding: 20px; margin: 35px 0; border-radius: 15px; }
+    
+    code { background: #f4f4f4; padding: 3px 7px; border-radius: 6px; font-family: 'Consolas', monospace; color: #d63384; font-weight: bold; }
+
+    .btn { display: inline-block; padding: 16px 40px; background: var(--primary); color: #fff !important; border-radius: 12px; text-decoration: none; font-weight: bold; font-size: 17px; transition: 0.3s; box-shadow: 0 6px 20px rgba(74, 143, 231, 0.3); }
+    .btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+
+    footer { text-align: center; padding: 50px 20px; font-size: 14px; color: #99a; border-top: 1px solid #eee; background: #fff; }
+
+    @media (max-width: 600px) {
+      .article-box { padding: 25px; }
+      h1 { font-size: 24px; }
+      .nav-menu { display: none; } /* 手機端建議隱藏或改為漢堡選單 */
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">🎯 檢定練習站</a>
+      <ul class="nav-menu">
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="practice.html">題庫練習</a></li>
+        <li><a href="guide.html">備考攻略</a></li>
+        <li><a href="about.html">關於本站</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <article class="article-box">
+      <h1>子網路遮罩計算完全攻略：從二進位到 CIDR</h1>
+      
+      <div class="meta">
+        <span class="pill">📅 2026 年度更新</span>
+        <span class="pill">💻 網路架設丙/乙級</span>
+        <span class="pill">🔎 主題：技術核心教學</span>
+      </div>
+
+      <p>
+        子網路計算 (Subnetting) 是網路技術士檢定中最令考生頭痛的「魔王題」。許多人選擇死記硬背，但題目數字一變就容易出錯。本文將帶你拆解計算邏輯，讓你徹底理解 IP 切分，輕鬆應對各種 IP 切分問題。
+      </p>
+
+      
+
+      <div class="toc">
+        <b>📌 快速學習導覽</b>
+        <a href="#concept">1. 核心觀念</a>
+        <a href="#binary">2. 二進位心算法</a>
+        <a href="#steps">3. 實戰計算三步驟</a>
+        <a href="#cidr-table">4. 常用對照表</a>
+      </div>
+
+      <h2 id="concept">一、 🌐 核心觀念：為什麼要學子網路？</h2>
+      <p>
+        在實際網路環境中，我們不能將所有電腦都放在同一個區段，否則會產生大量的「廣播風暴」。子網路的作用就是將大網域切小，提升安全性與管理效率。
+      </p>
+
+      <h2 id="binary">二、 🔢 第一步：掌握二進位快速轉換</h2>
+      <p>掌握以下「神奇 8 數字」，是所有子網路計算的心算基礎。只要這張表熟，計算速度會提升 3 倍：</p>
+      
+      
+
+      <div class="table-scroll">
+        <table>
+          <tr><th>二進位位元</th><td>10000000</td><td>11000000</td><td>11100000</td><td>11110000</td><td>11111000</td><td>11111100</td><td>11111110</td><td>11111111</td></tr>
+          <tr><th>十進位數值</th><td><strong>128</strong></td><td><strong>192</strong></td><td><strong>224</strong></td><td><strong>240</strong></td><td><strong>248</strong></td><td><strong>252</strong></td><td><strong>254</strong></td><td><strong>255</strong></td></tr>
+        </table>
+      </div>
+
+      <h2 id="steps">三、第二步：實戰計算三步驟</h2>
+      <p>範例：若需要將 <code>192.168.1.0 /24</code> 網域切分成 <strong>8 個子網路</strong>。</p>
+      
+      <h3>1. 確定借位數量 (Borrow Bits)</h3>
+      <p>要切成 8 個子網，因為 $2^3 = 8$，所以要向主機位借 3 位。新遮罩長度為 24 + 3 = <code>/27</code>。</p>
+
+      <h3>2. 計算新遮罩數值</h3>
+      <p>借了 3 位元，代表最後一段二進位是 <code>11100000</code>。查表得知為 <strong>224</strong>。<br>
+      完整遮罩即為：<code>255.255.255.224</code>。</p>
+
+      <h3>3. 找出「網段間距 (Block Size)」</h3>
+      <p>這是最關鍵的一步！<strong>網段間距 = 256 - 遮罩值</strong>。在此範例中為 256 - 224 = <code>32</code>。<br>
+      這代表每個網段的起點會以 32 為單位跳動：</p>
+      <ul>
+        <li>第一段：<code>.0</code> 到 <code>.31</code></li>
+        <li>第二段：<code>.32</code> 到 <code>.63</code></li>
+        <li>第三段：<code>.64</code> 到 <code>.95</code> ... (以此類推)</li>
+      </ul>
+
+      
+
+      <div class="teacher-tip">
+        <strong>👨‍🏫 老師建議：</strong>
+        計算「可用主機數」時，一定要記得<strong>「減 2」</strong>（扣除網路位址與廣播位址）。所以 /27 網段的可用主機就是 $32 - 2 = 30$ 台。
+      </div>
+
+      <h2 id="cidr-table">四、常用 CIDR 與網段間距對照表</h2>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>CIDR</th>
+              <th>十進位遮罩 (Mask)</th>
+              <th class="highlight-cell">網段間距 (Block Size)</th>
+              <th>可用主機數</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>/24</td><td>255.255.255.0</td><td class="highlight-cell">256</td><td>254</td></tr>
+            <tr><td>/25</td><td>255.255.255.128</td><td class="highlight-cell">128</td><td>126</td></tr>
+            <tr><td>/26</td><td>255.255.255.192</td><td class="highlight-cell">64</td><td>62</td></tr>
+            <tr><td>/27</td><td>255.255.255.224</td><td class="highlight-cell">32</td><td>30</td></tr>
+            <tr><td>/28</td><td>255.255.255.240</td><td class="highlight-cell">16</td><td>14</td></tr>
+            <tr><td>/30</td><td>255.255.255.252</td><td class="highlight-cell">4</td><td>2</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="text-align: center; margin-top: 50px;">
+        <p style="color: #667; margin-bottom: 25px; font-weight: bold;">理論學會了？立即進場實測！</p>
+        <a href="practice.html" class="btn">立即進入測驗系統實戰</a>
+      </div>
+    </article>
+  </div>
+
+  <footer>
+    © 2026 技術士檢定練習站<br>
+    打造最專業的學科測驗平台
+  </footer>
+
+</body>
+</html>
