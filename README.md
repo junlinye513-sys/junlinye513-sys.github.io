@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>🤖 科技趨勢：AI 與物聯網：引領未來的智慧核心｜115 年度最新版｜技術士檢定練習站</title>
+  <meta name="description" content="深入淺出解析人工智慧 (AI) 與物聯網 (IoT) 的核心概念。包含機器學習、深度學習、感測器技術以及 AIoT 的整合應用，助你掌握最新檢定考點。">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://junlinye513-sys.github.io/post-ai.html">
+
+  <style>
+    :root { 
+      --primary: #4A8FE7; 
+      --primary-dark: #2d6ac5; 
+      --bg: #f2f6fc; 
+      --radius: 20px; 
+      --card-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+    body { margin: 0; font-family: "Microsoft JhengHei", system-ui, sans-serif; background: var(--bg); color: #333; line-height: 1.8; }
+    
+    /* 導覽列 */
+    .navbar { position: sticky; top: 0; z-index: 1000; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.05); padding: 14px 0; }
+    .nav-container { max-width: 1000px; margin: auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+    .nav-logo { font-weight: 800; color: var(--primary-dark); text-decoration: none; font-size: 20px; }
+    .nav-menu { display: flex; gap: 24px; list-style: none; margin: 0; padding: 0; }
+    .nav-menu a { text-decoration: none; color: #556; font-size: 15px; font-weight: 600; }
+
+    /* 文章容器 */
+    .container { max-width: 900px; margin: 40px auto 60px; padding: 0 20px; }
+    .article-box { background: #fff; border-radius: var(--radius); padding: 45px; box-shadow: var(--card-shadow); border: 1px solid #eef2f8; }
+    
+    h1 { color: var(--primary-dark); font-size: 30px; margin: 0 0 15px; line-height: 1.3; }
+    .meta { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 25px; }
+    .pill { background: #f0f5ff; color: var(--primary); border: 1px solid #dce7ff; padding: 5px 12px; border-radius: 50px; font-size: 13px; font-weight: 600; }
+
+    h2 { color: var(--primary); margin: 45px 0 20px; font-size: 25px; border-left: 6px solid var(--primary); padding-left: 15px; }
+    h3 { margin-top: 30px; background: #f1f6ff; padding: 12px 20px; border-radius: 12px; font-size: 20px; color: var(--primary-dark); }
+    
+    /* 表格優化 */
+    .table-scroll { overflow-x: auto; margin: 25px 0; border-radius: 12px; border: 1px solid #eee; }
+    table { width: 100%; border-collapse: collapse; min-width: 600px; background: #fff; }
+    th, td { padding: 15px; border: 1px solid #f0f0f0; text-align: center; font-size: 15px; }
+    th { background: #f8faff; color: #445; font-weight: 700; }
+    td:first-child { font-weight: bold; color: var(--primary-dark); background: #fafafa; width: 140px; }
+
+    .teacher-tip { border-left: 6px solid #4caf50; background: #f3faf1; padding: 20px; margin: 35px 0; border-radius: 15px; }
+    .warning { border-left: 6px solid #ff9800; background: #fff8ef; padding: 20px; margin: 35px 0; border-radius: 15px; }
+    
+    .btn { display: inline-block; padding: 16px 40px; background: var(--primary); color: #fff !important; border-radius: 12px; text-decoration: none; font-weight: bold; font-size: 17px; box-shadow: 0 6px 20px rgba(74, 143, 231, 0.3); transition: 0.3s; }
+
+    footer { text-align: center; padding: 50px 20px; font-size: 14px; color: #99a; border-top: 1px solid #eee; background: #fff; }
+
+    @media (max-width: 600px) { .article-box { padding: 25px; } h1 { font-size: 24px; } }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">🎯 檢定練習站</a>
+      <ul class="nav-menu">
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="practice.html">題庫練習</a></li>
+        <li><a href="post-level-c.html">備考攻略</a></li>
+        <li><a href="about.html">關於本站</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <article class="article-box">
+      <h1>🤖 科技趨勢：AI 與物聯網：引領未來的智慧核心</h1>
+      
+      <div class="meta">
+        <span class="pill">📅 更新：2026 年度</span>
+        <span class="pill">🔎 主題： 科技趨勢</span>
+        <span class="pill">💡 數位轉型</span>
+      </div>
+
+      <p>
+        進入 115 年度，技術士檢定的學科題目中，「新技術趨勢」的比重明顯增加。其中最核心的兩大支柱就是 **人工智慧 (AI)** 與 **物聯網 (IoT)**。這篇文章將幫你快速釐清這些專業名詞，讓你在考場上輕鬆應對科技類考題。
+      </p>
+
+      <h2 id="ai">一 : 人工智慧 (AI)：電腦也會學習嗎？</h2>
+      <p>
+        人工智慧是指讓電腦模擬人類的認知功能，如「學習」與「解決問題」。在考試中，你必須分清楚以下三個層次的關係：
+      </p>
+      <ul>
+        <li><strong>人工智慧 (AI)：</strong> 最廣泛的概念，讓機器展現智慧。</li>
+        <li><strong>機器學習 (Machine Learning)：</strong> AI 的一個子集，強調透過「數據」讓演算法自行改進，不需要明確程式指令。</li>
+        <li><strong>深度學習 (Deep Learning)：</strong> 機器學習的進階版，模擬大腦的「神經網路」結構，適合處理影像辨識與語音翻譯。</li>
+      </ul>
+
+      
+
+      <h2 id="iot">二 : 物聯網 (IoT)：萬物皆可連線</h2>
+      <p>
+        物聯網是指將各種實體設備（如燈泡、感測器、家電）連接到網際網路，實現設備間的資訊交換。IoT 的基本架構通常包含三層：
+      </p>
+      <ol>
+        <li><strong>感知層：</strong> 各類感測器（如溫度計、RFID 標籤）負責收集數據。</li>
+        <li><strong>網路層：</strong> 透過 Wi-Fi、藍牙、5G 或 NB-IoT 將數據傳送到雲端。</li>
+        <li><strong>應用層：</strong> 最終提供給使用者的服務，如智慧家居、智慧工廠。</li>
+      </ol>
+
+      
+
+      <h2 id="aiot">三 : 強強聯手：AIoT 的興起</h2>
+      <p>
+        當 IoT 收集到海量數據，再交由 AI 進行大數據分析，這就是 **AIoT (人工智慧物聯網)**。
+      </p>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>技術</th>
+              <th>主要角色</th>
+              <th>生活實例</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>物聯網 (IoT)</td>
+              <td>數位神經 (收集數據)</td>
+              <td>智慧電表、穿戴式手環</td>
+            </tr>
+            <tr>
+              <td>人工智慧 (AI)</td>
+              <td>智慧大腦 (判斷數據)</td>
+              <td>ChatGPT、人臉解鎖</td>
+            </tr>
+            <tr>
+              <td>AIoT</td>
+              <td>自動化決策</td>
+              <td>無人駕駛車、智慧農場</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="exam">四 : 技術士學科常見考點整理</h2>
+      <div class="warning">
+        <strong>⚠️ 考試必背名詞：</strong>
+        <ul>
+          <li><strong>大數據 (Big Data)：</strong> IoT 的產出，具備 5V 特性（Volume, Velocity, Variety, Veracity, Value）。</li>
+          <li><strong>雲端運算 (Cloud Computing)：</strong> 提供儲存與運算資源的後台。</li>
+          <li><strong>邊緣運算 (Edge Computing)：</strong> 為了降低延遲，直接在設備端進行運算（AIoT 的重要趨勢）。</li>
+          <li><strong>5G 通訊：</strong> 具備高頻寬、低延遲、廣連結特性，是 IoT 的重要推手。</li>
+        </ul>
+      </div>
+
+      <div class="teacher-tip">
+        <strong>👨‍🏫 老師建議：</strong>
+        這類題目通常出現在「資訊類共同科目」中，考法多為「下列何者屬於物聯網的感知層？」或「AIoT 代表什麼縮寫？」。只要記住 **「IoT 收集、AI 思考」** 這個基本邏輯，就能拿到分數！
+      </div>
+
+      <div style="text-align: center; margin-top: 50px;">
+        <p style="color: #667; margin-bottom: 25px; font-weight: bold;">準備好挑戰 115 年度最新科技題型了嗎？</p>
+        <a href="practice.html" class="btn">進入學科練習系統 🚀</a>
+      </div>
+    </article>
+  </div>
+
+  <footer>
+    © 2026 技術士檢定練習站<br>
+    致力於提供與時俱進的專業教學資源
+  </footer>
+
+</body>
+</html>
