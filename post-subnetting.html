@@ -6,63 +6,118 @@
   <meta name="description" content="深入淺出教學子網路切割計算，包含二進位轉換、網段間距判定、CIDR 換算與常用遮罩對照表，助你輕鬆應對網路架設技術士考試。">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="https://junlinye513-sys.github.io/guide-subnetting.html">
+
   <style>
-    :root { 
-      --primary: #4A8FE7; 
-      --primary-dark: #2d6ac5; 
-      --bg: #f2f6fc; 
-      --radius: 20px; 
-      --card-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    /* --- 完全對齊標準版的 CSS --- */
+    :root {
+      --primary: #4A8FE7;
+      --primary-dark: #2d6ac5;
+      --bg: #f2f6fc;
+      --radius: 18px;
     }
-    body { margin: 0; font-family: "Microsoft JhengHei", system-ui, sans-serif; background: var(--bg); color: #333; line-height: 1.8; }
-    
-    /* 導覽列 - 現代化毛玻璃 */
-    .navbar { position: sticky; top: 0; z-index: 1000; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.05); padding: 14px 0; }
-    .nav-container { max-width: 1000px; margin: auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
-    .nav-logo { font-weight: 800; color: var(--primary-dark); text-decoration: none; font-size: 20px; display: flex; align-items: center; }
-    .nav-menu { display: flex; gap: 24px; list-style: none; margin: 0; padding: 0; }
-    .nav-menu a { text-decoration: none; color: #556; font-size: 15px; font-weight: 600; transition: 0.3s; }
+    body {
+      margin: 0;
+      font-family: "Microsoft JhengHei", system-ui, sans-serif;
+      background: var(--bg);
+      color: #333;
+      line-height: 1.85;
+    }
+
+    /* 導覽列 */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      padding: 12px 0;
+    }
+    .nav-container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 0 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-logo { font-weight: bold; color: var(--primary-dark); text-decoration: none; font-size: 18px; }
+    .nav-menu { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
+    .nav-menu a { text-decoration: none; color: #555; font-size: 15px; font-weight: 500; transition: color 0.3s; }
     .nav-menu a:hover { color: var(--primary); }
 
-    /* 文章主體 */
-    .container { max-width: 900px; margin: 40px auto 60px; padding: 0 20px; }
-    .article-box { background: #fff; border-radius: var(--radius); padding: 45px; box-shadow: var(--card-shadow); border: 1px solid #eef2f8; }
+    /* 文章容器與卡片 */
+    .container { max-width: 900px; margin: 30px auto 50px; padding: 0 16px; }
+    .article-box {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 34px;
+      box-shadow: 0 8px 20px rgba(0,0,0,.05);
+      border: 1px solid #eef2f8;
+    }
     
-    h1 { color: var(--primary-dark); font-size: 30px; margin: 0 0 15px; line-height: 1.3; }
-    .meta { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 25px; }
-    .pill { background: #f0f5ff; color: var(--primary); border: 1px solid #dce7ff; padding: 5px 12px; border-radius: 50px; font-size: 13px; font-weight: 600; }
+    /* 標題與內文 */
+    h1 {
+      color: var(--primary-dark);
+      font-size: 28px;
+      margin: 0 0 10px;
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 10px;
+      line-height: 1.3;
+    }
+    .meta { display: flex; gap: 10px; flex-wrap: wrap; color: #667; font-size: 13px; margin: 10px 0 18px; }
+    .pill { background: #f3f7ff; border: 1px solid #dce7ff; padding: 4px 10px; border-radius: 999px; }
+
+    h2 { color: var(--primary); margin-top: 28px; margin-bottom: 10px; font-size: 22px; border-left: 5px solid var(--primary); padding-left: 12px; }
+    h3 { margin-top: 18px; background: #f8faff; padding: 10px 15px; border-radius: 10px; font-size: 18px; color: var(--primary-dark); }
+    p { margin: 15px 0; text-align: justify; }
+    ul, ol { padding-left: 20px; margin: 10px 0 14px; }
+    li { margin-bottom: 10px; }
+
+    /* 重點標示與提示框 */
+    .highlight { background-color: #fff3cd; padding: 2px 6px; border-radius: 6px; font-weight: 700; }
+    .teacher-tip { border-left: 5px solid #4caf50; background: #f1f8e9; padding: 16px; margin: 20px 0; border-radius: 12px; }
+    .warning { border-left: 5px solid #ff9800; background: #fff7e6; padding: 16px; margin: 20px 0; border-radius: 12px; }
 
     /* 目錄 */
-    .toc { background: #f8fbff; border: 1px solid #e1e9f5; border-radius: 16px; padding: 24px; margin: 30px 0; }
-    .toc b { display: block; margin-bottom: 12px; color: #223; font-size: 17px; }
-    .toc a { display: inline-block; margin: 6px 18px 6px 0; font-weight: 600; color: var(--primary-dark); text-decoration: none; transition: 0.2s; }
-    .toc a:hover { color: var(--primary); text-decoration: underline; }
+    .toc { background: #fbfcff; border: 1px solid #e6edf7; border-radius: 14px; padding: 16px; margin: 20px 0; }
+    .toc b { display: block; margin-bottom: 10px; color: #223; font-size: 16px; }
+    .toc a { display: inline-block; margin: 5px 15px 5px 0; font-weight: 600; font-size: 15px; color: var(--primary-dark); text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
 
-    h2 { color: var(--primary); margin: 45px 0 20px; font-size: 25px; border-left: 6px solid var(--primary); padding-left: 15px; }
-    h3 { margin-top: 30px; background: #f1f6ff; padding: 12px 20px; border-radius: 12px; font-size: 20px; color: var(--primary-dark); display: flex; align-items: center; }
-    
-    /* 強化表格樣式 */
-    .table-scroll { overflow-x: auto; margin: 25px 0; border-radius: 12px; border: 1px solid #eee; }
-    table { width: 100%; border-collapse: collapse; min-width: 600px; background: #fff; }
-    th, td { padding: 15px; border: 1px solid #f0f0f0; text-align: center; }
-    th { background: #f8faff; color: #445; font-weight: 700; }
-    .highlight-cell { background: #fff9e6; font-weight: 800; color: #d4a017; }
+    /* 表格樣式 */
+    .table-scroll { overflow-x: auto; margin: 20px 0; border: 1px solid #eef2f8; border-radius: 12px; }
+    table { width: 100%; border-collapse: collapse; min-width: 500px; }
+    th, td { padding: 15px; border: 1px solid #eef2f8; text-align: center; font-size: 15px; }
+    th { background: #f8faff; color: var(--primary-dark); font-weight: bold; }
 
-    /* 老師建議與警告 */
-    .teacher-tip { border-left: 6px solid #4caf50; background: #f3faf1; padding: 20px; margin: 35px 0; border-radius: 15px; }
-    .warning { border-left: 6px solid #ff9800; background: #fff8ef; padding: 20px; margin: 35px 0; border-radius: 15px; }
-    
-    code { background: #f4f4f4; padding: 3px 7px; border-radius: 6px; font-family: 'Consolas', monospace; color: #d63384; font-weight: bold; }
+    /* 本頁專屬：高亮儲存格與程式碼樣式 */
+    .highlight-cell { background: #fff9e6; font-weight: bold; color: #d4a017; }
+    code { background: #f4f4f4; padding: 3px 7px; border-radius: 6px; font-family: 'Consolas', monospace; color: #d63384; font-weight: bold; font-size: 0.95em; }
 
-    .btn { display: inline-block; padding: 16px 40px; background: var(--primary); color: #fff !important; border-radius: 12px; text-decoration: none; font-weight: bold; font-size: 17px; transition: 0.3s; box-shadow: 0 6px 20px rgba(74, 143, 231, 0.3); }
-    .btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+    /* 按鈕樣式 */
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 12px 30px;
+      background: var(--primary);
+      color: #fff !important;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .btn:hover { background: var(--primary-dark); }
 
-    footer { text-align: center; padding: 50px 20px; font-size: 14px; color: #99a; border-top: 1px solid #eee; background: #fff; }
+    /* 頁尾 */
+    footer { text-align: center; padding: 40px 15px; font-size: 13px; color: #999; border-top: 1px solid #eee; background: #fff; margin-top: 50px; }
+    footer a { text-decoration: none; color: #777; margin: 0 5px; }
 
+    /* 手機版適應 */
     @media (max-width: 600px) {
-      .article-box { padding: 25px; }
+      .nav-menu { gap: 12px; overflow-x: auto; white-space: nowrap; padding-bottom: 5px; }
+      .article-box { padding: 22px; }
       h1 { font-size: 24px; }
-      .nav-menu { display: none; } /* 手機端建議隱藏或改為漢堡選單 */
     }
   </style>
 </head>
@@ -82,10 +137,11 @@
 
   <div class="container">
     <article class="article-box">
+      
       <h1>子網路遮罩計算完全攻略：從二進位到 CIDR</h1>
       
       <div class="meta">
-        <span class="pill">📅 更新：2026 年度</span>
+        <span class="pill">📅 更新：115 年度最新版本</span>
         <span class="pill">🔎 主題：網路架設丙/乙級</span>
         <span class="pill">💻 技術核心教學</span>
       </div>
@@ -94,10 +150,8 @@
         子網路計算 (Subnetting) 是網路技術士檢定中最令考生頭痛的「魔王題」。許多人選擇死記硬背，但題目數字一變就容易出錯。本文將帶你拆解計算邏輯，讓你徹底理解 IP 切分，輕鬆應對各種 IP 切分問題。
       </p>
 
-      
-
       <div class="toc">
-        <b>📌 快速學習導覽</b>
+        <b>📌 本篇攻略快速導覽</b>
         <a href="#concept">1. 核心觀念</a>
         <a href="#binary">2. 二進位心算法</a>
         <a href="#steps">3. 實戰計算三步驟</a>
@@ -112,12 +166,30 @@
       <h2 id="binary">二、第一步：掌握二進位快速轉換</h2>
       <p>掌握以下「神奇 8 數字」，是所有子網路計算的心算基礎。只要這張表熟，計算速度會提升 3 倍：</p>
       
-      
-
       <div class="table-scroll">
         <table>
-          <tr><th>二進位位元</th><td>10000000</td><td>11000000</td><td>11100000</td><td>11110000</td><td>11111000</td><td>11111100</td><td>11111110</td><td>11111111</td></tr>
-          <tr><th>十進位數值</th><td><strong>128</strong></td><td><strong>192</strong></td><td><strong>224</strong></td><td><strong>240</strong></td><td><strong>248</strong></td><td><strong>252</strong></td><td><strong>254</strong></td><td><strong>255</strong></td></tr>
+          <tr>
+            <th>二進位位元</th>
+            <td>10000000</td>
+            <td>11000000</td>
+            <td>11100000</td>
+            <td>11110000</td>
+            <td>11111000</td>
+            <td>11111100</td>
+            <td>11111110</td>
+            <td>11111111</td>
+          </tr>
+          <tr>
+            <th>十進位數值</th>
+            <td><strong>128</strong></td>
+            <td><strong>192</strong></td>
+            <td><strong>224</strong></td>
+            <td><strong>240</strong></td>
+            <td><strong>248</strong></td>
+            <td><strong>252</strong></td>
+            <td><strong>254</strong></td>
+            <td><strong>255</strong></td>
+          </tr>
         </table>
       </div>
 
@@ -125,7 +197,7 @@
       <p>範例：若需要將 <code>192.168.1.0 /24</code> 網域切分成 <strong>8 個子網路</strong>。</p>
       
       <h3>1. 確定借位數量 (Borrow Bits)</h3>
-      <p>要切成 8 個子網，因為 $2^3 = 8$，所以要向主機位借 3 位。新遮罩長度為 24 + 3 = <code>/27</code>。</p>
+      <p>要切成 8 個子網，因為 2³ = 8，所以要向主機位借 3 位。新遮罩長度為 24 + 3 = <code>/27</code>。</p>
 
       <h3>2. 計算新遮罩數值</h3>
       <p>借了 3 位元，代表最後一段二進位是 <code>11100000</code>。查表得知為 <strong>224</strong>。<br>
@@ -140,11 +212,9 @@
         <li>第三段：<code>.64</code> 到 <code>.95</code> ... (以此類推)</li>
       </ul>
 
-      
-
       <div class="teacher-tip">
         <strong>👨‍🏫 老師建議：</strong>
-        計算「可用主機數」時，一定要記得<strong>「減 2」</strong>（扣除網路位址與廣播位址）。所以 /27 網段的可用主機就是 $32 - 2 = 30$ 台。
+        計算「可用主機數」時，一定要記得<strong>「減 2」</strong>（扣除網路位址與廣播位址）。所以 /27 網段的可用主機就是 32 - 2 = 30 台。
       </div>
 
       <h2 id="cidr-table">四、常用 CIDR 與網段間距對照表</h2>
@@ -169,17 +239,18 @@
         </table>
       </div>
 
-      <div style="text-align: center; margin-top: 50px;">
-        <p style="color: #667; margin-bottom: 25px; font-weight: bold;">理論學會了？立即進場實測！</p>
+      <div style="text-align: center; margin-top: 40px;">
+        <p style="color: #666; font-size: 15px; margin-bottom: 20px;">理論學會了？立即進場實測！</p>
         <a href="practice.html" class="btn">開始題庫練習</a>
       </div>
+      
     </article>
   </div>
 
- <footer>
-    © 2026 技術士檢定練習站<br><br>
+  <footer>
+    © 2026 技術士檢定學習平台<br>
     <a href="about.html">關於本站</a>｜<a href="privacy.html">隱私權政策</a>｜<a href="contact.html">聯絡我們</a>
- </footer>
+  </footer>
 
 </body>
 </html>
