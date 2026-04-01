@@ -8,155 +8,135 @@
   <link rel="canonical" href="https://junlinye513-sys.github.io/guide-b.html">
 
   <style>
+    /* --- 全站統一樣式標準 --- */
     :root {
       --primary: #4A8FE7;
       --primary-dark: #2d6ac5;
       --bg: #f2f6fc;
-      --radius: 18px;
-    }
-    body {
-      margin: 0;
-      font-family: "Microsoft JhengHei", system-ui, sans-serif;
-      background: var(--bg);
-      color: #333;
-      line-height: 1.85;
+      --radius: 20px;
+      --card-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
 
-    /* 頂部導覽列：毛玻璃效果 */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Microsoft JhengHei", "PingFang TC", system-ui, sans-serif;
+      background-color: var(--bg);
+      color: #333;
+      line-height: 1.8;
+    }
+
+    /* 導覽列 */
     .navbar {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(0,0,0,0.05);
-      padding: 12px 0;
     }
-    .nav-container {
+
+    .nav-content {
       max-width: 1000px;
-      margin: auto;
-      padding: 0 20px;
+      margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 15px 20px;
     }
+
     .nav-logo {
       font-weight: bold;
-      color: var(--primary-dark);
+      color: var(--primary);
       text-decoration: none;
-      font-size: 18px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      font-size: 1.2rem;
     }
-    .nav-menu {
-      display: flex;
-      gap: 20px;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    .nav-menu a {
-      text-decoration: none;
-      color: #555;
-      font-size: 15px;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-    .nav-menu a:hover { color: var(--primary); }
 
-    /* 內容容器 */
-    .container { max-width: 900px; margin: 30px auto 50px; padding: 0 16px; }
-    .article-box {
-      background: #fff;
+    /* 版面容器 */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    /* 內容卡片 */
+    .post-header, .post-content {
+      background: #ffffff;
+      padding: 40px;
       border-radius: var(--radius);
-      padding: 34px;
-      box-shadow: 0 8px 20px rgba(0,0,0,.05);
-      border: 1px solid #eef2f8;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 30px;
     }
 
-    /* 標題與標籤 */
-    h1 {
+    h1 { font-size: 1.8rem; color: #2c3e50; margin: 0; line-height: 1.4; }
+    
+    h2 {
+      color: var(--primary);
+      border-left: 6px solid var(--primary);
+      padding-left: 15px;
+      margin: 45px 0 20px 0;
+      font-size: 1.5rem;
+    }
+
+    h3 {
       color: var(--primary-dark);
-      font-size: 28px;
-      margin: 0 0 10px;
-      border-bottom: 2px solid var(--primary);
-      padding-bottom: 10px;
-      line-height: 1.3;
+      margin-top: 30px;
+      font-size: 1.25rem;
     }
-    .meta { display: flex; gap: 10px; flex-wrap: wrap; color: #667; font-size: 13px; margin: 10px 0 18px; }
-    .pill { background: #f3f7ff; border: 1px solid #dce7ff; padding: 4px 10px; border-radius: 999px; }
 
-    h2 { color: var(--primary); margin-top: 28px; margin-bottom: 10px; font-size: 22px; border-left: 5px solid var(--primary); padding-left: 12px; }
-    h3 { margin-top: 18px; background: #f8faff; padding: 10px 15px; border-radius: 10px; font-size: 18px; color: var(--primary-dark); }
-    p { margin: 15px 0; text-align: justify; }
-    ul { padding-left: 20px; margin: 10px 0 14px; }
+    /* 提示框與警告框 */
+    .warning {
+      background: #fff5f5;
+      border-left: 5px solid #ff6b6b;
+      padding: 20px;
+      border-radius: 15px;
+      margin: 25px 0;
+    }
+
+    .teacher-tip {
+      background: #f0fff4;
+      border-left: 5px solid #48bb78;
+      padding: 20px;
+      border-radius: 15px;
+      margin: 25px 0;
+    }
+
+    ul, ol { padding-left: 25px; }
     li { margin-bottom: 10px; }
 
-    /* 提示框與強調 */
-    .teacher-tip { border-left: 5px solid #4caf50; background: #f1f8e9; padding: 16px; margin: 20px 0; border-radius: 12px; }
-    .warning { border-left: 5px solid #ff9800; background: #fff7e6; padding: 16px; margin: 20px 0; border-radius: 12px; }
-    .highlight { background-color: #fff3cd; padding: 2px 6px; border-radius: 6px; font-weight: 700; }
-
-    /* 回到首頁按鈕：對齊丙級樣式 */
-    .btn-home {
-      display: inline-block;
-      padding: 12px 40px;
-      background: var(--primary);
-      color: white !important;
-      border-radius: 10px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: all 0.3s;
-      box-shadow: 0 4px 12px rgba(74, 143, 231, 0.2);
-    }
-    .btn-home:hover {
-      background: var(--primary-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 15px rgba(74, 143, 231, 0.3);
+    /* 頁尾 - 同步 Level C 樣式 */
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      color: #888;
+      font-size: 0.9rem;
     }
 
-    /* 頁腳樣式 */
-    footer { text-align: center; padding: 40px 15px; font-size: 13px; color: #999; border-top: 1px solid #eee; background: #fff; margin-top: 50px; }
-    footer a { text-decoration: none; color: #777; margin: 0 5px; }
+    /* 手機版適應 */
     @media (max-width: 600px) {
-      .nav-menu { gap: 12px; overflow-x: auto; white-space: nowrap; padding-bottom: 5px; }
-      .article-box { padding: 22px; }
-      h1 { font-size: 24px; }
+      .post-header, .post-content { padding: 25px 20px; }
+      h1 { font-size: 1.5rem; }
     }
   </style>
 </head>
-
 <body>
 
   <nav class="navbar">
-    <div class="nav-container">
-      <a href="index.html" class="nav-logo">🎯 檢定練習站</a>
-      <ul class="nav-menu">
-        <li><a href="index.html">首頁</a></li>
-        <li><a href="practice.html">題庫練習</a></li>
-        <li><a href="post-level-c.html">備考攻略</a></li>
-        <li><a href="about.html">關於本站</a></li>
-      </ul>
+    <div class="nav-content">
+      <a href="index.html" class="nav-logo">技術士檢定練習站</a>
     </div>
   </nav>
 
   <div class="container">
-    <article class="article-box">
+    
+    <header class="post-header">
+      <h1>乙級技術士學科準備策略與常見陷阱</h1>
+    </header>
 
-      <h1>115 年度乙級技術士學科：準備策略與常見陷阱</h1>
-
-      <div class="meta">
-        <span class="pill">📅 更新：115 年度版本</span>
-        <span class="pill">🔎 主題：各職類乙級學科</span>
-        <span class="pill">📖 難度：中高階</span>
-      </div>
-
+    <main class="post-content">
       <p>
-        相較於丙級，乙級學科不再只是基礎概念記憶，而是強調「觀念整合能力」與「理解深度」。
-        許多考生在準備乙級時仍然使用丙級的背題方式，結果發現題目變化後就失去方向。
-        乙級的關鍵不是看過多少題，而是你是否真正理解核心概念。
+        進入乙級檢定，代表你正邁向專業技術人員的門檻。乙級學科與丙級最大的差別在於「觀念的整合」與「陷阱的細密度」。這不只是考你讀了多少題，而是你是否真正理解核心概念。
       </p>
 
       <h2>一、乙級與丙級最大的差異</h2>
@@ -167,7 +147,7 @@
       </ul>
 
       <div class="teacher-tip">
-        👨‍🏫 <strong>老師提醒：</strong>
+        <strong>👨‍🏫 老師提醒：</strong>
         若你只是把題庫刷三遍卻沒有理解觀念，乙級很容易卡在 50–60 分之間。
       </div>
 
@@ -190,30 +170,13 @@
       </p>
 
       <div class="warning">
-        ⚠️ <strong>常見陷阱：</strong>
-        題目常出現極小差異選項，例如數字範圍或專有名詞順序，必須逐字確認題目敘述。
+        <strong>⚠️ 常見陷阱：</strong>
+        題目常出現極小差異選項，例如數字範圍或專有名詞的縮寫，務必看清楚題目問的是「何者為非」還是「何者正確」。
       </div>
+    </main>
 
-      <h2>三、乙級考場作答策略</h2>
-      <ul>
-        <li>先做熟悉章節，建立信心。</li>
-        <li>遇到複雜題先標記，避免卡住影響節奏。</li>
-        <li>最後 15 分鐘務必檢查題號與答案卡。</li>
-      </ul>
-
-      <p>
-        若你已經準備好了，現在就點擊下方的按鈕，開始今天的模擬練習吧！
-      </p>
-      <div style="text-align: center; margin-top: 30px;">
-        <a href="practice.html" style="background: var(--primary); color: white; padding: 12px 30px; border-radius: 10px; font-weight: bold; text-decoration: none;">開始題庫練習</a>
-      </div>
-
-    </article>
-  </div>
-
-  <footer>
-    © 2026 技術士檢定學習平台<br><br>
-    <a href="about.html">關於本站</a>｜<a href="privacy.html">隱私權政策</a>｜<a href="contact.html">聯絡我們</a>
+  </div> <footer>
+    <p>&copy; 2026 技術士檢定練習站. All rights reserved.</p>
   </footer>
 
 </body>
