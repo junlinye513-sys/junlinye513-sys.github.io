@@ -8,14 +8,21 @@
   <link rel="canonical" href="https://junlinye513-sys.github.io/study-guide.html">
 
   <style>
+    /* --- 完全對齊標準版的 CSS --- */
     :root {
       --primary: #4A8FE7;
       --primary-dark: #2d6ac5;
       --bg: #f2f6fc;
       --radius: 18px;
     }
-    body { margin:0; font-family:"Microsoft JhengHei", system-ui, sans-serif; background:var(--bg); color:#333; line-height:1.85; }
-    
+    body {
+      margin: 0;
+      font-family: "Microsoft JhengHei", system-ui, sans-serif;
+      background: var(--bg);
+      color: #333;
+      line-height: 1.85;
+    }
+
     /* 導覽列 */
     .navbar {
       position: sticky;
@@ -39,6 +46,7 @@
     .nav-menu a { text-decoration: none; color: #555; font-size: 15px; font-weight: 500; }
     .nav-menu a:hover { color: var(--primary); }
 
+    /* 文章容器與卡片 */
     .container { max-width: 900px; margin: 30px auto 50px; padding: 0 16px; }
     .article-box {
       background: #fff;
@@ -47,6 +55,8 @@
       box-shadow: 0 8px 20px rgba(0,0,0,.05);
       border: 1px solid #eef2f8;
     }
+    
+    /* 標題與內文 */
     h1 {
       color: var(--primary-dark);
       font-size: 28px;
@@ -55,43 +65,33 @@
       padding-bottom: 10px;
       line-height: 1.3;
     }
-
     .meta { display: flex; gap: 10px; flex-wrap: wrap; color: #667; font-size: 13px; margin: 10px 0 18px; }
     .pill { background: #f3f7ff; border: 1px solid #dce7ff; padding: 4px 10px; border-radius: 999px; }
-    
-    h2 { color: var(--primary); margin-top: 32px; font-size: 22px; border-left: 5px solid var(--primary); padding-left: 12px; }
-    h3 {
-      margin-top: 20px;
-      background: #f8faff;
-      padding: 10px 15px;
-      border-radius: 10px;
-      font-size: 18px;
-      color: var(--primary-dark);
-    }
+
+    h2 { color: var(--primary); margin-top: 28px; margin-bottom: 10px; font-size: 22px; border-left: 5px solid var(--primary); padding-left: 12px; }
+    h3 { margin-top: 18px; background: #f8faff; padding: 10px 15px; border-radius: 10px; font-size: 18px; color: var(--primary-dark); }
     p { margin: 15px 0; text-align: justify; }
-    ul { padding-left: 20px; margin: 10px 0 14px; }
+    ul, ol { padding-left: 20px; margin: 10px 0 14px; }
     li { margin-bottom: 10px; }
 
-    .warning { border-left: 5px solid #ff9800; background: #fff7e6; padding: 16px; border-radius: 12px; margin: 20px 0; }
-    .teacher-tip { border-left: 5px solid #4caf50; background: #f1f8e9; padding: 16px; border-radius: 12px; margin: 20px 0; }
+    /* 重點標示與提示框 */
+    .highlight { background-color: #fff3cd; padding: 2px 6px; border-radius: 6px; font-weight: 700; }
+    .teacher-tip { border-left: 5px solid #4caf50; background: #f1f8e9; padding: 16px; margin: 20px 0; border-radius: 12px; }
+    .warning { border-left: 5px solid #ff9800; background: #fff7e6; padding: 16px; margin: 20px 0; border-radius: 12px; }
 
-    .btn-cta {
-      display: inline-block;
-      background: var(--primary);
-      color: #fff !important;
-      padding: 10px 25px;
-      border-radius: 10px;
-      text-decoration: none !important;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-    .btn-cta:hover { background: var(--primary-dark); }
+    /* 目錄 */
+    .toc { background: #fbfcff; border: 1px solid #e6edf7; border-radius: 14px; padding: 16px; margin: 20px 0; }
+    .toc b { display: block; margin-bottom: 10px; color: #223; font-size: 16px; }
+    .toc a { display: inline-block; margin: 5px 15px 5px 0; font-weight: 600; font-size: 15px; color: var(--primary-dark); text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
 
+    /* 頁尾 */
     footer { text-align: center; padding: 40px 15px; font-size: 13px; color: #999; border-top: 1px solid #eee; background: #fff; margin-top: 50px; }
     footer a { text-decoration: none; color: #777; margin: 0 5px; }
 
+    /* 手機版適應 */
     @media (max-width: 600px) {
-      .nav-menu { gap: 12px; overflow-x: auto; white-space: nowrap; }
+      .nav-menu { gap: 12px; overflow-x: auto; white-space: nowrap; padding-bottom: 5px; }
       .article-box { padding: 22px; }
       h1 { font-size: 24px; }
     }
@@ -100,100 +100,112 @@
 
 <body>
 
-<nav class="navbar">
-  <div class="nav-container">
-    <a href="index.html" class="nav-logo">🎯 檢定練習站</a>
-    <ul class="nav-menu">
-      <li><a href="index.html">首頁</a></li>
-      <li><a href="practice.html">題庫練習</a></li>
-      <li><a href="post-level-c.html">備考攻略</a></li>
-      <li><a href="about.html">關於本站</a></li>
-    </ul>
-  </div>
-</nav>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">🎯 檢定練習站</a>
+      <ul class="nav-menu">
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="practice.html">題庫練習</a></li>
+        <li><a href="post-level-c.html">備考攻略</a></li>
+        <li><a href="about.html">關於本站</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<div class="container">
-  <article class="article-box">
+  <div class="container">
+    <article class="article-box">
 
-    <h1>學科考前一週衝刺計畫：倒數 7 天高效複習安排</h1>
-       <div class="meta">
-        <span class="pill">📅 更新：2026 年度</span>
+      <h1>學科考前一週衝刺計畫：倒數 7 天高效複習安排</h1>
+
+      <div class="meta">
+        <span class="pill">📅 更新：115 年度最新版本</span>
         <span class="pill">🔎 主題：考前衝刺</span>
         <span class="pill">🎓 適用：所有考生</span>
-       </div>
-    <p>
-      當考試進入最後倒數 7 天，準備方式必須轉為「穩定分數」模式。此時不再追求大量新增內容，而是專注於 <strong>降低錯誤率、穩定節奏、強化弱點</strong>。
-    </p>
+      </div>
 
-    <h2>一、倒數一週整體原則</h2>
-    <ul>
-      <li><strong>不增加新壓力：</strong> 不再大量刷從未看過的題庫。</li>
-      <li><strong>錯題為王：</strong> 複習過去測驗中答錯的題目，確保不再重蹈覆轍。</li>
-      <li><strong>模擬實戰：</strong> 開始在本站 <a href="practice.html">練習區</a> 進行限時模擬測驗。</li>
-      <li><strong>穩定作息：</strong> 保持睡眠充足，調整腦袋在考試時段最清醒。</li>
-    </ul>
+      <p>
+        當考試進入最後倒數 7 天，準備方式必須轉為「穩定分數」模式。此時不再追求大量新增內容，而是專注於 <span class="highlight">降低錯誤率、穩定節奏、強化弱點</span>。
+      </p>
 
-    <div class="warning">
-      ⚠️ <strong>常見錯誤：</strong> 倒數階段突然更換不同版本的講義，容易造成觀念混淆。請堅持目前熟悉的筆記。
-    </div>
+      <div class="toc">
+        <b>📌 本篇攻略快速導覽</b>
+        <a href="#principles">1. 倒數一週整體原則</a>
+        <a href="#schedule">2. 倒數每日安排建議</a>
+        <a href="#mistakes">3. 錯題回補高效策略</a>
+        <a href="#action">4. 最後衝刺行動建議</a>
+      </div>
 
-    <h2>二、倒數每日安排建議</h2>
+      <h2 id="principles">一、倒數一週整體原則</h2>
+      <ul>
+        <li><strong>不增加新壓力：</strong> 不再大量刷從未看過的題庫。</li>
+        <li><strong>錯題為王：</strong> 複習過去測驗中答錯的題目，確保不再重蹈覆轍。</li>
+        <li><strong>模擬實戰：</strong> 開始在本站進行限時模擬測驗。</li>
+        <li><strong>穩定作息：</strong> 保持睡眠充足，調整腦袋在考試時段最清醒。</li>
+      </ul>
 
-    <h3>📅 倒數 7～5 天：基礎穩定期</h3>
-    <ul>
-      <li>全面回顧歷次模擬考的錯題。</li>
-      <li>整理出最容易失分的三大主題（例如：共同科目－環境保護）。</li>
-      <li><strong>動作建議：</strong> 每天針對弱項主題，在練習頁面點選該職類加強。</li>
-    </ul>
+      <div class="warning">
+        <strong>⚠️ 常見錯誤：</strong> 
+        倒數階段突然更換不同版本的講義，容易造成觀念混淆。請堅持目前熟悉的筆記。
+      </div>
 
-    <h3>📅 倒數 4～3 天：模擬調整期</h3>
-    <ul>
-      <li>每天下午進行 1 回「不分題型」的完整模擬測驗。</li>
-      <li>全程計時（丙級建議 40 分鐘內完成），模擬考場壓力。</li>
-      <li>檢討錯題後，立即在筆記本寫下一句話的觀念補強。</li>
-    </ul>
+      <h2 id="schedule">二、倒數每日安排建議</h2>
 
-    <h3>📅 倒數 2 天：重點濃縮期</h3>
-    <ul>
-      <li>僅複習自己整理的「錯題筆記」。</li>
-      <li>快速確認共同科目（職安、倫理、環保、資安）的高頻常識題。</li>
-      <li>再次演練需要計算的進位制或基本公式。</li>
-    </ul>
+      <h3>📅 倒數 7～5 天：基礎穩定期</h3>
+      <ul>
+        <li>全面回顧歷次模擬考的錯題。</li>
+        <li>整理出最容易失分的三大主題（例如：共同科目－環境保護）。</li>
+        <li><strong>動作建議：</strong> 每天針對弱項主題，在練習頁面點選該職類加強。</li>
+      </ul>
 
-    <h3>📅 倒數 1 天：節奏與心態調整</h3>
-    <ul>
-      <li><strong>禁止熬夜刷題：</strong> 腦袋疲勞會大幅增加當天看錯題目的機率。</li>
-      <li><strong>文具確認：</strong> 准考證、身分證、2B鉛筆、橡皮擦。</li>
-      <li><strong>交通確認：</strong> 再次確認考場位置與預計抵達時間。</li>
-    </ul>
+      <h3>📅 倒數 4～3 天：模擬調整期</h3>
+      <ul>
+        <li>每天下午進行 1 回「不分題型」的完整模擬測驗。</li>
+        <li>全程計時（丙級建議 40 分鐘內完成），模擬考場壓力。</li>
+        <li>檢討錯題後，立即在筆記本寫下一句話的觀念補強。</li>
+      </ul>
 
-    <h2>三、錯題回補高效策略</h2>
-    <p>這週你最不需要的是「分數」，而是「錯誤的原因」。</p>
-    <ul>
-      <li><strong>區分錯因：</strong> 是「完全沒讀過」還是「題目陷阱（如問何者為非）」？</li>
-      <li><strong>口訣記憶：</strong> 針對純記憶題型，想出一個有趣的連結幫助自己考場回憶。</li>
-    </ul>
+      <h3>📅 倒數 2 天：重點濃縮期</h3>
+      <ul>
+        <li>僅複習自己整理的「錯題筆記」。</li>
+        <li>快速確認共同科目（職安、倫理、環保、資安）的高頻常識題。</li>
+        <li>再次演練需要計算的進位制或基本公式。</li>
+      </ul>
 
-    <div class="teacher-tip">
-      👨‍🏫 <strong>老師提醒：</strong> 考前最後 48 小時，複習一遍自己的「錯題紀錄」所帶來的投資報酬率，遠高於隨機亂刷 500 題。
-    </div>
+      <h3>📅 倒數 1 天：節奏與心態調整</h3>
+      <ul>
+        <li><strong>禁止熬夜刷題：</strong> 腦袋疲勞會大幅增加當天看錯題目的機率。</li>
+        <li><strong>文具確認：</strong> 准考證、身分證、2B鉛筆、橡皮擦。</li>
+        <li><strong>交通確認：</strong> 再次確認考場位置與預計抵達時間。</li>
+      </ul>
 
-    <h2>四、最後衝刺行動建議</h2>
-    <p>
-      別再等待了！如果你已經安排好衝刺計畫，現在就點擊下方按鈕，開始今天的第一回模擬測驗，找出你目前的潛在弱點。
-    </p>
-    
-    <div style="text-align: center; margin-top: 30px;">
+      <h2 id="mistakes">三、錯題回補高效策略</h2>
+      <p>這週你最不需要的是「分數」，而是「錯誤的原因」。</p>
+      <ul>
+        <li><strong>區分錯因：</strong> 是「完全沒讀過」還是「題目陷阱（如問何者為非）」？</li>
+        <li><strong>口訣記憶：</strong> 針對純記憶題型，想出一個有趣的連結幫助自己考場回憶。</li>
+      </ul>
+
+      <div class="teacher-tip">
+        <strong>👨‍🏫 老師提醒：</strong> 
+        考前最後 48 小時，複習一遍自己的「錯題紀錄」所帶來的投資報酬率，遠高於隨機亂刷 500 題。
+      </div>
+
+      <h2 id="action">四、最後衝刺行動建議</h2>
+      <p>
+        別再等待了！如果你已經安排好衝刺計畫，現在就點擊下方按鈕，開始今天的第一回模擬測驗，找出你目前的潛在弱點。
+      </p>
+      
+      <div style="text-align: center; margin-top: 30px;">
         <a href="practice.html" style="background: var(--primary); color: white; padding: 12px 30px; border-radius: 10px; font-weight: bold; text-decoration: none;">開始題庫練習</a>
-    </div>
+      </div>
 
-  </article>
-</div>
+    </article>
+  </div>
 
-<footer>
-    © 2026 技術士檢定學習平台<br><br>
+  <footer>
+    © 2026 技術士檢定學習平台<br>
     <a href="about.html">關於本站</a>｜<a href="privacy.html">隱私權政策</a>｜<a href="contact.html">聯絡我們</a>
-</footer>
+  </footer>
 
 </body>
 </html>
