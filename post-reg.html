@@ -8,7 +8,6 @@
   <link rel="canonical" href="https://junlinye513-sys.github.io/guide-registration.html">
 
   <style>
-    /* --- 完全對齊標準版的 CSS --- */
     :root {
       --primary: #4A8FE7;
       --primary-dark: #2d6ac5;
@@ -43,10 +42,10 @@
     }
     .nav-logo { font-weight: bold; color: var(--primary-dark); text-decoration: none; font-size: 18px; }
     .nav-menu { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
-    .nav-menu a { text-decoration: none; color: #555; font-size: 15px; font-weight: 500; transition: color 0.3s; }
+    .nav-menu a { text-decoration: none; color: #555; font-size: 15px; font-weight: 500; }
     .nav-menu a:hover { color: var(--primary); }
 
-    /* 文章容器與卡片 */
+    /* 文章容器 */
     .container { max-width: 900px; margin: 30px auto 50px; padding: 0 16px; }
     .article-box {
       background: #fff;
@@ -74,7 +73,7 @@
     ul, ol { padding-left: 20px; margin: 10px 0 14px; }
     li { margin-bottom: 10px; }
 
-    /* 重點標示與提示框 */
+    /* 提示區塊 */
     .highlight { background-color: #fff3cd; padding: 2px 6px; border-radius: 6px; font-weight: 700; }
     .teacher-tip { border-left: 5px solid #4caf50; background: #f1f8e9; padding: 16px; margin: 20px 0; border-radius: 12px; }
     .warning { border-left: 5px solid #ff9800; background: #fff7e6; padding: 16px; margin: 20px 0; border-radius: 12px; }
@@ -85,36 +84,21 @@
     .toc a { display: inline-block; margin: 5px 15px 5px 0; font-weight: 600; font-size: 15px; color: var(--primary-dark); text-decoration: none; }
     .toc a:hover { text-decoration: underline; }
 
-    /* --- 專屬表格樣式 --- */
+    /* 表格 */
     .table-scroll { overflow-x: auto; margin: 20px 0; border: 1px solid #eef2f8; border-radius: 12px; }
     table { width: 100%; border-collapse: collapse; min-width: 500px; }
     th, td { padding: 15px; border: 1px solid #eef2f8; text-align: center; font-size: 15px; }
     th { background: #f8faff; color: var(--primary-dark); font-weight: bold; }
 
-    /* --- 專屬 FAQ 摺疊樣式 --- */
+    /* FAQ */
     details { border: 1px solid #eef2f8; border-radius: 12px; padding: 16px; margin-bottom: 15px; background: #fbfcff; transition: all 0.3s; }
     summary { font-weight: bold; cursor: pointer; color: var(--primary-dark); font-size: 16px; }
     details p { margin-top: 12px; margin-bottom: 0; font-size: 15px; color: #444; }
-
-    /* 按鈕樣式 */
-    .btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 12px 30px;
-      background: var(--primary);
-      color: #fff !important;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-    .btn:hover { background: var(--primary-dark); }
 
     /* 頁尾 */
     footer { text-align: center; padding: 40px 15px; font-size: 13px; color: #999; border-top: 1px solid #eee; background: #fff; margin-top: 50px; }
     footer a { text-decoration: none; color: #777; margin: 0 5px; }
 
-    /* 手機版適應 */
     @media (max-width: 600px) {
       .nav-menu { gap: 12px; overflow-x: auto; white-space: nowrap; padding-bottom: 5px; }
       .article-box { padding: 22px; }
@@ -240,18 +224,17 @@
         <p>報名截止後通常無法更改考區，請填寫時務必確認最方便前往的考場。</p>
       </details>
 
-      <div style="text-align: center; margin-top: 40px;">
-        <p style="color: #666; font-size: 15px; margin-bottom: 20px;">報名成功後，就開始衝刺題庫吧！</p>
-        <a href="practice.html" class="btn">開始題庫練習</a>
+      <div style="text-align: center; margin-top: 30px;">
+        <a href="practice.html" style="background: var(--primary); color: white; padding: 12px 30px; border-radius: 10px; font-weight: bold; text-decoration: none;">開始題庫練習</a>
       </div>
 
     </article>
   </div>
 
-  <footer>
-    © 2026 技術士檢定學習平台<br><br>
-    <a href="about.html">關於本站</a>｜<a href="privacy.html">隱私權政策</a>｜<a href="contact.html">聯絡我們</a>
-  </footer>
+ <footer>
+  © 2026 技術士檢定學習平台<br>
+  <a href="about.html">關於本站</a>｜<a href="privacy.html">隱私權政策</a>｜<a href="contact.html">聯絡我們</a>
+</footer>
 
 </body>
 </html>
