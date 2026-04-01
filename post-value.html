@@ -8,6 +8,7 @@
   <link rel="canonical" href="https://junlinye513-sys.github.io/guide-license-value.html">
 
   <style>
+    /* --- 完全對齊標準版的 CSS --- */
     :root {
       --primary: #4A8FE7;
       --primary-dark: #2d6ac5;
@@ -22,14 +23,13 @@
       line-height: 1.85;
     }
 
-    /* 導覽列 - 統一規格 12px */
+    /* 導覽列 */
     .navbar {
       position: sticky;
       top: 0;
       z-index: 1000;
       background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(0,0,0,0.05);
       padding: 12px 0;
     }
@@ -41,12 +41,12 @@
       justify-content: space-between;
       align-items: center;
     }
-    .nav-logo { font-weight: bold; color: var(--primary-dark); text-decoration: none; font-size: 18px; display: flex; align-items: center; }
+    .nav-logo { font-weight: bold; color: var(--primary-dark); text-decoration: none; font-size: 18px; }
     .nav-menu { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
-    .nav-menu a { text-decoration: none; color: #555; font-size: 15px; font-weight: 500; transition: color 0.3s; }
+    .nav-menu a { text-decoration: none; color: #555; font-size: 15px; font-weight: 500; }
     .nav-menu a:hover { color: var(--primary); }
 
-    /* 文章容器 */
+    /* 文章容器與卡片 */
     .container { max-width: 900px; margin: 30px auto 50px; padding: 0 16px; }
     .article-box {
       background: #fff;
@@ -55,6 +55,8 @@
       box-shadow: 0 8px 20px rgba(0,0,0,.05);
       border: 1px solid #eef2f8;
     }
+    
+    /* 標題與內文 */
     h1 {
       color: var(--primary-dark);
       font-size: 28px;
@@ -72,21 +74,10 @@
     ul, ol { padding-left: 20px; margin: 10px 0 14px; }
     li { margin-bottom: 10px; }
 
-    /* 提示區塊樣式 */
+    /* 重點標示與提示框 */
     .highlight { background-color: #fff3cd; padding: 2px 6px; border-radius: 6px; font-weight: 700; }
     .teacher-tip { border-left: 5px solid #4caf50; background: #f1f8e9; padding: 16px; margin: 20px 0; border-radius: 12px; }
     .warning { border-left: 5px solid #ff9800; background: #fff7e6; padding: 16px; margin: 20px 0; border-radius: 12px; }
-
-    /* 表格樣式 */
-    .table-scroll { overflow-x: auto; margin: 20px 0; border: 1px solid #eee; border-radius: 10px; }
-    table { width: 100%; border-collapse: collapse; min-width: 500px; }
-    th, td { padding: 12px; border: 1px solid #eee; text-align: center; font-size: 15px; }
-    th { background: #f1f6ff; color: var(--primary-dark); }
-
-    /* FAQ 摺疊樣式 */
-    details { border: 1px solid #eef2f8; border-radius: 10px; padding: 12px; margin-bottom: 10px; background: #fafbfc; }
-    summary { font-weight: bold; cursor: pointer; color: var(--primary-dark); }
-    details p { margin-top: 10px; font-size: 15px; color: #555; }
 
     /* 目錄 */
     .toc { background: #fbfcff; border: 1px solid #e6edf7; border-radius: 14px; padding: 16px; margin: 20px 0; }
@@ -94,10 +85,22 @@
     .toc a { display: inline-block; margin: 5px 15px 5px 0; font-weight: 600; font-size: 15px; color: var(--primary-dark); text-decoration: none; }
     .toc a:hover { text-decoration: underline; }
 
-    /* Footer - 統一規格 */
+    /* --- 專屬表格樣式 --- */
+    .table-scroll { overflow-x: auto; margin: 20px 0; border: 1px solid #eef2f8; border-radius: 12px; }
+    table { width: 100%; border-collapse: collapse; min-width: 500px; }
+    th, td { padding: 15px; border: 1px solid #eef2f8; text-align: center; font-size: 15px; }
+    th { background: #f8faff; color: var(--primary-dark); font-weight: bold; }
+
+    /* --- 專屬 FAQ 摺疊樣式 --- */
+    details { border: 1px solid #eef2f8; border-radius: 12px; padding: 16px; margin-bottom: 15px; background: #fbfcff; transition: all 0.3s; }
+    summary { font-weight: bold; cursor: pointer; color: var(--primary-dark); font-size: 16px; }
+    details p { margin-top: 12px; margin-bottom: 0; font-size: 15px; color: #444; }
+
+    /* 頁尾 */
     footer { text-align: center; padding: 40px 15px; font-size: 13px; color: #999; border-top: 1px solid #eee; background: #fff; margin-top: 50px; }
     footer a { text-decoration: none; color: #777; margin: 0 5px; }
 
+    /* 手機版適應 */
     @media (max-width: 600px) {
       .nav-menu { gap: 12px; overflow-x: auto; white-space: nowrap; padding-bottom: 5px; }
       .article-box { padding: 22px; }
@@ -126,7 +129,7 @@
       <h1>技術士證照有用嗎？丙級與乙級差別與就業分析</h1>
 
       <div class="meta">
-        <span class="pill">📅 更新：2026 年度</span>
+        <span class="pill">📅 更新：115 年度最新版本</span>
         <span class="pill">🔎 主題：就業分析與證照價值</span>
         <span class="pill">🎓 適用：高中職 / 大專 / 在職轉職</span>
       </div>
@@ -230,7 +233,7 @@
   </div>
 
   <footer>
-    © 2026 技術士檢定學習平台<br><br>
+    © 2026 技術士檢定學習平台<br>
     <a href="about.html">關於本站</a>｜<a href="privacy.html">隱私權政策</a>｜<a href="contact.html">聯絡我們</a>
   </footer>
 
