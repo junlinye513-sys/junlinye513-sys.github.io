@@ -65,7 +65,7 @@
     h2 { color: var(--primary); margin-top: 28px; margin-bottom: 10px; font-size: 22px; border-left: 5px solid var(--primary); padding-left: 12px; }
     p { margin: 15px 0; }
 
-    /* 提示框 (對齊標準版 warning) */
+    /* 提示框 */
     .warning-box {
       border-left: 5px solid #ff9800;
       background: #fff7e6;
@@ -141,7 +141,8 @@
 
     /* 頁尾 */
     footer { text-align: center; padding: 40px 15px; font-size: 13px; color: #999; border-top: 1px solid #eee; background: #fff; margin-top: 50px; }
-    footer a { text-decoration: none; color: #777; margin: 0 5px; }
+    footer a { text-decoration: none; color: #777; margin: 0 5px; transition: color 0.3s; }
+    footer a:hover { color: var(--primary); }
 
     /* 手機版適應 */
     @media (max-width: 600px) {
