@@ -20,7 +20,7 @@
       line-height: 1.85;
     }
 
-    /* 導覽列 (已加入抗跳動與 Emoji 對齊優化) */
+    /* 導覽列 (完全對齊其他頁面) */
     .navbar {
       position: sticky;
       top: 0;
@@ -38,33 +38,9 @@
       justify-content: space-between;
       align-items: center;
     }
-    .nav-logo { 
-      display: flex; 
-      align-items: center; 
-      gap: 6px; /* 讓 emoji 與文字有點呼吸空間 */
-      font-weight: bold; 
-      color: var(--primary-dark); 
-      text-decoration: none; 
-      font-size: 18px; 
-      line-height: 1; /* 鎖死高度，避免被 Emoji 撐開 */
-    }
-    .nav-menu { 
-      display: flex; 
-      align-items: center; 
-      gap: 20px; 
-      list-style: none; 
-      margin: 0; 
-      padding: 0; 
-    }
-    .nav-menu a { 
-      display: block;
-      text-decoration: none; 
-      color: #555; 
-      font-size: 15px; 
-      font-weight: 500; 
-      transition: color 0.3s; 
-      line-height: 1; /* 確保選單高度一致 */
-    }
+    .nav-logo { font-weight: bold; color: var(--primary-dark); text-decoration: none; font-size: 18px; }
+    .nav-menu { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
+    .nav-menu a { text-decoration: none; color: #555; font-size: 15px; font-weight: 500; transition: color 0.3s; }
     .nav-menu a:hover { color: var(--primary); }
 
     /* 文章容器與卡片 */
