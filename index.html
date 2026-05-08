@@ -479,36 +479,40 @@
 </footer>
 
 <script>
-const API="https://script.google.com/macros/s/AKfycbxAp06fzFAYTDRh17fZqe4pfytLRHAuNcPb8ubRKQJkCJZDEyVze9_fylV847gkz9jt/exec";
-const ua=encodeURIComponent(navigator.userAgent);
-let userId=localStorage.getItem("USER_ID")||("u"+Math.random().toString(36).substring(2));
-localStorage.setItem("USER_ID",userId);
+const API = "https://script.google.com/macros/s/AKfycbxAp06fzFAYTDRh17fZqe4pfytLRHAuNcPb8ubRKQJkCJZDEyVze9_fylV847gkz9jt/exec";
+const ua = encodeURIComponent(navigator.userAgent);
+let userId = localStorage.getItem("USER_ID") || ("u" + Math.random().toString(36).substring(2));
+localStorage.setItem("USER_ID", userId);
 
-async function updateStats(){
-  try{
-    const v=await fetch(`${API}?action=visit&ua=${ua}&vid=${userId}`).then(r=>r.json());
-    const o=await fetch(`${API}?action=online`).then(r=>r.json());
-    document.getElementById("stats").innerHTML=
-      `✨ 目前有 <b>${o.online??0}</b> 人在線練習中（累計造訪：${v.total??0}）`;
-  }catch{
-    document.getElementById("stats").style.display="none";
+async function updateStats() {
+  try {
+    const v = await fetch(`${API}?action=visit&ua=${ua}&vid=${userId}`).then(r => r.json());
+    const o = await fetch(`${API}?action=online`).then(r => r.json());
+    
+    // 確保 stats 標籤是顯示的
+    const statsEl = document.getElementById("stats");
+    statsEl.style.display = "inline-block"; 
+    statsEl.innerHTML = `✨ 目前有 <b>${o.online ?? 0}</b> 人在線練習中（累計造訪：${v.total ?? 0}）`;
+    
+  } catch (err) {
+    console.error("計數器讀取失敗:", err);
+    // 發生錯誤時，不要隱藏，可以保留最後一次的數字，或顯示提示文字
+    // document.getElementById("stats").innerHTML = "✨ 在線人數統計中..."; 
   }
 }
-fetch(`${API}?action=heartbeat&userId=${userId}&ua=${ua}`).then(updateStats);
-setInterval(()=>{fetch(`${API}?action=heartbeat&userId=${userId}&ua=${ua}`);updateStats();},10000);
+
+// 初始載入
+fetch(`${API}?action=heartbeat&userId=${userId}&ua=${ua}`)
+  .then(updateStats)
+  .catch(console.error);
+
+// 將輪詢時間拉長到 60 秒 (60000 毫秒)，避免打爆 Google Apps Script 的免費配額
+setInterval(() => {
+  fetch(`${API}?action=heartbeat&userId=${userId}&ua=${ua}`)
+    .then(updateStats)
+    .catch(console.error);
+}, 60000); 
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
