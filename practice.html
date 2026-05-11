@@ -5,7 +5,6 @@
   <title>題庫練習中心｜技術士檢定平台</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    /* --- 完全對齊 guide-cable.html 的 CSS 基礎設定 --- */
     :root {
       --primary: #4A8FE7;
       --primary-dark: #2d6ac5;
@@ -20,7 +19,7 @@
       line-height: 1.85;
     }
 
-    /* 導覽列 (100% 複製 guide-cable.html) */
+    /* 導覽列 (終極穩定寬裕版) */
     .navbar {
       position: sticky;
       top: 0;
@@ -28,7 +27,8 @@
       background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(0,0,0,0.05);
-      padding: 12px 0;
+      /* 明確加大上下留白，強制撐出與履歷篇一樣的完美高度 */
+      padding: 16px 0; 
     }
     .nav-container {
       max-width: 1000px;
@@ -38,12 +38,33 @@
       justify-content: space-between;
       align-items: center;
     }
-    .nav-logo { font-weight: bold; color: var(--primary-dark); text-decoration: none; font-size: 18px; }
-    .nav-menu { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
-    .nav-menu a { text-decoration: none; color: #555; font-size: 15px; font-weight: 500; transition: color 0.3s; }
+    .nav-logo { 
+      font-weight: bold; 
+      color: var(--primary-dark); 
+      text-decoration: none; 
+      font-size: 18px; 
+      display: flex; 
+      align-items: center; /* 讓 Emoji 完美垂直置中 */
+      gap: 6px; 
+    }
+    .nav-menu { 
+      display: flex; 
+      gap: 20px; 
+      list-style: none; 
+      margin: 0; 
+      padding: 0; 
+      align-items: center;
+    }
+    .nav-menu a { 
+      text-decoration: none; 
+      color: #555; 
+      font-size: 15px; 
+      font-weight: 500; 
+      transition: color 0.3s; 
+    }
     .nav-menu a:hover { color: var(--primary); }
 
-    /* 文章容器與卡片 (100% 複製 guide-cable.html) */
+    /* 文章容器與卡片 */
     .container { max-width: 900px; margin: 30px auto 50px; padding: 0 16px; }
     .article-box {
       background: #fff;
@@ -53,7 +74,6 @@
       border: 1px solid #eef2f8;
     }
     
-    /* 標題與內文 (100% 複製 guide-cable.html) */
     h1 {
       color: var(--primary-dark);
       font-size: 28px;
@@ -64,8 +84,6 @@
     }
     h2 { color: var(--primary); margin-top: 28px; margin-bottom: 10px; font-size: 22px; border-left: 5px solid var(--primary); padding-left: 12px; }
     p { margin: 15px 0; text-align: justify; }
-
-    /* --- 以下為 practice.html 專屬樣式 --- */
 
     /* 提示框 */
     .warning-box {
@@ -141,11 +159,11 @@
       text-decoration: underline;
     }
 
-    /* 頁尾 (100% 複製 guide-cable.html) */
+    /* 頁尾 */
     footer { text-align: center; padding: 40px 15px; font-size: 13px; color: #999; border-top: 1px solid #eee; background: #fff; margin-top: 50px; }
     footer a { text-decoration: none; color: #777; margin: 0 5px; }
 
-    /* 手機版適應 (保留共有設定與 practice 專屬設定) */
+    /* 手機版適應 */
     @media (max-width: 600px) {
       .nav-menu { gap: 12px; overflow-x: auto; white-space: nowrap; padding-bottom: 5px; }
       .article-box { padding: 22px; }
