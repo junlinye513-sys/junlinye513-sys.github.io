@@ -5,7 +5,8 @@
   <title>題庫練習中心｜技術士檢定平台</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-      :root {
+    /* --- 完全對齊 about.html 標準版的基础設定 --- */
+    :root {
       --primary: #4A8FE7;
       --primary-dark: #2d6ac5;
       --bg: #f2f6fc;
@@ -19,7 +20,7 @@
       line-height: 1.85;
     }
 
-    /* 導覽列 (純淨 about.html 版本) */
+    /* 導覽列 */
     .navbar {
       position: sticky;
       top: 0;
@@ -70,8 +71,12 @@
       padding-left: 12px; 
     }
     p { margin: 15px 0; text-align: justify; }
+    
+    /* 👇 就是這兩行兇手！補上後，導覽列的 <li> 就會跟 about.html 一樣高了 */
+    ul, ol { padding-left: 20px; margin: 10px 0 14px; }
+    li { margin-bottom: 10px; }
 
-    /* --- 以下為 practice.html 專屬樣式 (保留不變) --- */
+    /* --- 以下為 practice.html 專屬樣式 --- */
 
     /* 提示框 */
     .warning-box {
