@@ -483,37 +483,51 @@
 <script>
 const API = "https://script.google.com/macros/s/AKfycbxAp06fzFAYTDRh17fZqe4pfytLRHAuNcPb8ubRKQJkCJZDEyVze9_fylV847gkz9jt/exec";
 const ua = encodeURIComponent(navigator.userAgent);
-let userId = localStorage.getItem("USER_ID") || ("u" + Math.random().toString(36).substring(2));
-localStorage.setItem("USER_ID", userId);
 
+// 【優化】改用 sessionStorage，只要這次瀏覽分頁沒關閉，Token 就會保持一致，跨網頁切換也不會變
+let userId = sessionStorage.getItem("USER_SESSION_ID");
+if (!userId) {
+  userId = "u" + Math.random().toString(36).substring(2) + Date.now();
+  sessionStorage.setItem("USER_SESSION_ID", userId);
+}
+
+// 核心功能：更新畫面上的人數數據
 async function updateStats() {
   try {
-    const v = await fetch(`${API}?action=visit&ua=${ua}&vid=${userId}`).then(r => r.json());
+    // 1. 同步發送心跳訊號（Heartbeat），不阻礙後續程式執行
+fetch(`${API}?action=heartbeat&userId=${userId}&ua=${ua}`).catch(err => console.error("心跳失敗:", err));
+
+    // 2. 獲取當前最新的在線人數數據
     const o = await fetch(`${API}?action=online`).then(r => r.json());
     
-    // 確保 stats 標籤是顯示的
+    // 3. 【關鍵優化】檢查這次開分頁是否已經算過「累計造訪」了？
+    let totalVisits = sessionStorage.getItem("hasCountedVisitCount");
+    
+    if (!totalVisits) {
+      // 如果沒算過，才去戳後端 visit 讓資料庫 +1，並取得最新總數
+      const v = await fetch(`${API}?action=visit&ua=${ua}&vid=${userId}`).then(r => r.json());
+      totalVisits = v.total ?? 0;
+      // 記住已經加過了，並暫存當前的總數
+      sessionStorage.setItem("hasCountedVisitCount", totalVisits);
+    }
+
+    // 4. 將數據渲染到畫面上
     const statsEl = document.getElementById("stats");
-    statsEl.style.display = "inline-block"; 
-    statsEl.innerHTML = `✨ 目前有 <b>${o.online ?? 0}</b> 人在線練習中（累計造訪：${v.total ?? 0}）`;
+    if (statsEl) {
+      statsEl.style.display = "inline-block"; 
+      statsEl.innerHTML = `✨ 目前有 <b>${o.online ?? 0}</b> 人在線練習中（累計造訪：${totalVisits}）`;
+    }
     
   } catch (err) {
-    console.error("計數器讀取失敗:", err);
-    // 發生錯誤時，不要隱藏，可以保留最後一次的數字，或顯示提示文字
-    // document.getElementById("stats").innerHTML = "✨ 在線人數統計中..."; 
+    console.error("計數器讀取或更新失敗:", err);
   }
 }
 
-// 初始載入
-fetch(`${API}?action=heartbeat&userId=${userId}&ua=${ua}`)
-  .then(updateStats)
-  .catch(console.error);
+// 頁面載入時立刻執行一次
+updateStats();
 
-// 將輪詢時間拉長到 60 秒 (60000 毫秒)，避免打爆 Google Apps Script 的免費配額
-setInterval(() => {
-  fetch(`${API}?action=heartbeat&userId=${userId}&ua=${ua}`)
-    .then(updateStats)
-    .catch(console.error);
-}, 60000); 
+// 每隔 60 秒（60000 毫秒）自動定時打卡並重新抓取人數
+setInterval(updateStats, 60000); 
 </script>
 
 </body>
