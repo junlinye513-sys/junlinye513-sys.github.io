@@ -370,6 +370,53 @@
     window.addEventListener('DOMContentLoaded', updateView);
     window.addEventListener('hashchange', updateView);
   </script>
+<script>
+(function() {
+  const API = "https://script.google.com/macros/s/AKfycbxAp06fzFAYTDRh17fZqe4pfytLRHAuNcPb8ubRKQJkCJZDEyVze9_fylV847gkz9jt/exec";
+  const ua = encodeURIComponent(navigator.userAgent);
 
+  // 沿用與首頁相同的 Session 鎖定機制
+  let userId = sessionStorage.getItem("USER_SESSION_ID");
+  if (!userId) {
+    userId = "u" + Math.random().toString(36).substring(2) + Date.now();
+    sessionStorage.setItem("USER_SESSION_ID", userId);
+  }
+
+  // 背景打卡與更新功能
+  async function trackOnlineStatus() {
+    try {
+      // 1. 發送心跳訊號 (告訴後端：我還在寫題目喔！)
+      fetch(`${API}?action=heartbeat&userId=${userId}&ua=${ua}`).catch(err => console.error("心跳失敗:", err));
+
+      // 2. 如果這頁也想顯示人數，可以去抓 online 數據。如果你沒放 <div id="stats"> 它就不會報錯，只會在背景執行。
+      const o = await fetch(`${API}?action=online`).then(r => r.json());
+      
+      // 3. 檢查總造訪（避免切換頁面時重複 +1）
+      let totalVisits = sessionStorage.getItem("hasCountedVisitCount");
+      if (!totalVisits) {
+        const v = await fetch(`${API}?action=visit&ua=${ua}&vid=${userId}`).then(r => r.json());
+        totalVisits = v.total ?? 0;
+        sessionStorage.setItem("hasCountedVisitCount", totalVisits);
+      }
+
+      // 4. 更新畫面（如果這頁有放 id="stats" 才會執行，沒有的話就略過）
+      const statsEl = document.getElementById("stats");
+      if (statsEl) {
+        statsEl.style.display = "inline-block"; 
+        statsEl.innerHTML = `✨ 目前有 <b>${o.online ?? 0}</b> 人在線練習中（累計造訪：${totalVisits}）`;
+      }
+      
+    } catch (err) {
+      console.log("背景統計執行中...");
+    }
+  }
+
+  // 進來考試頁面立刻打卡一次
+  trackOnlineStatus();
+
+  // 之後每 60 秒默默打卡一次
+  setInterval(trackOnlineStatus, 60000); 
+})();
+</script>
 </body>
 </html>
