@@ -2,8 +2,8 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>網路線壓接教學｜T568A 與 T568B 差異解析｜術科考場重點｜115 年度最新版</title>
-  <meta name="description" content="深入淺出教學 RJ-45 網路線壓接技術。包含 T568A 與 T568B 線序對照、製作步驟拆解以及技術士術科考場常見失敗原因分析。">
+  <title>術科大魔王：網路線 T568A / T568B 怎麼背？實戰壓接技巧公開｜PassGo 考照通</title>
+  <meta name="description" content="技術士術科考試必備！教你用最白話的方式背熟 T568A 與 T568B 網路線順序，並大公開考場上最容易踩雷的失敗原因，幫你一次壓接成功。">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="https://passgo.idv.tw/guide-cable.html">
 
@@ -129,11 +129,11 @@
 
   <nav class="navbar">
     <div class="nav-container">
-      <a href="index.html" class="nav-logo">🎯 檢定練習站</a>
+      <a href="index.html" class="nav-logo">🎯 PassGo 考照通</a>
       <ul class="nav-menu">
         <li><a href="index.html">首頁</a></li>
         <li><a href="practice.html">題庫練習</a></li>
-        <li><a href="post-level-c.html">備考攻略</a></li>
+        <li><a href="guide.html">備考攻略</a></li>
         <li><a href="about.html">關於本站</a></li>
       </ul>
     </div>
@@ -142,36 +142,36 @@
   <div class="container">
     <article class="article-box">
       
-      <h1>網路線壓接實務：T568A 與 T568B 的差異與考場實作重點</h1>
+      <h1>術科大魔王：網路線 T568A / T568B 怎麼背？實戰壓接技巧公開</h1>
       
       <div class="meta">
-        <span class="pill">📅 更新：2026</span>
-        <span class="pill">🔎 主題：實作知識</span>
-        <span class="pill">🎓 適用：術科必考</span>
+        <span class="pill">📅 115年度更新</span>
+        <span class="pill">🔎 主題：硬體裝修/網路架設</span>
+        <span class="pill">🎓 適用：學科常考＆術科必考</span>
       </div>
 
       <p>
-        在技術士術科考場中，網路線製作（壓接 RJ-45 接頭）是得分門檻最高的一環。只要一根線序錯誤或是接觸不良，整個術科考試可能就此告終。本文將帶你深入了解兩大接線標準，並分享讓你在考場一次成功的製作秘訣。
+        不管是考硬體裝修還是網路架設，在技術士術科考場中，「壓接 RJ-45 網路線」絕對是讓人最緊張的一關。只要順序排錯一根，或是最後壓下去的時候接觸不良，術科成績可能就直接跟你說掰掰了。這篇會教大家怎麼秒記線序，並大公開考場上最常見的「翻車原因」。
       </p>
 
       <div class="toc">
         <b>📌 本篇攻略快速導覽</b>
-        <a href="#diff">1. T568A 與 T568B 差異</a>
-        <a href="#usage">2. 平行線 vs 交叉線</a>
-        <a href="#steps">3. 製作步驟拆解</a>
-        <a href="#exam-tips">4. 考場常見失敗原因</a>
+        <a href="#diff">1. T568A 與 T568B 到底差在哪？</a>
+        <a href="#usage">2. 平行線 vs 交叉線怎麼分？</a>
+        <a href="#steps">3. 壓接五步驟，跟著做就對了</a>
+        <a href="#exam-tips">4. 考場前輩血淚史：這些錯誤別犯</a>
       </div>
 
-      <h2 id="diff">一、T568A 與 T568B 有什麼不同？</h2>
-      <p>這兩者只是<strong>線序顏色順序</strong>的不同，其電氣性能是一樣的。目前業界與考場多以 <strong>T568B</strong> 為主流標準。</p>
+      <h2 id="diff">一、T568A 與 T568B 到底差在哪？</h2>
+      <p>其實這兩個標準的「電氣性能」是一模一樣的，差別純粹在於<strong>顏色排列的順序</strong>。目前考場和業界都是以 <strong>T568B</strong> 為絕對的主流，請務必把它的口訣背到滾瓜爛熟！</p>
 
       <div class="table-scroll">
         <table>
           <thead>
             <tr>
-              <th>腳位 (Pin)</th>
-              <th>T568A 線序顏色</th>
-              <th>T568B 線序顏色 (主流)</th>
+              <th>腳位 (Pin 1 左到右)</th>
+              <th>T568A 線序 (較少用)</th>
+              <th>⭐ T568B 線序 (絕對主流)</th>
             </tr>
           </thead>
           <tbody>
@@ -187,47 +187,52 @@
         </table>
       </div>
 
-      <h2 id="usage">二、平行線 vs 交叉線</h2>
-      <p>根據考試要求與連接設備的不同，你必須決定線材兩端的接線標準：</p>
+      <div class="teacher-tip">
+        <strong>👨‍🏫 老師教你背 (T568B 必考口訣)：</strong><br>
+        跟著唸三次：「<span class="highlight">白橘橘、白綠藍、白藍綠、白棕棕</span>」。<br>
+        這個口訣不僅術科會用到，學科測驗也超級愛考！
+      </div>
+
+      <h2 id="usage">二、平行線 vs 交叉線怎麼分？</h2>
+      <p>考試時會根據你要連接的設備，規定你要做哪一種線：</p>
       <ul>
-        <li><strong>平行線 (Straight-through)：</strong> 兩端皆為 T568B（或皆為 T568A）。用於連接不同類型設備，如：電腦到交換器（PC to Switch）。</li>
-        <li><strong>交叉線 (Crossover)：</strong> 一端 T568A，另一端 T568B。用於連接同類型設備，如：電腦到電腦（PC to PC）。</li>
+        <li><strong>平行線 (Straight-through)：</strong> 兩頭都做一樣的（通常兩端都做 T568B）。專門用來連接「不同種類」的設備，例如：電腦連到交換器 (PC to Switch)。</li>
+        <li><strong>交叉線 (Crossover)：</strong> 一頭做 T568A，另一頭做 T568B。專門用來連接「相同種類」的設備，例如：電腦連到另一台電腦 (PC to PC)。</li>
       </ul>
 
-      <h2 id="steps">三、製作步驟拆解</h2>
+      <h2 id="steps">三、壓接五步驟，跟著做就對了</h2>
       <ol>
-        <li><strong>剝除外皮：</strong> 使用剝線刀除去約 3 公分的護套，注意不要割傷內部的芯線。</li>
-        <li><strong>理線與排順序：</strong> 將四對絞線拆開、拉直，並按照 T568B 的線序排列整齊。</li>
-        <li><strong>修剪長度：</strong> 將排列好的線平整剪齊，保留約 1.2 至 1.5 公分的長度。</li>
-        <li><strong>推入接頭：</strong> 將芯線推入 RJ-45 接頭最底部，確保每一根線都頂到金屬片。</li>
-        <li><strong>壓接：</strong> 使用壓接鉗用力壓下，確保金屬片刺穿芯線外皮達成導通。</li>
+        <li><strong>輕輕剝皮：</strong> 用剝線刀轉一圈，剝掉大約 3 公分的外皮。力道要輕，千萬別割破裡面細線的皮！</li>
+        <li><strong>解開絞線排順序：</strong> 把四對纏繞的線解開、拉的直直的，然後在手指間按照 T568B 的順序排好、壓緊。</li>
+        <li><strong>一刀剪平：</strong> 把排好的線一刀剪齊，大概留 1.2 到 1.5 公分就好。剪不平是插不進接頭的喔！</li>
+        <li><strong>推入接頭：</strong> 拿著 RJ-45 接頭（金屬彈片朝下），把線慢慢推到最底，從接頭前端確認每一根都有頂到。</li>
+        <li><strong>用力壓接：</strong> 把接頭放進壓接鉗，用吃奶的力氣壓到底，聽到「喀」一聲，讓裡面的金屬片刺穿線皮導通。</li>
       </ol>
 
-      <h2 id="exam-tips">四、考場實作常見失敗原因</h2>
+      <h2 id="exam-tips">四、考場前輩血淚史：這些錯誤別犯</h2>
       <div class="warning">
-        <strong>❌ 絕對要避免的錯誤：</strong>
+        <strong>❌ 監考老師最愛抓的失誤：</strong>
         <ul>
-          <li><strong>線序錯亂：</strong> 這是最常見的失敗，尤其是「白綠」與「白藍」容易看反。</li>
-          <li><strong>外皮未壓入：</strong> 網路線外皮必須進入接頭內部的固定夾，否則會被扣分或容易斷裂。</li>
-          <li><strong>芯線未到底：</strong> 金屬片沒刺到導體，導致 LAN Tester 測試時燈號不亮。</li>
-          <li><strong>短路：</strong> 芯線修剪不平整導致金屬屑殘留。</li>
+          <li><strong>看錯顏色：</strong> 尤其是「白綠」跟「白藍」，在考場緊張時超容易看反。</li>
+          <li><strong>外皮沒吃進去：</strong> 網路線的灰色外皮一定要塞進水晶頭裡面，讓後方的卡榫夾住，不然稍微扯一下線就斷了，直接扣分。</li>
+          <li><strong>芯線沒推到底：</strong> 如果金屬片壓下來沒刺到裡面的銅線，用測線儀量的時候燈號絕對不會亮。</li>
         </ul>
       </div>
 
       <div class="teacher-tip">
-        <strong>👨‍🏫 老師建議：考場高分小撇步</strong>
-        壓接完成後，請先自己用 <strong>LAN Tester</strong> 跑一遍 1~8 號燈號。若燈號依序閃爍（1-1、2-2...），恭喜你這條線就拿滿分了！
+        <strong>👨‍🏫 考場定心丸：</strong>
+        壓接完千萬別急著舉手！先拿出你的 <strong>LAN Tester (測線儀)</strong> 插上去跑一遍。如果是平行線，兩邊的燈號一定會 1對1、2對2 依序閃爍到 8。看到燈全亮，恭喜你這關穩了！
       </div>
 
       <div style="text-align: center; margin-top: 30px;">
-        <p>理論學會了，快來練習學科題目鞏固知識！</p>
-       <a href="practice.html" style="background: var(--primary); color: white; padding: 12px 30px; border-radius: 10px; font-weight: bold; text-decoration: none;">開始題庫練習</a>
+        <p>口訣背熟了嗎？我們去學科測驗實戰看看！</p>
+       <a href="practice.html" class="btn">去題庫測驗一下</a>
       </div>
     </article>
   </div>
 
   <footer>
-    © 2026 技術士檢定學習平台<br>
+    © 2026 PassGo 考照通<br>
     <a href="about.html">關於本站</a>｜<a href="privacy.html">隱私權政策</a>｜<a href="contact.html">聯絡我們</a>
   </footer>
 
