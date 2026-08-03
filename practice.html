@@ -2,8 +2,12 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>題庫練習中心｜技術士檢定平台</title>
+  <title>題庫練習中心｜PassGo 考照通 - 技術士檢定學科練題網</title>
+  
+  <!-- 補上網頁摘要描述，幫助 SEO 搜尋 -->
+  <meta name="description" content="PassGo 考照通題庫練習中心，收錄 115 年度最新版資訊與商業職類乙丙級學科題庫，隨時隨地用手機或電腦輕鬆刷題，幫你順利拿證照！">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
   <style>
     /* --- 完全對齊 about.html 標準版的基础設定 --- */
     :root {
@@ -170,11 +174,11 @@
 
   <nav class="navbar">
     <div class="nav-container">
-      <a href="index.html" class="nav-logo">🎯 檢定練習站</a>
+      <a href="index.html" class="nav-logo">🎯 PassGo 考照通</a>
       <ul class="nav-menu">
         <li><a href="index.html">首頁</a></li>
         <li><a href="practice.html">題庫練習</a></li>
-        <li><a href="post-level-c.html">備考攻略</a></li>
+        <li><a href="guide.html">備考攻略</a></li>
         <li><a href="about.html">關於本站</a></li>
       </ul>
     </div>
@@ -182,15 +186,15 @@
 
   <div class="container">
     <div class="article-box">
-      <h1 id="main-title">技術士學科題庫導覽</h1>
+      <h1 id="main-title">選擇你要練習的題庫</h1>
       
       <div class="warning-box">
-        💡 <strong>115年度更新：</strong> 本站題庫均已同步至最新公告版次。請確認下方標註之<strong>版次編號</strong>，確保練習內容正確無誤。
+        💡 <strong>考前小叮嚀：</strong> 這裡的題庫都已經幫大家同步到勞動部 115 年度最新公告的版本囉！開始刷題前，可以稍微核對一下下方的<strong>版次編號</strong>，確保自己練到的是最新考題。
       </div>
 
       <div id="info-section">
-        <h2>💻 資訊職類練習中心</h2>
-        <p>包含軟體應用、硬體裝修、網頁設計、網路架設、程式設計等實務科目。</p>
+        <h2>💻 資訊職類刷題區</h2>
+        <p>收錄大家最常考的軟體應用、硬體裝修、網頁設計等乙丙級學科題目。準備好了就直接點擊「開始練習」吧！</p>
         
         <div class="exam-item">
           <div class="exam-info">
@@ -282,8 +286,8 @@
       </div>
 
       <div id="business-section">
-        <h2>📊 商業服務練習中心</h2>
-        <p>包含會計事務、門市服務、國際貿易等實務科目。</p>
+        <h2>📊 商業服務刷題區</h2>
+        <p>收錄會計事務、門市服務、國際貿易等乙丙級學科題目。把錯題多刷幾遍，正式考試一定沒問題！</p>
 
         <div class="exam-item">
           <div class="exam-info">
@@ -335,13 +339,13 @@
       </div>
 
       <div class="back-home-container">
-        <a href="index.html" class="back-link">← 返回首頁重新選擇</a>
+        <a href="index.html" class="back-link">← 回到首頁逛逛</a>
       </div>
     </div>
   </div>
 
   <footer>
-    © 2026 技術士檢定學習平台<br>
+    © 2026 PassGo 考照通<br>
     <a href="about.html">關於本站</a>｜<a href="privacy.html">隱私權政策</a>｜<a href="contact.html">聯絡我們</a>
   </footer>
 
@@ -355,15 +359,15 @@
       if (hash === '#info') {
         infoSec.style.display = 'block';
         busSec.style.display = 'none';
-        title.innerText = '資訊職類題庫專區';
+        title.innerText = '💻 資訊職類刷題區';
       } else if (hash === '#business') {
         busSec.style.display = 'block';
         infoSec.style.display = 'none';
-        title.innerText = '商業服務題庫專區';
+        title.innerText = '📊 商業服務刷題區';
       } else {
         infoSec.style.display = 'block';
         busSec.style.display = 'block';
-        title.innerText = '技術士學科題庫導覽';
+        title.innerText = '選擇你要練習的題庫';
       }
     }
 
