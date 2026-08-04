@@ -2,8 +2,8 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>子網路遮罩計算（Subnetting）教學｜CIDR 與考試解題技巧</title>
-  <meta name="description" content="深入淺出教學子網路切割計算，包含二進位轉換、網段間距判定、CIDR 換算與常用遮罩對照表，助你輕鬆應對網路架設技術士考試。">
+  <title>子網路遮罩計算 (Subnetting) 白話文教學｜秒解 CIDR 與 IP 切分｜PassGo 考照通</title>
+  <meta name="description" content="網路架設技術士大魔王破解！PassGo 考照通帶你用「神奇 8 數字」與三步驟心算法，秒解子網路遮罩 (Subnetting) 與 CIDR 切分考試題目。">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="https://passgo.idv.tw/guide-subnetting.html">
 
@@ -75,7 +75,7 @@
     li { margin-bottom: 10px; }
 
     /* 重點標示與提示框 */
-    .highlight { background-color: #fff3cd; padding: 2px 6px; border-radius: 6px; font-weight: 700; }
+    .highlight { background-color: #fff3cd; padding: 2px 6px; border-radius: 6px; font-weight: 700; color: #856404; }
     .teacher-tip { border-left: 5px solid #4caf50; background: #f1f8e9; padding: 16px; margin: 20px 0; border-radius: 12px; }
     .warning { border-left: 5px solid #ff9800; background: #fff7e6; padding: 16px; margin: 20px 0; border-radius: 12px; }
 
@@ -107,11 +107,12 @@
       font-weight: bold;
       transition: background 0.3s;
     }
-    .btn:hover { background: var(--primary-dark); }
+    .btn:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(74, 143, 231, 0.3); }
 
     /* 頁尾 */
     footer { text-align: center; padding: 40px 15px; font-size: 13px; color: #999; border-top: 1px solid #eee; background: #fff; margin-top: 50px; }
-    footer a { text-decoration: none; color: #777; margin: 0 5px; }
+    footer a { text-decoration: none; color: #777; margin: 0 5px; transition: color 0.3s; }
+    footer a:hover { color: var(--primary); }
 
     /* 手機版適應 */
     @media (max-width: 600px) {
@@ -125,11 +126,11 @@
 
   <nav class="navbar">
     <div class="nav-container">
-      <a href="index.html" class="nav-logo">🎯 檢定練習站</a>
+      <a href="index.html" class="nav-logo">🎯 PassGo 考照通</a>
       <ul class="nav-menu">
         <li><a href="index.html">首頁</a></li>
         <li><a href="practice.html">題庫練習</a></li>
-        <li><a href="post-level-c.html">備考攻略</a></li>
+        <li><a href="guide.html">備考攻略</a></li>
         <li><a href="about.html">關於本站</a></li>
       </ul>
     </div>
@@ -138,33 +139,33 @@
   <div class="container">
     <article class="article-box">
       
-      <h1>子網路遮罩計算教學（Subnetting）：從二進位到 CIDR</h1>
+      <h1>子網路遮罩計算 (Subnetting) 白話文教學：從二進位到 CIDR 秒解</h1>
       
       <div class="meta">
-        <span class="pill">📅 更新：2026</span>
-        <span class="pill">🔎 主題：網路架設丙/乙級</span>
-        <span class="pill">💻 技術核心教學</span>
+        <span class="pill">📅 115年度更新</span>
+        <span class="pill">🔎 主題：網路架設丙/乙級必考</span>
+        <span class="pill">💻 核心實戰教學</span>
       </div>
 
       <p>
-        子網路計算 (Subnetting) 是網路技術士檢定中最令考生頭痛的「魔王題」。許多人選擇死記硬背，但題目數字一變就容易出錯。本文將帶你拆解計算邏輯，讓你徹底理解 IP 切分，輕鬆應對各種 IP 切分問題。
+        子網路計算 (Subnetting) 絕對是網路技術士檢定中最令考生頭痛的「超級大魔王」。很多人在考場上選擇直接背題庫答案，但只要題目數字稍微一改就全軍覆沒。這篇文章將帶你拆解背後的計算邏輯，只要學會<strong>「神奇 8 數字」</strong>與<strong>「三步驟心算法」</strong>，你就能輕鬆秒殺各種 IP 切分問題！
       </p>
 
       <div class="toc">
         <b>📌 本篇攻略快速導覽</b>
-        <a href="#concept">1. 核心觀念</a>
-        <a href="#binary">2. 二進位心算法</a>
-        <a href="#steps">3. 實戰計算三步驟</a>
-        <a href="#cidr-table">4. 常用對照表</a>
+        <a href="#concept">1. 核心觀念：為什麼要切子網路？</a>
+        <a href="#binary">2. 第一步：必背的神奇 8 數字</a>
+        <a href="#steps">3. 第二步：實戰解題三步驟</a>
+        <a href="#cidr-table">4. 考前必備：CIDR 常用對照表</a>
       </div>
 
-      <h2 id="concept">一、核心觀念：為什麼要學子網路？</h2>
+      <h2 id="concept">一、核心觀念：為什麼要切子網路？</h2>
       <p>
-        在實際網路環境中，我們不能將所有電腦都放在同一個區段，否則會產生大量的「廣播風暴」。子網路的作用就是將大網域切小，提升安全性與管理效率。
+        在實際的網路環境中，我們不能把所有的電腦都塞在同一個大區段裡，否則只要有一台電腦發送廣播封包，就會引發嚴重的「廣播風暴」，導致網路癱瘓。切分子網路的作用，就像是把一個大辦公室隔出好幾間獨立的會議室，藉此提升安全性與網路效率。
       </p>
 
-      <h2 id="binary">二、第一步：掌握二進位快速轉換</h2>
-      <p>掌握以下「神奇 8 數字」，是所有子網路計算的心算基礎。只要這張表熟，計算速度會提升 3 倍：</p>
+      <h2 id="binary">二、第一步：必背的「神奇 8 數字」</h2>
+      <p>想要算得快，以下這個二進位轉換表絕對要背得滾瓜爛熟！這是所有子網路計算的心算基礎，只要這 8 個數字熟，在考場上的計算速度會直接提升 3 倍：</p>
       
       <div class="table-scroll">
         <table>
@@ -181,43 +182,45 @@
           </tr>
           <tr>
             <th>十進位數值</th>
-            <td><strong>128</strong></td>
-            <td><strong>192</strong></td>
-            <td><strong>224</strong></td>
-            <td><strong>240</strong></td>
-            <td><strong>248</strong></td>
-            <td><strong>252</strong></td>
-            <td><strong>254</strong></td>
-            <td><strong>255</strong></td>
+            <td class="highlight-cell">128</td>
+            <td class="highlight-cell">192</td>
+            <td class="highlight-cell">224</td>
+            <td class="highlight-cell">240</td>
+            <td class="highlight-cell">248</td>
+            <td class="highlight-cell">252</td>
+            <td class="highlight-cell">254</td>
+            <td class="highlight-cell">255</td>
           </tr>
         </table>
       </div>
 
-      <h2 id="steps">三、第二步：實戰計算三步驟</h2>
-      <p>範例：若需要將 <code>192.168.1.0 /24</code> 網域切分成 <strong>8 個子網路</strong>。</p>
+      <h2 id="steps">三、第二步：實戰解題三步驟</h2>
+      <p>💡 <strong>考題範例：</strong> 若公司需要將 <code>192.168.1.0 /24</code> 這個大網域，切分成 <strong>8 個子網路</strong>，請問新的遮罩與每個網段的範圍是多少？</p>
       
       <h3>1. 確定借位數量 (Borrow Bits)</h3>
-      <p>要切成 8 個子網，因為 2³ = 8，所以要向主機位借 3 位。新遮罩長度為 24 + 3 = <code>/27</code>。</p>
+      <p>要切成 8 個子網，因為 <code>2³ = 8</code>，所以我們需要向主機位借 3 個位元。原本的遮罩長度會從 /24 變成 24 + 3 = <span class="highlight">/27</span>。</p>
 
       <h3>2. 計算新遮罩數值</h3>
-      <p>借了 3 位元，代表最後一段二進位是 <code>11100000</code>。查表得知為 <strong>224</strong>。<br>
-      完整遮罩即為：<code>255.255.255.224</code>。</p>
+      <p>剛剛借了 3 個位元，代表最後一段的二進位變成了 <code>11100000</code>。去對照上面的神奇 8 數字表，可以立刻知道數值是 <strong>224</strong>。<br>
+      所以，完整的子網路遮罩就是：<code>255.255.255.224</code>。</p>
 
       <h3>3. 找出「網段間距 (Block Size)」</h3>
-      <p>這是最關鍵的一步！<strong>網段間距 = 256 - 遮罩值</strong>。在此範例中為 256 - 224 = <code>32</code>。<br>
-      這代表每個網段的起點會以 32 為單位跳動：</p>
+      <p>這是解題最關鍵的一步！公式是：<strong>網段間距 = 256 - 遮罩值</strong>。<br> 
+      在這個範例中，就是 256 - 224 = <span class="highlight">32</span>。<br>
+      這代表每個網段的起點，會以 32 為單位往上跳動：</p>
       <ul>
-        <li>第一段：<code>.0</code> 到 <code>.31</code></li>
-        <li>第二段：<code>.32</code> 到 <code>.63</code></li>
-        <li>第三段：<code>.64</code> 到 <code>.95</code> ... (以此類推)</li>
+        <li>第一段：從 <code>.0</code> 到 <code>.31</code></li>
+        <li>第二段：從 <code>.32</code> 到 <code>.63</code></li>
+        <li>第三段：從 <code>.64</code> 到 <code>.95</code> ... (以此類推)</li>
       </ul>
 
       <div class="teacher-tip">
-        <strong>👨‍🏫 老師建議：</strong>
-        計算「可用主機數」時，一定要記得<strong>「減 2」</strong>（扣除網路位址與廣播位址）。所以 /27 網段的可用主機就是 32 - 2 = 30 台。
+        <strong>👨‍🏫 站長的解題小提醒：</strong><br>
+        當考題問你「可用主機數量」時，一定要記得最後要<strong>「減 2」</strong>（因為要扣除頭尾的網路位址與廣播位址）。所以 /27 網段的可用主機就是 32 - 2 = <strong>30 台</strong>！
       </div>
 
-      <h2 id="cidr-table">四、常用 CIDR 與網段間距對照表</h2>
+      <h2 id="cidr-table">四、考前必備：CIDR 常用對照表</h2>
+      <p>考前衝刺階段，建議直接把這幾個最常考的 CIDR 網段間距記下來：</p>
       <div class="table-scroll">
         <table>
           <thead>
@@ -229,26 +232,26 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td>/24</td><td>255.255.255.0</td><td class="highlight-cell">256</td><td>254</td></tr>
-            <tr><td>/25</td><td>255.255.255.128</td><td class="highlight-cell">128</td><td>126</td></tr>
-            <tr><td>/26</td><td>255.255.255.192</td><td class="highlight-cell">64</td><td>62</td></tr>
-            <tr><td>/27</td><td>255.255.255.224</td><td class="highlight-cell">32</td><td>30</td></tr>
-            <tr><td>/28</td><td>255.255.255.240</td><td class="highlight-cell">16</td><td>14</td></tr>
-            <tr><td>/30</td><td>255.255.255.252</td><td class="highlight-cell">4</td><td>2</td></tr>
+            <tr><td>/24</td><td>255.255.255.0</td><td class="highlight-cell">256</td><td>254 台</td></tr>
+            <tr><td>/25</td><td>255.255.255.128</td><td class="highlight-cell">128</td><td>126 台</td></tr>
+            <tr><td>/26</td><td>255.255.255.192</td><td class="highlight-cell">64</td><td>62 台</td></tr>
+            <tr><td>/27</td><td>255.255.255.224</td><td class="highlight-cell">32</td><td>30 台</td></tr>
+            <tr><td>/28</td><td>255.255.255.240</td><td class="highlight-cell">16</td><td>14 台</td></tr>
+            <tr><td>/30</td><td>255.255.255.252</td><td class="highlight-cell">4</td><td>2 台 (常用於 Router 對接)</td></tr>
           </tbody>
         </table>
       </div>
 
       <div style="text-align: center; margin-top: 30px;">
-        <p>理論學會了？立即進場實測！</p>
-        <a href="practice.html" style="background: var(--primary); color: white; padding: 12px 30px; border-radius: 10px; font-weight: bold; text-decoration: none;">開始題庫練習</a>
+        <p>理論看懂了嗎？立刻進場實測你的計算速度吧！</p>
+        <a href="practice.html" class="btn">開始題庫練習</a>
       </div>
       
     </article>
   </div>
 
   <footer>
-    © 2026 技術士檢定學習平台<br>
+    © 2026 PassGo 考照通<br>
     <a href="about.html">關於本站</a>｜<a href="privacy.html">隱私權政策</a>｜<a href="contact.html">聯絡我們</a>
   </footer>
 
