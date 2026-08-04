@@ -2,8 +2,8 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>Excel 必備公式精選：文書處理檢定與職場攻略｜技術士練習站</title>
-  <meta name="description" content="精選技術士檢定與職場必備之 Excel 公式。包含 VLOOKUP、IF、COUNTIF 等函數詳解，提供邏輯對照表與考場解題撇步，助你輕鬆應對文書處理考題。">
+  <title>軟體應用必考！Excel 五大魔王公式白話文破解｜PassGo 考照通</title>
+  <meta name="description" content="電腦軟體應用乙丙級術科必備！PassGo 考照通幫你把 VLOOKUP、IF、COUNTIF 等最常卡關的 Excel 函數化為白話文，破解考場陷阱，輕鬆拿證照。">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="https://passgo.idv.tw/post-office.html">
 
@@ -75,7 +75,7 @@
     li { margin-bottom: 10px; }
 
     /* 重點標示與提示框 */
-    .highlight { background-color: #fff3cd; padding: 2px 6px; border-radius: 6px; font-weight: 700; }
+    .highlight { background-color: #fff3cd; padding: 2px 6px; border-radius: 6px; font-weight: 700; color: #856404; }
     .teacher-tip { border-left: 5px solid #4caf50; background: #f1f8e9; padding: 16px; margin: 20px 0; border-radius: 12px; }
     .warning { border-left: 5px solid #ff9800; background: #fff7e6; padding: 16px; margin: 20px 0; border-radius: 12px; }
 
@@ -133,11 +133,11 @@
 
   <nav class="navbar">
     <div class="nav-container">
-      <a href="index.html" class="nav-logo">🎯 檢定練習站</a>
+      <a href="index.html" class="nav-logo">🎯 PassGo 考照通</a>
       <ul class="nav-menu">
         <li><a href="index.html">首頁</a></li>
         <li><a href="practice.html">題庫練習</a></li>
-        <li><a href="post-level-c.html">備考攻略</a></li>
+        <li><a href="guide.html">備考攻略</a></li>
         <li><a href="about.html">關於本站</a></li>
       </ul>
     </div>
@@ -146,49 +146,50 @@
   <div class="container">
     <article class="article-box">
       
-      <h1>Excel 必備公式精選：文書處理檢定與職場攻略</h1>
+      <h1>軟體應用必考！Excel 五大魔王公式白話文破解</h1>
       
       <div class="meta">
-        <span class="pill">📅 更新：2026</span>
-        <span class="pill">🔎 主題：文書處理</span>
-        <span class="pill">💼 適用：職場技能與檢定</span>
+        <span class="pill">📅 115年度更新</span>
+        <span class="pill">🔎 主題：電腦軟體應用 (乙/丙級)</span>
+        <span class="pill">💼 適用：術科實戰與職場必備</span>
       </div>
 
       <p>
-        在「電腦軟體應用」技術士檢定中，Excel 往往是決定及格與否的關鍵。許多考生會卡在複雜的公式巢狀結構中。其實，只要掌握核心的 5 個函數組合，就能解決 80% 的題庫問題。本文幫你精煉出最實用的公式重點，讓你不再被試算表難倒。
+        準備「電腦軟體應用」技術士檢定的同學看過來！Excel 絕對是術科考試裡決定你能不能拿到證照的生死關卡。很多人看到一堆英文函數、括號包括號就頭痛。但其實，只要搞懂這 5 個最常出現的「核心公式」，考場上 80% 的資料處理都能迎刃而解。今天老師就幫你把它們翻譯成白話文！
       </p>
 
       <div class="toc">
-        <b>本篇攻略快速導覽</b>
-        <a href="#lookup">1. 萬能查詢：VLOOKUP</a>
-        <a href="#logic">2. 智慧判斷：IF 邏輯</a>
+        <b>📌 本篇攻略快速導覽</b>
+        <a href="#lookup">1. 萬能查詢神器：VLOOKUP</a>
+        <a href="#logic">2. 條件判斷大師：IF</a>
         <a href="#stat">3. 統計神隊友：COUNTIF 與 SUMIF</a>
-        <a href="#text">4. 字串處理：LEFT、RIGHT 與 MID</a>
+        <a href="#text">4. 文字擷取三劍客：LEFT, RIGHT, MID</a>
       </div>
 
-      <h2 id="lookup">一、萬能查詢：VLOOKUP 函數</h2>
+      <h2 id="lookup">一、萬能查詢神器：VLOOKUP</h2>
       <p>
-        這是考場出現率第一名的函數！它能幫你從大量資料表中，根據「關鍵字」抓取出對應的數值（如：根據學號抓取成績）。
+        這是考場出現率 100% 的超級魔王！它的功用是幫你從一大堆資料中，根據「關鍵字」把對應的資料抓過來（例如：根據學生的「學號」，去另一張表抓他的「姓名」）。
       </p>
       
       <div class="teacher-tip">
-        <strong>公式結構：</strong> <code>=VLOOKUP(找什麼, 在哪找, 第幾欄, 0)</code><br>
-        <strong>考場撇步：</strong> 最後一個參數請務必填 <code>0</code> (代表精確搜尋)，這在 99% 的考題中都是正確解答。
+        <strong>👨‍🏫 老師教你背口訣：</strong> <br>
+        <code>=VLOOKUP(找什麼, 在哪找, 第幾欄, 0)</code><br>
+        <span class="highlight">考場保命撇步：</span> 最後一個參數請務必、一定要填上 <code>0</code>（代表完全精確搜尋），這在 99% 的考題中都是唯一的正確解答！
       </div>
 
-      <h2 id="logic">二、智慧判斷：IF 邏輯函數</h2>
+      <h2 id="logic">二、條件判斷大師：IF</h2>
       <p>
-        IF 函數是電腦具備「判斷能力」的基礎。當你需要根據成績標記「及格」或「不及格」時，就是它上場的時候。
+        IF 函數是讓你的報表變聰明的關鍵。當你需要電腦幫你根據分數判斷「及格」或「不及格」，或是根據業績判斷「發多少獎金」時，就是要請 IF 出馬。
       </p>
       
       <ul>
-        <li><strong>基本用法：</strong> <code>=IF(分數>=60, "及格", "不及格")</code></li>
-        <li><strong>巢狀用法：</strong> 如果有多種等級（A, B, C），則需要在 IF 裡面再套一個 IF。</li>
+        <li><strong>基本句型：</strong> <code>=IF(分數>=60, "及格", "不及格")</code>（如果是真的就顯示及格，假的就顯示不及格）</li>
+        <li><strong>進階巢狀用法：</strong> 如果有優、甲、乙、丙好幾種等級怎麼辦？那就需要在 IF 裡面，再塞一個 IF（考試很愛考這種俄羅斯娃娃的寫法）。</li>
       </ul>
 
       <h2 id="stat">三、統計神隊友：COUNTIF 與 SUMIF</h2>
       <p>
-        這兩個函數是專門用來處理「有條件的統計」。
+        考題一定會叫你做統計表！如果你要算「有條件」的數量或總和，這兩個函數就是你的救星。
       </p>
       
       <div class="table-scroll">
@@ -196,55 +197,56 @@
           <thead>
             <tr>
               <th>函數名稱</th>
-              <th>主要用途</th>
-              <th>語法範例</th>
+              <th>白話文翻譯</th>
+              <th>考場實戰範例</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>COUNTIF</td>
-              <td>計算個數 (有幾人及格?)</td>
-              <td><code>=COUNTIF(範圍, "&gt;=60")</code></td>
+              <td>算人頭（有幾個及格？）</td>
+              <td><code>=COUNTIF(分數範圍, "&gt;=60")</code></td>
             </tr>
             <tr>
               <td>SUMIF</td>
-              <td>加總數值 (總共發多少獎金?)</td>
-              <td><code>=SUMIF(部門範圍, "業務部", 薪資範圍)</code></td>
+              <td>算總和（業務部總共發多少獎金？）</td>
+              <td><code>=SUMIF(部門範圍, "業務部", 獎金範圍)</code></td>
             </tr>
             <tr>
               <td>AVERAGE</td>
-              <td>計算平均值</td>
-              <td><code>=AVERAGE(範圍)</code></td>
+              <td>算平均（全班平均分數？）</td>
+              <td><code>=AVERAGE(分數範圍)</code></td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <h2 id="text">四、字串處理：LEFT、RIGHT 與 MID</h2>
+      <h2 id="text">四、文字擷取三劍客：LEFT、RIGHT、MID</h2>
       <p>
-        常用於提取特定欄位資訊，例如從身分證字號中提取性別碼，或從學號中提取入學年份。
+        考試很常故意給你一長串字，要你從裡面切出特定的資訊，例如：從「身分證字號」切出性別碼，或是從「學號」切出入學年度。
       </p>
       <ul>
-        <li><code>LEFT(網址, 5)</code>：取最左邊 5 個字。</li>
-        <li><code>RIGHT(電話, 3)</code>：取最後面 3 個字。</li>
-        <li><code>MID(身分證, 2, 1)</code>：從第 2 位開始，取 1 個字。</li>
+        <li><code>LEFT(儲存格, 3)</code>：從最「左邊」開始，切下 3 個字。</li>
+        <li><code>RIGHT(儲存格, 4)</code>：從最「右邊」開始，切下 4 個字。</li>
+        <li><code>MID(儲存格, 2, 1)</code>：從中間第 2 個字開始，切下 1 個字（這招拿來切身分證性別碼最常用！）。</li>
       </ul>
 
       <div class="warning">
-        <strong>⚠️ 考前注意：絕對路徑與相對路徑</strong><br>
-        在拖曳公式填充時，若某個儲存格（例如：匯率）必須固定，別忘了按下 <code>F4</code> 加上錢字號 (如 <code>$A$1</code>)，否則計算結果會全盤皆錯。
+        <strong>⚠️ 老師的終極血淚警告：千萬別忘記 F4！</strong><br>
+        在 Excel 裡，當你寫好第一格公式，準備往下拉套用到全部資料時，如果你的公式有引用到某個「不能變動的固定格子」（例如：匯率表、標準分數表），<span class="highlight">一定要按下 F4 幫它加上錢字號 (如 <code>$A$1</code>) 鎖起來！</span><br>
+        忘記鎖的話，公式往下一拉格子就會跑掉，你後面的計算結果會全盤皆錯，直接零分！
       </div>
 
       <div style="text-align: center; margin-top: 30px;">
-        <p>公式記住了嗎？現在就來做題庫練習！</p>
-        <a href="practice.html" style="background: var(--primary); color: white; padding: 12px 30px; border-radius: 10px; font-weight: bold; text-decoration: none;">開始題庫練習</a>
+        <p>觀念都弄懂了嗎？趁著記憶猶新，來學科題庫測驗一下你的基本功！</p>
+        <a href="practice.html" class="btn">開始題庫練習</a>
       </div>
 
     </article>
   </div>
 
   <footer>
-    © 2026 技術士檢定學習平台<br>
+    © 2026 PassGo 考照通<br>
     <a href="about.html">關於本站</a>｜<a href="privacy.html">隱私權政策</a>｜<a href="contact.html">聯絡我們</a>
   </footer>
 
