@@ -2,8 +2,8 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>技術士版權法規整理｜創用CC與軟體授權考試重點</title>
-  <meta name="description" content="詳解技術士檢定必考之版權與法律規範。包含軟體授權分類、創用 CC (Creative Commons) 標誌解析及資訊倫理考點，助你避開法律爭議。">
+  <title>版權與軟體授權必考重點！創用 CC 標誌與法規懶人包｜PassGo 考照通</title>
+  <meta name="description" content="技術士檢定資訊職類必考！PassGo 考照通幫你整理軟體授權分類、創用 CC 標誌解析及合理使用迷思，用最白話的方式教你避開法律爭議輕鬆拿分。">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="https://passgo.idv.tw/post-software.html">
 
@@ -75,7 +75,7 @@
     li { margin-bottom: 10px; }
 
     /* 重點標示與提示框 */
-    .highlight { background-color: #fff3cd; padding: 2px 6px; border-radius: 6px; font-weight: 700; }
+    .highlight { background-color: #fff3cd; padding: 2px 6px; border-radius: 6px; font-weight: 700; color: #856404; }
     .teacher-tip { border-left: 5px solid #4caf50; background: #f1f8e9; padding: 16px; margin: 20px 0; border-radius: 12px; }
     .warning { border-left: 5px solid #ff9800; background: #fff7e6; padding: 16px; margin: 20px 0; border-radius: 12px; }
 
@@ -111,11 +111,12 @@
       font-weight: bold;
       transition: background 0.3s;
     }
-    .btn:hover { background: var(--primary-dark); }
+    .btn:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(74, 143, 231, 0.3); }
 
     /* 頁尾 */
     footer { text-align: center; padding: 40px 15px; font-size: 13px; color: #999; border-top: 1px solid #eee; background: #fff; margin-top: 50px; }
-    footer a { text-decoration: none; color: #777; margin: 0 5px; }
+    footer a { text-decoration: none; color: #777; margin: 0 5px; transition: color 0.3s; }
+    footer a:hover { color: var(--primary); }
 
     /* 手機版適應 */
     @media (max-width: 600px) {
@@ -130,11 +131,11 @@
 
   <nav class="navbar">
     <div class="nav-container">
-      <a href="index.html" class="nav-logo">🎯 檢定練習站</a>
+      <a href="index.html" class="nav-logo">🎯 PassGo 考照通</a>
       <ul class="nav-menu">
         <li><a href="index.html">首頁</a></li>
         <li><a href="practice.html">題庫練習</a></li>
-        <li><a href="post-level-c.html">備考攻略</a></li>
+        <li><a href="guide.html">備考攻略</a></li>
         <li><a href="about.html">關於本站</a></li>
       </ul>
     </div>
@@ -143,28 +144,28 @@
   <div class="container">
     <article class="article-box">
       
-      <h1>版權法規：避開法律地雷：資訊人的法律必修課</h1>
+      <h1>版權與軟體授權必考重點！創用 CC 標誌與法規懶人包</h1>
       
       <div class="meta">
-        <span class="pill">📅 更新：2026</span>
-        <span class="pill">⚖️ 主題：軟體法律</span>
-        <span class="pill">🛡️ 適用：職業道德與規範</span>
+        <span class="pill">📅 115年度更新</span>
+        <span class="pill">⚖️ 主題：資訊倫理與法律</span>
+        <span class="pill">🛡️ 適用：各職類共同科目必讀</span>
       </div>
 
       <p>
-        在數位創作與軟體應用的時代，「我不懂法律」不能成為侵權的藉口。無論是在進行技術士檢定的學科考試，還是在職場處理專案，搞懂 <strong>軟體授權</strong> 與 <strong>創用 CC (Creative Commons)</strong> 是保護自己最好的方式。本文幫你整理出最核心的法律常識，助你避開隱形的法律地雷。
+        在技術士檢定的共同科目中，「資訊相關資安與倫理」幾乎是必考題，更是未來在職場中避免吃上官司的救命常識。不論是軟體授權的分類，還是創用 CC (Creative Commons) 標誌的意義，這篇文章幫你把生硬的法條轉化為好記的白話文，助你輕鬆避開考場與職場的隱形地雷！
       </p>
 
       <div class="toc">
         <b>📌 本篇攻略快速導覽</b>
-        <a href="#software">1. 軟體授權分類</a>
-        <a href="#cc">2. 創用 CC 標誌</a>
-        <a href="#fairuse">3. 合理使用迷思</a>
+        <a href="#software">1. 軟體授權分類：你用的是哪一種？</a>
+        <a href="#cc">2. 創用 CC (Creative Commons) 圖示解析</a>
+        <a href="#fairuse">3. 什麼是合理使用 (Fair Use)？</a>
       </div>
 
       <h2 id="software">一、軟體授權分類：你用的是哪一種？</h2>
       <p>
-        在學科題目中，區分軟體的「授權性質」是必考題。這決定了你是否可以散佈、修改或甚至商業使用該軟體。
+        在學科題目中，區分軟體的「授權性質」是超級常客。這決定了你是否可以散佈、修改，或是將該軟體用於商業營利。
       </p>
       
       <div class="table-scroll">
@@ -172,29 +173,29 @@
           <thead>
             <tr>
               <th>軟體類型</th>
-              <th>使用權利</th>
-              <th>代表範例</th>
+              <th>使用權利與限制</th>
+              <th>常見代表範例</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>商業軟體</td>
-              <td>需付費購買授權，嚴禁散佈。</td>
+              <td>必須付費購買授權，嚴禁私自拷貝與散佈。</td>
               <td>Windows, MS Office</td>
             </tr>
             <tr>
               <td>共享軟體 (Shareware)</td>
-              <td>試用期過後需付費，否則功能受限。</td>
-              <td>WinRAR, 某些繪圖工具</td>
+              <td>提供試用期，過期後需付費解鎖，否則功能會受限。</td>
+              <td>WinRAR, 部分防毒軟體</td>
             </tr>
             <tr>
               <td>免費軟體 (Freeware)</td>
-              <td>可免費使用，但通常不提供原始碼。</td>
-              <td>Google Chrome, Line</td>
+              <td>可免費使用，但<span class="highlight">不提供原始碼</span>，不能擅自修改。</td>
+              <td>Google Chrome, LINE</td>
             </tr>
             <tr>
-              <td>自由/開源軟體</td>
-              <td>可自由運行、複製、散佈與修改。</td>
+              <td>自由/開源軟體 (Open Source)</td>
+              <td>公開原始碼，可自由運行、複製、散佈與修改。</td>
               <td>Linux, Firefox, VLC</td>
             </tr>
           </tbody>
@@ -203,46 +204,48 @@
 
       <h2 id="cc">二、創用 CC (Creative Commons)：創作的保護傘</h2>
       <p>
-        當你在製作簡報或架設網站需要圖片素材時，看到 <strong>CC 標誌</strong> 就要特別注意。它透過四種核心圖示的組合，告訴你「作者開出的授權條件」。
+        當你在製作簡報或架設網站，上網找免費圖片素材時，看到 <strong>CC 標誌</strong> 就要特別注意。它透過以下四種核心圖示的組合，清楚告訴你「原作者開出的授權條件」：
       </p>
       
       <ul>
-        <li><strong>BY (姓名標示)：</strong> 必須標註作者姓名。</li>
-        <li><strong>NC (非商業性)：</strong> 不能用於賺錢的目的。</li>
-        <li><strong>ND (禁止改作)：</strong> 可以使用，但不能修改內容。</li>
-        <li><strong>SA (相同方式分享)：</strong> 若你修改了內容，必須用相同的授權分享出去。</li>
+        <li><strong>BY (姓名標示)：</strong> 必須清楚標註原作者的姓名。</li>
+        <li><strong>NC (非商業性)：</strong> 不能把素材用於賺錢、營利的目的。</li>
+        <li><strong>ND (禁止改作)：</strong> 可以照原樣使用，但絕對不能修改內容。</li>
+        <li><strong>SA (相同方式分享)：</strong> 若你修改了內容，修改後的新作品必須用「一模一樣的授權條款」分享出去。</li>
       </ul>
+
+      <div class="teacher-tip">
+        <strong>👨‍🏫 站長的考前口訣大放送：</strong><br>
+        背英文太難記？只要記住這個四字真言：<br>
+        <span class="highlight">BY = 名、NC = 錢、ND = 改、SA = 同！</span><br>
+        （標姓名、不收錢、不能改、用相同方式分享），考場上看到圖示直接套用，分數絕對穩拿！
+      </div>
 
       <h2 id="fairuse">三、合理使用 (Fair Use) 的迷思</h2>
       <p>
-        很多人以為「只要註明出處」或「沒有賺錢」就叫合理使用，這是極大的誤區。在法律判斷上，通常會考量：
+        很多人以為「只要在底下註明出處」或「我沒有拿來賺錢」就叫合理使用，這是極大的法律誤區。在判斷是否為合理使用時，法官通常會考量以下幾點：
       </p>
       <ol>
-        <li>使用的目的（教育用途優於營利用途）。</li>
-        <li>所佔比例（整本書印 90% 絕對不叫合理使用）。</li>
-        <li>對原創作品潛在市場價值的影響。</li>
+        <li><strong>使用的目的：</strong> 教育、學術研究用途的過關機率，遠大於商業營利用途。</li>
+        <li><strong>所佔比例：</strong> 引用一小段文字可以，但把整本書印了 90% 出來發，絕對不叫合理使用。</li>
+        <li><strong>市場影響：</strong> 你的引用是否會導致原作者的作品賣不出去？（例如直接把付費電影的精彩片段剪接上網）。</li>
       </ol>
 
       <div class="warning">
-        <strong>⚠️ 考試陷阱提醒：</strong>
-        題目若問到「公有領域 (Public Domain)」，代表版權已過期或創作者主動放棄。這類素材可以任意使用、修改而不用付費或標註。
-      </div>
-
-      <div class="teacher-tip">
-        <strong>👨‍🏫 老師建議：</strong>
-        在技術士檢定的共同科目（資訊類）中，最常考的是 <strong>「軟體非法重製」</strong> 的刑責，以及 <strong>「創用 CC 四大標誌」</strong> 的含義。只要記住 BY=名、NC=錢、ND=改、SA=同，分數就到手了！
+        <strong>⚠️ 考試陷阱題提醒：</strong><br>
+        題目如果問到 <strong>「公有領域 (Public Domain)」</strong>，代表該作品的版權已經過期，或是創作者主動放棄了所有版權。這類素材，大眾可以任意使用、修改、甚至商業營利，<span class="highlight">完全不用付費或標註作者</span>！
       </div>
 
       <div style="text-align: center; margin-top: 30px;">
-        <p>搞懂版權規則了嗎？立即練習學科題庫！</p>
-         <a href="practice.html" style="background: var(--primary); color: white; padding: 12px 30px; border-radius: 10px; font-weight: bold; text-decoration: none;">開始題庫練習</a>
+        <p>法規常識都搞懂了嗎？趁著記憶猶新，來挑戰一下學科題庫吧！</p>
+         <a href="practice.html" class="btn">開始題庫練習</a>
       </div>
 
     </article>
   </div>
 
   <footer>
-    © 2026 技術士檢定學習平台<br>
+    © 2026 PassGo 考照通<br>
     <a href="about.html">關於本站</a>｜<a href="privacy.html">隱私權政策</a>｜<a href="contact.html">聯絡我們</a>
   </footer>
 
