@@ -2,8 +2,8 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>證照怎麼寫在履歷才會加分？避免寫錯的技巧＋範例｜技術士丙級/乙級</title>
-  <meta name="description" content="證照放履歷怎麼寫才會加分？一次整理技術士丙級/乙級證照在履歷與自傳的寫法、可量化的描述公式、面試說法、常見錯誤與範例（115 年度最新版）。">
+  <title>證照放履歷怎麼寫才加分？技術士履歷優化與面試範例｜PassGo 考照通</title>
+  <meta name="description" content="考到技術士證照後履歷該怎麼寫？PassGo 考照通教你套用量化公式，把丙級/乙級證照轉化為具體能力證明，並提供自傳寫法、面試回答模板與常見錯誤避雷指南（115 年度最新版）。">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="https://passgo.idv.tw/guide-resume.html">
 
@@ -75,7 +75,7 @@
     li { margin-bottom: 10px; }
 
     /* 重點標示與提示框 */
-    .highlight { background-color: #fff3cd; padding: 2px 6px; border-radius: 6px; font-weight: 700; }
+    .highlight { background-color: #fff3cd; padding: 2px 6px; border-radius: 6px; font-weight: 700; color: #856404; }
     .teacher-tip { border-left: 5px solid #4caf50; background: #f1f8e9; padding: 16px; margin: 20px 0; border-radius: 12px; }
     .warning { border-left: 5px solid #ff9800; background: #fff7e6; padding: 16px; margin: 20px 0; border-radius: 12px; }
 
@@ -89,7 +89,8 @@
     .table-scroll { overflow-x: auto; margin: 20px 0; border: 1px solid #eef2f8; border-radius: 12px; }
     table { width: 100%; border-collapse: collapse; min-width: 500px; }
     th, td { padding: 15px; border: 1px solid #eef2f8; text-align: left; font-size: 15px; }
-    th { background: #f8faff; color: var(--primary-dark); font-weight: bold; }
+    th { background: #f8faff; color: var(--primary-dark); font-weight: bold; text-align: center; }
+    td:first-child { font-weight: bold; color: var(--primary-dark); background: #f8faff; width: 140px; text-align: center; }
 
     /* 按鈕樣式 */
     .btn {
@@ -103,11 +104,12 @@
       font-weight: bold;
       transition: background 0.3s;
     }
-    .btn:hover { background: var(--primary-dark); }
+    .btn:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(74, 143, 231, 0.3); }
 
     /* 頁尾 */
     footer { text-align: center; padding: 40px 15px; font-size: 13px; color: #999; border-top: 1px solid #eee; background: #fff; margin-top: 50px; }
-    footer a { text-decoration: none; color: #777; margin: 0 5px; }
+    footer a { text-decoration: none; color: #777; margin: 0 5px; transition: color 0.3s; }
+    footer a:hover { color: var(--primary); }
 
     /* 手機版適應 */
     @media (max-width: 600px) {
@@ -122,11 +124,11 @@
 
   <nav class="navbar">
     <div class="nav-container">
-      <a href="index.html" class="nav-logo">🎯 檢定練習站</a>
+      <a href="index.html" class="nav-logo">🎯 PassGo 考照通</a>
       <ul class="nav-menu">
         <li><a href="index.html">首頁</a></li>
         <li><a href="practice.html">題庫練習</a></li>
-        <li><a href="post-level-c.html">備考攻略</a></li>
+        <li><a href="guide.html">備考攻略</a></li>
         <li><a href="about.html">關於本站</a></li>
       </ul>
     </div>
@@ -138,88 +140,94 @@
       <h1>證照怎麼寫在履歷才會加分？技術士丙級／乙級履歷寫法與範例</h1>
 
       <div class="meta">
-        <span class="pill">📅 更新：2026</span>
-        <span class="pill">🔎 主題：求職履歷加分</span>
-        <span class="pill">🎓 適用：新鮮人 / 轉職 / 實習</span>
+        <span class="pill">📅 115年度更新</span>
+        <span class="pill">🔎 主題：求職與履歷優化</span>
+        <span class="pill">🎓 適用：新鮮人 / 轉職者 / 實習申請</span>
       </div>
 
       <p>
-        許多考生在履歷上只會寫「取得電腦軟體應用乙級」，但對於雇主來說，證照只是「入場券」。
-        這篇將教你如何運用量化公式，讓你的證照不再只是名稱，而是<strong>「能力的證明」</strong>。
+        辛苦考到的技術士證照，難道在履歷上只能寫短短一行字嗎？其實，對多數雇主與人資來說，證照只是基本「入場券」。這篇攻略將教你如何運用量化公式，把死板的證照名稱轉化為<span class="highlight">「含金量極高的能力證明」</span>，讓你在眾多求職者中脫穎而出。
       </p>
 
       <div class="toc">
         <b>📌 本篇攻略快速導覽</b>
-        <a href="#why">1. 為何名稱不夠？</a>
-        <a href="#formula">2. 加分寫法公式</a>
-        <a href="#layout">3. 履歷配置建議</a>
-        <a href="#interview">4. 面試回答模板</a>
+        <a href="#why">1. 為什麼只寫「證照名稱」絕對不夠？</a>
+        <a href="#formula">2. 履歷加分寫法公式 (直接套用)</a>
+        <a href="#layout">3. 證照在履歷中的排版與心機配置</a>
+        <a href="#interview">4. 面試必考題：高分回答模板</a>
       </div>
 
-      <h2 id="why">一、為什麼只列「證照名稱」不夠？</h2>
-      <p>雇主更想知道的是：<strong>你來了之後能用這個證照做什麼？</strong> 僅列出名稱無法展現你的實作熟練度。</p>
+      <h2 id="why">一、為什麼只寫「證照名稱」絕對不夠？</h2>
+      <p>試想一下，人資一天看幾十封履歷，如果每個人都只寫「取得電腦軟體應用乙級」，根本看不出差異。老闆真正想知道的是：<strong>「你來了之後，能用這個證照幫公司解決什麼問題？」</strong> 僅列出名稱，無法展現你的實作熟練度與細心程度。</p>
       
       <div class="teacher-tip">
-        <strong>✨ 加分思維：</strong><br>
-        不要只寫「證照名稱」，要寫成「證照 + 具體能力 + 成果」。這能證明你不是只有背題庫，而是真的具備解決問題的能力。
+        <strong>✨ 站長加分思維大公開：</strong><br>
+        不要只寫「證照名稱」，要寫成「<strong>證照名稱 ＋ 具體能力 ＋ 實際成果</strong>」。這能證明你不是只有死背題庫，而是真的具備將知識應用在工作上的戰鬥力。
       </div>
 
-      <h2 id="formula">二、加分寫法公式：直接套用</h2>
-      <p>建議在證照名稱下方補上一行簡短的能力描述，參考下表範例：</p>
+      <h2 id="formula">二、履歷加分寫法公式 (直接套用)</h2>
+      <p>建議在履歷的證照欄位或自傳中，在證照名稱下方補上一句簡短、具體的「能力描述」，可以參考以下範例直接修改：</p>
 
       <div class="table-scroll">
         <table>
           <thead>
             <tr>
               <th>職類情境</th>
-              <th>推薦加分寫法範例</th>
+              <th>推薦的加分寫法範例</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>資訊/軟體類</strong></td>
-              <td>熟悉 Access 資料庫關聯與 SQL 查詢，能產出自動化統計報表，提升資料處理效率。</td>
+              <td><strong>資訊 / 軟體類</strong><br>(如軟體應用乙級)</td>
+              <td>熟悉 Access 資料庫關聯與 SQL 查詢，能產出自動化統計報表，並熟練運用 Word 合併列印處理大量文書，大幅提升行政與資料處理效率。</td>
             </tr>
             <tr>
-              <td><strong>商業/行政類</strong></td>
-              <td>具備標準會計帳務處理能力，能精確操作財務軟體進行傳票製作與月結報表分析。</td>
+              <td><strong>商業 / 行政類</strong><br>(如會計事務丙級)</td>
+              <td>具備標準會計帳務處理能力，能精確操作財務軟體進行傳票製作、過帳與月結報表分析，對數字敏銳度高。</td>
             </tr>
             <tr>
-              <td><strong>新鮮人通用</strong></td>
-              <td>透過系統化檢定訓練，建立嚴謹的 SOP 作業習慣與軟體熟練度，可快速銜接實務需求。</td>
+              <td><strong>網路 / 硬體類</strong><br>(如網路架設丙級)</td>
+              <td>具備基礎網路架構規劃與查修能力，能獨立完成 RJ-45 實體線路配置、路由設定與基本故障排除 (Troubleshooting)。</td>
+            </tr>
+            <tr>
+              <td><strong>新鮮人通用寫法</strong></td>
+              <td>透過系統化的國家級檢定訓練，建立嚴謹的 SOP 作業習慣與軟體實作熟練度，抗壓性高，可快速銜接企業實務需求。</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <h2 id="layout">三、證照在履歷中的配置建議</h2>
-      <h3>1. 專業證照區</h3>
-      <p>建議將與應徵職缺「最相關」的證照排在第一位，並附上上述的描述句。</p>
+      <h2 id="layout">三、證照在履歷中的排版與心機配置</h2>
+      
+      <h3>1. 專業證照區 (Certifications)</h3>
+      <p>建議將與應徵職缺「最相關」的證照排在第一位（不要按照考取時間排）。如果有乙級，就不需要特別強調同職類的丙級，把版面留給具體的能力描述。</p>
 
-      <h3>2. 技能清單（Skills）</h3>
-      <p>將證照代表的能力拆解成關鍵字。例如：將「網頁設計丙級」拆解成「HTML5、CSS3、網頁版型設計」。</p>
+      <h3>2. 技能清單區 (Skills)</h3>
+      <p>請將證照代表的能力「拆解成關鍵字」。例如：不要只寫「網頁設計丙級」，你可以把它拆解成 <code>HTML5</code>、<code>CSS3</code>、<code>網頁版型切版設計</code> 等標籤，這樣更容易被求職網的系統關鍵字搜尋到。</p>
 
       <div class="warning">
-        <strong>⚠️ 避開錯誤：</strong><br>
-        避免堆疊與職缺完全無關的證照（例如：應徵會計卻放重機械操作證照），這會使履歷焦點模糊。
+        <strong>⚠️ 履歷避雷針：千萬別放錯重點</strong><br>
+        避免在履歷上「堆疊」與職缺完全無關的證照。例如：應徵辦公室會計助理，卻放了「重機械操作證照」或「中餐烹調丙級」，這不但不會加分，反而會讓人資覺得你履歷焦點模糊、不知道自己想找什麼工作。
       </div>
 
-      <h2 id="interview">四、面試回答模板</h2>
-      <p>當面試官問到：「這張證照對你的工作有什麼幫助？」你可以參考以下回答：</p>
+      <h2 id="interview">四、面試必考題：高分回答模板</h2>
+      <p>當面試官翻著履歷問到：「你覺得這張證照對你未來的工作有什麼實質幫助？」你可以參考以下這個充滿自信的回答模板：</p>
+      
       <div class="teacher-tip">
-        「我報考這張證照是為了確保我的專業能力達到業界標準。在準備過程中，我不僅熟悉了操作，更學會了如何在壓力下穩定產出正確的結果。這讓我能更快上手公司的作業流程。」
+        <strong>💬 面試回答示範：</strong><br>
+        「我當初報考這張證照，是為了確保自己的專業能力有達到業界的標準規範。在準備術科的過程中，我不僅熟悉了系統的操作，更學會了『如何在時間壓力下，穩定且細心地產出正確的結果』。我相信這種抗壓性與對 SOP 的嚴謹態度，能讓我更快上手貴公司的作業流程。」
       </div>
 
       <div style="text-align: center; margin-top: 30px;">
-        <p>現在就去檢查你的履歷，幫你的證照補上加分描述吧！</p>
-        <a href="practice.html" style="background: var(--primary); color: white; padding: 12px 30px; border-radius: 10px; font-weight: bold; text-decoration: none;">開始題庫練習</a>
+        <p>履歷準備好了，如果還想多考幾張證照加分，隨時來刷題吧！</p>
+        <a href="practice.html" class="btn">開始題庫練習</a>
       </div>
 
     </article>
   </div>
 
   <footer>
-    © 2026 技術士檢定學習平台<br>
+    © 2026 PassGo 考照通<br>
     <a href="about.html">關於本站</a>｜<a href="privacy.html">隱私權政策</a>｜<a href="contact.html">聯絡我們</a>
   </footer>
 
