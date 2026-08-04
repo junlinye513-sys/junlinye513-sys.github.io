@@ -2,8 +2,8 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>技術士考前一週怎麼讀？7天衝刺計畫與複習攻略</title>
-  <meta name="description" content="學科考前倒數 7 天高效衝刺計畫。包含每日複習安排、錯題回補策略、模擬測驗節奏與考場前準備建議，協助穩定提升分數。">
+  <title>學科考前 7 天救命衝刺計畫：不熬夜也能穩拿及格的秘笈｜PassGo 考照通</title>
+  <meta name="description" content="技術士學科考前倒數 7 天怎麼讀？PassGo 考照通為你規劃高效衝刺計畫，包含每日複習節奏、錯題回補策略與考場實戰準備，幫你穩定心態、拉高分數！">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="https://passgo.idv.tw/study-guide.html">
 
@@ -43,7 +43,7 @@
     }
     .nav-logo { font-weight: bold; color: var(--primary-dark); text-decoration: none; font-size: 18px; }
     .nav-menu { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
-    .nav-menu a { text-decoration: none; color: #555; font-size: 15px; font-weight: 500; }
+    .nav-menu a { text-decoration: none; color: #555; font-size: 15px; font-weight: 500; transition: color 0.3s; }
     .nav-menu a:hover { color: var(--primary); }
 
     /* 文章容器與卡片 */
@@ -75,7 +75,7 @@
     li { margin-bottom: 10px; }
 
     /* 重點標示與提示框 */
-    .highlight { background-color: #fff3cd; padding: 2px 6px; border-radius: 6px; font-weight: 700; }
+    .highlight { background-color: #fff3cd; padding: 2px 6px; border-radius: 6px; font-weight: 700; color: #856404; }
     .teacher-tip { border-left: 5px solid #4caf50; background: #f1f8e9; padding: 16px; margin: 20px 0; border-radius: 12px; }
     .warning { border-left: 5px solid #ff9800; background: #fff7e6; padding: 16px; margin: 20px 0; border-radius: 12px; }
 
@@ -85,9 +85,24 @@
     .toc a { display: inline-block; margin: 5px 15px 5px 0; font-weight: 600; font-size: 15px; color: var(--primary-dark); text-decoration: none; }
     .toc a:hover { text-decoration: underline; }
 
+    /* 按鈕樣式 */
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 12px 30px;
+      background: var(--primary);
+      color: #fff !important;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .btn:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(74, 143, 231, 0.3); }
+
     /* 頁尾 */
     footer { text-align: center; padding: 40px 15px; font-size: 13px; color: #999; border-top: 1px solid #eee; background: #fff; margin-top: 50px; }
-    footer a { text-decoration: none; color: #777; margin: 0 5px; }
+    footer a { text-decoration: none; color: #777; margin: 0 5px; transition: color 0.3s; }
+    footer a:hover { color: var(--primary); }
 
     /* 手機版適應 */
     @media (max-width: 600px) {
@@ -102,11 +117,11 @@
 
   <nav class="navbar">
     <div class="nav-container">
-      <a href="index.html" class="nav-logo">🎯 檢定練習站</a>
+      <a href="index.html" class="nav-logo">🎯 PassGo 考照通</a>
       <ul class="nav-menu">
         <li><a href="index.html">首頁</a></li>
         <li><a href="practice.html">題庫練習</a></li>
-        <li><a href="post-level-c.html">備考攻略</a></li>
+        <li><a href="guide.html">備考攻略</a></li>
         <li><a href="about.html">關於本站</a></li>
       </ul>
     </div>
@@ -115,95 +130,93 @@
   <div class="container">
     <article class="article-box">
 
-      <h1>學科考前一週衝刺計畫：倒數 7 天高效複習安排</h1>
+      <h1>學科考前 7 天救命衝刺計畫：不熬夜也能穩拿及格的秘笈</h1>
 
       <div class="meta">
-        <span class="pill">📅 更新：2026</span>
-        <span class="pill">🔎 主題：考前衝刺</span>
-        <span class="pill">🎓 適用：所有考生</span>
+        <span class="pill">📅 115年度更新</span>
+        <span class="pill">🔎 主題：考前衝刺與心態調整</span>
+        <span class="pill">🎓 適用：所有技術士考生</span>
       </div>
 
       <p>
-        當考試進入最後倒數 7 天，準備方式必須轉為「穩定分數」模式。此時不再追求大量新增內容，而是專注於 <span class="highlight">降低錯誤率、穩定節奏、強化弱點</span>。
+        距離考試只剩一個禮拜，看著厚厚的題庫是不是覺得特別焦慮？深呼吸！當考試進入最後倒數 7 天，準備方式必須從「大量吸收」轉換為<span class="highlight">「穩定分數」模式</span>。這時候你不需要再追求看完每一題，而是要專注於降低錯誤率、抓穩基本盤。照著這份衝刺計畫走，及格絕對沒問題！
       </p>
 
       <div class="toc">
         <b>📌 本篇攻略快速導覽</b>
-        <a href="#principles">1. 倒數一週整體原則</a>
-        <a href="#schedule">2. 倒數每日安排建議</a>
-        <a href="#mistakes">3. 錯題回補高效策略</a>
-        <a href="#action">4. 最後衝刺行動建議</a>
+        <a href="#principles">1. 倒數一週的 3 大保命原則</a>
+        <a href="#schedule">2. 每日倒數課表：跟著練就對了</a>
+        <a href="#mistakes">3. 錯題回補：把失分變成得分</a>
       </div>
 
-      <h2 id="principles">一、倒數一週整體原則</h2>
+      <h2 id="principles">一、倒數一週的 3 大保命原則</h2>
       <ul>
-        <li><strong>不增加新壓力：</strong> 不再大量刷從未看過的題庫。</li>
-        <li><strong>錯題為王：</strong> 複習過去測驗中答錯的題目，確保不再重蹈覆轍。</li>
-        <li><strong>模擬實戰：</strong> 開始在本站進行限時模擬測驗。</li>
-        <li><strong>穩定作息：</strong> 保持睡眠充足，調整腦袋在考試時段最清醒。</li>
+        <li><strong>拒絕新壓力：</strong> 絕對不要再買新講義，或是大量刷從來沒看過的新題型，這只會打擊自信心。</li>
+        <li><strong>錯題為王：</strong> 把過去測驗中答錯的題目拿出來反覆看，確保在考場上「錯過的不再錯」。</li>
+        <li><strong>穩定生理時鐘：</strong> 如果你是早上考試，請在這幾天把作息調整到早上最清醒，千萬別再熬夜讀書！</li>
       </ul>
 
       <div class="warning">
-        <strong>⚠️ 常見錯誤：</strong> 
-        倒數階段突然更換不同版本的講義，容易造成觀念混淆。請堅持目前熟悉的筆記。
+        <strong>⚠️ 考前常見大忌：</strong> 
+        倒數階段突然聽朋友說「某個補習班的秘笈很準」，就跑去背不同版本的口訣，這極容易造成觀念混淆。請死守你目前最熟悉的筆記！
       </div>
 
-      <h2 id="schedule">二、倒數每日安排建議</h2>
+      <h2 id="schedule">二、每日倒數課表：跟著練就對了</h2>
 
-      <h3>📅 倒數 7～5 天：基礎穩定期</h3>
+      <h3>📅 倒數 7～5 天：基礎防禦期</h3>
+      <p>目標是把一定能拿到的分數先鎖進保險箱：</p>
       <ul>
-        <li>全面回顧歷次模擬考的錯題。</li>
-        <li>整理出最容易失分的三大主題（例如：共同科目－環境保護）。</li>
-        <li><strong>動作建議：</strong> 每天針對弱項主題，在練習頁面點選該職類加強。</li>
+        <li>全面回顧過去幾週模擬考的錯題紀錄。</li>
+        <li>找出你最容易瘋狂失分的 2 個弱點單元（例如：很多人死在共同科目的法規數字）。</li>
+        <li><strong>實戰動作：</strong> 每天針對這 2 個弱項，在本站進行「單元加強練習」。</li>
       </ul>
 
-      <h3>📅 倒數 4～3 天：模擬調整期</h3>
+      <h3>📅 倒數 4～3 天：考場模擬期</h3>
+      <p>讓身體習慣考試的壓迫感：</p>
       <ul>
-        <li>每天下午進行 1 回「不分題型」的完整模擬測驗。</li>
-        <li>全程計時（丙級建議 40 分鐘內完成），模擬考場壓力。</li>
-        <li>檢討錯題後，立即在筆記本寫下一句話的觀念補強。</li>
+        <li>每天挑一段不被打擾的時間，進行 1 回「不分題型」的完整 80 題模擬測驗。</li>
+        <li><span class="highlight">嚴格計時！</span> 逼自己要在 40 分鐘內寫完，訓練考場上的果斷力。</li>
+        <li>做完馬上檢討，並在筆記本上用「一句話」寫下剛剛錯題的正確觀念。</li>
       </ul>
 
-      <h3>📅 倒數 2 天：重點濃縮期</h3>
+      <h3>📅 倒數 2 天：精華濃縮期</h3>
+      <p>這時候課本可以直接蓋上了：</p>
       <ul>
-        <li>僅複習自己整理的「錯題筆記」。</li>
-        <li>快速確認共同科目（職安、倫理、環保、資安）的高頻常識題。</li>
-        <li>再次演練需要計算的進位制或基本公式。</li>
+        <li>只看自己整理的「錯題筆記」或截圖。</li>
+        <li>快速掃描共同科目（職安、倫理、環保、資安）的送分題，這 20 分絕對不能掉。</li>
+        <li>拿出一張白紙，把需要背的計算公式、進位制換算默寫一次。</li>
       </ul>
 
-      <h3>📅 倒數 1 天：節奏與心態調整</h3>
+      <h3>📅 倒數 1 天：節奏與心態歸零</h3>
+      <p>放輕鬆，你已經準備得很好了：</p>
       <ul>
-        <li><strong>禁止熬夜刷題：</strong> 腦袋疲勞會大幅增加當天看錯題目的機率。</li>
-        <li><strong>文具確認：</strong> 准考證、身分證、2B鉛筆、橡皮擦。</li>
-        <li><strong>交通確認：</strong> 再次確認考場位置與預計抵達時間。</li>
+        <li><strong>禁止熬夜：</strong> 腦袋一旦疲勞，考場上眼殘看錯「何者為非」的機率會暴增 300%。</li>
+        <li><strong>裝備盤點：</strong> 准考證、身分證（一定要帶！）、兩支好畫的 2B 鉛筆、好擦的橡皮擦。</li>
+        <li><strong>考場動線：</strong> 上網 Google 一下考場地圖，預抓一下明天的交通時間。</li>
       </ul>
 
-      <h2 id="mistakes">三、錯題回補高效策略</h2>
-      <p>這週你最不需要的是「分數」，而是「錯誤的原因」。</p>
+      <h2 id="mistakes">三、錯題回補：把失分變成得分</h2>
+      <p>最後一週，你最不需要在意的是模擬考拿了幾分，而是要知道「為什麼被扣分」。</p>
       <ul>
-        <li><strong>區分錯因：</strong> 是「完全沒讀過」還是「題目陷阱（如問何者為非）」？</li>
-        <li><strong>口訣記憶：</strong> 針對純記憶題型，想出一個有趣的連結幫助自己考場回憶。</li>
+        <li><strong>分類你的錯誤：</strong> 是「這觀念我真的不懂」，還是「我眼脫看錯題目」？</li>
+        <li><strong>發明白癡口訣：</strong> 針對那種永遠背不起來的死法規或數字，幫自己編一個好笑的諧音記憶法，考場上只要能想起來就是贏家。</li>
       </ul>
 
       <div class="teacher-tip">
-        <strong>👨‍🏫 老師提醒：</strong> 
-        考前最後 48 小時，複習一遍自己的「錯題紀錄」所帶來的投資報酬率，遠高於隨機亂刷 500 題。
+        <strong>👨‍🏫 站長的最後叮嚀：</strong> 
+        考前最後 48 小時，複習一遍自己的「錯題筆記」所帶來的投資報酬率，絕對遠遠高於你在網路上盲目亂刷 500 題。相信自己這段時間的累積，穩穩發揮就對了！
       </div>
-
-      <h2 id="action">四、最後衝刺行動建議</h2>
-      <p>
-        別再等待了！如果你已經安排好衝刺計畫，現在就點擊下方按鈕，開始今天的第一回模擬測驗，找出你目前的潛在弱點。
-      </p>
       
       <div style="text-align: center; margin-top: 30px;">
-        <a href="practice.html" style="background: var(--primary); color: white; padding: 12px 30px; border-radius: 10px; font-weight: bold; text-decoration: none;">開始題庫練習</a>
+        <p>別再焦慮了，用行動化解緊張！現在就來做一回模擬測驗：</p>
+        <a href="practice.html" class="btn">開始考前模擬測驗</a>
       </div>
 
     </article>
   </div>
 
   <footer>
-    © 2026 技術士檢定學習平台<br>
+    © 2026 PassGo 考照通<br>
     <a href="about.html">關於本站</a>｜<a href="privacy.html">隱私權政策</a>｜<a href="contact.html">聯絡我們</a>
   </footer>
 
