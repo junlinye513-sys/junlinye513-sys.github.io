@@ -2,8 +2,8 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>技術士證照有用嗎？丙級與乙級差別一次看懂</title>
-  <meta name="description" content="技術士證照有用嗎？一次看懂丙級與乙級差別、難度與適合對象、履歷加分與就業影響。附常見問題 FAQ 與準備重點整理。">
+  <title>技術士證照有用嗎？丙級與乙級差別、就業與薪資分析｜PassGo 考照通</title>
+  <meta name="description" content="技術士證照真的有用嗎？PassGo 考照通深入解析丙級與乙級的差別、難度、適合對象、履歷加分與就業薪資影響，助你釐清職涯方向。">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="https://passgo.idv.tw/guide-license-value.html">
 
@@ -43,7 +43,7 @@
     }
     .nav-logo { font-weight: bold; color: var(--primary-dark); text-decoration: none; font-size: 18px; }
     .nav-menu { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
-    .nav-menu a { text-decoration: none; color: #555; font-size: 15px; font-weight: 500; }
+    .nav-menu a { text-decoration: none; color: #555; font-size: 15px; font-weight: 500; transition: color 0.3s; }
     .nav-menu a:hover { color: var(--primary); }
 
     /* 文章容器與卡片 */
@@ -75,8 +75,8 @@
     li { margin-bottom: 10px; }
 
     /* 重點標示與提示框 */
-    .highlight { background-color: #fff3cd; padding: 2px 6px; border-radius: 6px; font-weight: 700; }
-    .teacher-tip { border-left: 5px solid #4caf50; background: #f1f8e9; padding: 16px; margin: 20px 0; border-radius: 12px; }
+    .highlight { background-color: #fff3cd; padding: 2px 6px; border-radius: 6px; font-weight: 700; color: #856404; }
+    .info-box { border-left: 5px solid #4caf50; background: #f1f8e9; padding: 16px; margin: 20px 0; border-radius: 12px; }
     .warning { border-left: 5px solid #ff9800; background: #fff7e6; padding: 16px; margin: 20px 0; border-radius: 12px; }
 
     /* 目錄 */
@@ -85,20 +85,36 @@
     .toc a { display: inline-block; margin: 5px 15px 5px 0; font-weight: 600; font-size: 15px; color: var(--primary-dark); text-decoration: none; }
     .toc a:hover { text-decoration: underline; }
 
-    /* --- 專屬表格樣式 --- */
+    /* 專屬表格樣式 */
     .table-scroll { overflow-x: auto; margin: 20px 0; border: 1px solid #eef2f8; border-radius: 12px; }
     table { width: 100%; border-collapse: collapse; min-width: 500px; }
     th, td { padding: 15px; border: 1px solid #eef2f8; text-align: center; font-size: 15px; }
     th { background: #f8faff; color: var(--primary-dark); font-weight: bold; }
+    td:first-child { font-weight: bold; color: var(--primary-dark); background: #f8faff; width: 140px; }
 
-    /* --- 專屬 FAQ 摺疊樣式 --- */
+    /* 專屬 FAQ 摺疊樣式 */
     details { border: 1px solid #eef2f8; border-radius: 12px; padding: 16px; margin-bottom: 15px; background: #fbfcff; transition: all 0.3s; }
     summary { font-weight: bold; cursor: pointer; color: var(--primary-dark); font-size: 16px; }
     details p { margin-top: 12px; margin-bottom: 0; font-size: 15px; color: #444; }
 
+    /* 按鈕樣式 */
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 12px 30px;
+      background: var(--primary);
+      color: #fff !important;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .btn:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(74, 143, 231, 0.3); }
+
     /* 頁尾 */
     footer { text-align: center; padding: 40px 15px; font-size: 13px; color: #999; border-top: 1px solid #eee; background: #fff; margin-top: 50px; }
-    footer a { text-decoration: none; color: #777; margin: 0 5px; }
+    footer a { text-decoration: none; color: #777; margin: 0 5px; transition: color 0.3s; }
+    footer a:hover { color: var(--primary); }
 
     /* 手機版適應 */
     @media (max-width: 600px) {
@@ -113,11 +129,11 @@
 
   <nav class="navbar">
     <div class="nav-container">
-      <a href="index.html" class="nav-logo">🎯 檢定練習站</a>
+      <a href="index.html" class="nav-logo">🎯 PassGo 考照通</a>
       <ul class="nav-menu">
         <li><a href="index.html">首頁</a></li>
         <li><a href="practice.html">題庫練習</a></li>
-        <li><a href="post-level-c.html">備考攻略</a></li>
+        <li><a href="guide.html">備考攻略</a></li>
         <li><a href="about.html">關於本站</a></li>
       </ul>
     </div>
@@ -129,14 +145,14 @@
       <h1>技術士證照有用嗎？丙級與乙級差別、就業與薪資分析</h1>
 
       <div class="meta">
-        <span class="pill">📅 更新：2026</span>
+        <span class="pill">📅 115年度更新</span>
         <span class="pill">🔎 主題：就業分析與證照價值</span>
         <span class="pill">🎓 適用：高中職 / 大專 / 在職轉職</span>
       </div>
 
       <p>
         許多考生在決定報考檢定前，常會問：「技術士證照真的有用嗎？」
-        其實，證照雖然不是高薪的保證，但它是<strong>「專業能力的敲門磚」</strong>。這篇將從升學、就業以及職涯發展的角度，為你深入分析丙級與乙級的差異。
+        其實，證照雖然不是高薪的絕對保證，但它是求職與職場競爭中不可或缺的<span class="highlight">「專業能力敲門磚」</span>。這篇將從升學、就業以及職涯發展的角度，為你深入解析丙級與乙級的真實差異。
       </p>
 
       <div class="toc">
@@ -148,20 +164,20 @@
       </div>
 
       <h2 id="value">一、技術士證照的核心價值</h2>
-      <p>技術士證照是政府核發的專業證明，對於不同階段的人有不同的意義：</p>
+      <p>技術士證照是國家核發的專業能力證明，對於不同階段的求職者或學生而言，具備以下關鍵意義：</p>
       <ul>
-        <li><strong>升學：</strong>技優甄審、甄選入學、學習歷程等場合可加分。</li>
-        <li><strong>就業：</strong>讓面試官在短時間內確認你具備該職類的基本能力。</li>
-        <li><strong>轉職：</strong>對非本科系的人來說，這是跨入新領域最基本的門檻。</li>
+        <li><strong>升學加分：</strong>在技優甄審、甄選入學、學習歷程檔案等升學管道中可作為具體佐證。</li>
+        <li><strong>就業優勢：</strong>讓面試官在審視履歷時，能快速確認求職者具備該職類的基本核心能力。</li>
+        <li><strong>轉職門檻：</strong>對於非本科系或欲跨領域發展的轉職者來說，證照是建立專業信任感的最快途徑。</li>
       </ul>
 
-      <div class="teacher-tip">
-        <strong>👨‍🏫 老師提醒：</strong>
-        證照不是魔法，但它是「證明你有努力過、且具備基礎能力」的最快方式。在同等條件下，有證照的履歷更容易被看見。
+      <div class="info-box">
+        <strong>💡 核心觀點：</strong>
+        證照本身並非萬靈丹，但它能客觀「證明具備基礎操作能力與學習動機」。在條件相近的求職者中，持有證照通常能獲得更高的關注度。
       </div>
 
       <h2 id="compare">二、丙級與乙級差別（一次看懂）</h2>
-      <p>如果你卡在「到底要先考丙級還是直接衝乙級？」，可以參考下表判斷：</p>
+      <p>如果在「應該先考丙級還是直接挑戰乙級」之間猶豫，可透過下表進行評估：</p>
 
       <div class="table-scroll">
         <table>
@@ -175,65 +191,65 @@
           <tbody>
             <tr>
               <td><strong>定位</strong></td>
-              <td>入門打底、基礎技能</td>
-              <td>專業升級、實務整合</td>
+              <td>入門打底、建立基礎技能</td>
+              <td>專業升級、實務整合與深度應用</td>
             </tr>
             <tr>
               <td><strong>適合對象</strong></td>
-              <td>高中職、初學者、建立信心</td>
-              <td>大專、在職、具備基礎者</td>
+              <td>高中職學生、初學者、建立信心</td>
+              <td>大專生、在職從業人員、具備一定基礎者</td>
             </tr>
             <tr>
               <td><strong>履歷效果</strong></td>
-              <td>具備基本操作與學習動機</td>
-              <td>具備獨立作業與專業深度</td>
+              <td>具備基本操作與良好的學習動機</td>
+              <td>具備獨立作業能力與更高的專業深度</td>
             </tr>
             <tr>
               <td><strong>建議路線</strong></td>
-              <td>先拿丙級（穩紮穩打）</td>
-              <td>基礎夠強可直接挑戰</td>
+              <td>建議由丙級開始，循序漸進扎根</td>
+              <td>若學經歷符合且基礎扎實可直接挑戰</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <h2 id="career">三、就業與薪資：證照會影響薪水嗎？</h2>
-      <p>直接說結論：<strong>不一定會「直接加薪」</strong>。薪資通常與職務、公司規模與實作經驗更相關。但證照能提供以下關鍵幫助：</p>
+      <p>客觀來說：<strong>證照不一定會直接帶來「跳級加薪」</strong>。薪資水準通常仍與實際工作經驗、職務內容及公司規模高度相關。不過，證照在職場上能提供以下實質幫助：</p>
       <ul>
-        <li><strong>提高面試機會：</strong>許多大型企業或公職職缺，會將證照列為必備或優先條件。</li>
-        <li><strong>談判籌碼：</strong>在起薪談判時，證照能作為你具備專業能力的佐證。</li>
-        <li><strong>職務加給：</strong>部分公司（如水電、室內設計、餐飲、特定技職）會針對持有證照者發放額外津貼。</li>
+        <li><strong>提高面試機會：</strong>許多大型企業、特定產業或公職招募時，會將證照列為必要條件或加分項目。</li>
+        <li><strong>薪資談判籌碼：</strong>在新人起薪或內部考核時，證照能作為專業能力的具體佐證。</li>
+        <li><strong>專業津貼：</strong>部分特定技職產業（如水電工程、室內設計、餐飲等）會針對持有乙級或特定證照者發放專業津貼。</li>
       </ul>
 
       <div class="warning">
-        <strong>⚠️ 注意事項：</strong>
-        「證照 + 作品集」才是最強組合。例如你有網頁設計證照，最好再附上你自己做的網站作品，加分效果會翻倍。
+        <strong>⚠️ 職場求職建議：</strong>
+        「證照搭配實際作品集」往往能發揮最強的加分效果。例如持有網頁設計相關證照時，若能同時附上獨立架設的網站作品，錄取機率將顯著提升。
       </div>
 
       <h2 id="faq">四、常見問題 FAQ</h2>
       <details>
-        <summary>Q1：丙級是不是沒什麼用？</summary>
-        <p>丙級對高中職學生極具價值（升學加分），且是通往乙級的最佳練習。如果你是完全的初學者，丙級是建立基礎最好的路徑。</p>
+        <summary>Q1：丙級證照是不是沒什麼實質效益？</summary>
+        <p>丙級對高中職學生在升學面上極具價值，對社會新鮮人而言則是證明具備基礎水準的入門門檻。對於完全零基礎的學習者來說，從丙級開始打底是最穩健的路徑。</p>
       </details>
       <details>
-        <summary>Q2：可以直接考乙級嗎？</summary>
-        <p>法律上只要符合學經歷規定即可報考。但乙級題庫量大、難度高，建議先確保你對該職類的學術科都有一定掌握度。</p>
+        <summary>Q2：可以直接報考乙級嗎？</summary>
+        <p>只要符合勞動部規定的學經歷資格即可直接報考。但乙級檢定範圍廣、難度較高，建議先評估自身對學科與術科的掌握程度再做決定。</p>
       </details>
       <details>
-        <summary>Q3：證照會過期嗎？</summary>
-        <p>目前勞動部核發的技術士證照多為永久有效，不需要換證。</p>
+        <summary>Q3：技術士證照會過期嗎？</summary>
+        <p>目前勞動部核發的全國技術士證照多數為永久有效，通過後不需重新換證。</p>
       </details>
 
       <div style="text-align: center; margin-top: 30px;">
-        <p>想好要挑戰哪一級了嗎？現在就開始練習題庫！</p>
-        <a href="practice.html" style="background: var(--primary); color: white; padding: 12px 30px; border-radius: 10px; font-weight: bold; text-decoration: none;">開始題庫練習</a>
+        <p>評估好目標了嗎？現在就開始進行題庫練習吧！</p>
+        <a href="practice.html" class="btn">開始題庫練習</a>
       </div>
 
     </article>
   </div>
 
   <footer>
-    © 2026 技術士檢定學習平台<br>
+    © 2026 PassGo 考照通<br>
     <a href="about.html">關於本站</a>｜<a href="privacy.html">隱私權政策</a>｜<a href="contact.html">聯絡我們</a>
   </footer>
 
