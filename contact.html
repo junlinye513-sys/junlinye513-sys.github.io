@@ -21,17 +21,17 @@
       --radius: 18px;
     }
 
-    /* 2. 基礎設定：移除 body padding 確保導覽列貼邊 */
+    /* 2. 基礎設定 (完全統一格式：嚴格歸零 padding) */
     body {
+      margin: 0;
+      padding: 0; /* 對齊全站設定 */
       font-family: "Microsoft JhengHei", system-ui, sans-serif;
       background: var(--bg);
-      margin: 0;
-      padding: 0;
       color: #333;
-      line-height: 1.8;
+      line-height: 1.85; /* 對齊全站標準行高 */
     }
 
-    /* 3. 導覽列：嚴格對齊首頁與練習頁高度 */
+    /* 3. 導覽列 (完全統一格式：嚴格對齊高度與置中) */
     .navbar {
       position: sticky;
       top: 0;
@@ -43,7 +43,6 @@
       border-bottom: 1px solid rgba(0,0,0,0.05);
       padding: 12px 0;
     }
-
     .nav-container {
       max-width: 1000px;
       margin: auto;
@@ -52,46 +51,42 @@
       justify-content: space-between;
       align-items: center;
     }
-
-    /* 修正 Logo 垂直置中，防止圖示撐開高度 */
-    .nav-logo {
-      font-weight: bold;
-      color: var(--primary-dark);
-      text-decoration: none;
-      font-size: 18px;
-      display: flex;
-      align-items: center;
+    .nav-logo { 
+      font-weight: bold; 
+      color: var(--primary-dark); 
+      text-decoration: none; 
+      font-size: 18px; 
+      display: flex; 
+      align-items: center; 
+    }
+    .nav-menu { 
+      display: flex; 
+      gap: 20px; 
+      list-style: none; 
+      margin: 0; 
+      padding: 0; 
+      align-items: center; 
+    }
+    .nav-menu a { 
+      text-decoration: none; 
+      color: #555; 
+      font-size: 15px; 
+      font-weight: 500; 
+      transition: 0.3s; 
+    }
+    .nav-menu a:hover { 
+      color: var(--primary); 
     }
 
-    .nav-menu {
-      display: flex;
-      gap: 20px;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav-menu a {
-      text-decoration: none;
-      color: #555;
-      font-size: 15px;
-      font-weight: 500;
-      transition: 0.3s;
-    }
-
-    .nav-menu a:hover {
-      color: var(--primary);
-    }
-
-    /* 4. 內容容器 */
+    /* 4. 內容容器 (保留此頁特色，下邊距對齊標準版 60px) */
     .container {
       max-width: 750px;
-      margin: 40px auto;
+      margin: 40px auto 60px;
       background: #fff;
       padding: 40px;
       border-radius: var(--radius);
       box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-      text-align: center; /* 保持標題與按鈕置中 */
+      text-align: center;
     }
 
     h1 { color: var(--primary-dark); margin-bottom: 10px; margin-top: 0; }
@@ -116,79 +111,40 @@
       transform: translateY(-2px);
     }
 
-    /* 5. FAQ 區塊 */
+    /* 5. FAQ 區塊 (保留此頁特色) */
     .faq-section {
       text-align: left;
       margin-top: 40px;
       border-top: 1px solid #eee;
       padding-top: 30px;
     }
-
     .faq-section h2 {
       font-size: 20px;
       color: var(--primary);
       margin-bottom: 20px;
     }
-
     .faq-item {
       margin-bottom: 20px;
       background: #f9fbff;
       padding: 15px;
       border-radius: 10px;
     }
-
     .faq-item strong {
       display: block;
       color: #222;
       font-size: 16px;
       margin-bottom: 5px;
     }
-
     .faq-item span {
       font-size: 15px;
       color: #444;
     }
 
-    /* 6. 頁腳：對齊 privacy.html 樣式 */
-    footer {
-      text-align: center;
-      padding: 40px 15px;
-      font-size: 13px;
-      color: #999;
-      border-top: 1px solid #eee;
-      background: #fff;
-      margin-top: 60px;
-    }
-
-    footer a {
-      text-decoration: none;
-      color: #777;
-      margin: 0 5px;
-      transition: 0.3s;
-    }
-
-    footer a:hover {
-      color: var(--primary);
-    }
-
-    /* 7. 行動裝置適應 */
-    @media (max-width: 600px) {
-      .nav-menu {
-        gap: 12px;
-        overflow-x: auto;
-        white-space: nowrap;
-        padding-bottom: 5px;
-      }
-      .container { padding: 25px; margin: 20px 15px; }
-      .email-box { font-size: 16px; padding: 12px 20px; }
-    }
-
-    /* 底部連結靠左處理 */
+    /* 回首頁連結 */
     .back-home-container {
       text-align: left;
       margin-top: 30px;
     }
-
     .back-home { 
       display: inline-block; 
       color: #888; 
@@ -197,7 +153,29 @@
       transition: color 0.3s;
     }
     .back-home:hover { color: var(--primary); }
-    
+
+    /* 6. 頁尾 (完全統一格式) */
+    footer { 
+      text-align: center; 
+      padding: 40px 15px; 
+      font-size: 13px; 
+      color: #999; 
+      border-top: 1px solid #eee; 
+      background: #fff; 
+      margin-top: 60px; 
+    }
+    footer a { 
+      text-decoration: none; 
+      color: #777; 
+      margin: 0 5px; 
+    }
+
+    /* 7. 行動裝置適應 */
+    @media (max-width: 600px) {
+      .nav-menu { gap: 12px; overflow-x: auto; white-space: nowrap; padding-bottom: 5px; }
+      .container { padding: 25px; margin: 20px 15px; }
+      .email-box { font-size: 16px; padding: 12px 20px; }
+    }
   </style>
 </head>
 <body>
