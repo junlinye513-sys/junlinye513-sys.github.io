@@ -76,7 +76,7 @@
 
     /* 重點標示與提示框 */
     .highlight { background-color: #fff3cd; padding: 2px 6px; border-radius: 6px; font-weight: 700; }
-    .teacher-tip { border-left: 5px solid #4caf50; background: #f1f8e9; padding: 16px; margin: 20px 0; border-radius: 12px; }
+    .info-box { border-left: 5px solid #4caf50; background: #f1f8e9; padding: 16px; margin: 20px 0; border-radius: 12px; }
     .warning { border-left: 5px solid #ff9800; background: #fff7e6; padding: 16px; margin: 20px 0; border-radius: 12px; }
 
     /* 目錄 */
@@ -110,12 +110,14 @@
       text-decoration: none;
       font-weight: bold;
       transition: background 0.3s;
+      box-shadow: 0 5px 15px rgba(74, 143, 231, 0.3);
     }
-    .btn:hover { background: var(--primary-dark); }
+    .btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
 
     /* 頁尾 */
     footer { text-align: center; padding: 40px 15px; font-size: 13px; color: #999; border-top: 1px solid #eee; background: #fff; margin-top: 50px; }
-    footer a { text-decoration: none; color: #777; margin: 0 5px; }
+    footer a { text-decoration: none; color: #777; margin: 0 5px; transition: color 0.3s; }
+    footer a:hover { color: var(--primary); }
 
     /* 手機版適應 */
     @media (max-width: 600px) {
@@ -151,7 +153,7 @@
       </div>
 
       <p>
-        不管是考硬體裝修還是網路架設，在技術士術科考場中，「壓接 RJ-45 網路線」絕對是讓人最緊張的一關。只要順序排錯一根，或是最後壓下去的時候接觸不良，術科成績可能就直接跟你說掰掰了。這篇會教大家怎麼秒記線序，並大公開考場上最常見的「翻車原因」。
+        無論是報考硬體裝修還是網路架設，在技術士術科測驗中，「壓接 RJ-45 網路線」絕對是令人最緊張的關卡之一。只要順序排錯一根線，或是壓接時接觸不良，術科成績極可能因此無法及格。這篇攻略將帶大家快速記憶線序，並公開考場上最常見的「實戰翻車原因」。
       </p>
 
       <div class="toc">
@@ -159,11 +161,11 @@
         <a href="#diff">1. T568A 與 T568B 到底差在哪？</a>
         <a href="#usage">2. 平行線 vs 交叉線怎麼分？</a>
         <a href="#steps">3. 壓接五步驟，跟著做就對了</a>
-        <a href="#exam-tips">4. 考場前輩血淚史：這些錯誤別犯</a>
+        <a href="#exam-tips">4. 考場實戰：這些錯誤別犯</a>
       </div>
 
       <h2 id="diff">一、T568A 與 T568B 到底差在哪？</h2>
-      <p>其實這兩個標準的「電氣性能」是一模一樣的，差別純粹在於<strong>顏色排列的順序</strong>。目前考場和業界都是以 <strong>T568B</strong> 為絕對的主流，請務必把它的口訣背到滾瓜爛熟！</p>
+      <p>其實這兩個標準的「電氣性能」完全相同，差別純粹在於<strong>顏色排列的順序</strong>。目前考場與業界實務皆以 <strong>T568B</strong> 為絕對主流，請務必將其口訣背到滾瓜爛熟！</p>
 
       <div class="table-scroll">
         <table>
@@ -187,46 +189,46 @@
         </table>
       </div>
 
-      <div class="teacher-tip">
-        <strong>👨‍🏫 老師教你背 (T568B 必考口訣)：</strong><br>
-        跟著唸三次：「<span class="highlight">白橘橘、白綠藍、白藍綠、白棕棕</span>」。<br>
-        這個口訣不僅術科會用到，學科測驗也超級愛考！
+      <div class="info-box">
+        <strong>💡 核心記憶口訣 (T568B 必考)：</strong><br>
+        建議反覆誦讀三次：「<span class="highlight">白橘橘、白綠藍、白藍綠、白棕棕</span>」。<br>
+        這個口訣不僅術科會用到，學科測驗也十分常考！
       </div>
 
       <h2 id="usage">二、平行線 vs 交叉線怎麼分？</h2>
-      <p>考試時會根據你要連接的設備，規定你要做哪一種線：</p>
+      <p>考試時需根據連接的設備類型，決定製作哪一種線材：</p>
       <ul>
-        <li><strong>平行線 (Straight-through)：</strong> 兩頭都做一樣的（通常兩端都做 T568B）。專門用來連接「不同種類」的設備，例如：電腦連到交換器 (PC to Switch)。</li>
-        <li><strong>交叉線 (Crossover)：</strong> 一頭做 T568A，另一頭做 T568B。專門用來連接「相同種類」的設備，例如：電腦連到另一台電腦 (PC to PC)。</li>
+        <li><strong>平行線 (Straight-through)：</strong> 兩端接頭皆使用相同標準（通常皆為 T568B）。專門用來連接「不同種類」的設備，例如：電腦連接至交換器 (PC to Switch)。</li>
+        <li><strong>交叉線 (Crossover)：</strong> 一端製作 T568A，另一端製作 T568B。專門用來連接「相同種類」的設備，例如：電腦連接至另一台電腦 (PC to PC)。</li>
       </ul>
 
       <h2 id="steps">三、壓接五步驟，跟著做就對了</h2>
       <ol>
-        <li><strong>輕輕剝皮：</strong> 用剝線刀轉一圈，剝掉大約 3 公分的外皮。力道要輕，千萬別割破裡面細線的皮！</li>
-        <li><strong>解開絞線排順序：</strong> 把四對纏繞的線解開、拉的直直的，然後在手指間按照 T568B 的順序排好、壓緊。</li>
-        <li><strong>一刀剪平：</strong> 把排好的線一刀剪齊，大概留 1.2 到 1.5 公分就好。剪不平是插不進接頭的喔！</li>
-        <li><strong>推入接頭：</strong> 拿著 RJ-45 接頭（金屬彈片朝下），把線慢慢推到最底，從接頭前端確認每一根都有頂到。</li>
-        <li><strong>用力壓接：</strong> 把接頭放進壓接鉗，用吃奶的力氣壓到底，聽到「喀」一聲，讓裡面的金屬片刺穿線皮導通。</li>
+        <li><strong>輕柔剝皮：</strong> 使用剝線刀輕轉一圈，剝除約 3 公分的外皮。力道必須輕柔，切勿割破內部細線的絕緣皮！</li>
+        <li><strong>解開絞線排順序：</strong> 將四對纏繞的芯線解開、拉直，然後在手指間依照 T568B 的順序排列平整並壓緊。</li>
+        <li><strong>一刀剪平：</strong> 將排列好的芯線一刀剪齊，保留約 1.2 至 1.5 公分的長度。若剪不平整，將無法順利推入接頭。</li>
+        <li><strong>推入接頭：</strong> 拿取 RJ-45 接頭（金屬彈片朝下），將線材平穩推至最底，並從接頭前端確認每一根芯線皆有頂到盡頭。</li>
+        <li><strong>用力壓接：</strong> 將接頭放入壓接鉗，確實施力壓到底部，聽到「喀」一聲，確保內部的金屬刺片穿透線皮並導通。</li>
       </ol>
 
-      <h2 id="exam-tips">四、考場前輩血淚史：這些錯誤別犯</h2>
+      <h2 id="exam-tips">四、考場實戰：這些錯誤別犯</h2>
       <div class="warning">
-        <strong>❌ 監考老師最愛抓的失誤：</strong>
+        <strong>❌ 監考評分最常見的失誤：</strong>
         <ul>
-          <li><strong>看錯顏色：</strong> 尤其是「白綠」跟「白藍」，在考場緊張時超容易看反。</li>
-          <li><strong>外皮沒吃進去：</strong> 網路線的灰色外皮一定要塞進水晶頭裡面，讓後方的卡榫夾住，不然稍微扯一下線就斷了，直接扣分。</li>
-          <li><strong>芯線沒推到底：</strong> 如果金屬片壓下來沒刺到裡面的銅線，用測線儀量的時候燈號絕對不會亮。</li>
+          <li><strong>看錯顏色：</strong> 尤其是「白綠」與「白藍」，在考場緊張時極易混淆看反。</li>
+          <li><strong>外皮未入接頭：</strong> 網路線的灰色外皮必須推入水晶頭內部，讓後方的卡榫確實夾住。否則稍微拉扯線材即會脫落，將面臨直接扣分。</li>
+          <li><strong>芯線未推到底：</strong> 若金屬刺片壓下時未接觸到內部的銅線，使用測線儀檢測時燈號絕對不會亮起。</li>
         </ul>
       </div>
 
-      <div class="teacher-tip">
-        <strong>👨‍🏫 考場定心丸：</strong>
-        壓接完千萬別急著舉手！先拿出你的 <strong>LAN Tester (測線儀)</strong> 插上去跑一遍。如果是平行線，兩邊的燈號一定會 1對1、2對2 依序閃爍到 8。看到燈全亮，恭喜你這關穩了！
+      <div class="info-box">
+        <strong>💡 實戰定心丸：</strong>
+        壓接完成後切勿急著舉手交件！務必先使用 <strong>LAN Tester (測線儀)</strong> 進行自我檢測。若是平行線，兩側的燈號必須 1對1、2對2 依序閃爍至 8。確認燈號全亮無誤，便可安心過關！
       </div>
 
       <div style="text-align: center; margin-top: 30px;">
-        <p>口訣背熟了嗎？我們去學科測驗實戰看看！</p>
-       <a href="practice.html" class="btn">去題庫測驗一下</a>
+        <p>口訣背熟了嗎？立刻前往學科測驗實戰演練！</p>
+        <a href="practice.html" class="btn">開始考前模擬測驗</a>
       </div>
     </article>
   </div>
