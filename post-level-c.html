@@ -76,7 +76,7 @@
 
     /* 重點標示與提示框 */
     .highlight { background-color: #fff3cd; padding: 2px 6px; border-radius: 6px; font-weight: 700; color: #856404; }
-    .teacher-tip { border-left: 5px solid #4caf50; background: #f1f8e9; padding: 16px; margin: 20px 0; border-radius: 12px; }
+    .info-box { border-left: 5px solid #4caf50; background: #f1f8e9; padding: 16px; margin: 20px 0; border-radius: 12px; }
     .warning { border-left: 5px solid #ff9800; background: #fff7e6; padding: 16px; margin: 20px 0; border-radius: 12px; }
 
     /* 目錄 */
@@ -96,12 +96,14 @@
       text-decoration: none;
       font-weight: bold;
       transition: background 0.3s;
+      box-shadow: 0 5px 15px rgba(74, 143, 231, 0.3);
     }
-    .btn:hover { background: var(--primary-dark); }
+    .btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
 
     /* 頁尾 */
     footer { text-align: center; padding: 40px 15px; font-size: 13px; color: #999; border-top: 1px solid #eee; background: #fff; margin-top: 50px; }
-    footer a { text-decoration: none; color: #777; margin: 0 5px; }
+    footer a { text-decoration: none; color: #777; margin: 0 5px; transition: color 0.3s; }
+    footer a:hover { color: var(--primary); }
 
     /* 手機版適應 */
     @media (max-width: 600px) {
@@ -138,85 +140,85 @@
       </div>
 
       <p>
-        很多人覺得丙級很簡單，以為只要考前一天死背題庫就能過。結果往往是在考場上遇到題型變化，或是因為粗心而慘遭滑鐵盧。其實，丙級學科只要掌握正確的準備策略，拿到 60 分及格真的是一塊蛋糕。這篇攻略整理了老師多年的帶班經驗，照著做就對了！
+        許多人覺得丙級檢定學科很簡單，以為只要考前一天死背題庫就能順利過關。結果往往是在考場上遇到題型變化，或是因為粗心而慘遭滑鐵盧。其實，丙級學科只要掌握正確的準備策略，拿到 60 分及格門檻真的是一塊蛋糕。這篇攻略彙整了最高效的備考經驗，照著步驟執行就對了！
       </p>
 
       <div class="toc">
         <b>📌 本篇攻略快速導覽</b>
-        <a href="#structure">1. 搞懂題庫：別放掉送分題</a>
+        <a href="#structure">1. 搞懂題庫架構：別放掉送分題</a>
         <a href="#plan">2. 三階段複習法，越讀越輕鬆</a>
-        <a href="#mistakes">3. 分數上不去的秘密：錯題回補</a>
+        <a href="#mistakes">3. 分數停滯的秘密：錯題回補技巧</a>
         <a href="#examday">4. 考場實戰細節，一分都不漏</a>
-        <a href="#checklist">5. 出發前的最後檢核</a>
+        <a href="#checklist">5. 出發前的最後檢核清單</a>
       </div>
 
-      <h2 id="structure">一、搞懂題庫：別放掉送分題</h2>
+      <h2 id="structure">一、搞懂題庫架構：別放掉送分題</h2>
       <p>
-        丙級學科主要由「專業科目」跟「共同科目」組成。你的目標不是考 100 分，而是要「穩拿基本分」。
+        丙級學科測驗主要由「專業科目」與「共同科目」組成。首要目標不是考取滿分，而是要「穩拿基本分」。
       </p>
       <ul>
-        <li><strong>專業科目：</strong> 就是你報考的職類知識（像是軟體應用、會計事務等）。這部分佔分最重，但範圍也最大。</li>
-        <li><strong>共同科目：</strong> 所有考生都要考的 20 題（職安、倫理、環保等）。這部分題型固定、變化少，<span class="highlight">是考試及格的救命仙丹</span>。</li>
+        <li><strong>專業科目：</strong> 針對你報考的職類知識（如軟體應用、會計事務等）。這部分佔分最重，但涵蓋範圍也最廣。</li>
+        <li><strong>共同科目：</strong> 所有職類考生都必須測驗的 20 題（包含職安、職業倫理、環保、資訊安全等）。這部分題型固定、變化少，<span class="highlight">是考試及格的救命大補丸</span>。</li>
       </ul>
 
-      <div class="teacher-tip">
-        <strong>👨‍🏫 老師碎碎念：</strong>
-        很多同學拼命死背專業題目，結果在共同科目狂掉分，這超級虧！建議先把共同科目的題庫刷到「看到題目就能秒選」的程度，這 20 分先放進口袋，心就安了一半。
+      <div class="info-box">
+        <strong>💡 備考關鍵筆記：</strong>
+        許多考生拼命死背專業題目，結果卻在相對簡單的共同科目上大量失分，非常可惜！建議優先將共同科目的題庫刷到「看到題目就能秒選正確答案」的熟練度，這 20 分先穩穩放進口袋，及格機率就能大幅提升。
       </div>
 
       <h2 id="plan">二、三階段複習法，越讀越輕鬆</h2>
 
       <h3>1）第一階段：看懂比死背重要（考前 3–4 週）</h3>
       <p>
-        不要一開始就瘋狂做模擬測驗！請先拿著題庫，像看故事書一樣從頭到尾瀏覽一遍。遇到看不懂的專有名詞（像是 DNS、資產負債表），去 Google 查一下是什麼意思，你的大腦才會對它有印象。
+        初期不要急著瘋狂進行模擬測驗！請先拿起題庫，像閱讀文章一樣從頭到尾瀏覽一遍。遇到看不懂的專有名詞（例如 DNS、資產負債表），試著上網查詢其意義，讓大腦對這些詞彙產生初步印象與連結。
       </p>
 
       <h3>2）第二階段：幫題目分類（考前 2 週）</h3>
       <p>
-        開始刷題後，你會發現題目大概分三種。把它們分類處理，讀起來會快很多：
+        開始大量刷題後，你會發現題目大致可分為三種類型。將它們分類處理，吸收效率會高很多：
       </p>
       <ul>
-        <li><span class="highlight">常識理解題</span>：用正常邏輯就能選對，這種看過有印象就好，不用花太多時間。</li>
-        <li><span class="highlight">計算與邏輯題</span>：例如二進位換算、折扣計算。這種題型一定要拿筆跟紙親手算過一次，絕對不能只背答案的數字！</li>
-        <li><span class="highlight">死背題</span>：例如法規的天數、歷史年份。這種就把它們整理成小筆記，考前十分鐘拿出來狂背。</li>
+        <li><span class="highlight">常識理解題</span>：運用一般生活邏輯即可選出正確答案，這類題目看過有印象即可，無須耗費過多時間。</li>
+        <li><span class="highlight">計算與邏輯題</span>：例如二進位換算、財務折扣計算等。這類題型務必準備紙筆，親手計算過一遍，絕對不可只背誦答案數字！</li>
+        <li><span class="highlight">記憶型死背題</span>：例如法規規定的天數、歷史年份或特定規格。這類題目建議整理成專屬筆記，留待考前十分鐘做最後衝刺記憶。</li>
       </ul>
 
       <h3>3）第三階段：實戰模擬測驗（考前 7 天）</h3>
       <p>
-        最後一個禮拜，重點是「習慣考試的節奏」。建議每天上我們網站做 1–2 回的模擬測驗。注意：做完測驗後，一定要把做錯的題目挑出來看懂，不能只看成績就關掉網頁。
+        最後一週的核心任務是「習慣考試的節奏與時間壓力」。建議每天上線進行 1–2 回的完整模擬測驗。特別注意：做完測驗後，務必將答錯的題目挑出來確實釐清觀念，切忌只看總分就結束練習。
       </p>
 
       <div class="warning">
-        <strong>⚠️ 考前大忌：</strong>
-        考前幾天不要再去買什麼新的參考書或看別人的密技筆記了！這時候要專注在把「自己會錯的題目變少」，而不是貪心想看更多沒看過的東西。
+        <strong>⚠️ 考前衝刺大忌：</strong>
+        考前幾天請勿再購買全新的參考書，或四處索取他人的密技筆記！此時應專注於將「自己常錯的題目搞懂並減少錯誤率」，而非貪心想要吸收更多從未接觸過的新資訊。
       </div>
 
-      <h2 id="mistakes">三、分數上不去的秘密：錯題回補</h2>
-      <p>如果你發現每次模擬測驗都在 50 幾分徘徊，通常是因為你都在錯一樣的題目。試著用這三步來對付錯題：</p>
+      <h2 id="mistakes">三、分數停滯的秘密：錯題回補技巧</h2>
+      <p>如果在模擬測驗中成績總是停滯不前，通常是因為反覆在相同的盲點上犯錯。試著運用以下三個步驟來破解錯題：</p>
       <ol>
-        <li><strong>找出病因：</strong> 是觀念根本沒懂？還是算錯了？或者是眼睛脫窗沒看到「何者為非」？</li>
-        <li><strong>用自己的話解釋：</strong> 看著正確答案，試著用一句話講給自己聽。例如：「喔！因為冷氣調高 1 度就可以省電，所以要選這個選項。」</li>
-        <li><strong>做記號：</strong> 把一直錯的題目截圖下來或做個星號，考前只看這些精華。</li>
+        <li><strong>找出病因：</strong> 是觀念根本不清楚？計算過程出錯？還是因為粗心漏看了「何者為非」？</li>
+        <li><strong>用自己的話解釋：</strong> 看著正確答案，試著用簡單的一句話向自己解釋原因。例如：「原來冷氣調高 1 度就可以省電，所以必須選這個選項。」</li>
+        <li><strong>做記號聚焦：</strong> 將屢次答錯的題目截圖或標註星號，考前只需反覆複習這些精華錯題。</li>
       </ol>
 
       <h2 id="examday">四、考場實戰細節，一分都不漏</h2>
       <ul>
-        <li><strong>注意陷阱字：</strong> 看清楚題目是問「正確」還是「不正確」！很多同學就是死在眼殘。</li>
-        <li><strong>千萬不要留白：</strong> 丙級學科是<span class="highlight">不倒扣</span>的。遇到真的不會的題目，隨便猜一個也比空白好，說不定就賽中了！</li>
-        <li><strong>檢查畫卡：</strong> 如果你是用紙本畫卡，每做 10 題就要對一下題號，千萬別畫錯格，那會直接悲劇。</li>
+        <li><strong>注意陷阱關鍵字：</strong> 務必看清楚題目是詢問「正確」還是「不正確」！這是考場上最常見的失分主因。</li>
+        <li><strong>千萬不要留白：</strong> 丙級學科測驗是<span class="highlight">不倒扣</span>的。遇到完全沒有頭緒的題目，隨機猜測一個答案也絕對比留白好，千萬別放棄任何得分機會！</li>
+        <li><strong>仔細檢查畫卡：</strong> 若採用紙本畫卡測驗，建議每完成 10 題就核對一次題號與答案格，避免發生劃錯格的連鎖悲劇。</li>
       </ul>
 
-      <h2 id="checklist">五、出發前的最後檢核</h2>
+      <h2 id="checklist">五、出發前的最後檢核清單</h2>
       <ul>
-        <li>✅ 共同科目的 20 題，我已經有把握能拿滿分了。</li>
-        <li>✅ 那些我常錯的死背題，我都抄在一張紙上了。</li>
-        <li>✅ 我已經完成過 3 次以上的完整模擬練習，而且都及格。</li>
-        <li>✅ 准考證、身分證件、好擦的橡皮擦跟 2B 鉛筆都準備好了。</li>
+        <li>✅ 共同科目的 20 題，我已經有把握能穩穩拿下分數。</li>
+        <li>✅ 那些我經常答錯的記憶型題目，都已經整理在考前筆記上了。</li>
+        <li>✅ 我已經完成過 3 次以上的完整模擬練習，且成績均達及格標準。</li>
+        <li>✅ 准考證、身分證件、好擦的橡皮擦與備用的 2B 鉛筆皆已確認攜帶。</li>
       </ul>
 
       <div style="text-align: center; margin-top: 30px;">
-        <p>準備好了嗎？現在就來做一回模擬測驗，看看自己的實力吧！</p>
-        <a href="practice.html" class="btn">開始題庫練習</a>
+        <p>萬事具備了嗎？現在就來進行一回模擬測驗，檢驗自己的實力吧！</p>
+        <a href="practice.html" class="btn">開始考前模擬測驗</a>
       </div>
 
     </article>
