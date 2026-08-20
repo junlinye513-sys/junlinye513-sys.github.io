@@ -76,7 +76,7 @@
 
     /* 重點標示與提示框 */
     .highlight { background-color: #fff3cd; padding: 2px 6px; border-radius: 6px; font-weight: 700; color: #856404; }
-    .teacher-tip { border-left: 5px solid #4caf50; background: #f1f8e9; padding: 16px; margin: 20px 0; border-radius: 12px; }
+    .info-box { border-left: 5px solid #4caf50; background: #f1f8e9; padding: 16px; margin: 20px 0; border-radius: 12px; }
     .warning { border-left: 5px solid #ff9800; background: #fff7e6; padding: 16px; margin: 20px 0; border-radius: 12px; }
 
     /* 目錄 */
@@ -113,12 +113,14 @@
       text-decoration: none;
       font-weight: bold;
       transition: background 0.3s;
+      box-shadow: 0 5px 15px rgba(74, 143, 231, 0.3);
     }
-    .btn:hover { background: var(--primary-dark); }
+    .btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
 
     /* 頁尾 */
     footer { text-align: center; padding: 40px 15px; font-size: 13px; color: #999; border-top: 1px solid #eee; background: #fff; margin-top: 50px; }
-    footer a { text-decoration: none; color: #777; margin: 0 5px; }
+    footer a { text-decoration: none; color: #777; margin: 0 5px; transition: color 0.3s; }
+    footer a:hover { color: var(--primary); }
 
     /* 手機版適應 */
     @media (max-width: 600px) {
@@ -155,7 +157,7 @@
       </div>
 
       <p>
-        在資訊類和網路架設的技術士檢定中，<strong>OSI 七層模型 (Open Systems Interconnection model)</strong> 絕對是每年必考的大魔王。初學者看到這七層往往覺得霧煞煞，不知道哪個設備對應哪一層。今天 PassGo 考照通幫大家整理了最直觀的對照表與口訣，帶你輕鬆破關！
+        在資訊類和網路架設的技術士檢定中，<strong>OSI 七層模型 (Open Systems Interconnection model)</strong> 絕對是每年必考的核心重點。初學者看到這七層往往覺得難以理解，不確定哪個硬體設備對應哪一個階層。本篇 PassGo 考照通為大家整理了最直觀的對照表與口訣，幫助考生輕鬆破關！
       </p>
 
       <div class="toc">
@@ -167,7 +169,7 @@
       </div>
 
       <h2 id="table">一、考試必背：OSI 七層全方位對照表</h2>
-      <p>在選擇題裡，最常考你「某個設備或協定是屬於哪一層」。請直接把下面這張表當成寶典：</p>
+      <p>在選擇題中，最常出現的題型是詢問「某個設備或協定屬於哪一層」。建議將以下這張對照表熟記：</p>
       
       <div class="table-scroll">
         <table>
@@ -234,51 +236,51 @@
         </table>
       </div>
 
-      <div class="teacher-tip">
-        <strong>👨‍🏫 老師教你秒記口訣：</strong><br>
-        背不起來沒關係，記住這個順序（由上到下）：<br>
+      <div class="info-box">
+        <strong>💡 快速記憶口訣：</strong><br>
+        若覺得難以記憶，可以先記住這個由上到下的層級順序：<br>
         <span class="highlight">「應、表、會、傳、網、資、實」</span><br>
-        諧音口訣：「<strong>應用表姐會傳網路資料，實實在在！</strong>」考場上如果忘記順序，在紙上默寫這句口訣就穩了。
+        諧音口訣：「<strong>應用表姐會傳網路資料，實實在在！</strong>」考場上若忘記順序，在紙上默寫這句口訣即可快速回想。
       </div>
 
-      <h2 id="encapsulation">二、核心觀念：資料是怎麼被「打包」送出去的？</h2>
+      <h2 id="encapsulation">二、核心觀念：資料是如何被「打包」傳送的？</h2>
       <p>
-        當你在電腦前傳送一個檔案時，資料會從第七層一路往下傳，每一層都會幫你加上自己的「標頭 (Header)」，就像把信件一層層套進大信封裡：
+        當在電腦前傳送一個檔案時，資料會從第七層一路往下傳，每一層都會加上專屬的「標頭 (Header)」，這過程就像把信件一層層套進更大的信封裡：
       </p>
       <ul>
-        <li><strong>封裝 (Encapsulation)：</strong> 發送端（從 L7 往下到 L1），每往下走一層就多包一層外殼。</li>
-        <li><strong>解封裝 (De-encapsulation)：</strong> 接收端（從 L1 往上到 L7），每往上一層就把對應的信封拆開，最後拿到原始資料。</li>
+        <li><strong>封裝 (Encapsulation)：</strong> 發送端（從 L7 往下到 L1），每往下走一層就多包覆一層外殼。</li>
+        <li><strong>解封裝 (De-encapsulation)：</strong> 接收端（從 L1 往上到 L7），每往上一層就把對應的標頭拆開，最後還原出原始資料。</li>
       </ul>
 
       <h2 id="tcpip">三、延伸考點：OSI vs TCP/IP 模型</h2>
       <p>
-        雖然 OSI 模型有七層，但在現在的網際網路實務中，我們更常使用精簡的 <strong>TCP/IP 四層模型</strong>。考試很愛考它們的對應關係：
+        雖然 OSI 模型分為七層，但在現今的網際網路實務架構中，更常使用的是精簡的 <strong>TCP/IP 四層模型</strong>。這兩者的對應關係是常見考題：
       </p>
       <ol>
-        <li><strong>應用層：</strong> 對應 OSI 的 應用、表示、交談層 (L5, L6, L7)。</li>
+        <li><strong>應用層：</strong> 對應 OSI 的 應用層、表示層、交談層 (L5, L6, L7)。</li>
         <li><strong>傳輸層：</strong> 對應 OSI 的 傳輸層 (L4)。</li>
         <li><strong>網際網路層：</strong> 對應 OSI 的 網路層 (L3)。</li>
-        <li><strong>網路介面層：</strong> 對應 OSI 的 資料連結與實體層 (L1, L2)。</li>
+        <li><strong>網路介面層：</strong> 對應 OSI 的 資料連結層與實體層 (L1, L2)。</li>
       </ol>
 
-      <h2 id="troubleshoot">四、實戰應用：網路壞了怎麼從 OSI 找問題？</h2>
-      <p>身為技術士，當客戶抱怨「網路斷線」時，請務必採用工程師最愛的 <strong>由下而上 (Bottom-Up)</strong> 排查法：</p>
+      <h2 id="troubleshoot">四、實戰應用：網路故障如何從 OSI 找問題？</h2>
+      <p>在實務運作中，遇到「網路斷線」問題時，業界最常採用 <strong>由下而上 (Bottom-Up)</strong> 排查法：</p>
       <ul>
-        <li><strong>Step 1 (實體層 L1)：</strong> 先檢查網路線有沒有插好？集線器或分享器的電源燈有沒有亮？</li>
-        <li><strong>Step 2 (資料連結層 L2)：</strong> 檢查網卡有沒有抓到 MAC 位址？交換器連接埠的燈號有沒有異常閃爍？</li>
-        <li><strong>Step 3 (網路層 L3)：</strong> 打開命令提示字元 <code>ping 8.8.8.8</code>，檢查 IP 設定跟路由有沒有通。</li>
-        <li><strong>Step 4 (傳輸層與應用層 L4-L7)：</strong> 確認防火牆有沒有擋到特定 Port，或是瀏覽器能不能正常開網頁。</li>
+        <li><strong>Step 1 (實體層 L1)：</strong> 先檢查網路線是否插妥？集線器或分享器的電源燈號是否正常亮起？</li>
+        <li><strong>Step 2 (資料連結層 L2)：</strong> 檢查網卡是否順利取得 MAC 位址？交換器連接埠的燈號是否有異常閃爍現象？</li>
+        <li><strong>Step 3 (網路層 L3)：</strong> 開啟命令提示字元輸入 <code>ping 8.8.8.8</code>，檢查 IP 設定與路由是否連通。</li>
+        <li><strong>Step 4 (傳輸層與應用層 L4-L7)：</strong> 確認防火牆是否阻擋特定 Port，或瀏覽器是否能正常開啟網頁。</li>
       </ul>
 
       <div class="warning">
         <strong>⚠️ 考場絕對不能混淆的鐵律：</strong><br>
-        只要考題看到 <strong>「路由器 (Router)」</strong>，直覺就要反射它跟 <strong>IP</strong> 以及 <strong>Layer 3 (網路層)</strong> 有關！<br>
-        只要看到 <strong>「交換器 (Switch)」</strong>，直覺就要反射它跟 <strong>MAC</strong> 以及 <strong>Layer 2 (資料連結層)</strong> 有關！千萬別張冠李戴了。
+        只要考題出現 <strong>「路由器 (Router)」</strong>，請直覺反應它與 <strong>IP</strong> 以及 <strong>Layer 3 (網路層)</strong> 相關！<br>
+        只要考題出現 <strong>「交換器 (Switch)」</strong>，請直覺反應它與 <strong>MAC</strong> 以及 <strong>Layer 2 (資料連結層)</strong> 相關！請務必釐清兩者差異。
       </div>
 
       <div style="text-align: center; margin-top: 30px;">
-        <p>觀念通了沒有？立刻到題庫區刷幾題來驗收成果吧！</p>
-        <a href="practice.html" class="btn">去題庫測驗一下</a>
+        <p>觀念都弄懂了嗎？立刻到題庫區刷幾題來驗收成果吧！</p>
+        <a href="practice.html" class="btn">開始考前模擬測驗</a>
       </div>
 
     </article>
