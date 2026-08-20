@@ -75,8 +75,8 @@
     li { margin-bottom: 10px; }
 
     /* 重點標示與提示框 */
-    .highlight { background-color: #fff3cd; padding: 2px 6px; border-radius: 6px; font-weight: 700; }
-    .teacher-tip { border-left: 5px solid #4caf50; background: #f1f8e9; padding: 16px; margin: 20px 0; border-radius: 12px; }
+    .highlight { background-color: #fff3cd; padding: 2px 6px; border-radius: 6px; font-weight: 700; color: #856404; }
+    .info-box { border-left: 5px solid #4caf50; background: #f1f8e9; padding: 16px; margin: 20px 0; border-radius: 12px; }
     .warning { border-left: 5px solid #ff9800; background: #fff7e6; padding: 16px; margin: 20px 0; border-radius: 12px; }
 
     /* 目錄 */
@@ -96,12 +96,14 @@
       text-decoration: none;
       font-weight: bold;
       transition: background 0.3s;
+      box-shadow: 0 5px 15px rgba(74, 143, 231, 0.3);
     }
-    .btn:hover { background: var(--primary-dark); }
+    .btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
 
     /* 頁尾 */
     footer { text-align: center; padding: 40px 15px; font-size: 13px; color: #999; border-top: 1px solid #eee; background: #fff; margin-top: 50px; }
-    footer a { text-decoration: none; color: #777; margin: 0 5px; }
+    footer a { text-decoration: none; color: #777; margin: 0 5px; transition: color 0.3s; }
+    footer a:hover { color: var(--primary); }
 
     /* 手機版適應 */
     @media (max-width: 600px) {
@@ -120,7 +122,7 @@
       <ul class="nav-menu">
         <li><a href="index.html">首頁</a></li>
         <li><a href="practice.html">題庫練習</a></li>
-        <li><a href="post-level-c.html">備考攻略</a></li>
+        <li><a href="guide.html">備考攻略</a></li>
         <li><a href="about.html">關於本站</a></li>
       </ul>
     </div>
@@ -138,7 +140,7 @@
       </div>
 
       <p>
-        「老師，丙級證照是不是廢紙？」、「我非本科系，是不是直接考乙級比較好？」這些是我最常被學生問到的問題。考取技術士證照不應該只是為了一張證書，我們應該把它當作你「職涯規劃」的階梯。這篇就來幫大家分析，不同階段的人，該怎麼發揮證照的最大價值。
+        「丙級證照是不是廢紙？」、「非本科系，是不是直接考乙級比較好？」這些是許多考生常有的疑問。考取技術士證照不應該只是為了一張證書，更應該把它當作「職涯規劃」的重要階梯。這篇文章將為大家分析，處於不同階段的求職者，該如何發揮證照的最大價值。
       </p>
 
       <div class="toc">
@@ -150,57 +152,57 @@
       </div>
 
       <h2 id="freshman">一、在校生與新鮮人：丙級是你的敲門磚</h2>
-      <p>很多人覺得丙級很簡單，所以瞧不起它。但對還沒踏入職場的新鮮人來說，丙級其實非常好用：</p>
+      <p>很多人覺得丙級相對基礎，因而容易輕視它。但對於還沒踏入職場的新鮮人來說，丙級其實具備極高的實用性：</p>
       <ul>
-        <li><strong>證明你「不是一張白紙」：</strong> 至少向老闆證明，你具備這項工作最基礎的常識跟動手能力。</li>
-        <li><strong>升學與實習的門票：</strong> 在技優甄審或爭取大公司的實習機會時，丙級往往是第一道基本門檻。</li>
-        <li><strong>建立考試自信：</strong> 先習慣國家檢定的學科跟術科節奏，以後挑戰乙級才不會那麼慌張。</li>
+        <li><strong>證明你「不是一張白紙」：</strong> 至少向企業證明，你具備這項工作最基礎的常識與動手操作能力。</li>
+        <li><strong>升學與實習的門票：</strong> 在技優甄審或爭取大公司的實習機會時，丙級往往是篩選的第一道基本門檻。</li>
+        <li><strong>建立考試自信：</strong> 先習慣國家檢定的學科與術科測驗節奏，未來挑戰乙級時才不會過於慌張。</li>
       </ul>
 
-      <div class="teacher-tip">
-        <strong>👨‍🏫 老師真心話：</strong>
-        剛畢業的同學千萬別眼高手低。先拿到丙級穩定軍心，然後把術科練出來的東西做成「作品集」，你的面試錄取率就會比別人高很多！
+      <div class="info-box">
+        <strong>💡 實戰建議：</strong>
+        剛畢業的求職者切勿眼高手低。先透過丙級證照穩定基礎，並將術科練習的成果轉化為具體的「個人作品集」，面試錄取率將會大幅提升！
       </div>
 
       <h2 id="career-changer">二、非本科想轉職：讓履歷有底氣的證明</h2>
-      <p>如果你想換跑道，但大學讀的科系完全無關，這時候證照就是你最好的實力背書：</p>
+      <p>如果你想轉換跑道，但過去所學的科系完全無關，這時候證照就是你最好的實力背書：</p>
       
       <h3>1. 把能力「具象化」</h3>
-      <p>面試官不認識你，不知道你自己在家讀了多少書。但政府核發的證照是有公信力的，它能迅速填補你「非本科系」的弱勢。</p>
+      <p>面試官並不認識你，無從得知你私下付出了多少時間自學。但政府核發的技術士證照具備高度的公信力，能迅速填補你「非本科系」的履歷弱勢。</p>
       
-      <h3>2. 逼自己系統化學習</h3>
-      <p>轉職最怕學得很零散。準備證照的過程（尤其是學科題庫），會強迫你把這個行業的專業術語、安全規範一次搞懂，這能大幅縮短你進新公司的適應期。</p>
+      <h3>2. 逼迫自己系統化學習</h3>
+      <p>跨領域轉職最怕學得太過零散。準備證照的過程（尤其是學科題庫的訓練），會強迫你將該行業的專業術語、安全規範一次搞懂，這能大幅縮短你進入新領域的適應期。</p>
 
       <div class="warning">
-        <strong>⚠️ 給轉職者的建議：</strong>
-        轉職的最終目標應該要鎖定「乙級」。如果你準備時間不夠，可以先考丙級打底，但請一定要有直上乙級的計畫，因為乙級才是證明你能「獨立作業」的關鍵指標。
+        <strong>⚠️ 給轉職者的關鍵建議：</strong>
+        轉職的最終目標應該要鎖定「乙級」。如果初期準備時間不足，可以先考取丙級打底，但請務必擬定直上乙級的後續計畫，因為乙級才是證明你能「獨立作業」的核心指標。
       </div>
 
       <h2 id="advancement">三、已經在上班了：乙級就是你的談薪籌碼</h2>
-      <p>如果你已經在業界打滾了一陣子，那乙級證照對你來說就是鍍金的工具：</p>
+      <p>如果你已經在業界打滾了一陣子，那麼乙級證照對你來說就是職場鍍金的最佳工具：</p>
       <ul>
-        <li><strong>展現專業深度：</strong> 乙級的難度在於，它不只要你會「做」，還要求你懂背後的「原理」，甚至要會除錯（Debug）。</li>
-        <li><strong>爭取實質加薪：</strong> 很多體制完善的公司或公家機關，對於持有乙級技術士證照的員工，每個月都會有額外的專業津貼。</li>
-        <li><strong>邁向管理職：</strong> 當你具備乙級的獨立判斷能力，老闆在提拔基層幹部時，自然會第一個想到你。</li>
+        <li><strong>展現專業深度：</strong> 乙級的難度在於，它不只要你會「做」，更要求你懂得背後的「原理機制」，甚至具備獨立除錯（Debug）的能力。</li>
+        <li><strong>爭取實質加薪：</strong> 許多體制完善的企業或公家機關，對於持有乙級技術士證照的員工，每個月都會發放額外的專業職務津貼。</li>
+        <li><strong>邁向管理職：</strong> 當你具備乙級的獨立判斷能力，主管在提拔基層幹部時，自然會將你列為優先考量。</li>
       </ul>
 
       <h2 id="strategy">四、聰明人的考照策略（成為 T 型人才）</h2>
-      <p>如果你想讓證照發揮 1+1 > 2 的效果，建議大家採用「T型人才」的考照策略：</p>
+      <p>如果你想讓手中的證照發揮 1+1 > 2 的綜效，建議採用「T型人才」的考照策略：</p>
 
       <h3>專業與廣度並重，打造不可取代性</h3>
-      <p>先在一個領域努力考到乙級（這代表你的專業深度），然後跨領域去考一張相關的丙級（這代表你的廣度）。例如：</p>
+      <p>先在一個領域努力考取乙級（這代表你的專業深度），接著跨領域去考取一張相關聯的丙級（這代表你的能力廣度）。例如：</p>
       <ul>
-        <li><span class="highlight">電腦軟體應用 (乙) + 會計事務 (丙)</span> ＝ 老闆最愛的「萬能行政財會」。</li>
-        <li><span class="highlight">網頁設計 (丙) + 電腦軟體設計 (丙)</span> ＝ 前後端觀念都懂的「軟體潛力股」。</li>
+        <li><span class="highlight">電腦軟體應用 (乙) + 會計事務 (丙)</span> ＝ 企業最青睞的「高階行政與數位財會人才」。</li>
+        <li><span class="highlight">網頁設計 (丙) + 電腦軟體設計 (丙)</span> ＝ 前後端觀念皆具備的「軟體開發潛力股」。</li>
       </ul>
 
       <p>
-        總結來說，證照絕對不是廢紙，<strong>真正的價值在於你準備考試時學到的東西，以及你怎麼把這些證照組合起來，說服面試官</strong>。想清楚自己的目標了嗎？那就趕快開始行動吧！
+        總結來說，證照絕對不是廢紙，<strong>真正的價值在於你準備考試時所累積的知識，以及你如何將這些證照巧妙組合，以此說服面試官</strong>。想清楚自己的職涯目標了嗎？那就趕快開始行動吧！
       </p>
 
       <div style="text-align: center; margin-top: 30px;">
         <p>不管你要考丙級還是乙級，學科題庫都在這裡準備好了！</p>
-        <a href="practice.html" class="btn">去題庫測驗一下</a>
+        <a href="practice.html" class="btn">開始考前模擬測驗</a>
       </div>
 
     </article>
