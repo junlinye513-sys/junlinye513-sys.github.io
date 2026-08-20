@@ -76,7 +76,7 @@
 
     /* 重點標示與提示框 */
     .highlight { background-color: #fff3cd; padding: 2px 6px; border-radius: 6px; font-weight: 700; color: #856404; }
-    .teacher-tip { border-left: 5px solid #4caf50; background: #f1f8e9; padding: 16px; margin: 20px 0; border-radius: 12px; }
+    .info-box { border-left: 5px solid #4caf50; background: #f1f8e9; padding: 16px; margin: 20px 0; border-radius: 12px; }
     .warning { border-left: 5px solid #ff9800; background: #fff7e6; padding: 16px; margin: 20px 0; border-radius: 12px; }
 
     /* 目錄 */
@@ -106,12 +106,14 @@
       text-decoration: none;
       font-weight: bold;
       transition: background 0.3s;
+      box-shadow: 0 5px 15px rgba(74, 143, 231, 0.3);
     }
-    .btn:hover { background: var(--primary-dark); }
+    .btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
 
     /* 頁尾 */
     footer { text-align: center; padding: 40px 15px; font-size: 13px; color: #999; border-top: 1px solid #eee; background: #fff; margin-top: 50px; }
-    footer a { text-decoration: none; color: #777; margin: 0 5px; }
+    footer a { text-decoration: none; color: #777; margin: 0 5px; transition: color 0.3s; }
+    footer a:hover { color: var(--primary); }
 
     /* 手機版適應 */
     @media (max-width: 600px) {
@@ -147,7 +149,7 @@
       </div>
 
       <p>
-        「準備技術士學科，我到底該買參考書還是直接用線上刷題？」這是很多同學在備考時的共同疑問。在 115 年度最新題庫不斷更新的時代，資訊的<strong>精準度</strong>與<strong>複習效率</strong>往往決定了你能不能一次過關。這篇老師就來帶大家客觀對比這兩種工具，幫你找到最省時省力的及格捷徑！
+        「準備技術士學科，到底該買參考書還是直接使用線上刷題？」這是許多考生在備考時的共同疑問。在 115 年度最新題庫不斷更新的時代，資訊的<strong>精準度</strong>與<strong>複習效率</strong>往往決定了能不能一次順利過關。這篇攻略將帶大家客觀對比這兩種工具，幫助你找到最省時省力的及格捷徑！
       </p>
 
       <div class="toc">
@@ -158,11 +160,11 @@
       </div>
 
       <h2 id="online">一、線上模擬考：高效刷題的數位武器</h2>
-      <p>對於目標是「要在最短時間內穩過學科」的考生來說，像我們 PassGo 考照通這樣的線上練習系統，具備實體書絕對做不到的強大優勢：</p>
+      <p>對於目標是「要在最短時間內穩過學科」的考生來說，像 PassGo 考照通這類的線上練習系統，具備實體書難以達到的強大優勢：</p>
       <ul>
-        <li><strong>自動收錄錯題：</strong> 系統會聰明記住你答錯的題目，不用自己拿筆辛苦做記號。</li>
-        <li><strong>利用零碎時間：</strong> 手機隨開隨練，不管是坐捷運、等公車還是午休，都能隨時刷個幾題。</li>
-        <li><strong>即時對答案：</strong> 點選選項馬上知道對錯與詳解，不用翻到書本最後面辛苦對答案。</li>
+        <li><strong>自動收錄錯題：</strong> 系統會聰明記住答錯的題目，不需再拿筆辛苦做記號。</li>
+        <li><strong>利用零碎時間：</strong> 手機隨開隨練，不管是搭乘捷運、等公車還是午休，都能隨時刷題維持手感。</li>
+        <li><strong>即時對答案：</strong> 點選選項即可馬上知道對錯與詳解，不用頻繁翻閱書本後方的解答頁面。</li>
       </ul>
 
       <h2 id="compare">二、資源深度對比</h2>
@@ -184,7 +186,7 @@
             <tr>
               <td>學習成本</td>
               <td class="highlight-win">🏆 低 (手機連網即可免費練習)</td>
-              <td>高 (需要花錢買書)</td>
+              <td>高 (需要花費購買)</td>
             </tr>
             <tr>
               <td>弱點強化</td>
@@ -199,41 +201,41 @@
             <tr>
               <td>便攜程度</td>
               <td class="highlight-win">🏆 極高 (手機輕巧好操作)</td>
-              <td>低 (厚重一大本書不易攜帶)</td>
+              <td>低 (厚重書本不易攜帶)</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <h2 id="who">三、🎯 誰適合哪種資源？</h2>
+      <h2 id="who">三、🎯 你適合哪一種資源？</h2>
       
-      <h3>1. 我適合「線上練習系統」，如果：</h3>
+      <h3>1. 適合「線上練習系統」的考生：</h3>
       <ul>
-        <li>我的時間很有限，只能利用零碎的空檔來背題庫。</li>
-        <li>我喜歡用手機刷題，討厭帶著厚重的書本到處跑。</li>
-        <li>我希望在考前一週進行大量的全真模擬測驗來練手感。</li>
+        <li>時間較為零碎，只能利用空檔來熟悉題庫。</li>
+        <li>習慣使用手機刷題，不希望攜帶厚重的書本到處跑。</li>
+        <li>希望在考前一週進行大量的全真模擬測驗來練習手感。</li>
       </ul>
 
-      <h3>2. 我適合「實體參考書」，如果：</h3>
+      <h3>2. 適合「實體參考書」的考生：</h3>
       <ul>
-        <li>我對該職類（例如硬體裝修或網路架設）完全零基礎，需要先系統化讀懂基礎原理。</li>
-        <li>我沒辦法長時間盯著手機或電腦螢幕，看久了容易眼花撩亂。</li>
-        <li>我需要大量的空白頁面來練習手寫計算過程。</li>
+        <li>對該職類（例如硬體裝修或網路架設）完全零基礎，需要先系統化讀懂基礎原理。</li>
+        <li>較難長時間盯著手機或電腦螢幕，容易感到視覺疲勞。</li>
+        <li>需要大量的空白頁面與空間來練習手寫計算過程。</li>
       </ul>
 
-      <div class="teacher-tip">
-        <strong>👨‍🏫 老師的「一次過」聰明策略：</strong>
-        如果你想用最高效率一次及格，建議採取 <strong>「82黃金法則」</strong>：把 80% 的時間花在 <strong>線上練習系統</strong> 大量刷題、維持手感；如果遇到怎麼背都背不起來的 20% 困難觀念，再翻閱 <strong>參考書</strong> 或上網搜尋文章把原理搞懂！
+      <div class="info-box">
+        <strong>💡 考前「一次過」聰明策略：</strong>
+        如果想用最高效率一次及格，建議採取 <strong>「82黃金法則」</strong>：將 80% 的時間花在 <strong>線上練習系統</strong> 進行大量刷題、維持手感；若遇到難以理解的 20% 困難觀念，再翻閱 <strong>實體參考書</strong> 或上網搜尋文章把原理徹底搞懂！
       </div>
 
       <div class="warning">
-        <strong>⚠️ 考前千萬別踩這個雷：</strong>
-        絕對不要去買二手書或拿學長姐留下來的「舊版參考書」來背！因為 115 年度最新的資安、環保法規與題型已經改了很多，一定要搭配線上最新的題庫練習才不會吃大虧。
+        <strong>⚠️ 考前關鍵避雷指南：</strong>
+        絕對不要購買二手書或拿過往舊版的「舊版參考書」來死背！由於 115 年度最新的資安、環保法規與題型已經有大幅更新，務必搭配線上最新的題庫練習，才不會在考場上吃虧。
       </div>
 
       <div style="text-align: center; margin-top: 30px;">
         <p>觀念釐清了嗎？立刻來挑戰 115 年度最新模擬考吧！</p>
-        <a href="practice.html" class="btn">開始題庫練習</a>
+        <a href="practice.html" class="btn">開始考前模擬測驗</a>
       </div>
     </article>
   </div>
