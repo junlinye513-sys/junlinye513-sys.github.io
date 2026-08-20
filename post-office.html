@@ -76,7 +76,7 @@
 
     /* 重點標示與提示框 */
     .highlight { background-color: #fff3cd; padding: 2px 6px; border-radius: 6px; font-weight: 700; color: #856404; }
-    .teacher-tip { border-left: 5px solid #4caf50; background: #f1f8e9; padding: 16px; margin: 20px 0; border-radius: 12px; }
+    .info-box { border-left: 5px solid #4caf50; background: #f1f8e9; padding: 16px; margin: 20px 0; border-radius: 12px; }
     .warning { border-left: 5px solid #ff9800; background: #fff7e6; padding: 16px; margin: 20px 0; border-radius: 12px; }
 
     /* 目錄 */
@@ -113,12 +113,14 @@
       text-decoration: none;
       font-weight: bold;
       transition: background 0.3s;
+      box-shadow: 0 5px 15px rgba(74, 143, 231, 0.3);
     }
-    .btn:hover { background: var(--primary-dark); }
+    .btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
 
     /* 頁尾 */
     footer { text-align: center; padding: 40px 15px; font-size: 13px; color: #999; border-top: 1px solid #eee; background: #fff; margin-top: 50px; }
-    footer a { text-decoration: none; color: #777; margin: 0 5px; }
+    footer a { text-decoration: none; color: #777; margin: 0 5px; transition: color 0.3s; }
+    footer a:hover { color: var(--primary); }
 
     /* 手機版適應 */
     @media (max-width: 600px) {
@@ -155,7 +157,7 @@
       </div>
 
       <p>
-        準備「電腦軟體應用」技術士檢定的同學看過來！Excel 絕對是術科考試裡決定你能不能拿到證照的生死關卡。很多人看到一堆英文函數、括號包括號就頭痛。但其實，只要搞懂這 5 個最常出現的「核心公式」，考場上 80% 的資料處理都能迎刃而解。今天老師就幫你把它們翻譯成白話文！
+        準備「電腦軟體應用」技術士檢定的考生請注意！Excel 絕對是術科考試裡決定能否順利取得證照的關鍵關卡。許多人看到繁雜的英文函數與層層括號就感到頭痛，但其實，只要搞懂這 5 個最常出現的「核心公式」，考場上 80% 的資料處理都能迎刃而解。這篇攻略將把這些函數化為白話文，幫助大家輕鬆掌握！
       </p>
 
       <div class="toc">
@@ -168,28 +170,28 @@
 
       <h2 id="lookup">一、萬能查詢神器：VLOOKUP</h2>
       <p>
-        這是考場出現率 100% 的超級魔王！它的功用是幫你從一大堆資料中，根據「關鍵字」把對應的資料抓過來（例如：根據學生的「學號」，去另一張表抓他的「姓名」）。
+        這是考場出現率 100% 的重點函數！它的功用是幫助你從一大堆資料中，根據「關鍵字」將對應的資料精準抓取過來（例如：根據學生的「學號」，去另一張表抓取對應的「姓名」）。
       </p>
       
-      <div class="teacher-tip">
-        <strong>👨‍🏫 老師教你背口訣：</strong> <br>
+      <div class="info-box">
+        <strong>💡 核心記憶口訣：</strong> <br>
         <code>=VLOOKUP(找什麼, 在哪找, 第幾欄, 0)</code><br>
-        <span class="highlight">考場保命撇步：</span> 最後一個參數請務必、一定要填上 <code>0</code>（代表完全精確搜尋），這在 99% 的考題中都是唯一的正確解答！
+        <span class="highlight">考場保命撇步：</span> 最後一個參數請務必填上 <code>0</code>（代表完全精確搜尋），這在 99% 的術科考題中都是唯一的正確解答！
       </div>
 
       <h2 id="logic">二、條件判斷大師：IF</h2>
       <p>
-        IF 函數是讓你的報表變聰明的關鍵。當你需要電腦幫你根據分數判斷「及格」或「不及格」，或是根據業績判斷「發多少獎金」時，就是要請 IF 出馬。
+        IF 函數是讓報表具備邏輯判斷能力的關鍵。當需要系統根據分數自動判斷「及格」或「不及格」，或是根據業績門檻判斷「發放多少獎金」時，就是 IF 函數派上用場的時機。
       </p>
       
       <ul>
-        <li><strong>基本句型：</strong> <code>=IF(分數>=60, "及格", "不及格")</code>（如果是真的就顯示及格，假的就顯示不及格）</li>
-        <li><strong>進階巢狀用法：</strong> 如果有優、甲、乙、丙好幾種等級怎麼辦？那就需要在 IF 裡面，再塞一個 IF（考試很愛考這種俄羅斯娃娃的寫法）。</li>
+        <li><strong>基本句型：</strong> <code>=IF(分數>=60, "及格", "不及格")</code>（條件成立時顯示及格，不成立則顯示不及格）</li>
+        <li><strong>進階巢狀用法：</strong> 如果有優、甲、乙、丙多種等級該如何處理？那就需要在 IF 函數裡面，再包覆一個 IF（這類多層次的寫法在考試中極為常見）。</li>
       </ul>
 
       <h2 id="stat">三、統計神隊友：COUNTIF 與 SUMIF</h2>
       <p>
-        考題一定會叫你做統計表！如果你要算「有條件」的數量或總和，這兩個函數就是你的救星。
+        考題必定會出現統計表製作！若需要計算「符合特定條件」的數量或總和，這兩個函數就是解題的關鍵。
       </p>
       
       <div class="table-scroll">
@@ -223,23 +225,23 @@
 
       <h2 id="text">四、文字擷取三劍客：LEFT、RIGHT、MID</h2>
       <p>
-        考試很常故意給你一長串字，要你從裡面切出特定的資訊，例如：從「身分證字號」切出性別碼，或是從「學號」切出入學年度。
+        考試常會提供一長串字元，要求考生從中擷取特定的資訊，例如：從「身分證字號」切出性別碼，或是從「學號」擷取出入學年度。
       </p>
       <ul>
-        <li><code>LEFT(儲存格, 3)</code>：從最「左邊」開始，切下 3 個字。</li>
-        <li><code>RIGHT(儲存格, 4)</code>：從最「右邊」開始，切下 4 個字。</li>
-        <li><code>MID(儲存格, 2, 1)</code>：從中間第 2 個字開始，切下 1 個字（這招拿來切身分證性別碼最常用！）。</li>
+        <li><code>LEFT(儲存格, 3)</code>：從最「左邊」開始，擷取 3 個字元。</li>
+        <li><code>RIGHT(儲存格, 4)</code>：從最「右邊」開始，擷取 4 個字元。</li>
+        <li><code>MID(儲存格, 2, 1)</code>：從中間第 2 個字開始，擷取 1 個字元（這招最常被用來判斷身分證的性別碼！）。</li>
       </ul>
 
       <div class="warning">
-        <strong>⚠️ 老師的終極血淚警告：千萬別忘記 F4！</strong><br>
-        在 Excel 裡，當你寫好第一格公式，準備往下拉套用到全部資料時，如果你的公式有引用到某個「不能變動的固定格子」（例如：匯率表、標準分數表），<span class="highlight">一定要按下 F4 幫它加上錢字號 (如 <code>$A$1</code>) 鎖起來！</span><br>
-        忘記鎖的話，公式往下一拉格子就會跑掉，你後面的計算結果會全盤皆錯，直接零分！
+        <strong>⚠️ 考場關鍵警告：千萬別忘記 F4 絕對參照！</strong><br>
+        在 Excel 中，當寫好第一格公式準備往下拉套用至全部資料時，若公式有引用到某個「不能變動的固定範圍」（例如：匯率表、標準分數表），<span class="highlight">一定要按下 F4 鍵為其加上錢字號 (如 <code>$A$1</code>) 進行鎖定！</span><br>
+        若忘記鎖定儲存格，公式往下一拉參照位置就會跑掉，後續的計算結果將全盤皆錯，導致嚴重扣分！
       </div>
 
       <div style="text-align: center; margin-top: 30px;">
         <p>觀念都弄懂了嗎？趁著記憶猶新，來學科題庫測驗一下你的基本功！</p>
-        <a href="practice.html" class="btn">開始題庫練習</a>
+        <a href="practice.html" class="btn">開始考前模擬測驗</a>
       </div>
 
     </article>
