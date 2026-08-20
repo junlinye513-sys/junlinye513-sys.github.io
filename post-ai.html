@@ -76,7 +76,7 @@
 
     /* 重點標示與提示框 */
     .highlight { background-color: #fff3cd; padding: 2px 6px; border-radius: 6px; font-weight: 700; }
-    .teacher-tip { border-left: 5px solid #4caf50; background: #f1f8e9; padding: 16px; margin: 20px 0; border-radius: 12px; }
+    .info-box { border-left: 5px solid #4caf50; background: #f1f8e9; padding: 16px; margin: 20px 0; border-radius: 12px; }
     .warning { border-left: 5px solid #ff9800; background: #fff7e6; padding: 16px; margin: 20px 0; border-radius: 12px; }
 
     /* 目錄 */
@@ -110,12 +110,14 @@
       text-decoration: none;
       font-weight: bold;
       transition: background 0.3s;
+      box-shadow: 0 5px 15px rgba(74, 143, 231, 0.3);
     }
-    .btn:hover { background: var(--primary-dark); }
+    .btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
 
     /* 頁尾 */
     footer { text-align: center; padding: 40px 15px; font-size: 13px; color: #999; border-top: 1px solid #eee; background: #fff; margin-top: 50px; }
-    footer a { text-decoration: none; color: #777; margin: 0 5px; }
+    footer a { text-decoration: none; color: #777; margin: 0 5px; transition: color 0.3s; }
+    footer a:hover { color: var(--primary); }
 
     /* 手機版適應 */
     @media (max-width: 600px) {
@@ -151,7 +153,7 @@
       </div>
 
       <p>
-        進入 115 年度，大家在刷題時應該有發現，學科測驗裡的「新科技」題目變多了。其中最常出現的兩大魔王就是 <strong>人工智慧 (AI)</strong> 與 <strong>物聯網 (IoT)</strong>。這篇文章我用最白話的方式幫大家梳理一下，考前當故事看過一遍，考場上就能輕鬆拿分，千萬別被這些專有名詞嚇到了！
+        進入 115 年度，考生在練習題庫時應該有發現，學科測驗中關於「新科技」的題目比例增加了。其中最常出現的兩大核心就是 <strong>人工智慧 (AI)</strong> 與 <strong>物聯網 (IoT)</strong>。這篇攻略將用最白話的方式為大家梳理重點，考前當作精華筆記閱覽一遍，在考場上就能輕鬆拿分，千萬別被這些專有名詞嚇到了！
       </p>
 
       <div class="toc">
@@ -164,27 +166,27 @@
 
       <h2 id="ai">一、人工智慧 (AI)：原來電腦也會自己找答案？</h2>
       <p>
-        很多人以為 AI 就是寫好一堆程式讓電腦照著跑，其實不是喔。在選擇題裡，你一定要分清楚以下這三個範圍的大小（由大到小）：
+        許多人誤以為 AI 只是撰寫好程式讓電腦按表操課，其實不然。在作答選擇題時，務必要釐清以下三個概念的範圍大小（由大到小）：
       </p>
       <ul>
-        <li><strong>人工智慧 (AI)：</strong> 範圍最大的總稱，只要是讓機器表現得像人類一樣聰明，就算 AI。</li>
-        <li><strong>機器學習 (Machine Learning)：</strong> AI 的核心技術。重點在於「我們不寫死程式」，而是餵給電腦一大堆數據，讓它<span class="highlight">自己找出規律</span>。</li>
-        <li><strong>深度學習 (Deep Learning)：</strong> 機器學習的進階版，模仿人類大腦的「神經網路」來運作。現在很紅的人臉辨識、自動語音翻譯，背後都是靠它。</li>
+        <li><strong>人工智慧 (AI)：</strong> 範圍最大的總稱，只要是讓機器表現得像人類一樣具備判斷力，即可稱為 AI。</li>
+        <li><strong>機器學習 (Machine Learning)：</strong> AI 的核心技術。重點在於「不將程式寫死」，而是提供電腦大量數據，讓它<span class="highlight">自行找出規律</span>。</li>
+        <li><strong>深度學習 (Deep Learning)：</strong> 機器學習的進階版，模仿人類大腦的「神經網路」來運作。現今廣泛應用的人臉辨識、自動語音翻譯，背後皆是仰賴此技術。</li>
       </ul>
 
-      <h2 id="iot">二、物聯網 (IoT)：把身邊所有的東西都連上網</h2>
+      <h2 id="iot">二、物聯網 (IoT)：將身邊的萬物連上網</h2>
       <p>
-        物聯網簡單來說，就是把電燈、手錶、冷氣甚至路燈，通通連上網路。考試最愛考它的「三層架構」，只要記住這個順序就不會錯：
+        物聯網簡單來說，就是將電燈、手錶、冷氣甚至路燈等實體設備，全部連上網路。測驗中最常考的就是它的「三層架構」，只要熟記此順序就不易出錯：
       </p>
       <ol>
-        <li><strong>感知層（負責感覺）：</strong> 最底層的設備，像是溫度計、RFID 條碼、監視器，專門用來收集資料。</li>
-        <li><strong>網路層（負責傳遞）：</strong> 扮演快遞員的角色，透過 Wi-Fi、藍牙或是 5G 把資料送出去。</li>
-        <li><strong>應用層（負責服務）：</strong> 最終呈現給我們的結果，例如用手機看家裡的監視器畫面、或是智慧手環幫你算心跳。</li>
+        <li><strong>感知層（負責收集）：</strong> 最底層的設備，例如溫度計、RFID 條碼、監視器，專門用來收集資料。</li>
+        <li><strong>網路層（負責傳遞）：</strong> 扮演傳輸的角色，透過 Wi-Fi、藍牙或是 5G 將感知層的資料傳送出去。</li>
+        <li><strong>應用層（負責服務）：</strong> 最終呈現給使用者的結果，例如透過手機查看家中的監視器畫面，或是智慧手環計算步數與心率。</li>
       </ol>
 
-      <h2 id="aiot">三、AIoT：有大腦的物聯網</h2>
+      <h2 id="aiot">三、AIoT：具備大腦的物聯網</h2>
       <p>
-        當物聯網 (IoT) 沒日沒夜地收集了一大堆資料後，誰來幫忙看這些資料？當然就是交給人工智慧 (AI) 去判斷！這兩個加起來就是現在很常考的 <strong>AIoT (人工智慧物聯網)</strong>。
+        當物聯網 (IoT) 日以繼夜地收集了巨量資料後，該由誰來處理這些數據？此時便需要交由人工智慧 (AI) 進行分析與判斷！這兩項技術的結合，即是近年測驗的熱門焦點 <strong>AIoT (人工智慧物聯網)</strong>。
       </p>
       
       <div class="table-scroll">
@@ -193,24 +195,24 @@
             <tr>
               <th>技術名稱</th>
               <th>扮演的角色</th>
-              <th>生活中的例子</th>
+              <th>生活中的應用實例</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>物聯網 (IoT)</td>
-              <td>數位神經 (拼命收集數據)</td>
-              <td>會記錄你步數的智慧手環、智慧電表</td>
+              <td>數位神經 (持續收集數據)</td>
+              <td>記錄健康數據的智慧手環、智慧電表</td>
             </tr>
             <tr>
               <td>人工智慧 (AI)</td>
               <td>超級大腦 (負責分析判斷)</td>
-              <td>幫你寫文章的 ChatGPT、人臉解鎖</td>
+              <td>協助生成文章的 ChatGPT、人臉解鎖</td>
             </tr>
             <tr>
               <td>AIoT (結合兩者)</td>
               <td>神經＋大腦 (自動做出決策)</td>
-              <td>看到前面有路人會自動煞車的無人駕駛車</td>
+              <td>偵測到前方有行人會自動煞車的無人駕駛車</td>
             </tr>
           </tbody>
         </table>
@@ -218,23 +220,23 @@
 
       <h2 id="exam">四、考前必背：這些選項最常出現</h2>
       <div class="warning">
-        <strong>⚠️ 如果在選項看到這些專有名詞，請直接聯想：</strong>
+        <strong>⚠️ 若在選項中看到以下專有名詞，請直接聯想：</strong>
         <ul>
-          <li><strong>大數據 (Big Data)：</strong> IoT 收集來的巨量資料。考題常出「5V 特性」：大量 (Volume)、快速 (Velocity)、多樣 (Variety)、真實 (Veracity)、價值 (Value)。</li>
-          <li><strong>雲端運算 (Cloud Computing)：</strong> 把資料丟到網路上的超級電腦去算，你自己的設備就不用太好。</li>
-          <li><strong>邊緣運算 (Edge Computing)：</strong> 雲端有時候會塞車（延遲），所以<span class="highlight">直接在設備旁邊就先算好</span>。這幾年超愛考這個概念！</li>
-          <li><strong>5G 通訊：</strong> 擁有「高頻寬、低延遲、廣連結」三大特色，是這幾年推動科技發展的大功臣。</li>
+          <li><strong>大數據 (Big Data)：</strong> IoT 收集而來的巨量資料。考題常測驗其「5V 特性」：大量 (Volume)、快速 (Velocity)、多樣 (Variety)、真實 (Veracity)、價值 (Value)。</li>
+          <li><strong>雲端運算 (Cloud Computing)：</strong> 將資料傳送至網路上的超級電腦進行運算，降低終端設備的硬體需求。</li>
+          <li><strong>邊緣運算 (Edge Computing)：</strong> 由於雲端傳輸有時會遇到網路延遲，因此<span class="highlight">直接在設備端（邊緣）先行運算處理</span>。這是近幾年非常熱門的考點！</li>
+          <li><strong>5G 通訊：</strong> 具備「高頻寬、低延遲、廣連結」三大特色，是推動各項新科技發展的關鍵基礎。</li>
         </ul>
       </div>
 
-      <div class="teacher-tip">
-        <strong>👨‍🏫 考前小叮嚀：</strong>
-        這類題目多半出現在共同科目裡，考法通常是「下列何者屬於物聯網的感知層？」或是「邊緣運算的主要目的是什麼？」。只要把上面的基本邏輯看懂，這幾分絕對是穩穩拿下的送分題！
+      <div class="info-box">
+        <strong>💡 考前重點叮嚀：</strong>
+        這類科技趨勢題多半出現在共同科目中，常見考法如「下列何者屬於物聯網的感知層？」或是「邊緣運算的主要目的是什麼？」。只要掌握上述的基本邏輯，這幾分絕對能穩穩拿下！
       </div>
 
       <div style="text-align: center; margin-top: 30px;">
-        <p>觀念弄懂了嗎？趁著記憶猶新，直接來刷幾題試試看吧！</p>
-        <a href="practice.html" class="btn">去題庫測驗一下</a>
+        <p>觀念都弄懂了嗎？趁著記憶猶新，直接來刷幾題試試看吧！</p>
+        <a href="practice.html" class="btn">開始考前模擬測驗</a>
       </div>
       
     </article>
