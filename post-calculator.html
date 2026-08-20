@@ -75,8 +75,8 @@
     li { margin-bottom: 10px; }
 
     /* 重點標示與提示框 */
-    .highlight { background-color: #fff3cd; padding: 2px 6px; border-radius: 6px; font-weight: 700; }
-    .teacher-tip { border-left: 5px solid #4caf50; background: #f1f8e9; padding: 16px; margin: 20px 0; border-radius: 12px; }
+    .highlight { background-color: #fff3cd; padding: 2px 6px; border-radius: 6px; font-weight: 700; color: #856404; }
+    .info-box { border-left: 5px solid #4caf50; background: #f1f8e9; padding: 16px; margin: 20px 0; border-radius: 12px; }
     .warning { border-left: 5px solid #ff9800; background: #fff7e6; padding: 16px; margin: 20px 0; border-radius: 12px; }
 
     /* 目錄 */
@@ -102,12 +102,14 @@
       text-decoration: none;
       font-weight: bold;
       transition: background 0.3s;
+      box-shadow: 0 5px 15px rgba(74, 143, 231, 0.3);
     }
-    .btn:hover { background: var(--primary-dark); }
+    .btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
 
     /* 頁尾 */
     footer { text-align: center; padding: 40px 15px; font-size: 13px; color: #999; border-top: 1px solid #eee; background: #fff; margin-top: 50px; }
-    footer a { text-decoration: none; color: #777; margin: 0 5px; }
+    footer a { text-decoration: none; color: #777; margin: 0 5px; transition: color 0.3s; }
+    footer a:hover { color: var(--primary); }
 
     /* 手機版適應 */
     @media (max-width: 600px) {
@@ -126,7 +128,7 @@
       <ul class="nav-menu">
         <li><a href="index.html">首頁</a></li>
         <li><a href="practice.html">題庫練習</a></li>
-        <li><a href="post-level-c.html">備考攻略</a></li>
+        <li><a href="guide.html">備考攻略</a></li>
         <li><a href="about.html">關於本站</a></li>
       </ul>
     </div>
@@ -144,88 +146,88 @@
       </div>
 
       <p>
-        在準備技術士檢定（像是網路架設、硬體裝修或商業計算類）時，計算機絕對是你最重要的神隊友。但每年考場上，總有幾位同學因為帶錯計算機型號，當場被監考老師沒收，甚至被視為違規扣分。這篇老師就來教大家，怎麼挑一台安全過關又好用的「國考計算機」。
+        在準備技術士檢定（如網路架設、硬體裝修或商業計算類）時，計算機絕對是作答時最重要的輔助工具。但每年考場上，總有考生因為攜帶了錯誤型號的計算機，當場被監考人員沒收，甚至被視為違規扣分。這篇攻略將教大家如何挑選一台既能安全過關，又實用順手的「國考專用計算機」。
       </p>
 
       <div class="toc">
         <b>📌 本篇攻略快速導覽</b>
         <a href="#rules">1. 考場地雷區：這些功能千萬別碰</a>
         <a href="#identify">2. 怎樣才知道這台合不合格？</a>
-        <a href="#list">3. 學長姐最愛用的安全牌型號</a>
+        <a href="#list">3. 歷屆考生最愛用的安全牌型號</a>
         <a href="#skills">4. 資訊與電子類同學：必備這兩招</a>
       </div>
 
       <h2 id="rules">一、 考場地雷區：這些功能的計算機千萬別帶</h2>
-      <p>勞動部與考選部對電子計算機的審查非常嚴格，核心原則只有一個：<strong>「不能有記憶跟通訊功能」</strong>。如果你買的計算機有以下這些特異功能，絕對不能帶進去：</p>
+      <p>勞動部與考選部對電子計算機的審查非常嚴格，核心原則只有一個：<strong>「絕對不能有記憶與通訊功能」</strong>。如果你購買的計算機具備以下特異功能，絕對禁止攜入考場：</p>
       <ul>
-        <li><strong>🚫 程式儲存 (Programmable)：</strong> 絕對不能自己寫程式或把公式存在裡面。</li>
+        <li><strong>🚫 程式儲存 (Programmable)：</strong> 絕對不能自行編寫程式或將公式儲存於記憶體中。</li>
         <li><strong>🚫 文字儲存：</strong> 螢幕不能顯示英文字母以外的自訂文字內容。</li>
-        <li><strong>🚫 無線通訊：</strong> 嚴禁有紅外線、藍牙、Wi-Fi 等傳輸功能。</li>
-        <li><strong>🚫 語音播報：</strong> 按按鍵或計算出結果時，不能發出講話的聲音。</li>
+        <li><strong>🚫 無線通訊：</strong> 嚴禁具備紅外線、藍牙、Wi-Fi 等資料傳輸功能。</li>
+        <li><strong>🚫 語音播報：</strong> 按壓按鍵或計算出結果時，不能發出語音播報的聲音。</li>
       </ul>
 
       <div class="warning">
-        <strong>⚠️ 老師的血淚警告：</strong>
-        很多讀工科的同學，會想帶自己平常大學上課用的「高階工程繪圖計算機」去考場。注意！那種通常都能存公式，在技術士檢定中是<span class="highlight">絕對禁用</span>的！進考場入座前，監考老師一定會一台一台檢查型號，千萬別心存僥倖。
+        <strong>⚠️ 考場常見違規警告：</strong>
+        許多工科背景的考生，會習慣帶平常大學上課使用的「高階工程繪圖計算機」去考場。請特別注意！這類高階機型通常具備記憶公式功能，在技術士檢定中是<span class="highlight">絕對禁用</span>的！進考場入座前，監考人員一定會逐一檢查機身型號，千萬別心存僥倖。
       </div>
 
       <h2 id="identify">二、 怎樣才知道這台計算機合不合格？</h2>
-      <p>去書局或光華商場買計算機的時候，跟著這兩步檢查最保險：</p>
+      <p>前往實體書局或電子商場購買時，依照以下兩個步驟檢查最為保險：</p>
       <ol>
-        <li><strong>看包裝貼紙：</strong> 找外包裝上有明確印著「考選部核定」或「國家考試專用」字樣的型號。</li>
-        <li><strong>翻背面確認：</strong> 翻到計算機背面，一定要有一張標檢局的檢驗合格標籤，而且機器背面不能印有任何關於「程式編寫(Program)」的字樣。</li>
+        <li><strong>檢視外包裝貼紙：</strong> 尋找外包裝上明確印有「考選部核定」或「國家考試專用」字樣的型號。</li>
+        <li><strong>翻查機身背面：</strong> 翻到計算機背面，必須要有一張標準檢驗局的檢驗合格標籤，且機器背面絕不能印有任何關於「程式編寫 (Program)」功能的標示。</li>
       </ol>
 
-      <h2 id="list">三、 115 年度學長姐最愛用的安全牌型號</h2>
-      <p>如果你不想自己慢慢比對型號，老師這邊直接幫你整理了三款現在市面上最好買、考場絕對安全過關的熱門型號：</p>
+      <h2 id="list">三、 115 年度歷屆考生最愛用的安全牌型號</h2>
+      <p>為了省去逐一比對型號的麻煩，我們已經為大家整理出目前市面上最容易購買、且考場絕對安全過關的三款熱門型號：</p>
       <div class="table-scroll">
         <table>
           <thead>
             <tr>
               <th>品牌</th>
               <th>熱門型號</th>
-              <th>為什麼推薦它？</th>
+              <th>推薦理由分析</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td><strong>CASIO (卡西歐)</strong></td>
               <td>FX-82SOLAR II</td>
-              <td>國考最經典、最多人拿的型號。全太陽能供電不怕考到一半沒電，輕薄好帶，是絕對的安全牌首選。</td>
+              <td>國考界最經典、市佔率最高的型號。具備全太陽能供電，不怕考到一半沒電，且機身輕薄好帶，是絕對的安全牌首選。</td>
             </tr>
             <tr>
               <td><strong>E-MORE</strong></td>
               <td>fx-127</td>
-              <td>高 CP 值之選。台灣各大書局、甚至有些五金大賣場都買得到，支援基礎的科學運算，便宜又好用。</td>
+              <td>高 CP 值的經濟之選。台灣各大書局甚至部分五金大賣場皆可買到，支援基礎的科學運算，價格親民且實用。</td>
             </tr>
             <tr>
               <td><strong>Canon (佳能)</strong></td>
               <td>F-502G</td>
-              <td>手感穩重，按鍵按下去的回饋感極佳。螢幕顯示的字體很清晰，適合容易按錯鍵、需要反覆檢查的考生。</td>
+              <td>手感穩重，按鍵按壓的回饋感極佳。螢幕顯示字體清晰，非常適合容易按錯鍵、需要反覆檢查運算過程的考生。</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <h2 id="skills">四、 資訊與電子類同學請注意：一定要有這兩個功能</h2>
-      <p>如果你報考的是「網路架設」或「電子類」相關檢定，挑計算機時除了要合格，請特別確認有沒有這兩個進階功能，這會救你一命：</p>
+      <h2 id="skills">四、 資訊與電子類考生請注意：一定要有這兩個功能</h2>
+      <p>如果你報考的是「網路架設」或「電子類」相關檢定，挑選計算機時除了確保合格，請特別確認是否具備以下兩個進階運算功能，這將在考場上發揮極大的作用：</p>
       
       <h3>1. 進制轉換功能 (二進位 / 十進位 / 十六進位)</h3>
       <p>
-        在計算學科大魔王<strong>「子網路遮罩 (Subnetting)」</strong>時，如果你的計算機能直接幫你把二進位轉換成十進位，不僅能大幅縮短作答時間，還能完全避免手算粗心算錯的慘劇。
+        在計算學科常見的大魔王題型<strong>「子網路遮罩 (Subnetting)」</strong>時，若你的計算機能直接協助將二進位轉換為十進位，不僅能大幅縮短作答時間，還能有效避免手動計算時因粗心而算錯的慘劇。
       </p>
 
       <h3>2. 基本科學運算 (指數、對數、根號)</h3>
-      <p>電子類考題很常出現歐姆定律、電路分析與頻率計算。請確保計算機鍵盤上有 <code>x^y</code>、<code>log</code> 以及 <code>√</code> 這幾個按鍵，不然遇到計算題就只能雙手一攤了。</p>
+      <p>電子類考題經常出現歐姆定律、電路分析與頻率計算等題型。請務必確保計算機鍵盤上配有 <code>x^y</code>、<code>log</code> 以及 <code>√</code> 這幾個科學運算按鍵，否則遇到複雜的計算題就只能雙手一攤了。</p>
 
-      <div class="teacher-tip">
-        <strong>👨‍🏫 考前刷題小叮嚀：</strong>
-        平常在我們網站練習題庫時，請一定要把「實體計算機」拿出來按！千萬別用手機 APP 算。提早習慣實體按鍵的位置跟換算邏輯，考試限時的壓力下才不會找不到功能喔！
+      <div class="info-box">
+        <strong>💡 考前刷題關鍵提醒：</strong>
+        平常在線上進行題庫測驗時，請務必將「實體計算機」拿出來同步按壓操作！千萬別依賴手機 APP 計算。提早習慣實體按鍵的相對位置與換算邏輯，在考場限時壓力下才不會慌亂找不到功能。
       </div>
 
       <div style="text-align: center; margin-top: 30px;">
         <p>準備好你的最強副手了嗎？立刻來測試一下計算手感！</p>
-         <a href="practice.html" class="btn">去題庫測驗一下</a>
+         <a href="practice.html" class="btn">開始考前模擬測驗</a>
       </div>
 
     </article>
