@@ -337,7 +337,22 @@
           <a href="https://script.google.com/macros/s/AKfycbygs_FhJBK0Ojr2HU1D2bi_5h4-9EIZQZ5SdJc8mumOYIpga1WkN7T4v6jT-2QUaU-TVw/exec" class="btn-go" target="_blank">開始練習</a>
         </div>
       </div>
-
+      
+      <!-- 餐飲食品職類刷題區 -->
+      <div id="food-section">
+        <h2>🍽️ 餐飲食品刷題區</h2>
+        <p>收錄中餐烹調、烘焙食品、飲料調製等乙丙級學科題目。準備好了就點擊練習吧！</p>
+        
+        <!-- 這裡先放一個範例，你可以複製這段替換成實際的 Google Apps Script 連結 -->
+        <div class="exam-item">
+          <div class="exam-info">
+            <span class="exam-name">中餐烹調(葷食) 丙級</span>
+            <div class="exam-details"><span class="version-tag">版次 V114090113</span> 檔名：076023A13</div>
+          </div>
+          <a href="https://script.google.com/macros/s/AKfycbxO4P59BHFxhyshyY_BHFqpDsJE1hDwqCRMHjyBbwAx3RQy-zwfKwi5MlSkD-0tXH_rHw/exec" class="btn-go">開始練習</a>
+        </div>
+      </div>
+      
       <div class="back-home-container">
         <a href="index.html" class="back-link">← 回到首頁</a>
       </div>
@@ -354,19 +369,28 @@
       const hash = window.location.hash;
       const infoSec = document.getElementById('info-section');
       const busSec = document.getElementById('business-section');
+      const foodSec = document.getElementById('food-section'); // 新增這行
       const title = document.getElementById('main-title');
+
+      // 預設先將所有區塊隱藏，後面再根據 hash 決定顯示哪個
+      infoSec.style.display = 'none';
+      busSec.style.display = 'none';
+      if (foodSec) foodSec.style.display = 'none'; // 確保元素存在避免報錯
 
       if (hash === '#info') {
         infoSec.style.display = 'block';
-        busSec.style.display = 'none';
         title.innerText = '💻 資訊職類刷題區';
       } else if (hash === '#business') {
         busSec.style.display = 'block';
-        infoSec.style.display = 'none';
         title.innerText = '📊 商業服務刷題區';
+      } else if (hash === '#food') { // 新增判斷
+        if (foodSec) foodSec.style.display = 'block';
+        title.innerText = '🍽️ 餐飲食品刷題區';
       } else {
+        // 如果沒有指定，就全部顯示
         infoSec.style.display = 'block';
         busSec.style.display = 'block';
+        if (foodSec) foodSec.style.display = 'block';
         title.innerText = '選擇你要練習的題庫';
       }
     }
@@ -374,7 +398,6 @@
     window.addEventListener('DOMContentLoaded', updateView);
     window.addEventListener('hashchange', updateView);
   </script>
-<script>
 (function() {
   const API = "https://script.google.com/macros/s/AKfycbxAp06fzFAYTDRh17fZqe4pfytLRHAuNcPb8ubRKQJkCJZDEyVze9_fylV847gkz9jt/exec";
   const ua = encodeURIComponent(navigator.userAgent);
