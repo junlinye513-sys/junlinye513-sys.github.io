@@ -93,7 +93,7 @@
     }
 
     /* 考試項目卡片 */
-    #info-section, #business-section { display: none; }
+    #info-section, #business-section, #food-section { display: none; }
 
     .exam-item {
       background: #fdfdfe;
@@ -343,13 +343,12 @@
         <h2>🍽️ 餐飲食品刷題區</h2>
         <p>收錄中餐烹調、烘焙食品、飲料調製等乙丙級學科題目。準備好了就點擊練習吧！</p>
         
-        <!-- 這裡先放一個範例，你可以複製這段替換成實際的 Google Apps Script 連結 -->
         <div class="exam-item">
           <div class="exam-info">
             <span class="exam-name">中餐烹調(葷食) 丙級</span>
             <div class="exam-details"><span class="version-tag">版次 V114090113</span> 檔名：076023A13</div>
           </div>
-          <a href="https://script.google.com/macros/s/AKfycbxO4P59BHFxhyshyY_BHFqpDsJE1hDwqCRMHjyBbwAx3RQy-zwfKwi5MlSkD-0tXH_rHw/exec" class="btn-go">開始練習</a>
+          <a href="https://script.google.com/macros/s/AKfycbxO4P59BHFxhyshyY_BHFqpDsJE1hDwqCRMHjyBbwAx3RQy-zwfKwi5MlSkD-0tXH_rHw/exec" class="btn-go" target="_blank">開始練習</a>
         </div>
       </div>
       
@@ -369,13 +368,13 @@
       const hash = window.location.hash;
       const infoSec = document.getElementById('info-section');
       const busSec = document.getElementById('business-section');
-      const foodSec = document.getElementById('food-section'); // 新增這行
+      const foodSec = document.getElementById('food-section');
       const title = document.getElementById('main-title');
 
-      // 預設先將所有區塊隱藏，後面再根據 hash 決定顯示哪個
+      // 預設先將所有區塊隱藏
       infoSec.style.display = 'none';
       busSec.style.display = 'none';
-      if (foodSec) foodSec.style.display = 'none'; // 確保元素存在避免報錯
+      if (foodSec) foodSec.style.display = 'none';
 
       if (hash === '#info') {
         infoSec.style.display = 'block';
@@ -383,11 +382,11 @@
       } else if (hash === '#business') {
         busSec.style.display = 'block';
         title.innerText = '📊 商業服務刷題區';
-      } else if (hash === '#food') { // 新增判斷
+      } else if (hash === '#food') {
         if (foodSec) foodSec.style.display = 'block';
         title.innerText = '🍽️ 餐飲食品刷題區';
       } else {
-        // 如果沒有指定，就全部顯示
+        // 沒有指定 hash 時顯示全部
         infoSec.style.display = 'block';
         busSec.style.display = 'block';
         if (foodSec) foodSec.style.display = 'block';
@@ -398,52 +397,45 @@
     window.addEventListener('DOMContentLoaded', updateView);
     window.addEventListener('hashchange', updateView);
   </script>
-(function() {
-  const API = "https://script.google.com/macros/s/AKfycbxAp06fzFAYTDRh17fZqe4pfytLRHAuNcPb8ubRKQJkCJZDEyVze9_fylV847gkz9jt/exec";
-  const ua = encodeURIComponent(navigator.userAgent);
 
-  // 沿用與首頁相同的 Session 鎖定機制
-  let userId = sessionStorage.getItem("USER_SESSION_ID");
-  if (!userId) {
-    userId = "u" + Math.random().toString(36).substring(2) + Date.now();
-    sessionStorage.setItem("USER_SESSION_ID", userId);
-  }
+  <script>
+  (function() {
+    const API = "https://script.google.com/macros/s/AKfycbxAp06fzFAYTDRh17fZqe4pfytLRHAuNcPb8ubRKQJkCJZDEyVze9_fylV847gkz9jt/exec";
+    const ua = encodeURIComponent(navigator.userAgent);
 
-  // 背景打卡與更新功能
-  async function trackOnlineStatus() {
-    try {
-      // 1. 發送心跳訊號 (告訴後端：我還在寫題目喔！)
-      fetch(`${API}?action=heartbeat&userId=${userId}&ua=${ua}`).catch(err => console.error("心跳失敗:", err));
-
-      // 2. 如果這頁也想顯示人數，可以去抓 online 數據。如果你沒放 <div id="stats"> 它就不會報錯，只會在背景執行。
-      const o = await fetch(`${API}?action=online`).then(r => r.json());
-      
-      // 3. 檢查總造訪（避免切換頁面時重複 +1）
-      let totalVisits = sessionStorage.getItem("hasCountedVisitCount");
-      if (!totalVisits) {
-        const v = await fetch(`${API}?action=visit&ua=${ua}&vid=${userId}`).then(r => r.json());
-        totalVisits = v.total ?? 0;
-        sessionStorage.setItem("hasCountedVisitCount", totalVisits);
-      }
-
-      // 4. 更新畫面（如果這頁有放 id="stats" 才會執行，沒有的話就略過）
-      const statsEl = document.getElementById("stats");
-      if (statsEl) {
-        statsEl.style.display = "inline-block"; 
-        statsEl.innerHTML = `✨ 目前有 <b>${o.online ?? 0}</b> 人在線練習中（累計造訪：${totalVisits}）`;
-      }
-      
-    } catch (err) {
-      console.log("背景統計執行中...");
+    let userId = sessionStorage.getItem("USER_SESSION_ID");
+    if (!userId) {
+      userId = "u" + Math.random().toString(36).substring(2) + Date.now();
+      sessionStorage.setItem("USER_SESSION_ID", userId);
     }
-  }
 
-  // 進來考試頁面立刻打卡一次
-  trackOnlineStatus();
+    async function trackOnlineStatus() {
+      try {
+        fetch(`${API}?action=heartbeat&userId=${userId}&ua=${ua}`).catch(err => console.error("心跳失敗:", err));
 
-  // 之後每 60 秒默默打卡一次
-  setInterval(trackOnlineStatus, 60000); 
-})();
-</script>
+        const o = await fetch(`${API}?action=online`).then(r => r.json());
+        
+        let totalVisits = sessionStorage.getItem("hasCountedVisitCount");
+        if (!totalVisits) {
+          const v = await fetch(`${API}?action=visit&ua=${ua}&vid=${userId}`).then(r => r.json());
+          totalVisits = v.total ?? 0;
+          sessionStorage.setItem("hasCountedVisitCount", totalVisits);
+        }
+
+        const statsEl = document.getElementById("stats");
+        if (statsEl) {
+          statsEl.style.display = "inline-block"; 
+          statsEl.innerHTML = `✨ 目前有 <b>${o.online ?? 0}</b> 人在線練習中（累計造訪：${totalVisits}）`;
+        }
+        
+      } catch (err) {
+        console.log("背景統計執行中...");
+      }
+    }
+
+    trackOnlineStatus();
+    setInterval(trackOnlineStatus, 60000); 
+  })();
+  </script>
 </body>
 </html>
